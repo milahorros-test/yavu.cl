@@ -90,8 +90,7 @@
         </div><!--/.navbar-collapse -->
       </div>
     </nav>
-
-    @yield('content')
+      @yield('content')
 
      <div class="container">
       <!-- Example row of columns -->
