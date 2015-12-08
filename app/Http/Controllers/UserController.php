@@ -22,11 +22,11 @@ class UserController extends Controller
     public function store(Request $request)
     {
         \Milahorros\User::create([
-            'RUT_USUARIO' => "NDS",
+            'RUT_USUARIO' => $request['rut'],
             'EMAIL_USUARIO' => $request['email'],
-            'LOGIN_USUARIO' => 'AS',
+            'LOGIN_USUARIO' => $request['nameUser'],
             'NOMBRE_USUARIO' => $request['name'],
-            'APELLIDO_USUARIO' => 'NN',
+            'APELLIDO_USUARIO' => $request['secondName'],
             'DIRECCION_USUARIO' => 'NN',
             'CIUDAD_USUARIO' => 'NN',
             'REGION_USUARIO' => 'NN',

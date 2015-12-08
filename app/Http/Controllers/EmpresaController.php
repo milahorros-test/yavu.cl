@@ -39,9 +39,9 @@ class EmpresaController extends Controller
     public function store(Request $request)
     {
         \Milahorros\Empresa::create([
-            'RUT_EMPRESA' => "NDSs",
+            'RUT_EMPRESA' => $request['rut'],
             'EMAIL_EMPRESA' => $request['email'],
-            'LOGIN_EMPRESA' => 'AsS',
+            'LOGIN_EMPRESA' => $request['nameUser'],
             'NOMBRE_EMPRESA' => $request['name'],
             'DIRECCION_EMPRESA' => 'NN',
             'CIUDAD_EMPRESA' => 'NN',

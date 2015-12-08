@@ -51,8 +51,8 @@
             </li>
             <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Registrate<b class="caret"></b></a>                        
               <ul class="dropdown-menu">
-                <li><a href="/usuarios/create">Registro de clientes</a></li>
-                <li><a href="/empresas/create">Registro de empresas</a></li>
+                <li><a href="/usuarios/create/">Registro de clientes</a></li>
+                <li><a href="/empresas/create/">Registro de empresas</a></li>
               </ul>
             </li>    
             <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Puntos milahorros<b class="caret"></b></a>                        
