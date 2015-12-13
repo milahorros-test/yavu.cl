@@ -55,8 +55,10 @@ class UserController extends Controller
      Session::flash('message', 'Usuario editado correctamente');
      return Redirect::to('/usuarios');
    }
-   public function destroy($id)
-   {
-
-   }
+  public function destroy($id)
+  {
+    User::destroy($id);
+    Session::flash('message', 'Usuario eliminado correctamente');
+    return Redirect::to('/usuarios');
+  }
 }

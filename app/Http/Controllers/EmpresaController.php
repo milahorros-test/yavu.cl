@@ -55,6 +55,8 @@ class EmpresaController extends Controller
     }
     public function destroy($id)
     {
-
+        Empresa::destroy($id);
+        Session::flash('message', 'Empresa eliminada correctamente');
+        return Redirect::to('/empresas');
     }
 }

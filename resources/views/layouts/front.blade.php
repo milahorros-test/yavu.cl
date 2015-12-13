@@ -41,18 +41,18 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">                
             <li>
-              <a href="/">Inicio</a>
+              <a href="{!!URL::to('/')!!}">Inicio</a>
             </li>
             <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Nosotros<b class="caret"></b></a>                        
               <ul class="dropdown-menu">
-                <li><a href="/nosotros/">Nuestra empresa</a></li>
-                <li><a href="/contacto/">Contacto</a></li>
+                <li><a href="{!!URL::to('/nosotros/')!!}">Nuestra empresa</a></li>
+                <li><a href="{!!URL::to('/contacto/')!!}">Contacto</a></li>
               </ul>
             </li>
             <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Registrate<b class="caret"></b></a>                        
               <ul class="dropdown-menu">
-                <li><a href="/usuarios/create/">Registro de clientes</a></li>
-                <li><a href="/empresas/create/">Registro de empresas</a></li>
+                <li><a href="{!!URL::to('/usuarios/create')!!}">Registro de clientes</a></li>
+                <li><a href="{!!URL::to('/empresas/create')!!}">Registro de empresas</a></li>
               </ul>
             </li>    
             <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Puntos milahorros<b class="caret"></b></a>                        
@@ -71,8 +71,8 @@
             -->  
             <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Accede<b class="caret"></b></a>                        
               <ul class="dropdown-menu">
-                <li><a href="/login/">Acceso clientes</a></li>
-                <li><a href="/login/">Acceso empresas</a></li>
+                <li><a href="{!!URL::to('/login/')!!}">Acceso clientes</a></li>
+                <li><a href="{!!URL::to('/login/')!!}">Acceso empresas</a></li>
               </ul>
             </li>                        
           </ul>    

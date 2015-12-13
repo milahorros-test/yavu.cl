@@ -16,5 +16,5 @@
 </div>			
 <div class="form-group">
 	{!!Form::label('Clave:')!!}
-	{!!Form::password('PASSWORD_EMPRESA',['class'=>'form-control','placeholder'=>'Ingrese una clave'])!!}			
+	{!!Form::password('PASSWORD_EMPRESA',['class'=>'form-control','placeholder'=>'Ingrese una clave','required'=>'required'])!!}			
 </div>
