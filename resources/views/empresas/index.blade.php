@@ -1,12 +1,13 @@
 @extends('layouts.front')
-<?php $message=Session::get('message') ?>
 @section('content')
 <div class="jumbotron">
 	<div id="contentIn">
-		@if($message == 'store')
+		@if(Session::has('message'))
 			<div class="alert alert-success alert-dismissible" role="alert">
-	  			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	  			Empresa creada exitosamente
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				{{Session::get('message')}}
 			</div>
 		@endif
 		<table class="table">
@@ -27,7 +28,7 @@
 				<td>{{$empresa->FONO_EMPRESA}}</td>
 				<td>{{$empresa->FECHA_CREACION_EMPRESA}}</td>
 				<td>{{$empresa->NOMBRE_ENCARGADO_EMPRESA}}</td>
-				<td></td>
+				<td>{!!link_to_route('empresas.edit', $title = 'Editar', $parameters = $empresa->ID_EMPRESA, $attributes = ['class'=>'btn btn-primary'])!!}</td>
 			</tbody>
 			@endforeach
 		</table>	

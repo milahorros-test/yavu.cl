@@ -12,25 +12,13 @@ class User extends Model implements AuthenticatableContract,
                                     CanResetPasswordContract
 {
     use Authenticatable, Authorizable, CanResetPassword;
-
-    /**
-     * The database table used by the model.
-     *
-     * @var string
-     */
     protected $table = 'users';
-
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
+    protected $primaryKey = 'ID_USUARIO';
     protected $fillable = ['RUT_USUARIO', 'EMAIL_USUARIO', 'LOGIN_USUARIO', 'NOMBRE_USUARIO', 'APELLIDO_USUARIO', 'DIRECCION_USUARIO', 'CIUDAD_USUARIO', 'REGION_USUARIO', 'PAIS_USUARIO', 'FONO_USUARIO', 'FONO_2_USUARIO', 'SEXO_USUARIO', 'FECHA_NACIMIENTO_USUARIO', 'PASSWORD_USUARIO'];
-
-    /**
-     * The attributes excluded from the model's JSON form.
-     *
-     * @var array
-     */
     protected $hidden = ['PASSWORD_USUARIO', 'remember_token'];
+    public function setPasswordAttribute($valor){
+        if(!empty($valor)){
+          $this->attributes['PASSWORD_USUARIO'] = \Hash::make($valor);
+        }
+    }
 }
