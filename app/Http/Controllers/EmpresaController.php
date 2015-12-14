@@ -8,58 +8,50 @@ use Milahorros\Http\Requests;
 use Milahorros\Http\Requests\EmpresaCreateRequest;
 use Milahorros\Http\Requests\EmpresaUpdateRequest;
 use Milahorros\Http\Controllers\Controller;
+use Illuminate\Routing\Route;
 class EmpresaController extends Controller
 {
-    public function index()
-    {
-        $empresas = Empresa::paginate(5);
-        return view('empresas.index', compact('empresas'));
-    }
-    public function create()
-    {
-        return view('empresas.create');
-    }
-    public function store(EmpresaCreateRequest $request)
-    {
-        Empresa::create([
-            'RUT_EMPRESA' => $request['RUT_EMPRESA'],
-            'EMAIL_EMPRESA' => $request['EMAIL_EMPRESA'],
-            'LOGIN_EMPRESA' => $request['LOGIN_EMPRESA'],
-            'NOMBRE_EMPRESA' => $request['NOMBRE_EMPRESA'],
-            'DIRECCION_EMPRESA' => 'NN',
-            'CIUDAD_EMPRESA' => 'NN',
-            'REGION_EMPRESA' => 'NN',
-            'PAIS_EMPRESA' => 'NN',
-            'FONO_EMPRESA' => 'NN',
-            'FONO_2_EMPRESA' => 'NN', 
-            'FECHA_CREACION_EMPRESA' => 'NN',
-            'NOMBRE_ENCARGADO_EMPRESA' => 'NN',
-            'PASSWORD_EMPRESA' => bcrypt($request['PASSWORD_EMPRESA'])
-            ]);
-        Session::flash('message', 'Empresa creada correctamente');
-        return Redirect::to('/empresas');
-    }
-    public function show($id)
-    {
+  public function __construct(){
+    $this->beforeFilter('@find', ['only' => ['edit', 'update', 'destroy']]);
+  }
+  public function find(Route $route){
+    $this->empresa = Empresa::find($route->getParameter('empresas'));
+    //return $this->empresa;
+  }    
+  public function index()
+  {
+      $empresas = Empresa::paginate(5);
+      return view('empresas.index', compact('empresas'));
+  }
+  public function create()
+  {
+      return view('empresas.create');
+  }
+  public function store(EmpresaCreateRequest $request)
+  {
+      Empresa::create($request->all());
+      Session::flash('message', 'Empresa creada correctamente');
+      return Redirect::to('/empresas');
+  }
+  public function show($id)
+  {
 
-    }
-    public function edit($id)
-    {
-        $empresa = Empresa::find($id);
-        return view('empresas.edit', compact('empresa')); 
-    }
-    public function update(EmpresaUpdateRequest $request, $id)
-    {
-        $empresa = Empresa::find($id);
-        $empresa->fill($request->all());
-        $empresa->save();
-        Session::flash('message', 'Empresa editada correctamente');
-        return Redirect::to('/empresas');
-    }
-    public function destroy($id)
-    {
-        Empresa::destroy($id);
-        Session::flash('message', 'Empresa eliminada correctamente');
-        return Redirect::to('/empresas');
-    }
+  }
+  public function edit($id)
+  {
+      return view('empresas.edit', ['empresa' => $this->empresa]); 
+  }
+  public function update(EmpresaUpdateRequest $request, $id)
+  {
+      $this->empresa->fill($request->all());
+      $this->empresa->save();
+      Session::flash('message', 'Empresa editada correctamente');
+      return Redirect::to('/empresas');
+  }
+  public function destroy($id)
+  {
+      $this->empresa->delete();
+      Session::flash('message', 'Empresa eliminada correctamente');
+      return Redirect::to('/empresas');
+  }
 }
