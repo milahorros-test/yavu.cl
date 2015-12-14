@@ -2,6 +2,7 @@
 @section('content')
 <div class="jumbotron">
 	<div id="contentIn">
+		@include('alerts.alertFields')
 		<h4>Actualización de Empresa : {{$empresa->NOMBRE_EMPRESA}}</h4>
 
 		{!!Form::model($empresa, ['method'=>'PATCH', 'action' => ['EmpresaController@update', $empresa->ID_EMPRESA] ])!!}

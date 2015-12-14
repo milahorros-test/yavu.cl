@@ -5,6 +5,8 @@ use Session;
 use Redirect;
 use Milahorros\Empresa;
 use Milahorros\Http\Requests;
+use Milahorros\Http\Requests\EmpresaCreateRequest;
+use Milahorros\Http\Requests\EmpresaUpdateRequest;
 use Milahorros\Http\Controllers\Controller;
 class EmpresaController extends Controller
 {
@@ -17,7 +19,7 @@ class EmpresaController extends Controller
     {
         return view('empresas.create');
     }
-    public function store(Request $request)
+    public function store(EmpresaCreateRequest $request)
     {
         Empresa::create([
             'RUT_EMPRESA' => $request['RUT_EMPRESA'],
@@ -34,7 +36,8 @@ class EmpresaController extends Controller
             'NOMBRE_ENCARGADO_EMPRESA' => 'NN',
             'PASSWORD_EMPRESA' => bcrypt($request['PASSWORD_EMPRESA'])
             ]);
-            return redirect('/empresas')->with('message','store');
+        Session::flash('message', 'Empresa creada correctamente');
+        return Redirect::to('/empresas');
     }
     public function show($id)
     {
@@ -45,7 +48,7 @@ class EmpresaController extends Controller
         $empresa = Empresa::find($id);
         return view('empresas.edit', compact('empresa')); 
     }
-    public function update(Request $request, $id)
+    public function update(EmpresaUpdateRequest $request, $id)
     {
         $empresa = Empresa::find($id);
         $empresa->fill($request->all());

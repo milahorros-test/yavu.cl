@@ -2,6 +2,7 @@
 @section('content')
 <div class="jumbotron">
 	<div id="contentIn">
+		@include('alerts.alertFields')
 		<h4>Actualización de cliente : {{$user->NOMBRE_USUARIO .' '. $user->APELLIDO_USUARIO}}</h4>
 
 		{!!Form::model($user, ['method'=>'PATCH', 'action' => ['UserController@update', $user->ID_USUARIO] ])!!}
@@ -10,7 +11,7 @@
 		{!!Form::close()!!}
 
 		{!!Form::open(['action'=> ['UserController@destroy', $user->ID_USUARIO], 'method'=>'DELETE'])!!}
-			{!!Form::submit('Eliminar', ['class'=>'btn btn-primary btn-danger'])!!}
+			{!!Form::submit('Eliminar', ['class'=>'btn btn-primary btn-danger']) !!}﻿
 		{!!Form::close()!!}
 
 	</div>

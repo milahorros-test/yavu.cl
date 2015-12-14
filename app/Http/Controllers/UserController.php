@@ -2,6 +2,8 @@
 namespace Milahorros\Http\Controllers;
 use Illuminate\Http\Request;
 use Milahorros\Http\Requests;
+use Milahorros\Http\Requests\UserCreateRequest;
+use Milahorros\Http\Requests\UserUpdateRequest;
 use Milahorros\Http\Controllers\Controller;
 use Session;
 use Redirect;
@@ -17,7 +19,7 @@ class UserController extends Controller
    {
       return view('usuarios.create');
    }
-   public function store(Request $request)
+   public function store(UserCreateRequest $request)
    {
       User::create([
          'RUT_USUARIO' => $request['RUT_USUARIO'],
@@ -47,7 +49,7 @@ class UserController extends Controller
       $user = User::find($id);
       return view('usuarios.edit', compact('user')); 
    }
-   public function update($id, Request $request)
+   public function update($id, UserUpdateRequest $request)
    {
      $user = User::find($id);
      $user->fill($request->all());
