@@ -33,6 +33,7 @@
 			</tbody>
 			@endforeach
 		</table>	
+		{!!$empresas->render()!!}
 	</div>
 </div>
 @stop

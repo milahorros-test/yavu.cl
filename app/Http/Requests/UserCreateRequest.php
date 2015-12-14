@@ -11,7 +11,7 @@ class UserCreateRequest extends Request
    {
       return [
          'RUT_USUARIO' => 'required',         
-         'EMAIL_USUARIO' => 'required',
+         'EMAIL_USUARIO' => 'required|unique:users',
          'LOGIN_USUARIO' => 'required',
          'NOMBRE_USUARIO' => 'required',
          'APELLIDO_USUARIO' => 'required',

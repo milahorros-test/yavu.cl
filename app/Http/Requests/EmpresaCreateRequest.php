@@ -11,7 +11,7 @@ class EmpresaCreateRequest extends Request
    {
       return [
          'RUT_EMPRESA' => 'required',
-         'EMAIL_EMPRESA' => 'required',
+         'EMAIL_EMPRESA' => 'required|unique:empresas',
          'LOGIN_EMPRESA' => 'required',
          'NOMBRE_EMPRESA' => 'required',
          'PASSWORD_EMPRESA' => 'required'
