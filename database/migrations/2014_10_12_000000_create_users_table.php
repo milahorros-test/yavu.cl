@@ -26,7 +26,7 @@ class CreateUsersTable extends Migration
             $table->string('FONO_2_USUARIO', 20);
             $table->string('SEXO_USUARIO', 10);
             $table->string('FECHA_NACIMIENTO_USUARIO', 100);
-            $table->string('PASSWORD_USUARIO', 60);
+            $table->string('PASSWORD_USUARIO', 100);
             $table->rememberToken();
             $table->timestamps();
         });

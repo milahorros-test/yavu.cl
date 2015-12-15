@@ -11,7 +11,7 @@
 				<th>Ciudad</th>
 				<th>Fono</th>
 				<th>Cumplea&ntilde;os</th>
-				<th>Sexo</th>				
+				<th>Sexo</th>
 				<th>Operaciones</th>
 			</thead>
 			@foreach($users as $user)	

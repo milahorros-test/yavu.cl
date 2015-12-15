@@ -93,7 +93,6 @@
       </div>
     </nav>
       @yield('content')
-
      <div class="container">
       <!-- Example row of columns -->
       <div class="row">

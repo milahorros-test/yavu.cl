@@ -1,9 +1,10 @@
 @extends('layouts.front')
-<?php $message=Session::get('message'); ?>
 @section('content')
-{!!Form::open()!!}
+{!!Form::open(['route' => 'log.store', 'method' => 'POST'])!!}
 <div class="jumbotron">
   <div id="contentIn">
+    @include('alerts.errorsMessage')
+    @include('alerts.alertFields')
     <h4>Login</h4>
     <div class="form-group">
       {!!Form::label('Usuario:')!!}
@@ -14,7 +15,7 @@
       {!!Form::password('password',['class'=>'form-control','placeholder'=>'Ingresa tu clave'])!!}     
     </div>
     <div class="form-group">
-      {!!Form::submit('Registrar',['class'=>'btn btn-primary'])!!}
+      {!!Form::submit('Acceder',['class'=>'btn btn-primary'])!!}
     </div>
   </div>
 </div>

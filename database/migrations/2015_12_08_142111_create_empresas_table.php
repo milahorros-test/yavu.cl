@@ -27,7 +27,7 @@ class CreateEmpresasTable extends Migration
             $table->string('FONO_2_EMPRESA', 20);
             $table->string('FECHA_CREACION_EMPRESA', 100);
             $table->string('NOMBRE_ENCARGADO_EMPRESA', 100);
-            $table->string('PASSWORD_EMPRESA', 60);
+            $table->string('PASSWORD_EMPRESA', 100);
             $table->timestamps();
         });
     }

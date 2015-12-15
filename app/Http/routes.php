@@ -7,3 +7,4 @@ Route::get('contacto','FrontController@contacto');
 Route::get('nosotros','FrontController@nosotros');
 Route::resource('usuarios','UserController');
 Route::resource('empresas','EmpresaController');
+Route::resource('log', 'LogController');
