@@ -23,6 +23,6 @@
 </div>				
 <div class="form-group has-feedback has-feedback-left">
 	{!!Form::label('Clave:')!!}
-	{!!Form::password('PASSWORD_USUARIO',['class'=>'form-control','placeholder'=>'Ingrese una clave','required'=>'required'])!!}		
+	{!!Form::password('PASSWORD_USUARIO',['class'=>'form-control','placeholder'=>'Ingrese una clave'])!!}		
 	<i class="form-control-feedback glyphicon glyphicon-lock"></i>
 </div>

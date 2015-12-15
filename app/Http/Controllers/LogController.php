@@ -24,12 +24,15 @@ class LogController extends Controller
             'EMAIL_USUARIO'     => Input::get('email'),
             'PASSWORD_USUARIO'  => Input::get('password')  
         ];
-        if(Auth::attempt($credentials)){
+        if(Auth::attempt($credentials)){            
+        //if(Auth::attempt(['EMAIL_USUARIO' => $request['email'], 'PASSWORD_USUARIO' => $request['password'] ])){
             return Redirect::to('/usuarios');
         }
+
         //Sino enviamos mensaje a nuestro usuario
-        Session::flash('message-error', 'Datos son incorrectos');
-        return Redirect::to('/login');
+        //Session::flash('message-error', 'Datos son incorrectos');
+        //return Redirect::to('/login');
+        return $request['email'].' / '.$request['password'];
     }
     public function show($id)
     {

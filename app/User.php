@@ -19,7 +19,7 @@ class User extends Model implements AuthenticatableContract,
     protected $fillable = ['RUT_USUARIO', 'EMAIL_USUARIO', 'LOGIN_USUARIO', 'NOMBRE_USUARIO', 'APELLIDO_USUARIO', 'DIRECCION_USUARIO', 'CIUDAD_USUARIO', 'REGION_USUARIO', 'PAIS_USUARIO', 'FONO_USUARIO', 'FONO_2_USUARIO', 'SEXO_USUARIO', 'FECHA_NACIMIENTO_USUARIO', 'PASSWORD_USUARIO'];
     //protected $hidden = ['PASSWORD_USUARIO', 'remember_token'];
     protected $dates = ['deleted_at'];
-    public function setPasswordAttribute($valor){
+    public function setPasswordUsuarioAttribute($valor){
         if(!empty($valor)){
           $this->attributes['PASSWORD_USUARIO'] = \Hash::make($valor);
         }
