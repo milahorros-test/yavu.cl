@@ -3,6 +3,7 @@ namespace Milahorros\Http\Controllers;
 use Auth;
 use Hash;
 use Milahorros\User;
+use Milahorros\Empresa;
 use Input;
 use Session;
 Use Redirect;
@@ -23,18 +24,22 @@ class LogController extends Controller
     public function store(LoginRequest $request)
     {
         $userEmail = User::where('email', Input::get('email'))->first();
-        $userPassword = User::where('password', Input::get('password'));
         if(!$userEmail){
-            Session::flash('message-error', 'El email ingresado no se encuentra registrado.');    
-            return Redirect::back();//->withInput()->withFlashMessage('Unknown username.');    
-        }else if(!$userPassword){
-                Session::flash('message-error', 'El clave incorrecta.');    
-                return Redirect::back();//->withInput()->withFlashMessage('Unknown username.'); 
+            $empresaEmail = Empresa::where('email', Input::get('email'))->first();
+            if(!$empresaEmail){
+                Session::flash('message-error', 'El email ingresado no se encuentra registrado.');    
+                return Redirect::back();//->withInput()->withFlashMessage('Unknown username.');     
+            }else{
+                Session::flash('message-warning', 'Usted estaba accediendo al portal de usuarios, por favor inicie sesión en el portal de empresas.');  
+                return Redirect::to('/acceso');  
+            }
+
+        }else{
+            if(Auth::attempt(['email' => Input::get('email'), 'password' => Input::get('password')])){
+                return Redirect::to('/usuarios');
+            }
         }
 
-        if(Auth::attempt(['email' => Input::get('email'), 'password' => Input::get('password')])){
-            return Redirect::to('/usuarios');
-        }
         //Sino enviamos mensaje a nuestro usuario
         Session::flash('message-error', 'Datos son incorrectos');
         return Redirect::to('/login');

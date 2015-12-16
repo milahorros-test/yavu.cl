@@ -75,7 +75,7 @@
             </li>
             -->  
             @if (Auth::check())
-              <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">{!!Auth::user()->nombre!!}<b class="caret"></b></a>                        
+              <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle"><b class="caret"></b></a>                        
                 <ul class="dropdown-menu">
                   <li><a href="{!!URL::to('#')!!}">Inicio</a></li>
                   <li><a href="{!!URL::to('#')!!}">Perfil</a></li>
@@ -86,11 +86,12 @@
               <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Accede<b class="caret"></b></a>                        
                 <ul class="dropdown-menu">
                   <li><a href="{!!URL::to('/login/')!!}">Acceso usuarios</a></li>
-                  <li><a href="{!!URL::to('/login/')!!}">Acceso empresas</a></li>
+                  <li><a href="{!!URL::to('/acceso/')!!}">Acceso empresas</a></li>
                 </ul>
               </li>               
             @endif﻿
           </ul>    
+          <!--
           @if (!Auth::check())
             @if(Request::path() !== 'login')
               {!!Form::open(['route' => 'log.store', 'method' => 'POST', 'class' => 'navbar-form navbar-right'])!!}
@@ -106,7 +107,7 @@
               {!!Form::close()!!}
             @endif
           @endif
-
+          -->
 
         </div><!--/.navbar-collapse -->
       </div>
