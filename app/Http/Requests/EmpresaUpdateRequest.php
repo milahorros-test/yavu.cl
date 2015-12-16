@@ -10,11 +10,10 @@ class EmpresaUpdateRequest extends Request
    public function rules()
    {
       return [
-         'RUT_EMPRESA' => 'required',
-         'EMAIL_EMPRESA' => 'required',
-         'LOGIN_EMPRESA' => 'required',
-         'NOMBRE_EMPRESA' => 'required',
-         'PASSWORD_EMPRESA' => 'required'
+         'rut' => 'required',
+         'email' => 'required',
+         'login' => 'required',
+         'nombre' => 'required',
       ];
    }
 }

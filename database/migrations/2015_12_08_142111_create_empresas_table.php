@@ -14,20 +14,20 @@ class CreateEmpresasTable extends Migration
     {
         Schema::dropIfExists('empresas');
         Schema::create('empresas', function (Blueprint $table) {
-            $table->increments('ID_EMPRESA');
-            $table->string('RUT_EMPRESA', 16)->unique();
-            $table->string('EMAIL_EMPRESA', 100)->unique();
-            $table->string('LOGIN_EMPRESA', 100)->unique();
-            $table->string('NOMBRE_EMPRESA', 200);
-            $table->string('DIRECCION_EMPRESA', 100);
-            $table->string('CIUDAD_EMPRESA', 100);
-            $table->string('REGION_EMPRESA', 100);
-            $table->string('PAIS_EMPRESA', 100);
-            $table->string('FONO_EMPRESA', 20);
-            $table->string('FONO_2_EMPRESA', 20);
-            $table->string('FECHA_CREACION_EMPRESA', 100);
-            $table->string('NOMBRE_ENCARGADO_EMPRESA', 100);
-            $table->string('PASSWORD_EMPRESA', 100);
+            $table->increments('id');
+            $table->string('rut', 16)->unique();
+            $table->string('email', 100)->unique();
+            $table->string('login', 100)->unique();
+            $table->string('nombre', 200);
+            $table->string('direccion', 100);
+            $table->string('ciudad', 100);
+            $table->string('region', 100);
+            $table->string('pais', 100);
+            $table->string('fono', 20);
+            $table->string('fono_2', 20);
+            $table->string('fecha_creacion', 100);
+            $table->string('nombre_encargado', 100);
+            $table->string('password', 100);
             $table->timestamps();
         });
     }

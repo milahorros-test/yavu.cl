@@ -10,9 +10,9 @@ class UserCreateRequest extends Request
    public function rules()
    {
       return [
-         'rut' => 'required',         
+         'rut' => 'required|unique:users',         
          'email' => 'required|unique:users',
-         'login' => 'required',
+         'login' => 'required|unique:users',
          'nombre' => 'required',
          'apellido' => 'required',
          'password' => 'required'

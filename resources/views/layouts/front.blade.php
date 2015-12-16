@@ -2,7 +2,8 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+<!--[if gt IE 8]><!--> 
+<html class="no-js" lang=""> <!--<![endif]-->
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -49,14 +50,16 @@
                 <li><a href="{!!URL::to('/contacto/')!!}">Contacto</a></li>
               </ul>
             </li>
-            <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Registrate<b class="caret"></b></a>                        
-              <ul class="dropdown-menu">
-                <li><a href="{!!URL::to('/usuarios/create')!!}">Registro de clientes</a></li>
-                <li><a href="{!!URL::to('/empresas/create')!!}">Registro de empresas</a></li>
-                <li><a href="{!!URL::to('/usuarios/')!!}">Mostrar listado de clientes</a></li>
-                <li><a href="{!!URL::to('/empresas/')!!}">Mostrar listado de empresas</a></li>
-              </ul>
-            </li>    
+            @if (!Auth::check())
+              <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Registrate<b class="caret"></b></a>                        
+                <ul class="dropdown-menu">
+                  <li><a href="{!!URL::to('/usuarios/create')!!}">Registro de usuarios</a></li>
+                  <li><a href="{!!URL::to('/empresas/create')!!}">Registro de empresas</a></li>
+                  <li><a href="{!!URL::to('/usuarios/')!!}">Mostrar listado de clientes</a></li>
+                  <li><a href="{!!URL::to('/empresas/')!!}">Mostrar listado de empresas</a></li>
+                </ul>
+              </li>   
+            @endif 
             <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Puntos milahorros<b class="caret"></b></a>                        
               <ul class="dropdown-menu">
                 <li><a href="#">Ranking mensual</a></li>
@@ -71,24 +74,40 @@
               </ul>
             </li>
             -->  
-            <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Accede<b class="caret"></b></a>                        
-              <ul class="dropdown-menu">
-                <li><a href="{!!URL::to('/login/')!!}">Acceso clientes</a></li>
-                <li><a href="{!!URL::to('/login/')!!}">Acceso empresas</a></li>
-              </ul>
-            </li>                        
+            @if (Auth::check())
+              <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">{!!Auth::user()->nombre!!}<b class="caret"></b></a>                        
+                <ul class="dropdown-menu">
+                  <li><a href="{!!URL::to('#')!!}">Inicio</a></li>
+                  <li><a href="{!!URL::to('#')!!}">Perfil</a></li>
+                  <li><a href="{!!URL::to('/logout/')!!}">Cerrar sesión</a></li>
+                </ul>
+              </li>
+            @else
+              <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Accede<b class="caret"></b></a>                        
+                <ul class="dropdown-menu">
+                  <li><a href="{!!URL::to('/login/')!!}">Acceso usuarios</a></li>
+                  <li><a href="{!!URL::to('/login/')!!}">Acceso empresas</a></li>
+                </ul>
+              </li>               
+            @endif﻿
           </ul>    
-          <!--
-          <form class="navbar-form navbar-right" role="form">
-            <div class="form-group">
-              <input type="text" placeholder="Email" class="form-control">
-            </div>
-            <div class="form-group">
-              <input type="password" placeholder="Password" class="form-control">
-            </div>
-            <button type="submit" class="btn btn-success">Sign in</button>
-          </form> 
-          -->
+          @if (!Auth::check())
+            @if(Request::path() !== 'login')
+              {!!Form::open(['route' => 'log.store', 'method' => 'POST', 'class' => 'navbar-form navbar-right'])!!}
+                <div class="form-group">
+                  {!!Form::email('email',null,['class'=>'form-control','placeholder'=>'Ingresa tu email de usuario'])!!}     
+                </div>
+                <div class="form-group">
+                  {!!Form::password('password',['class'=>'form-control','placeholder'=>'Ingresa tu clave'])!!}     
+                </div>
+                <div class="form-group">
+                  {!!Form::submit('Acceder',['class'=>'btn btn-primary'])!!}
+                </div>
+              {!!Form::close()!!}
+            @endif
+          @endif
+
+
         </div><!--/.navbar-collapse -->
       </div>
     </nav>

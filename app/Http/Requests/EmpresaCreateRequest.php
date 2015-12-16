@@ -10,11 +10,11 @@ class EmpresaCreateRequest extends Request
    public function rules()  
    {
       return [
-         'RUT_EMPRESA' => 'required',
-         'EMAIL_EMPRESA' => 'required|unique:empresas',
-         'LOGIN_EMPRESA' => 'required',
-         'NOMBRE_EMPRESA' => 'required',
-         'PASSWORD_EMPRESA' => 'required'
+         'rut' => 'required',
+         'email' => 'required|unique:empresas',
+         'login' => 'required',
+         'nombre' => 'required',
+         'password' => 'required'
       ];
    }
 }

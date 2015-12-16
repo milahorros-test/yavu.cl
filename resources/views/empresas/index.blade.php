@@ -16,13 +16,13 @@
 			</thead>
 			@foreach($empresas as $empresa)	
 			<tbody>
-				<td>{{$empresa->NOMBRE_EMPRESA}}</td>
-				<td>{{$empresa->EMAIL_EMPRESA}}</td>
-				<td>{{$empresa->CIUDAD_EMPRESA}}</td>
-				<td>{{$empresa->FONO_EMPRESA}}</td>
-				<td>{{$empresa->FECHA_CREACION_EMPRESA}}</td>
-				<td>{{$empresa->NOMBRE_ENCARGADO_EMPRESA}}</td>
-				<td>{!!link_to_route('empresas.edit', $title = 'Editar', $parameters = $empresa->ID_EMPRESA, $attributes = ['class'=>'btn btn-primary'])!!}</td>
+				<td>{{$empresa->nombre}}</td>
+				<td>{{$empresa->email}}</td>
+				<td>{{$empresa->ciudad}}</td>
+				<td>{{$empresa->fono}}</td>
+				<td>{{$empresa->fecha_creacion}}</td>
+				<td>{{$empresa->nombre_encargado}}</td>
+				<td>{!!link_to_route('empresas.edit', $title = 'Editar', $parameters = $empresa->id, $attributes = ['class'=>'btn btn-primary'])!!}</td>
 			</tbody>
 			@endforeach
 		</table>	
