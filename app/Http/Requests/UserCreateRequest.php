@@ -10,12 +10,12 @@ class UserCreateRequest extends Request
    public function rules()
    {
       return [
-         'RUT_USUARIO' => 'required',         
-         'EMAIL_USUARIO' => 'required|unique:users',
-         'LOGIN_USUARIO' => 'required',
-         'NOMBRE_USUARIO' => 'required',
-         'APELLIDO_USUARIO' => 'required',
-         'PASSWORD_USUARIO' => 'required'
+         'rut' => 'required',         
+         'email' => 'required|unique:users',
+         'login' => 'required',
+         'nombre' => 'required',
+         'apellido' => 'required',
+         'password' => 'required'
       ];
    }
 }

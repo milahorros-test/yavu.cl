@@ -12,21 +12,21 @@ class CreateUsersTable extends Migration
     {
         Schema::dropIfExists('users');
         Schema::create('users', function (Blueprint $table) {
-            $table->increments('ID_USUARIO');
-            $table->string('RUT_USUARIO', 16)->unique();            
-            $table->string('EMAIL_USUARIO', 200)->unique();
-            $table->string('LOGIN_USUARIO', 100)->unique();              
-            $table->string('NOMBRE_USUARIO', 100);
-            $table->string('APELLIDO_USUARIO', 100);          
-            $table->string('DIRECCION_USUARIO', 100);
-            $table->string('CIUDAD_USUARIO', 100);
-            $table->string('REGION_USUARIO', 100);
-            $table->string('PAIS_USUARIO', 100);
-            $table->string('FONO_USUARIO', 20);
-            $table->string('FONO_2_USUARIO', 20);
-            $table->string('SEXO_USUARIO', 10);
-            $table->string('FECHA_NACIMIENTO_USUARIO', 100);
-            $table->string('PASSWORD_USUARIO', 100);
+            $table->increments('id');
+            $table->string('rut', 16)->unique();            
+            $table->string('email', 200)->unique();
+            $table->string('login', 100)->unique();              
+            $table->string('nombre', 100);
+            $table->string('apellido', 100);          
+            $table->string('direccion', 100);
+            $table->string('ciudad', 100);
+            $table->string('region', 100);
+            $table->string('pais', 100);
+            $table->string('fono', 20);
+            $table->string('fono_2', 20);
+            $table->string('sexo', 10);
+            $table->string('fecha_nacimiento', 100);
+            $table->string('password', 100);
             $table->rememberToken();
             $table->timestamps();
         });

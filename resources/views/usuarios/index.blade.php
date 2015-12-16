@@ -16,13 +16,13 @@
 			</thead>
 			@foreach($users as $user)	
 			<tbody>
-				<td>{{$user->NOMBRE_USUARIO}}</td>
-				<td>{{$user->EMAIL_USUARIO}}</td>
-				<td>{{$user->CIUDAD_USUARIO}}</td>
-				<td>{{$user->FONO_USUARIO}}</td>
-				<td>{{$user->FECHA_NACIMIENTO_USUARIO}}</td>
-				<td>{{$user->SEXO_USUARIO}}</td>
-				<td>{!!link_to_route('usuarios.edit', $title = 'Editar', $parameters = $user->ID_USUARIO, $attributes = ['class'=>'btn btn-primary'])!!}</td>
+				<td>{{$user->nombre}}</td>
+				<td>{{$user->email}}</td>
+				<td>{{$user->ciudad}}</td>
+				<td>{{$user->fono}}</td>
+				<td>{{$user->fecha_nacimiento}}</td>
+				<td>{{$user->sexo}}</td>
+				<td>{!!link_to_route('usuarios.edit', $title = 'Editar', $parameters = $user->id, $attributes = ['class'=>'btn btn-primary'])!!}</td>
 			</tbody>
 			@endforeach
 		</table>	
