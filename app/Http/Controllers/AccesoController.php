@@ -25,7 +25,16 @@ class AccesoController extends Controller
     {
         //Session::flash('message-error', 'Datos son incorrectos');
         //return Redirect::to('/login');
-        return 'Nombre usuario: '.$request['email'].'/ Clave: '.$request['password'];
+        //return 'Nombre usuario: '.$request['email'].'/ Clave: '.$request['password'];
+
+        if(Auth::empresa()->attempt(['email' => Input::get('email'), 'password' => Input::get('password')])){
+            return Redirect::to('/empresas');
+        }
+
+        //Sino enviamos mensaje a nuestro usuario
+        Session::flash('message-error', 'Datos son incorrectos');
+        return Redirect::to('/acceso');
+
     }
     public function logout(){
         Auth::logout();

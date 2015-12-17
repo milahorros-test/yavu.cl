@@ -35,7 +35,7 @@ class LogController extends Controller
             }
 
         }else{
-            if(Auth::attempt(['email' => Input::get('email'), 'password' => Input::get('password')])){
+            if(Auth::user()->attempt(['email' => Input::get('email'), 'password' => Input::get('password')])){
                 return Redirect::to('/usuarios');
             }
         }
