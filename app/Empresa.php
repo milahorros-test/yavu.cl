@@ -2,6 +2,8 @@
 namespace Milahorros;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Kbwebs\MultiAuth\PasswordResets\CanResetPassword;
+use Kbwebs\MultiAuth\PasswordResets\Contracts\CanResetPassword as CanResetPasswordContract;
 class Empresa extends Model
 {
 	use SoftDeletes;
