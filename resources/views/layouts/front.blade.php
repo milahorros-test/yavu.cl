@@ -90,6 +90,7 @@
                   <li><a href="{!!URL::to('/logout/')!!}">Cerrar sesión</a></li>
                 </ul>
               </li>
+              
             @endif﻿  
             <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Nosotros<b class="caret"></b></a>                        
               <ul class="dropdown-menu">
