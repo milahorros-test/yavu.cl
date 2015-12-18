@@ -1,5 +1,5 @@
 <?php
-namespace Milahorros;
+namespace milahorros;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Kbwebs\MultiAuth\PasswordResets\CanResetPassword;

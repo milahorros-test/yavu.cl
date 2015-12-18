@@ -1,6 +1,6 @@
 <?php
 
-namespace Milahorros\Console\Commands;
+namespace milahorros\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Foundation\Inspiring;

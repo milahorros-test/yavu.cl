@@ -1,13 +1,13 @@
 <?php
-namespace Milahorros\Http\Controllers;
+namespace milahorros\Http\Controllers;
 use Illuminate\Http\Request;
 use Session;
 use Redirect;
-use Milahorros\Empresa;
-use Milahorros\Http\Requests;
-use Milahorros\Http\Requests\EmpresaCreateRequest;
-use Milahorros\Http\Requests\EmpresaUpdateRequest;
-use Milahorros\Http\Controllers\Controller;
+use milahorros\Empresa;
+use milahorros\Http\Requests;
+use milahorros\Http\Requests\EmpresaCreateRequest;
+use milahorros\Http\Requests\EmpresaUpdateRequest;
+use milahorros\Http\Controllers\Controller;
 use Illuminate\Routing\Route;
 class EmpresaController extends Controller
 {

@@ -1,10 +1,10 @@
 <?php
 
-namespace Milahorros\Http\Controllers\Auth;
+namespace milahorros\Http\Controllers\Auth;
 
-use Milahorros\User;
+use milahorros\User;
 use Validator;
-use Milahorros\Http\Controllers\Controller;
+use milahorros\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 

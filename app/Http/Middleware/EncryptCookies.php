@@ -1,6 +1,6 @@
 <?php
 
-namespace Milahorros\Http\Middleware;
+namespace milahorros\Http\Middleware;
 
 use Illuminate\Cookie\Middleware\EncryptCookies as BaseEncrypter;
 

@@ -7,7 +7,7 @@ return [
         ],
         'user' => [
             'driver' => 'eloquent',
-            'model'  => Milahorros\User::class,
+            'model'  => milahorros\User::class,
             'table' => 'users'
         ]
     ],

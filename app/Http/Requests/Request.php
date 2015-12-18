@@ -1,6 +1,6 @@
 <?php
 
-namespace Milahorros\Http\Requests;
+namespace milahorros\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Milahorros\Http;
+namespace milahorros\Http;
 
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
@@ -13,11 +13,11 @@ class Kernel extends HttpKernel
      */
     protected $middleware = [
         \Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode::class,
-        \Milahorros\Http\Middleware\EncryptCookies::class,
+        \milahorros\Http\Middleware\EncryptCookies::class,
         \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
         \Illuminate\Session\Middleware\StartSession::class,
         \Illuminate\View\Middleware\ShareErrorsFromSession::class,
-        \Milahorros\Http\Middleware\VerifyCsrfToken::class,
+        \milahorros\Http\Middleware\VerifyCsrfToken::class,
     ];
 
     /**
@@ -26,8 +26,8 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $routeMiddleware = [
-        'auth' => \Milahorros\Http\Middleware\Authenticate::class,
+        'auth' => \milahorros\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
-        'guest' => \Milahorros\Http\Middleware\RedirectIfAuthenticated::class,
+        'guest' => \milahorros\Http\Middleware\RedirectIfAuthenticated::class,
     ];
 }

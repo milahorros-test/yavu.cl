@@ -1,8 +1,8 @@
 <?php
 
-namespace Milahorros\Http\Controllers\Auth;
+namespace milahorros\Http\Controllers\Auth;
 
-use Milahorros\Http\Controllers\Controller;
+use milahorros\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 
 class PasswordController extends Controller

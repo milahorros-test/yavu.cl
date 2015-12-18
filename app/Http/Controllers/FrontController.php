@@ -1,8 +1,8 @@
 <?php
-namespace Milahorros\Http\Controllers;
+namespace milahorros\Http\Controllers;
 use Illuminate\Http\Request;
-use Milahorros\Http\Requests;
-use Milahorros\Http\Controllers\Controller;
+use milahorros\Http\Requests;
+use milahorros\Http\Controllers\Controller;
 class FrontController extends Controller
 {
     public function index()

@@ -1,13 +1,13 @@
 <?php
-namespace Milahorros\Http\Controllers;
+namespace milahorros\Http\Controllers;
 use Illuminate\Http\Request;
-use Milahorros\Http\Requests;
-use Milahorros\Http\Requests\UserCreateRequest;
-use Milahorros\Http\Requests\UserUpdateRequest;
-use Milahorros\Http\Controllers\Controller;
+use milahorros\Http\Requests;
+use milahorros\Http\Requests\UserCreateRequest;
+use milahorros\Http\Requests\UserUpdateRequest;
+use milahorros\Http\Controllers\Controller;
 use Session;
 use Redirect;
-use Milahorros\User;
+use milahorros\User;
 use Illuminate\Routing\Route;
 class UserController extends Controller
 {

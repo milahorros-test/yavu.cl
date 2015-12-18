@@ -1,16 +1,16 @@
 <?php
-namespace Milahorros\Http\Controllers;
+namespace milahorros\Http\Controllers;
 use Auth;
 use Hash;
-use Milahorros\User;
-use Milahorros\Empresa;
+use milahorros\User;
+use milahorros\Empresa;
 use Input;
 use Session;
 Use Redirect;
-use Milahorros\Http\Requests\LoginRequest;
+use milahorros\Http\Requests\LoginRequest;
 use Illuminate\Http\Request;
-use Milahorros\Http\Requests;
-use Milahorros\Http\Controllers\Controller;
+use milahorros\Http\Requests;
+use milahorros\Http\Controllers\Controller;
 class LogController extends Controller
 {
     public function index()

@@ -1,6 +1,6 @@
 <?php
 
-namespace Milahorros\Events;
+namespace milahorros\Events;
 
 abstract class Event
 {

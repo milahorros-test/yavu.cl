@@ -1,6 +1,6 @@
 <?php
-namespace Milahorros\Http\Requests;
-use Milahorros\Http\Requests\Request;
+namespace milahorros\Http\Requests;
+use milahorros\Http\Requests\Request;
 class UserCreateRequest extends Request
 {
    public function authorize()

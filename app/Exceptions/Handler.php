@@ -1,6 +1,6 @@
 <?php
 
-namespace Milahorros\Exceptions;
+namespace milahorros\Exceptions;
 
 use Exception;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
