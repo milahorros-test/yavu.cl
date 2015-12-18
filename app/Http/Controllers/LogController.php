@@ -30,23 +30,29 @@ class LogController extends Controller
                 Session::flash('message-error', 'El email ingresado no se encuentra registrado.');    
                 return Redirect::back();//->withInput()->withFlashMessage('Unknown username.');     
             }else{
-                Session::flash('message-warning', 'Usted estaba accediendo al portal de usuarios, por favor inicie sesión en el portal de empresas.');  
-                return Redirect::to('/acceso');  
+                if(Auth::empresa()->attempt(['email' => Input::get('email'), 'password' => Input::get('password')])){
+                    return Redirect::to('/empresas');
+                }
+                Session::flash('message-error', 'Datos son incorrectos');
+                return Redirect::to('/Login');
             }
-
         }else{
             if(Auth::user()->attempt(['email' => Input::get('email'), 'password' => Input::get('password')])){
                 return Redirect::to('/usuarios');
             }
         }
-
-        //Sino enviamos mensaje a nuestro usuario
         Session::flash('message-error', 'Datos son incorrectos');
         return Redirect::to('/login');
     }
     public function logout(){
-        Auth::logout();
-        return Redirect::to('/');
+        if(Auth::logout()){
+            return Redirect::to('/');    
+        }elseif(Auth::empresa()->logout()){
+            return Redirect::to('/');
+        }else{
+            Session::flash('message-error', 'Ocurrió un error al cerrar la sesión.');
+            return Redirect::to('/');
+        }
     }
     public function show($id)
     {

@@ -74,7 +74,8 @@
               </ul>
             </li>
             -->  
-            @if (Auth::check())
+
+            @if(Auth::check())
               <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle"><b class="caret"></b></a>                        
                 <ul class="dropdown-menu">
                   <li><a href="{!!URL::to('#')!!}">Inicio</a></li>
@@ -90,9 +91,6 @@
                 </ul>
               </li>               
             @endif﻿
-          </ul>    
-          <!--
-          @if (!Auth::check())
             @if(Request::path() !== 'login')
               {!!Form::open(['route' => 'log.store', 'method' => 'POST', 'class' => 'navbar-form navbar-right'])!!}
                 <div class="form-group">
@@ -106,8 +104,12 @@
                 </div>
               {!!Form::close()!!}
             @endif
+
+          </ul>    
+
+          @if(!Auth::check())
+
           @endif
-          -->
 
         </div><!--/.navbar-collapse -->
       </div>

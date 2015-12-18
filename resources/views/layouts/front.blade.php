@@ -74,12 +74,13 @@
               </ul>
             </li>
             -->  
-            @if (Auth::check())
-              <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle"><b class="caret"></b></a>                        
+            @if (Auth::user()->check())
+              <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle"><strong>{!!Auth::user()->get()->nombre!!}</strong><b class="caret"></b></a>                        
                 <ul class="dropdown-menu">
                   <li><a href="{!!URL::to('#')!!}">Inicio</a></li>
                   <li><a href="{!!URL::to('#')!!}">Perfil</a></li>
                   <li><a href="{!!URL::to('/logout/')!!}">Cerrar sesión</a></li>
+                  <li></li>
                 </ul>
               </li>
             @else
@@ -88,27 +89,24 @@
                   <li><a href="{!!URL::to('/login/')!!}">Acceso usuarios</a></li>
                   <li><a href="{!!URL::to('/acceso/')!!}">Acceso empresas</a></li>
                 </ul>
-              </li>               
+              </li>      
+              @if(Request::path() !== 'login')
+                {!!Form::open(['route' => 'log.store', 'method' => 'POST', 'class' => 'navbar-form navbar-right'])!!}
+                  <div class="form-group">
+                    {!!Form::email('email',null,['class'=>'form-control','placeholder'=>'Ingresa tu email de usuario'])!!}     
+                  </div>
+                  <div class="form-group">
+                    {!!Form::password('password',['class'=>'form-control','placeholder'=>'Ingresa tu clave'])!!}     
+                  </div>
+                  <div class="form-group">
+                    {!!Form::submit('Acceder',['class'=>'btn btn-primary'])!!}
+                  </div>
+                {!!Form::close()!!}
+              @endif                       
             @endif﻿
           </ul>    
-          <!--
           @if (!Auth::check())
-            @if(Request::path() !== 'login')
-              {!!Form::open(['route' => 'log.store', 'method' => 'POST', 'class' => 'navbar-form navbar-right'])!!}
-                <div class="form-group">
-                  {!!Form::email('email',null,['class'=>'form-control','placeholder'=>'Ingresa tu email de usuario'])!!}     
-                </div>
-                <div class="form-group">
-                  {!!Form::password('password',['class'=>'form-control','placeholder'=>'Ingresa tu clave'])!!}     
-                </div>
-                <div class="form-group">
-                  {!!Form::submit('Acceder',['class'=>'btn btn-primary'])!!}
-                </div>
-              {!!Form::close()!!}
-            @endif
-          @endif
-          -->
-
+          @endif        
         </div><!--/.navbar-collapse -->
       </div>
     </nav>
