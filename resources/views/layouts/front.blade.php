@@ -44,13 +44,12 @@
             <li>
               <a href="{!!URL::to('/')!!}">Inicio</a>
             </li>
-            <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Nosotros<b class="caret"></b></a>                        
-              <ul class="dropdown-menu">
-                <li><a href="{!!URL::to('/nosotros/')!!}">Nuestra empresa</a></li>
-                <li><a href="{!!URL::to('/contacto/')!!}">Contacto</a></li>
-              </ul>
-            </li>
-            @if (!Auth::check())
+            @if(Request::path() !== 'login') 
+              @if(!Auth::user()->check() && !Auth::empresa()->check())
+                <li class="dropdown"><a href="{!!URL::to('/login/')!!}">Inicia Sesión</a></li> 
+              @endif                 
+            @endif 
+            @if (!Auth::user()->check() && !Auth::empresa()->check())
               <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Registrate<b class="caret"></b></a>                        
                 <ul class="dropdown-menu">
                   <li><a href="{!!URL::to('/usuarios/create')!!}">Registro de usuarios</a></li>
@@ -60,6 +59,7 @@
                 </ul>
               </li>   
             @endif 
+               <!--  
             <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Puntos milahorros<b class="caret"></b></a>                        
               <ul class="dropdown-menu">
                 <li><a href="#">Ranking mensual</a></li>
@@ -67,7 +67,7 @@
                 <li><a href="#">Ranking global</a></li>
               </ul>
             </li>    
-            <!--                    
+                           
             <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Contacto<b class="caret"></b></a>                        
               <ul class="dropdown-menu">
                 <li><a href="/contacto/">Contacto</a></li>
@@ -80,33 +80,24 @@
                   <li><a href="{!!URL::to('#')!!}">Inicio</a></li>
                   <li><a href="{!!URL::to('#')!!}">Perfil</a></li>
                   <li><a href="{!!URL::to('/logout/')!!}">Cerrar sesión</a></li>
-                  <li></li>
                 </ul>
               </li>
-            @else
-              <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Accede<b class="caret"></b></a>                        
+            @elseif(Auth::empresa()->check())
+              <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle"><strong>{!!Auth::empresa()->get()->nombre!!}</strong><b class="caret"></b></a>                        
                 <ul class="dropdown-menu">
-                  <li><a href="{!!URL::to('/login/')!!}">Acceso usuarios</a></li>
-                  <li><a href="{!!URL::to('/acceso/')!!}">Acceso empresas</a></li>
+                  <li><a href="{!!URL::to('#')!!}">Inicio</a></li>
+                  <li><a href="{!!URL::to('#')!!}">Perfil</a></li>
+                  <li><a href="{!!URL::to('/logout/')!!}">Cerrar sesión</a></li>
                 </ul>
-              </li>      
-              @if(Request::path() !== 'login')
-                {!!Form::open(['route' => 'log.store', 'method' => 'POST', 'class' => 'navbar-form navbar-right'])!!}
-                  <div class="form-group">
-                    {!!Form::email('email',null,['class'=>'form-control','placeholder'=>'Ingresa tu email de usuario'])!!}     
-                  </div>
-                  <div class="form-group">
-                    {!!Form::password('password',['class'=>'form-control','placeholder'=>'Ingresa tu clave'])!!}     
-                  </div>
-                  <div class="form-group">
-                    {!!Form::submit('Acceder',['class'=>'btn btn-primary'])!!}
-                  </div>
-                {!!Form::close()!!}
-              @endif                       
-            @endif﻿
-          </ul>    
-          @if (!Auth::check())
-          @endif        
+              </li>
+            @endif﻿  
+            <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Nosotros<b class="caret"></b></a>                        
+              <ul class="dropdown-menu">
+                <li><a href="{!!URL::to('/nosotros/')!!}">Nuestra empresa</a></li>
+                <li><a href="{!!URL::to('/contacto/')!!}">Contacto</a></li>
+              </ul>
+            </li>                     
+          </ul>         
         </div><!--/.navbar-collapse -->
       </div>
     </nav>

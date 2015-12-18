@@ -6,7 +6,7 @@
     @include('alerts.warningMessage')
     @include('alerts.errorsMessage')
     @include('alerts.alertFields')
-    <h4>Login usuarios</h4>
+    <h4>Login</h4>
     <div class="form-group">
       {!!Form::label('Usuario:')!!}
       {!!Form::email('email',null,['class'=>'form-control','placeholder'=>'Ingresa tu email de usuario'])!!}     
