@@ -1,18 +1,17 @@
 <?php
 namespace milahorros\Http\Controllers;
 use Illuminate\Http\Request;
-use Session;
-use Redirect;
-use milahorros\Empresa;
 use milahorros\Http\Requests;
 use milahorros\Http\Requests\EmpresaCreateRequest;
 use milahorros\Http\Requests\EmpresaUpdateRequest;
 use milahorros\Http\Controllers\Controller;
+use Session;
+use Redirect;
+use milahorros\Empresa;
 use Illuminate\Routing\Route;
 class EmpresaController extends Controller
 {
   public function __construct(){
-    
     $this->beforeFilter('@find', ['only' => ['edit', 'update', 'destroy']]);
   }
   public function find(Route $route){

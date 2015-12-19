@@ -8,14 +8,14 @@ use Kbwebs\MultiAuth\PasswordResets\Contracts\CanResetPassword as CanResetPasswo
 use Illuminate\Foundation\Auth\Access\Authorizable;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
-class Empresa extends Model implements AuthenticatableContract,
+class Admin extends Model implements AuthenticatableContract,
                                     AuthorizableContract,
                                     CanResetPasswordContract
 {
-	use Authenticatable, Authorizable, CanResetPassword, SoftDeletes;
-    protected $table = "empresas";
+    use Authenticatable, Authorizable, CanResetPassword, SoftDeletes;
+    protected $table = 'admins';
     protected $primaryKey = 'id';
-    protected $fillable = ['rut', 'email', 'login', 'nombre', 'direccion', 'ciudad', 'region', 'pais', 'fono', 'fono_2', 'fecha_creacion', 'nombre_encargado', 'password'];
+    protected $fillable = ['email', 'nombre', 'apellido', 'password'];
     protected $hidden = ['password', 'remember_token'];
     protected $dates = ['deleted_at'];
     public function setPasswordAttribute($valor){
@@ -23,4 +23,5 @@ class Empresa extends Model implements AuthenticatableContract,
           $this->attributes['password'] = \Hash::make($valor);
         }
     }
+
 }

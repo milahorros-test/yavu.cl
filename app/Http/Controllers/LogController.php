@@ -4,6 +4,7 @@ use Auth;
 use Hash;
 use milahorros\User;
 use milahorros\Empresa;
+use milahorros\Admin;
 use Input;
 use Session;
 Use Redirect;
@@ -27,14 +28,23 @@ class LogController extends Controller
         if(!$userEmail){
             $empresaEmail = Empresa::where('email', Input::get('email'))->first();
             if(!$empresaEmail){
-                Session::flash('message-error', 'El email ingresado no se encuentra registrado.');    
-                return Redirect::back();//->withInput()->withFlashMessage('Unknown username.');     
+                $adminEmail = Admin::where('email', Input::get('email'))->first();
+                if(!$adminEmail){
+                    Session::flash('message-error', 'El email ingresado no se encuentra registrado.');    
+                    return Redirect::back();//->withInput()->withFlashMessage('Unknown username.');  
+                }else{
+                    if(Auth::admin()->attempt(['email' => Input::get('email'), 'password' => Input::get('password')])){
+                        return Redirect::to('/admins');
+                    }
+                    Session::flash('message-error', 'Datos son incorrectos');
+                    return Redirect::to('/login');                    
+                }
             }else{
                 if(Auth::empresa()->attempt(['email' => Input::get('email'), 'password' => Input::get('password')])){
                     return Redirect::to('/empresas');
                 }
                 Session::flash('message-error', 'Datos son incorrectos');
-                return Redirect::to('/Login');
+                return Redirect::to('/login');
             }
         }else{
             if(Auth::user()->attempt(['email' => Input::get('email'), 'password' => Input::get('password')])){

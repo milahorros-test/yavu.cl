@@ -9,6 +9,11 @@ return [
             'driver' => 'eloquent',
             'model'  => milahorros\User::class,
             'table' => 'users'
+        ],
+        'admin' => [
+            'driver' => 'eloquent',
+            'model'  => milahorros\Admin::class,
+            'table' => 'admins'
         ]
     ],
     'password' => [

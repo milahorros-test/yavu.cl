@@ -15,9 +15,8 @@ class User extends Model implements AuthenticatableContract,
     use Authenticatable, Authorizable, CanResetPassword, SoftDeletes;
     protected $table = 'users';
     protected $primaryKey = 'id';
-    //LUEGO QUE ESTÉ DEFINIDO EL FORMULARIO QUE LA EMPRESA DEBERÁ COMPLETAR, DEBEMOS ESPECIFICAR LOS CAMPOS EN EL FILLABLE QUE EL USUARIO PUEDE REGISTRAR PARA MANTENER EL CONTROL DE LOS ELEMENTOS QUE SE ESTAN INGRESANDO
     protected $fillable = ['rut', 'email', 'login', 'nombre', 'apellido', 'direccion', 'ciudad', 'region', 'pais', 'fono', 'fono_2', 'sexo', 'fecha_nacimiento', 'password'];
-    //protected $hidden = ['PASSWORD_USUARIO', 'remember_token'];
+    protected $hidden = ['password', 'remember_token'];
     protected $dates = ['deleted_at'];
     public function setPasswordAttribute($valor){
         if(!empty($valor)){
