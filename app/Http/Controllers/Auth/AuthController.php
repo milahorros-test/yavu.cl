@@ -1,10 +1,10 @@
 <?php
 
-namespace milahorros\Http\Controllers\Auth;
+namespace yavu\Http\Controllers\Auth;
 
-use milahorros\User;
+use yavu\User;
 use Validator;
-use milahorros\Http\Controllers\Controller;
+use yavu\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace milahorros\Http\Middleware;
+namespace yavu\Http\Middleware;
 
 use Closure;
 use Illuminate\Contracts\Auth\Guard;

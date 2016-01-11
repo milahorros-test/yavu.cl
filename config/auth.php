@@ -7,7 +7,7 @@ return [
         ],
         'user' => [
             'driver' => 'eloquent',
-            'model'  => milahorros\User::class,
+            'model'  => yavu\User::class,
             'table' => 'users'
         ],
         'admin' => [

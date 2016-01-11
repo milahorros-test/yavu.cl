@@ -140,10 +140,10 @@ return [
         /*
          * Application Service Providers...
          */
-        milahorros\Providers\AppServiceProvider::class,
-        milahorros\Providers\AuthServiceProvider::class,
-        milahorros\Providers\EventServiceProvider::class,
-        milahorros\Providers\RouteServiceProvider::class,
+        yavu\Providers\AppServiceProvider::class,
+        yavu\Providers\AuthServiceProvider::class,
+        yavu\Providers\EventServiceProvider::class,
+        yavu\Providers\RouteServiceProvider::class,
         'Collective\Html\HtmlServiceProvider',
 
     ],

@@ -1,6 +1,6 @@
 <?php
 
-namespace milahorros\Providers;
+namespace yavu\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

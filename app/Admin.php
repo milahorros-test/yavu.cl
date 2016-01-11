@@ -1,5 +1,5 @@
 <?php
-namespace milahorros;
+namespace yavu;
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;

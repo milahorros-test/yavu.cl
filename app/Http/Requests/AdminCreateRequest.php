@@ -1,6 +1,6 @@
 <?php
-namespace milahorros\Http\Requests;
-use milahorros\Http\Requests\Request;
+namespace yavu\Http\Requests;
+use yavu\Http\Requests\Request;
 class AdminCreateRequest extends Request
 {
     public function authorize()

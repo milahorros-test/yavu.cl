@@ -1,13 +1,13 @@
 <?php
-namespace milahorros\Http\Controllers;
+namespace yavu\Http\Controllers;
 use Illuminate\Http\Request;
-use milahorros\Http\Requests;
-use milahorros\Http\Requests\EmpresaCreateRequest;
-use milahorros\Http\Requests\EmpresaUpdateRequest;
-use milahorros\Http\Controllers\Controller;
+use yavu\Http\Requests;
+use yavu\Http\Requests\EmpresaCreateRequest;
+use yavu\Http\Requests\EmpresaUpdateRequest;
+use yavu\Http\Controllers\Controller;
 use Session;
 use Redirect;
-use milahorros\Empresa;
+use yavu\Empresa;
 use Illuminate\Routing\Route;
 class EmpresaController extends Controller
 {

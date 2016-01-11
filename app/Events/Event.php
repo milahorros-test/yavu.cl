@@ -1,6 +1,6 @@
 <?php
 
-namespace milahorros\Events;
+namespace yavu\Events;
 
 abstract class Event
 {

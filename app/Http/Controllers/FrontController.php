@@ -1,8 +1,8 @@
 <?php
-namespace milahorros\Http\Controllers;
+namespace yavu\Http\Controllers;
 use Illuminate\Http\Request;
-use milahorros\Http\Requests;
-use milahorros\Http\Controllers\Controller;
+use yavu\Http\Requests;
+use yavu\Http\Controllers\Controller;
 class FrontController extends Controller
 {
     public function index()

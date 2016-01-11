@@ -1,13 +1,13 @@
 <?php
-namespace milahorros\Http\Controllers;
+namespace yavu\Http\Controllers;
 use Illuminate\Http\Request;
-use milahorros\Http\Requests;
-use milahorros\Http\Requests\AdminCreateRequest;
-use milahorros\Http\Requests\AdminUpdateRequest;
-use milahorros\Http\Controllers\Controller;
+use yavu\Http\Requests;
+use yavu\Http\Requests\AdminCreateRequest;
+use yavu\Http\Requests\AdminUpdateRequest;
+use yavu\Http\Controllers\Controller;
 use Session;
 use Redirect;
-use milahorros\Admin;
+use yavu\Admin;
 use Illuminate\Routing\Route;
 class AdminController extends Controller
 {

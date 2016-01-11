@@ -1,13 +1,13 @@
 <?php
-namespace milahorros\Http\Controllers;
+namespace yavu\Http\Controllers;
 use Illuminate\Http\Request;
-use milahorros\Http\Requests;
-use milahorros\Http\Requests\UserCreateRequest;
-use milahorros\Http\Requests\UserUpdateRequest;
-use milahorros\Http\Controllers\Controller;
+use yavu\Http\Requests;
+use yavu\Http\Requests\UserCreateRequest;
+use yavu\Http\Requests\UserUpdateRequest;
+use yavu\Http\Controllers\Controller;
 use Session;
 use Redirect;
-use milahorros\User;
+use yavu\User;
 use Illuminate\Routing\Route;
 class UserController extends Controller
 {

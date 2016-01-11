@@ -1,6 +1,6 @@
 <?php
 
-namespace milahorros\Http\Requests;
+namespace yavu\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 

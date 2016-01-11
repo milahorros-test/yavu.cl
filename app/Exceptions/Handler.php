@@ -1,6 +1,6 @@
 <?php
 
-namespace milahorros\Exceptions;
+namespace yavu\Exceptions;
 
 use Exception;
 use Illuminate\Database\Eloquent\ModelNotFoundException;

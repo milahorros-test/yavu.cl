@@ -1,17 +1,17 @@
 <?php
-namespace milahorros\Http\Controllers;
+namespace yavu\Http\Controllers;
 use Auth;
 use Hash;
-use milahorros\User;
-use milahorros\Empresa;
-use milahorros\Admin;
+use yavu\User;
+use yavu\Empresa;
+use yavu\Admin;
 use Input;
 use Session;
 Use Redirect;
-use milahorros\Http\Requests\LoginRequest;
+use yavu\Http\Requests\LoginRequest;
 use Illuminate\Http\Request;
-use milahorros\Http\Requests;
-use milahorros\Http\Controllers\Controller;
+use yavu\Http\Requests;
+use yavu\Http\Controllers\Controller;
 class LogController extends Controller
 {
     public function index()

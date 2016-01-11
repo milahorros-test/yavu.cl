@@ -1,5 +1,5 @@
 suites:
     main:
-        namespace: milahorros
-        psr4_prefix: milahorros
+        namespace: yavu
+        psr4_prefix: yavu
         src_path: app

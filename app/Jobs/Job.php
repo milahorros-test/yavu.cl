@@ -1,6 +1,6 @@
 <?php
 
-namespace milahorros\Jobs;
+namespace yavu\Jobs;
 
 use Illuminate\Bus\Queueable;
 

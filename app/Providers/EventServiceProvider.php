@@ -1,6 +1,6 @@
 <?php
 
-namespace milahorros\Providers;
+namespace yavu\Providers;
 
 use Illuminate\Contracts\Events\Dispatcher as DispatcherContract;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -13,8 +13,8 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        'milahorros\Events\SomeEvent' => [
-            'milahorros\Listeners\EventListener',
+        'yavu\Events\SomeEvent' => [
+            'yavu\Listeners\EventListener',
         ],
     ];
 
