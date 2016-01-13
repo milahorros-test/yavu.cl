@@ -11,6 +11,7 @@
     </thead>
     <tbody>
       <tr>
+      <!-- Formulario de registro -->
       <i class="form-control-feedback glyphicon glyphicon-user"></i>
         <td> -> Regístrate gratis!<br>
         <i class="form-control-feedback glyphicon glyphicon-user"></i>
