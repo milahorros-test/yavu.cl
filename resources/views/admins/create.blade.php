@@ -5,7 +5,7 @@
 		@include('alerts.alertFields')
 		<h4>Registro de administradores</h4>
 
-		{!!Form::open(['route'=>'admins.store', 'method'=>'POST'])!!}
+		{!!Form::open(['route'=>'admins', 'method'=>'POST'])!!}
 			@include('admins.forms.fieldsAdmin')
 			{!!Form::submit('Registrar', ['class'=>'btn btn-primary btn-success'])!!}
 		{!!Form::close()!!}

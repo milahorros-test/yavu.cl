@@ -29,6 +29,10 @@ class FrontController extends Controller
     {
         return view('nosotros');        
     }
+    public function terminos()
+    {
+        return view('terminos');        
+    }
 
 
 
