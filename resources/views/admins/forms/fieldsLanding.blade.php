@@ -21,5 +21,3 @@
 {!!Form::select('ciudad', ['La Serena' => 'La Serena', 'Coquimbo' => 'Coquimbo', 'otra' => 'otras...'], $selected = null, ['class' => 'form-control btn btn-primary']) !!}
 
 </div>
-
-<!-- comentario -->
