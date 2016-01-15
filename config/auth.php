@@ -12,7 +12,7 @@ return [
         ],
         'admin' => [
             'driver' => 'eloquent',
-            'model'  => milahorros\Admin::class,
+            'model'  => yavu\Admin::class,
             'table' => 'admins'
         ]
     ],

@@ -22,7 +22,6 @@
                 padding-bottom: 20px;
             }
         </style>
-
     </head>
     <body>
         <!--[if lt IE 8]>

@@ -17,7 +17,6 @@
 	<i class="form-control-feedback glyphicon glyphicon-lock"></i>
 </div>
 <div>
-{!!Form::label('Seleccione su ciudad:')!!}	
-{!!Form::select('ciudad', ['La Serena' => 'La Serena', 'Coquimbo' => 'Coquimbo', 'otra' => 'otras...'], $selected = null, ['class' => 'form-control btn btn-primary']) !!}
-
+	{!!Form::label('Seleccione su ciudad:')!!}	
+	{!!Form::select('ciudad', ['La Serena' => 'La Serena', 'Coquimbo' => 'Coquimbo', 'otra' => 'otras...'], $selected = null, ['class' => 'form-control btn btn-primary']) !!}
 </div>

@@ -10,10 +10,10 @@
             </td>
             <td width="90%">
             @include('alerts.alertFields')	
-			{!!Form::open(['route'=>'admins.store', 'method'=>'POST'])!!}
-			@include('admins.forms.fieldsLanding')
-			{!!Form::submit('Registrar', ['class'=>'btn btn-primary btn-success'])!!}
-			{!!Form::close()!!}
+      			{!!Form::open(['route'=>'usuarios.store', 'method'=>'POST'])!!}
+      			@include('admins.forms.fieldsLanding')
+      			{!!Form::submit('Registrar', ['class'=>'btn btn-primary btn-success'])!!}
+      			{!!Form::close()!!}
             </td>
         </tr>
      </table>
