@@ -95,6 +95,7 @@
               <ul class="dropdown-menu">
                 <li><a href="{!!URL::to('/nosotros/')!!}">Nuestra empresa</a></li>
                 <li><a href="{!!URL::to('/contacto/')!!}">Contacto</a></li>
+                <li><a href="{!!URL::to('/terminos/')!!}">Terminos</a></li>
               </ul>
             </li>                     
           </ul>         
