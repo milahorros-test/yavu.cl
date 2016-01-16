@@ -55,4 +55,8 @@ class UserController extends Controller
     Session::flash('message', 'Usuario eliminado correctamente');
     return Redirect::to('/usuarios');
   }
+  public function perfil()
+  {
+    return view('perfil'); 
+  }  
 }
