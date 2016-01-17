@@ -12,29 +12,31 @@
 		  	<div class="panel-body">
 			<table class="table">
 				<tr>
-					<th colspan="4">¡Mantenga sus datos actualizados!</th>
+					<th colspan="2">¡Mantenga sus datos actualizados!</th>
+					<th>* <small>(Campos requeridos)</small></th>	
 				</tr>	
 				<tr>
 					<td>Nombre</td>
-					<td></td>
-					<td>{!!Form::text('nombre',null,['class'=>'form-control','placeholder'=>'Ingrese su nombre','required'=>'required','width'=>'100%'])!!}<td>	
-					<td></td>							
+					<td>{!!Form::text('nombre',null,['class'=>'form-control','placeholder'=>'Ingrese su nombre','required'=>'required','width'=>'100%'])!!}</td>	
+					<td>*</td>							
 				</tr>
 				<tr>
 					<td>Apellido</td>
-					<td></td>
 					<td>{!!Form::text('apellido',null,['class'=>'form-control','placeholder'=>'Ingrese su apellido','required'=>'required'])!!}</td>	
-					<td></td>							
+					<td>*</td>							
 				</tr>
 				<tr>
 					<td>Rut</td>
-					<td></td>
 					<td>{!!Form::text('rut',null,['class'=>'form-control','placeholder'=>'Ingrese su rut','required'=>'required'])!!}</td>	
 					<td></td>							
 				</tr>
 				<tr>
-					<td>Foto de avatar</td>
+					<td>Fecha de nacimiento</td>
+					<td>{!!Form::date('fecha_nacimiento',null,['class'=>'form-control','placeholder'=>'Ingrese fecha de nacimiento','required'=>'required'])!!}</td>	
 					<td></td>
+				</tr>				
+				<tr>
+					<td>Foto de avatar</td>
 					<td>
 						<a href="#">
 							<img alt="Imagen corfo" src= "images/default-img.gif" height="140px" width="210px" />
@@ -43,9 +45,10 @@
 					<td></td>
 				</tr>				
 				<tr>
-					<td>
+					<td>Guadar</td>
+					<td colspan="2">
 						{!!Form::submit('Guardar', ['class'=>'btn btn-success','width'=>'100%']) !!}﻿
-					</td>						
+					</td>		
 				</tr>
 			</table>
 		  </div>
@@ -55,28 +58,27 @@
 		  	<div class="panel-body">
 			<table class="table">
 				<tr>
-					<th colspan="4">¡Mantenga sus datos actualizados!</th>
+					<th colspan="2">¡Mantenga sus datos actualizados!</th>
+					<th>* <small>(Campos requeridos)</small></th>	
 				</tr>	
 				<tr>
 					<td>Email</td>
-					<td></td>
 					<td>{!!Form::email('email',null,['class'=>'form-control','placeholder'=>'Ingrese su email','required'=>'required'])!!}</td>	
-					<td></td>							
+					<td>*</td>							
 				</tr>				
 				<tr>
 					<td>Nombre de usuario</td>
-					<td></td>
 					<td>{!!Form::text('login',null,['class'=>'form-control','placeholder'=>'Ingrese su nombre de usuario','required'=>'required'])!!}</td>	
-					<td></td>							
+					<td>*</td>							
 				</tr>				
 				<tr>
 					<td>Clave</td>
-					<td></td>
 					<td>{!!Form::password('password',['class'=>'form-control','placeholder'=>'Ingrese una clave'])!!}</td>	
 					<td></td>							
 				</tr>
 				<tr>
-					<td>
+					<td>Guardar</td>
+					<td colspan="2">
 						{!!Form::submit('Guardar', ['class'=>'btn btn-success','width'=>'100%']) !!}﻿
 					</td>						
 				</tr>
@@ -89,28 +91,27 @@
 			
 			<table class="table">
 				<tr>
-					<th colspan="4">¡Mantenga sus datos actualizados!</th>
+					<th colspan="2">¡Mantenga sus datos actualizados!</th>
+					<th>* <small>(Campos requeridos)</small></th>	
 				</tr>	
 				<tr>
-					<td>Teléfono de contacto</td>
-					<td></td>
-					<td></td>	
+					<td>Teléfono movil de contacto</td>
+					<td>{!!Form::text('fono',null,['class'=>'form-control','placeholder'=>'Ingrese número movil','required'=>'required','width'=>'100%'])!!}</td>	
+					<td></td>							
+				</tr>				
+				<tr>
+					<td>Teléfono adicional</td>
+					<td>{!!Form::text('fono_2',null,['class'=>'form-control','placeholder'=>'Ingrese número adicional', 'width'=>'100%'])!!}</td>	
 					<td></td>							
 				</tr>				
 				<tr>
 					<td></td>
-					<td></td>
-					<td></td>	
-					<td></td>							
-				</tr>				
-				<tr>
-					<td></td>
-					<td></td>
 					<td></td>	
 					<td></td>							
 				</tr>	
 				<tr>
-					<td>
+					<td>Guardar</td>
+					<td colspan="2">
 						{!!Form::submit('Guardar', ['class'=>'btn btn-success','width'=>'100%']) !!}﻿
 					</td>						
 				</tr>
