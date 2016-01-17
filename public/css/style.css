@@ -3,7 +3,7 @@
 	margin: 1px auto 0 auto;
 	padding: 40px 40px 40px 40px;
 	/*padding: 0 60px 30px 60px;*/
-	border: solid 1px #cbcbcb;
+	border: solid 0px #cbcbcb;
 	border-radius: 2px;
 	background: #fafafa;
 	-moz-box-shadow: 1px 1px 1px 1px #cbcbcb;
@@ -12,11 +12,11 @@
 
 #contentIn {
 	width: 98%;
-	margin: 1px auto 0 auto;
+	margin: 0px auto 0 auto;
 	/*Arriba-Derecha-Abajo-Izquierda*/
 	padding: 40px 40px 40px 40px;
 	/*padding: 0 60px 30px 60px;*/
-	border: solid 1px #cbcbcb;
+	border: solid 0px #cbcbcb;
 	border-radius: 2px;
 	background: #fafafa;
 	-moz-box-shadow: 1px 1px 1px 1px #cbcbcb;

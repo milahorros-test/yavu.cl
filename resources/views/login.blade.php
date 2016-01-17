@@ -18,7 +18,7 @@
             {!!Form::password('password',['class'=>'form-control','placeholder'=>'Ingresa tu clave'])!!}     
           </div>
           <div class="form-group">
-            {!!Form::submit('Acceder',['class'=>'btn btn-default'])!!}
+            {!!Form::submit('Acceder',['class'=>'btn btn-info'])!!}
           </div>
         </div>
     </div>
