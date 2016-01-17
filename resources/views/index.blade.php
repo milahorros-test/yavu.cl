@@ -1,5 +1,6 @@
 @extends('layouts.front')
 @section('content')
+@include('layouts.bannerFront')
 <div class="jumbotron">
   <div id="content" class="container">
     <div class="panel panel-default">
