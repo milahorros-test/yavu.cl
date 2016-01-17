@@ -2750,9 +2750,9 @@ select[multiple].form-group-lg .form-control {
 } /*aquí se modifican las propiedades del boton*/
 .btn {
   display: inline-block;
-  padding: 8px 40px; 
+  padding: 9px 50px; 
   margin-bottom: 0;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: normal;
   line-height: 1.42857143;
   text-align: center;
@@ -2985,7 +2985,8 @@ fieldset[disabled] .btn-success.active {
   background-color: #5bc0de;
   border-color: #46b8da;
   will-change: opacity, transform;
-  transition: all .1s ease-out;      
+  transition: all .1s ease-out;    
+
 }
 .btn-info:hover,
 .btn-info:focus,
