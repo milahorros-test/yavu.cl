@@ -14,7 +14,7 @@
       <div class="fill"><img style="background-size:cover;" src = "img/BannerFront/banner5.jpg" height=100% width=100%></div>
         <div class = "carousel-caption">
           <div class="title-slide"><br>            
-            <h3 class="txt-responsive">YaVu</h3>
+            <h1 class="txt-responsive">YaVu</h1>
             <p>Encontrar donde comprar, est&aacute; Aqu&iacute;.</p> 
           </div>            
         </div>
@@ -24,7 +24,7 @@
       <div class="fill"><img style="background-size:cover;" src = "img/BannerFront/banner1.jpg" height=100% width=100%></div>
         <div class = "carousel-caption">
           <div class="title-slide"><br>
-              <h3 class="txt-responsive">YaVu</h3>
+              <h1 class="txt-responsive">YaVu</h1>
               <p>Sitio web exclusivo de pymes virtuales.</p>
           </div>
         </div>
@@ -34,7 +34,7 @@
       <div class="fill"><img style="background-size:cover;" src = "img/BannerFront/banner2.jpg" height=100% width=100%></div>
         <div class = "carousel-caption">
           <div class="title-slide"><br>
-              <h3 class="txt-responsive">YaVu</h3>
+              <h1 class="txt-responsive">YaVu</h1>
               <p>Gesti&oacute;n r&aacute;pida y transparente.</p>
           </div>  
         </div>
@@ -44,7 +44,7 @@
       <div class="fill"><img style="background-size:cover;" src = "img/BannerFront/banner3.jpg" height=100% width=100%></div>
         <div class = "carousel-caption">
           <div class="title-slide"><br>
-              <h3 class="txt-responsive">YaVu</h3>
+              <h1 class="txt-responsive">YaVu</h1>
               <p>Priorice sus compras</p>
           </div>  
         </div>
@@ -54,7 +54,7 @@
       <div class="fill"><img style="background-size:cover;" src = "img/BannerFront/banner4.jpg" height=100% width=100%></div>
         <div class = "carousel-caption">
           <div class="title-slide"><br>
-            <h3 class="txt-responsive">YaVu</h3>
+            <h1 class="txt-responsive">YaVu</h1>
             <p>Entre a 'Nosotros' y conozca nuestra gesti&oacute;n.</p>
           </div>
         </div>
