@@ -38,6 +38,10 @@ class UserController extends Controller
   {
 
   }
+  public function profile()
+  {
+    return view('usuarios.profile'); 
+  }    
   public function edit($id)
   {
     return view('usuarios.edit', ['user' => $this->user]); 
@@ -55,8 +59,5 @@ class UserController extends Controller
     Session::flash('message', 'Usuario eliminado correctamente');
     return Redirect::to('/usuarios');
   }
-  public function perfil()
-  {
-    return view('perfil'); 
-  }  
+
 }
