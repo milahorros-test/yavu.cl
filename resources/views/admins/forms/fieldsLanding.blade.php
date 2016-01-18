@@ -1,4 +1,4 @@
-<div class="container">
+<div>
 	<table class="table">
 		<tr>
 			<td colspan="2" width="95%">¡Registrate Ya con nosotros y se parte de la comunidad de beneficios!</td>
