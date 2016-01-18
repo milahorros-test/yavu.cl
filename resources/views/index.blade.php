@@ -5,20 +5,24 @@
   <div id="content" class="container">
     <div class="panel panel-default">
     <div class="panel-heading"><h2>Somos Yavu.cl!</h2></div>
-      <div class="panel-body"></h2> 
-        <table class="table">
-          <tr>
-              <td><a href="Pagina de corfo"><img alt="Imagen corfo" src= "images/default-img.gif" height="310px" width="420px"/></a></td>
-              <td width="90%">
-                @include('alerts.alertFields')  
-                {!!Form::open(['route'=>'usuarios.store', 'method'=>'POST'])!!}
-                  @include('admins.forms.fieldsLanding')
-                  <br>
-                  {!!Form::submit('Registrar', ['class'=>'btn btn-primary btn-success'])!!}
-                {!!Form::close()!!}
-              </td>
-          </tr>
-        </table>
+      <div class="panel-body">
+
+      <div class="col-sm-6">
+        <a href="Pagina de corfo"><img alt="Imagen corfo" src= "images/default-img.gif" height="250px" width="420px"/></a>
+      </div>
+
+      <div class="panel panel-success col-sm-6">
+        <div class="panel-heading">¡No pierdas tiempo registrate en YaVu!</div>
+        <div class="panel-body">
+          @include('alerts.alertFields')  
+          {!!Form::open(['route'=>'usuarios.store', 'method'=>'POST'])!!}
+            @include('admins.forms.fieldsLanding')
+            <br>
+            {!!Form::submit('Registrar', ['class'=>'btn btn-primary btn-success'])!!}
+          {!!Form::close()!!}               
+        </div>
+      </div>            
+
      </div>
     </div>  
 
