@@ -8,7 +8,7 @@
 			<div class="panel-body">
 			    <p></p>
 				<div>
-					Los visitantes podrán acceder a beneficios en la compra de productos o adquisición de servicios en los establecimientos adheridos (Proveedor) al Titular del Servicio (MilAhorros.cl), que serán anunciados en el sitio y en cualquier otro medio que el titular del servicio crea pertinente, y estarán sujetos a disponibilidad y vencimiento, registrándose y creando un usuario en el sitio (en adelante “usuario”).
+					Los visitantes podrán acceder a beneficios en la compra de productos o adquisición de servicios en los establecimientos adheridos (Proveedor) al Titular del Servicio (Yavu.cl), que serán anunciados en el sitio y en cualquier otro medio que el titular del servicio crea pertinente, y estarán sujetos a disponibilidad y vencimiento, registrándose y creando un usuario en el sitio (en adelante “usuario”).
 				</div>
 				<br>
 				<div style="text-align: left;"> 
@@ -31,7 +31,7 @@
 				</div>
 				<br>
 				<div style="text-align: left;">
-				A los fines de su registro, la información suministrada por los usuarios deberá ser fidedigna, y tendrá el carácter de declaración jurada. Cuando la información suministrada no atienda a las circunstancias reales de quien brinda la información, se considerara a tal usuario incurso en incumplimiento de los términos y condiciones, siendo responsable por todos los perjuicios sufridos por Milahorros.cl o terceros, como consecuencia de tal falta de veracidad. Podrá además tal circunstancia ser usada en su contra como hecho constitutivo de mala fe contractual.
+				A los fines de su registro, la información suministrada por los usuarios deberá ser fidedigna, y tendrá el carácter de declaración jurada. Cuando la información suministrada no atienda a las circunstancias reales de quien brinda la información, se considerara a tal usuario incurso en incumplimiento de los términos y condiciones, siendo responsable por todos los perjuicios sufridos por Yavu.cl o terceros, como consecuencia de tal falta de veracidad. Podrá además tal circunstancia ser usada en su contra como hecho constitutivo de mala fe contractual.
 				</div>
 				<br>
 				<div style="text-algn: left;">
@@ -55,15 +55,15 @@
 			<div class="panel-body">
 			    <p></p>
 				<div style="text-align: left;"> 
-				En ningún caso MilAhorros.cl será responsable por la utilización indebida del servicio ni por los daños y perjuicios que pudiera ocasionar al usuario y/o Proveedor del beneficio.
+				En ningún caso Yavu.cl será responsable por la utilización indebida del servicio ni por los daños y perjuicios que pudiera ocasionar al usuario y/o Proveedor del beneficio.
 				</div>
 				<br>
 				<div style="text-align: left;"> 
-				MilAhorros.cl no será responsable por el contenido, la información o los datos de proveedores o terceros que figuren en el sitio o en sitios que puedan estar vinculados, dispensando el usuario al titular del servicio de cualquier daño derivado de o de algún modo relacionado con el sitio. El titular del Servicio se reserva el derecho de remover, quitar o bloquear todo material que a su juicio pueda ser obsceno, abusivo, fraudulento, violatorio de derecho de autor, marcas o propiedad alguna, contrario a la moral y buenas costumbres o violatorio de los presentes términos.
+				Yavu.cl no será responsable por el contenido, la información o los datos de proveedores o terceros que figuren en el sitio o en sitios que puedan estar vinculados, dispensando el usuario al titular del servicio de cualquier daño derivado de o de algún modo relacionado con el sitio. El titular del Servicio se reserva el derecho de remover, quitar o bloquear todo material que a su juicio pueda ser obsceno, abusivo, fraudulento, violatorio de derecho de autor, marcas o propiedad alguna, contrario a la moral y buenas costumbres o violatorio de los presentes términos.
 				</div>
 				<br>
 				<div style="text-align: left;"> 
-				En caso de que el proveedor no cumpla con los beneficios publicados en el sitio, el usuario deberá informarlo mediante mail a reclamos@milahorros.cl
+				En caso de que el proveedor no cumpla con los beneficios publicados en el sitio, el usuario deberá informarlo mediante mail a reclamos@yavu.cl
 				</div>
 				<br>
 				<div style="text-align: left;">

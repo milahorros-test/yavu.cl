@@ -12,7 +12,7 @@
       </div>
 
       <div class="panel panel-success col-sm-6">
-        <div class="panel-heading">¡No pierdas tiempo registrate en YaVu!</div>
+        <div class="panel-heading">¡No pierdas tiempo registrate en Yavu!</div>
         <div class="panel-body">
           @include('alerts.alertFields')  
           {!!Form::open(['route'=>'usuarios.store', 'method'=>'POST'])!!}

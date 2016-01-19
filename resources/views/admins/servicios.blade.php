@@ -4,7 +4,7 @@
 	<div id="contentIn">
 		@include('alerts.alertFields')
 		@include('alerts.successMessage')
-		<h2>Panel de administración</h2>		
+		<h2>Panel de administración de Servicios</h2>		
 		<table class="table">
 			<thead>
 				<th>Nombre</th>

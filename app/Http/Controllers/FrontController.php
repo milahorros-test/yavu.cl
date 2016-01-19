@@ -11,8 +11,8 @@ class FrontController extends Controller
     }
     public function login()
     {
-        return view('login');
-    }   
+        return view('login');        
+    } 
     public function acceso()
     {
         return view('acceso');
