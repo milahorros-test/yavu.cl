@@ -1,3 +1,4 @@
+<!-- falta modificar -->
 @extends('layouts.frontadm')	
 @section('content')
 <div class="jumbotron">
