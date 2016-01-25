@@ -26,5 +26,5 @@
 		{!!Form::password('password',['class'=>'form-control','placeholder'=>'Ingrese una clave'])!!}		
 		<i class="form-control-feedback glyphicon glyphicon-lock"></i>			
 	</td>
-	<td>*</td>
+	<td><!--*--></td>
 </tr>		
