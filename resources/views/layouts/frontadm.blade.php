@@ -6,31 +6,34 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
-        {!!Html::style('css/yavuadm.css')!!}
         {!!Html::style('css/bootstrap.css')!!}
+        {!!Html::style('css/sidebar.css')!!}
         {!!Html::style('css/style.css')!!}
         {!!Html::style('css/main.css')!!}
         {!!Html::style('css/bootstrap-theme.min.css')!!}
+        {!!Html::script('js/jquery.js')!!}
         {!!Html::script('js/vendor/modernizr-2.8.3-respond-1.4.2.min.js')!!}
-        <style>
-            body {
-                padding-top: 50px;
-                padding-bottom: 20px;
-            }
-        </style>
+
     </head>
     <body>
-     <!-- @yield('content') --> 
-          <ul class="sidebar">
-      <li class="sidebar-brand"><a href="">Administración Yavu</a></li>
-      <li><a href="#">Servicios</a></li>
-      <li><a href="#">Empresas</a></li>
-      <li><a href="#">Salir</a></li>
-      </ul>
-
-<!-- footer 
- Sin footer 
-    /footer -->
+    <div id="wrapper">
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand"> <a href="#"> Bienvenido Administrador</a></li>
+                <h3 align="center"> SERVICIOS </h3>
+                <li> <a href="#">Registrar Servicios</a> </li>
+                <li> <a href="#">Listado de Servicios</a> </li>
+                <h3 align="center"> EMPRESAS </h3>
+                <li><a href="{!!URL::to('/empresas/create')!!}">Registro de empresas</a></li>
+                <li> <a href="#">Listado de empresas</a> </li>
+                <li> <a href="#">Salir</a> </li>
+            </ul>
+        </div>
+        <!-- Page Content -->
+ @yield('content') 
+    </div>
+        <!-- Sin footer  -->
       
     </div> <!-- /container -->        
         {!!Html::script('//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js')!!}
