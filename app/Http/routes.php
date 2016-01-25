@@ -2,7 +2,7 @@
 Route::get('/','FrontController@index');
 Route::get('index','FrontController@index');
 Route::get('login','FrontController@login');
-Route::get('registro','FrontController@rregistro');
+Route::get('registro','FrontController@registro');
 Route::get('contacto','FrontController@contacto');
 Route::get('nosotros','FrontController@nosotros');
 Route::get('terminos','FrontController@terminos');
