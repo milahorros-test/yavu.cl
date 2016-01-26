@@ -22,11 +22,11 @@
             <ul class="sidebar-nav">
                 <li class="sidebar-brand"> <a href="#"> Bienvenido Administrador</a></li>
                 <h3 align="center"> SERVICIOS </h3>
-                <li> <a href="#">Registrar Servicios</a> </li>
+                <li> <a href="#">Registrar Servicio</a> </li>
                 <li> <a href="#">Listado de Servicios</a> </li>
                 <h3 align="center"> EMPRESAS </h3>
-                <li><a href="{!!URL::to('/empresas/create')!!}">Registro de empresas</a></li>
-                <li> <a href="#">Listado de empresas</a> </li>
+                <li><a href="{!!URL::to('/empresas/create')!!}">Registrar Empresa</a></li>
+                <li> <a href="#">Listado de Empresas</a> </li>
                 <li> <a href="#">Salir</a> </li>
             </ul>
         </div>
