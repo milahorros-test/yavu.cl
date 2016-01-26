@@ -25,27 +25,27 @@
 
 	@media (min-width: 768px) {
 	  #contentIn {
-	    width: 80%;
+	    width: 90%;
 	  }
 	}
 	@media (min-width: 880px) {
 	  #contentIn {
-	    width: 75%;
+	    width: 85%;
 	  }
 	}
 	@media (min-width: 992px) {
 	  #contentIn {
-	    width: 70%;
+	    width: 80%;
 	  }
 	}
 	@media (min-width: 1096px) {
 	  #contentIn {
-	    width: 65%;
+	    width: 75%;
 	  }
 	}
 	@media (min-width: 1200px) {
 	  #contentIn {
-	    width: 60%; /*a escala , old : 1200x1170*/
+	    width: 70%; /*a escala , old : 1200x1170*/
 
 	  }
 	}
