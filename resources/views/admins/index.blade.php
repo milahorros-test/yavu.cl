@@ -1,4 +1,4 @@
-@extends('layouts.front')	
+@extends('layouts.frontadm')	
 @section('content')
 <div class="jumbotron">
 	<div id="contentIn">
@@ -30,11 +30,4 @@
 	</div>
 </div>
 @stop
-<<<<<<< HEAD
-=======
 
-
-
-
-
->>>>>>> 9ca8fea3baf1c25b8697b437a770ae21b945cdd6

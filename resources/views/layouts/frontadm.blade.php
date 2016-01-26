@@ -21,10 +21,15 @@
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 <li class="sidebar-brand"> <a href="#"> Bienvenido Administrador</a></li>
+                <h5 align="center">{Nombre adm}</h5>
+                <hr>
                 <h3 align="center"> SERVICIOS </h3>
+                <hr>
                 <li> <a href="#">Registrar Servicio</a> </li>
                 <li> <a href="#">Listado de Servicios</a> </li>
+                <hr>
                 <h3 align="center"> EMPRESAS </h3>
+                <hr>
                 <li><a href="{!!URL::to('/empresas/create')!!}">Registrar Empresa</a></li>
                 <li><a href="{!!URL::to('/empresas/')!!}">Listado de empresas</a></li>
                 <li> <a href="#">Salir</a> </li>
