@@ -67,13 +67,14 @@
             <!-- tab-content -->
             <div class="tab-content">
                 <section class="tab-item-1">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/eZJMzAHa-uQ" frameborder="0" allowfullscreen></iframe>
                 </section>
                 <section class="tab-item-2">
-                    <h1>Two</h1>
+                    <iframe width="800" height="600" src="{!!URL::to('/empresas/create')!!}"></a></li>" frameborder="0" allowfullscreen>
+                    </iframe>
                 </section>
                 <section class="tab-item-3">
-                    <h1>Three</h1>
+                    <iframe width="800" height="600" src="{!!URL::to('/empresas/')!!}"></a></li>" frameborder="0" allowfullscreen>
+                    </iframe>
                 </section>
                 <section class="tab-item-4">
                     <h1>Four</h1>
