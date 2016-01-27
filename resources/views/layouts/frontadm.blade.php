@@ -31,45 +31,36 @@
             <!-- tab-menu -->
             <input type="radio" class="tab-1" name="tab" checked="checked">
             <span>Home</span><i class="fa fa-home"></i>
-
+            <span>EMPRESA</span>
             <input type="radio" class="tab-2" name="tab">
-            <span>Posts</span><i class="fa fa-medium"></i>
-
+            <span>Registrar</span><i class="fa fa-book"></i>
+            
             <input type="radio" class="tab-3" name="tab">
-            <span>Users</span><i class="fa fa-user"></i>
+            <span>Listado</span><i class="fa fa-list-alt"></i>
 
+            <span>SERVICIOS</span>
             <input type="radio" class="tab-4" name="tab">
-            <span>Comments</span><i class="fa fa-comment"></i>
+            <span>Registrar</span><i class="fa fa-book"></i>
             
             <input type="radio" class="tab-5" name="tab">
-            <span>Upload</span><i class="fa fa-cloud-upload"></i>
+            <span>Listado</span><i class="fa fa-list-alt"></i>
             
             <input type="radio" class="tab-6" name="tab">
-            <span>Favorite</span><i class="fa fa-star"></i>
-            
-            <input type="radio" class="tab-7" name="tab">
-            <span>Photos</span><i class="fa fa-photo"></i>
-            
-            <input type="radio" class="tab-8" name="tab">
-            <span>Analysis</span><i class="fa fa-line-chart"></i>
-            
-            <input type="radio" class="tab-9" name="tab">
-            <span>Links</span><i class="fa fa-link"></i>
-            
-            <input type="radio" class="tab-10" name="tab">
             <span>Settings</span><i class="fa fa-cog"></i>
 
             <!-- tab-top-bar -->
             <div class="top-bar">
-            Bievenido al Panel de Administración!
+            <h2> Bienvenido Admin! </h2>
             </div>
 
             <!-- tab-content -->
             <div class="tab-content">
                 <section class="tab-item-1">
+                Bienviendo al panel de administración de yavu.cl!
+                Si has olvidado tu contraseña, consulta Restablecer la contraseña de administrador. 
                 </section>
                 <section class="tab-item-2">
-                    <iframe width="800" height="600" src="{!!URL::to('/empresas/create')!!}"></a></li>" frameborder="0" allowfullscreen>
+                    <iframe width="800" height="700" src="{!!URL::to('/empresas/create')!!}"></a></li>" frameborder="0" allowfullscreen>
                     </iframe>
                 </section>
                 <section class="tab-item-3">
@@ -77,25 +68,16 @@
                     </iframe>
                 </section>
                 <section class="tab-item-4">
-                    <h1>Four</h1>
+                    <iframe width="800" height="700" src="{!!URL::to('/empresas/create')!!}"></a></li>" frameborder="0" allowfullscreen>
+                    </iframe>
                 </section>
                 <section class="tab-item-5">
-                    <h1>Five</h1>
+                    <iframe width="800" height="600" src="{!!URL::to('/empresas/')!!}"></a></li>" frameborder="0" allowfullscreen>
+                    </iframe>
                 </section>
                 <section class="tab-item-6">
-                    <h1>Six</h1>
+                    <h1>Configuraciones para administrador</h1>
                 </section>
-                <section class="tab-item-7">
-                    <h1>Sever</h1>
-                </section>
-                <section class="tab-item-8">
-                    <h1>Eight</h1>
-                </section>
-                <section class="tab-item-9">
-                    <h1>Nine</h1>
-                </section>
-                <section class="tab-item-10">
-                    <h1>Ten</h1>
                 </section>
             </div>
         </div>

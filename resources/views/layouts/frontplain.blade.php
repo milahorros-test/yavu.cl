@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         {!!Html::style('css/bootstrap.css')!!}
-        {!!Html::style('css/sidebar.css')!!}
+        
         {!!Html::style('css/style.css')!!}
         {!!Html::style('css/main.css')!!}
         {!!Html::style('http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css')!!}
@@ -15,10 +15,9 @@
         {!!Html::script('js/jquery.js')!!}
         {!!Html::script('js/vendor/modernizr-2.8.3-respond-1.4.2.min.js')!!}
 
-
     </head>
     <body>
-@yield('content')
+            @yield('content')
     </body>
     
         <!-- No hay footer  -->
