@@ -10,34 +10,98 @@
         {!!Html::style('css/sidebar.css')!!}
         {!!Html::style('css/style.css')!!}
         {!!Html::style('css/main.css')!!}
+        {!!Html::style('http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css')!!}
         {!!Html::style('css/bootstrap-theme.min.css')!!}
         {!!Html::script('js/jquery.js')!!}
         {!!Html::script('js/vendor/modernizr-2.8.3-respond-1.4.2.min.js')!!}
 
+
     </head>
     <body>
-    <div id="wrapper">
-        <!-- Sidebar -->
-        <div id="sidebar-wrapper">
-            <ul class="sidebar-nav">
-                <li class="sidebar-brand"> <a href="#"> Bienvenido Administrador</a></li>
-                <h5 align="center">{Nombre adm}</h5>
-                <hr>
-                <h3 align="center"> SERVICIOS </h3>
-                <hr>
-                <li> <a href="#">Registrar Servicio</a> </li>
-                <li> <a href="#">Listado de Servicios</a> </li>
-                <hr>
-                <h3 align="center"> EMPRESAS </h3>
-                <hr>
-                <li><a href="{!!URL::to('/empresas/create')!!}">Registrar Empresa</a></li>
-                <li><a href="{!!URL::to('/empresas/')!!}">Listado de empresas</a></li>
-                <li> <a href="#">Salir</a> </li>
-            </ul>
+<div class="container">
+        <div class="clear-backend">
+            <div class="avatar ease">
+                <div>
+                        <img class="ease" src="img/admin.png" alt="">
+                        <hr>
+                    </a>
+                </div>
+            </div>
+
+            <!-- tab-menu -->
+            <input type="radio" class="tab-1" name="tab" checked="checked">
+            <span>Home</span><i class="fa fa-home"></i>
+
+            <input type="radio" class="tab-2" name="tab">
+            <span>Posts</span><i class="fa fa-medium"></i>
+
+            <input type="radio" class="tab-3" name="tab">
+            <span>Users</span><i class="fa fa-user"></i>
+
+            <input type="radio" class="tab-4" name="tab">
+            <span>Comments</span><i class="fa fa-comment"></i>
+            
+            <input type="radio" class="tab-5" name="tab">
+            <span>Upload</span><i class="fa fa-cloud-upload"></i>
+            
+            <input type="radio" class="tab-6" name="tab">
+            <span>Favorite</span><i class="fa fa-star"></i>
+            
+            <input type="radio" class="tab-7" name="tab">
+            <span>Photos</span><i class="fa fa-photo"></i>
+            
+            <input type="radio" class="tab-8" name="tab">
+            <span>Analysis</span><i class="fa fa-line-chart"></i>
+            
+            <input type="radio" class="tab-9" name="tab">
+            <span>Links</span><i class="fa fa-link"></i>
+            
+            <input type="radio" class="tab-10" name="tab">
+            <span>Settings</span><i class="fa fa-cog"></i>
+
+            <!-- tab-top-bar -->
+            <div class="top-bar">
+            Bievenido al Panel de Administración!
+            </div>
+
+            <!-- tab-content -->
+            <div class="tab-content">
+                <section class="tab-item-1">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/eZJMzAHa-uQ" frameborder="0" allowfullscreen></iframe>
+                </section>
+                <section class="tab-item-2">
+                    <h1>Two</h1>
+                </section>
+                <section class="tab-item-3">
+                    <h1>Three</h1>
+                </section>
+                <section class="tab-item-4">
+                    <h1>Four</h1>
+                </section>
+                <section class="tab-item-5">
+                    <h1>Five</h1>
+                </section>
+                <section class="tab-item-6">
+                    <h1>Six</h1>
+                </section>
+                <section class="tab-item-7">
+                    <h1>Sever</h1>
+                </section>
+                <section class="tab-item-8">
+                    <h1>Eight</h1>
+                </section>
+                <section class="tab-item-9">
+                    <h1>Nine</h1>
+                </section>
+                <section class="tab-item-10">
+                    <h1>Ten</h1>
+                </section>
+            </div>
         </div>
-        <!-- Page Content -->
- @yield('content') 
     </div>
+    <footer class="footer">
+
+    </footer>
         <!-- No hay footer  -->
       
     </div> <!-- /container -->        
