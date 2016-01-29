@@ -5,7 +5,7 @@
 		@include('alerts.alertFields')
 		<h4>Registro de Servicios</h4>
 		{!!Form::open(['route'=>'servicios.store', 'method'=>'POST'])!!}
-			@include('servicios.forms.fieldsEmpresa')
+			@include('servicios.forms.fieldsServicios')
 			{!!Form::submit('Registrar', ['class'=>'btn btn-primary btn-success'])!!}
 		{!!Form::close()!!}
 	</div>

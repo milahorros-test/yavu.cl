@@ -68,11 +68,11 @@
                     </iframe>
                 </section>
                 <section class="tab-item-4">
-                    <iframe width="800" height="700" src="{!!URL::to('/empresas/create')!!}"></a></li>" frameborder="0" allowfullscreen>
+                    <iframe width="800" height="700" src="{!!URL::to('/servicios/create')!!}"></a></li>" frameborder="0" allowfullscreen>
                     </iframe>
                 </section>
                 <section class="tab-item-5">
-                    <iframe width="800" height="600" src="{!!URL::to('/empresas/')!!}"></a></li>" frameborder="0" allowfullscreen>
+                    <iframe width="800" height="600" src="{!!URL::to('/servicios/')!!}"></a></li>" frameborder="0" allowfullscreen>
                     </iframe>
                 </section>
                 <section class="tab-item-6">
