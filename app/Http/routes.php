@@ -15,6 +15,7 @@ Route::resource('usuarios','UserController');
 Route::resource('profile', 'UserController@profile');
 
 Route::resource('empresas','EmpresaController');
+Route::resource('servicios','ServicioController');
 
 Route::resource('admins','AdminController');
 

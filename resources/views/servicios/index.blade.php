@@ -22,7 +22,7 @@
 				<td>{{$empresa->fono}}</td>
 				<td>{{$empresa->fecha_creacion}}</td>
 				<td>{{$empresa->nombre_encargado}}</td>
-				<td>{!!link_to_route('empresas.edit', $title = 'Editar', $parameters = $empresa->id, $attributes = ['class'=>'btn btn-primary'])!!}</td>
+				<td>{!!link_to_route('servicios.edit', $title = 'Editar', $parameters = $empresa->id, $attributes = ['class'=>'btn btn-primary'])!!}</td>
 			</tbody>
 			@endforeach
 		</table>	
