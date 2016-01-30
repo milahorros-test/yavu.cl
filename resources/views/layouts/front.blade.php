@@ -51,11 +51,11 @@
             @if (!Auth::user()->check() && !Auth::empresa()->check())
               <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Registrate<b class="caret"></b></a>                        
                 <ul class="dropdown-menu">
-                  <li><a href="{!!URL::to('/usuarios/create')!!}">Registro de usuarios</a></li>
-                  <li><a href="{!!URL::to('/empresas/create')!!}">Registro de empresas</a></li>
+                  <li><a href="{!!URL::to('/usuarios/create')!!}">Registro de usuarios</a></li> 
+                  <!-- Esto ya no va acá <li><a href="{!!URL::to('/empresas/create')!!}">Registro de empresas</a></li> -->
                   <li><a href="{!!URL::to('/admins/create')!!}">Registro de Administradores</a></li>
                   <li><a href="{!!URL::to('/usuarios')!!}">Mostrar listado de clientes</a></li>
-                  <li><a href="{!!URL::to('/empresas')!!}">Mostrar listado de empresas</a></li>
+                  <!-- Esto ya no va acá <li><a href="{!!URL::to('/empresas')!!}">Mostrar listado de empresas</a></li> -->
                   <li><a href="{!!URL::to('/admins')!!}">Mostrar listado de Administradores</a></li>
                 </ul>
               </li>   
