@@ -15,6 +15,7 @@ class UserUpdateRequest extends Request
          'login' => 'required',
          'nombre' => 'required',
          'apellido' => 'required',
+         
          //'PASSWORD_USUARIO' => 'required'
       ];
    }
