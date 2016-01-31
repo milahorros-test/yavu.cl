@@ -42,7 +42,7 @@
           <tr>
             <td>Mensaje</td>
             <td>
-              {!!Form::text('message',null,['class'=>'form-control','placeholder'=>'Ingresa tu mensaje', 'required'=>'required'])!!}                      
+              {!!Form::textarea('message',null,['class'=>'form-control','placeholder'=>'Ingresa tu mensaje', 'required'=>'required','rows'=>'3'])!!}                      
             </td>
             <td>*</td>
           </tr>
@@ -64,7 +64,7 @@
         {!!Form::close()!!}
       </div>
     </div>  
-|  </div>
+  </div>
 </div>
 {!!Form::close()!!}
 @stop

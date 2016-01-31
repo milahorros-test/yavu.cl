@@ -16,7 +16,7 @@
         <div class="panel-body">
           @include('alerts.alertFields')  
           {!!Form::open(['route'=>'usuarios.store', 'method'=>'POST'])!!}
-            @include('admins.forms.fieldsLanding')
+            @include('usuarios.forms.fieldsLanding')
             <br>
             {!!Form::submit('Registrar', ['class'=>'btn btn-primary btn-success'])!!}
           {!!Form::close()!!}               

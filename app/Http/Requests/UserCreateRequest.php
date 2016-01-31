@@ -15,7 +15,8 @@ class UserCreateRequest extends Request
          //'login' => 'required|unique:users',
          'nombre' => 'required',
          'apellido' => 'required',
-         'password' => 'required'
+         'password' => 'required',
+         'ciudad' => 'required'
       ];
    }
 }

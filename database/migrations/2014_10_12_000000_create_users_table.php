@@ -13,7 +13,7 @@ class CreateUsersTable extends Migration
         Schema::dropIfExists('users');
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('rut', 16)->unique();            
+            $table->string('rut', 16);            
             $table->string('email', 200)->unique();
             $table->string('login', 100)->unique();              
             $table->string('nombre', 100);

@@ -1,7 +1,7 @@
 #content {
-	width: 98%;
+	width: 90%;
 	margin: 1px auto 0 auto;
-	padding: 40px 40px 40px 40px;
+	padding: 25px 15px 15px 15px;
 	/*padding: 0 60px 30px 60px;*/
 	border: solid 0px #cbcbcb;
 	border-radius: 2px;
@@ -14,7 +14,7 @@
 	width: 98%;
 	margin: 0px auto 0 auto;
 	/*Arriba-Derecha-Abajo-Izquierda*/
-	padding: 40px 40px 40px 40px;
+	padding: 25px 15px 15px 15px;
 	/*padding: 0 60px 30px 60px;*/
 	border: solid 0px #cbcbcb;
 	border-radius: 2px;

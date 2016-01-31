@@ -3,7 +3,6 @@ namespace yavu\Http\Requests;
 use yavu\Http\Requests\Request;
 class UserProfileUpdateRequest extends Request
 {
-
     public function authorize()
     {
         return false;
@@ -11,7 +10,7 @@ class UserProfileUpdateRequest extends Request
     public function rules()
     {
         return [
-            //
+                
         ];
     }
 }
