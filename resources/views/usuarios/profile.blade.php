@@ -11,7 +11,6 @@
 			<div class="panel-heading">Perfil - Datos personales</div>
 		  	<div class="panel-body">
 			<table class="table">
-				{!!Form::model($user, ['method'=>'PUT', 'route' => ['usuarios.update', $user->id] ])!!}			
 				<tr>
 					<th colspan="2">¡Mantenga sus datos actualizados!</th>
 					<th>* <small>(Campos requeridos)</small></th>	
