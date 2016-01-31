@@ -38,6 +38,10 @@ class UserController extends Controller
   {
 
   }
+  public function panel()
+  {
+    return view('usuarios.panel'); 
+  }  
   public function profile()
   {
     return view('usuarios.profile'); 

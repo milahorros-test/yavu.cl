@@ -48,7 +48,7 @@ class LogController extends Controller
             }
         }else{
             if(Auth::user()->attempt(['email' => Input::get('email'), 'password' => Input::get('password')])){
-                return Redirect::to('/profile');
+                return Redirect::to('/panel');
             }
         }
         Session::flash('message-error', 'Datos son incorrectos');
