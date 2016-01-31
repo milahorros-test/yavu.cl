@@ -28,7 +28,7 @@
 						<div class="list-group-item" style="height:80px;">
 							Mira tu perfil y añade nuevas características, completa tus datos y revisa el estado de tus coins.							
 						</div>
-						<a href="#" class="list-group-item">Ir a mi perfil</a>
+						{!!link_to_route('usuarios.edit', $title = 'Ir a mi perfil', $parameters = Auth::user()->get()->id, $attributes = ['class'=>'list-group-item'])!!}
 					</div>								
 				</td>
 				<td>
@@ -47,23 +47,25 @@
 				<td>
 					<div class="list-group" >
 						<div class="list-group-item">
-							Publicaciones
+							Politicas y servicios
 						</div>							
 						<div class="list-group-item" style="height:80px;">
-							¡Publicaciones nuevas! <span class="badge">14</span>
+							Entérate de nuestras politicas para comenzar una actividad en Yavu.<span class="badge">14</span>
 						</div>
-						<a href="#" class="list-group-item">Ir a publicaciones YA!</a>
+						<a href="#" class="list-group-item">Leer políticas</a>
 					</div>								
 				</td>
 				<td>
 					<div class="list-group" >
 						<div class="list-group-item">
-							Publicaciones
+							Informes
 						</div>							
 						<div class="list-group-item" style="height:80px;">
-							¡Publicaciones nuevas! <span class="badge">14</span>
+							Revisa estadisticas
 						</div>
 						<a href="#" class="list-group-item">Ir a publicaciones YA!</a>
+						
+						
 					</div>								
 				</td>
 			</tr>										

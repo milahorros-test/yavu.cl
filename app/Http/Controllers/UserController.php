@@ -40,7 +40,8 @@ class UserController extends Controller
   }
   public function panel()
   {
-    return view('usuarios.panel'); 
+    $users = User::All();
+    return view('usuarios.panel', compact('users'));    
   }  
   public function profile()
   {
