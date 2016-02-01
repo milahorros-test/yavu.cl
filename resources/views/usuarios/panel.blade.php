@@ -16,9 +16,6 @@
 						</div>							
 						<div class="list-group-item" style="height:281px;">
 							Mira lo que otros interatúan con la variedad de publicaciones de tiendas que podrían interesarte.
-
-
-					
 						</div>						
 						<a href="#" class="list-group-item">Ir a publicaciones <span class="badge">14<small>  ¡Publicaciones nuevas!</small></span></a>
 					</div>					
@@ -48,7 +45,6 @@
 							Mi empresa
 						</div>							
 						<div class="list-group-item">
-
 							Inicia actividad en yavu.cl con tu empresa registrandote aquí.<br>
 							<ol>
 								<li>registro de empresa</li>
@@ -56,11 +52,13 @@
 								<li>creación/edición de perfil (con vista previa)</li>
 								<li>interacciones/estadísticas (aquí iría el futuro data mining)</li>
 								<li>configuración de empresa (aquí podrá configurar cosas tales como:</li>
+								<li>
 									<ul>
 										<li>ver servicio activo</li>
 										<li>asignar Roles a otro usuario</li>
 										<li>ver pagos/facturas </li>									
 									</ul>
+								</li>
 							</ol>
 						</div>
 						<a href="#" class="list-group-item">Saber más y registrar mi empresa</a>
