@@ -11,6 +11,8 @@
 			<div class="panel-heading">Perfil - Datos personales</div>
 		  	<div class="panel-body">
 			<table class="table">
+				{!!Form::model($user, ['method'=>'PUT', 'route' => ['usuarios.update', $user->id] ])!!}
+				@include('usuarios.forms.fieldsUser')			
 				<tr>
 					<th colspan="2">¡Mantenga sus datos actualizados!</th>
 					<th>* <small>(Campos requeridos)</small></th>	
@@ -81,6 +83,7 @@
 					<td>Guardar</td>
 					<td colspan="2">
 						{!!Form::submit('Guardar', ['class'=>'btn btn-success','width'=>'100%']) !!}﻿
+						
 					</td>						
 				</tr>
 			</table>

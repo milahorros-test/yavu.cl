@@ -12,9 +12,7 @@ Route::get('logout', 'LogController@logout');
 Route::resource('log', 'LogController');
 
 Route::resource('usuarios','UserController');
-Route::resource('profile', 'UserController@profile');
 Route::resource('panel', 'UserController@panel');
-
 
 
 Route::resource('empresas','EmpresaController');
