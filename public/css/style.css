@@ -100,11 +100,45 @@
 
 
 #contentMiddle {
-	width: 80%;
+	width: 70%;
 	margin: 0px auto 0 auto;
 	/*Arriba-Derecha-Abajo-Izquierda*/
-	padding: 25px 15px 15px 15px;
+	padding: 15px 15px 15px 15px;
 	/*padding: 0 60px 30px 60px;*/
 	border: solid 0px #cbcbcb;
 	border-radius: 2px;
+}
+@media (min-width: 400px) {
+  #contentMiddle {
+    width: 95%;
+  }
+@media (min-width: 500px) {
+  #contentMiddle {
+    width: 95%;
+  }
+@media (min-width: 768px) {
+  #contentMiddle {
+    width: 85%;
+  }
+} 
+@media (min-width: 880px) {
+  #contentMiddle {
+    width: 80%;
+  }
+}
+@media (min-width: 992px) {
+  #contentMiddle {
+    width: 75%;
+  }
+}
+@media (min-width: 1096px) {
+  #contentMiddle {
+    width: 70%;
+  }
+}
+@media (min-width: 1200px) {
+  #contentMiddle {
+    width: 70%; /*a escala , old : 1200x1170*/
+
+  }
 }

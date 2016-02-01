@@ -1,18 +1,18 @@
 <div class="form-group has-feedback has-feedback-left col-sm-6">
 	{!!Form::label('Nombre:')!!}		
-	{!!Form::text('nombre',null,['class'=>'form-control input-lg','placeholder'=>'Ingrese su nombre','required'=>'required'])!!}
+	{!!Form::text('nombre',null,['class'=>'form-control','placeholder'=>'Ingrese su nombre','required'=>'required'])!!}
 </div>		
 <div class="form-group has-feedback has-feedback-left col-sm-6">
 	{!!Form::label('Apellido:')!!}
-	{!!Form::text('apellido',null,['class'=>'form-control input-lg','placeholder'=>'Ingrese su apellido','required'=>'required'])!!}
+	{!!Form::text('apellido',null,['class'=>'form-control','placeholder'=>'Ingrese su apellido','required'=>'required'])!!}
 </div>
 <div class="form-group has-feedback has-feedback-left col-sm-6">
 	{!!Form::label('Email:')!!}
-	{!!Form::email('email',null,['class'=>'form-control input-lg','placeholder'=>'Ingrese su email','required'=>'required'])!!}			
+	{!!Form::email('email',null,['class'=>'form-control','placeholder'=>'Ingrese su email','required'=>'required'])!!}			
 </div>
 <div class="form-group has-feedback has-feedback-left col-sm-6">
 	{!!Form::label('Clave:')!!}
-	{!!Form::password('password',['class'=>'form-control input-lg','placeholder'=>'Ingrese una clave'])!!}
+	{!!Form::password('password',['class'=>'form-control','placeholder'=>'Ingrese una clave'])!!}
 </div>
 <div class="form-group has-feedback has-feedback-left col-sm-6">
 	{!!Form::label('Ciudad:')!!}
@@ -48,7 +48,7 @@
 		'Aysen' => 'Aysen',	
 		'Magallanes' => 'Magallanes',	
 		'otra' => 'otras...'], 
-		$selected = null, ['class' => 'form-control input-lg']) 
+		$selected = null, ['class' => 'form-control']) 
 	!!}					
 </div>
 

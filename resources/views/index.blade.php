@@ -19,7 +19,7 @@
             @include('usuarios.forms.fieldsLanding')
             <div class="form-group has-feedback has-feedback-left col-sm-6">
               {!!Form::label('Registrate ya!')!!}
-              {!!Form::submit('Registrar', ['class'=>'btn btn-primary btn-success col-sm-12 input-lg'])!!}
+              {!!Form::submit('Registrar', ['class'=>'btn btn-primary btn-success col-sm-12'])!!}
             </div>
           {!!Form::close()!!}               
         </div>

@@ -11,14 +11,14 @@
         <div class="panel-body">
           <div class="form-group has-feedback has-feedback-left col-md-12">
             {!!Form::label('Usuario:')!!}
-            {!!Form::email('email',null,['class'=>'form-control input-lg','placeholder'=>'Ingresa tu email de usuario'])!!}     
+            {!!Form::email('email',null,['class'=>'form-control','placeholder'=>'Ingresa tu email de usuario'])!!}     
           </div>
           <div class="form-group has-feedback has-feedback-left col-md-12">
             {!!Form::label('Clave:')!!}
-            {!!Form::password('password',['class'=>'form-control input-lg','placeholder'=>'Ingresa tu clave'])!!}     
+            {!!Form::password('password',['class'=>'form-control','placeholder'=>'Ingresa tu clave'])!!}     
           </div>
           <div class="form-group has-feedback has-feedback-left col-md-12">
-            {!!Form::submit('Acceder',['class'=>'btn btn-default input-lg col-md-12'])!!}
+            {!!Form::submit('Acceder',['class'=>'btn btn-default col-md-12'])!!}
           </div>
         </div>
     </div>
