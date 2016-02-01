@@ -4,8 +4,8 @@
 	<div id="contentIn">
 		@include('alerts.alertFields')
 		<h4>Registro de Empresas</h4>
-		{!!Form::open(['route'=>'servicios.store', 'method'=>'POST'])!!}
-			@include('servicios.forms.fieldsServicios')
+		{!!Form::open(['route'=>'empresas.store', 'method'=>'POST'])!!}
+			@include('empresas.forms.fieldsEmpresa')
 			{!!Form::submit('Registrar', ['class'=>'btn btn-primary btn-success'])!!}
 		{!!Form::close()!!}
 	</div>

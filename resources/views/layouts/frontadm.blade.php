@@ -8,8 +8,8 @@
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         {!!Html::style('css/bootstrap.css')!!}
         {!!Html::style('css/sidebar.css')!!}
-        {!!Html::style('css/style.css')!!}
-        {!!Html::style('css/main.css')!!}
+        <!-- {!!Html::style('css/style.css')!!} -->
+        <!-- {!!Html::style('css/main.css')!!} -->
         {!!Html::style('http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css')!!}
         {!!Html::style('css/bootstrap-theme.min.css')!!}
         {!!Html::script('js/jquery.js')!!}
@@ -44,6 +44,17 @@
             
             <input type="radio" class="tab-5" name="tab">
             <span>Listado</span><i class="fa fa-list-alt"></i>
+
+            <span>PAGOS</span>
+            <input type="radio" class="tab-4" name="tab">
+            <span>Registrar</span><i class="fa fa-book"></i>
+            
+            <input type="radio" class="tab-5" name="tab">
+            <span>Listado</span><i class="fa fa-list-alt"></i>
+
+            <input type="radio" class="tab-5" name="tab">
+            <span>Deudores</span><i class="fa fa-usd"></i>
+
             
             <input type="radio" class="tab-6" name="tab">
             <span>Settings</span><i class="fa fa-cog"></i>

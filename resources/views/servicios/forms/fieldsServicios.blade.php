@@ -1,4 +1,5 @@
 <div class="form-group has-feedback has-feedback-left">
+
 	{!!Form::label('Nombre:')!!}
 	{!!Form::text('nombre',null,['class'=>'form-control','placeholder'=>'Ingrese el nombre de la empresa', 'required'=>'required'])!!}
 </div>
