@@ -17,9 +17,9 @@
           @include('alerts.alertFields')  
           {!!Form::open(['route'=>'usuarios.store', 'method'=>'POST'])!!}
             @include('usuarios.forms.fieldsLanding')
-            <div class="form-group has-feedback has-feedback-left">
+            <div class="form-group has-feedback has-feedback-left col-sm-6">
               {!!Form::label('Registrate ya!')!!}
-              {!!Form::submit('Registrar', ['class'=>'btn btn-primary btn-success col-sm-6'])!!}
+              {!!Form::submit('Registrar', ['class'=>'btn btn-primary btn-success col-sm-12 input-lg'])!!}
             </div>
           {!!Form::close()!!}               
         </div>
