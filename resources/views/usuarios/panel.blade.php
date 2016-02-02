@@ -6,7 +6,7 @@
 		@include('alerts.errorsMessage')
 		@include('alerts.successMessage')
 		@include('alerts.warningMessage')
-		<h1>Panel</h1>
+		<h4 style="margin-top:-40px;">Panel</h4>
 		<div class="row">
 		    <div class="col-sm-8">
 				<div class="list-group" >

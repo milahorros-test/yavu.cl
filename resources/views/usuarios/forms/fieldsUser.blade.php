@@ -30,6 +30,11 @@
 </div>
 
 <div class="form-group has-feedback has-feedback-left col-sm-6">
+	{!!Form::label('Dirección:')!!}
+	{!!Form::text('direccion',null,['class'=>'form-control','placeholder'=>'Ingrese dirección','required'=>'required'])!!}
+</div>
+
+<div class="form-group has-feedback has-feedback-left col-sm-6">
 	{!!Form::label('Ciudad:')!!}		
 	{!!Form::select('ciudad', 
 		['Tarapacá' => 'Tarapacá',
@@ -66,3 +71,37 @@
 		$selected = null, ['class' => 'form-control']) 
 	!!}			
 </div>	
+
+<div class="form-group has-feedback has-feedback-left col-sm-6">
+	{!!Form::label('Región:')!!}
+	{!!Form::text('region',null,['class'=>'form-control','placeholder'=>'Ingrese región actual','required'=>'required'])!!}
+</div>
+
+<div class="form-group has-feedback has-feedback-left col-sm-6">
+	{!!Form::label('País:')!!}
+	{!!Form::text('pais',null,['class'=>'form-control','placeholder'=>'Ingrese país de origen','required'=>'required'])!!}
+</div>
+
+<div class="form-group has-feedback has-feedback-left col-sm-6">
+	{!!Form::label('Teléfono Movil:')!!}
+	{!!Form::text('fono',null,['class'=>'form-control','placeholder'=>'','required'=>'required'])!!}
+</div>
+
+<div class="form-group has-feedback has-feedback-left col-sm-6">
+	{!!Form::label('Teléfono Fijo:')!!}
+	{!!Form::text('fono_2',null,['class'=>'form-control','placeholder'=>'','required'=>'required'])!!}
+</div>
+
+<div class="form-group has-feedback has-feedback-left col-sm-6">
+	{!!Form::label('Sexo:')!!}
+	{!!Form::select('sexo', 
+		['Masculino' => 'Masculino',
+		'Femenino' => 'Femenino',	
+		'Otro' => 'Otro'], 
+		$selected = null, ['class' => 'form-control']) 
+	!!}		
+</div>
+<div class="form-group has-feedback has-feedback-left col-sm-6">
+	{!!Form::label('Cumpleaños:')!!}
+	{!!Form::date('fecha_nacimiento',null,['class'=>'form-control','placeholder'=>'','required'=>'required'])!!}
+</div>
