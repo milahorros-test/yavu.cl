@@ -1,4 +1,4 @@
-
+{!!Html::script('js/datepicker.js')!!}
 
 <div class="form-group has-feedback has-feedback-left">
 
@@ -24,9 +24,7 @@
 					'Pagado' => 'Pagado',		
 					'otro' => 'otro...'], 
 					$selected = null, ['class' => 'form-control']) 
-				!!}
-
-				$picks = Picks::distinct()->select('user_id')->where('weeknum', '=', 1)->groupBy('user_id')->get();		
+				!!}		
 			</td>
 
 </div>	

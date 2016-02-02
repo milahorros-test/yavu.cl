@@ -6,13 +6,10 @@
 		@include('alerts.successMessage')
 		<table class="table">
 			<thead>
-				<th>Nombre</th>
-				<th>Correo</th>
+				<th>Empresa</th>
+				<th>Tipo de Servicio</th>
 				<th>Ciudad</th>
-				<th>Fono</th>
-				<th>Aniversario Empresa</th>
-				<th>Encargado</th>
-				<th>Operaciones</th>
+				<th>Fecha</th>
 			</thead>
 			@foreach($empresas as $empresa)	
 			<tbody>

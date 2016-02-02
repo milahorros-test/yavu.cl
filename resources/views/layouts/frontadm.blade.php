@@ -1,6 +1,7 @@
 <html class="no-js" lang=""> 
     <head>
         <meta charset="utf-8">
+        <meta >
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>Yavu.cl</title>
         <meta name="description" content="">
@@ -10,10 +11,11 @@
         {!!Html::style('css/sidebar.css')!!}
         <!-- {!!Html::style('css/style.css')!!} -->
         <!-- {!!Html::style('css/main.css')!!} -->
-        {!!Html::style('http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css')!!}
+        {!!Html::style('css/fontawesome/css/font-awesome.min.css')!!}
         {!!Html::style('css/bootstrap-theme.min.css')!!}
         {!!Html::script('js/jquery.js')!!}
         {!!Html::script('js/vendor/modernizr-2.8.3-respond-1.4.2.min.js')!!}
+        {!!Html::script('js/refresh.js')!!}
 
 
     </head>
@@ -29,23 +31,26 @@
             </div>
 
             <!-- tab-menu -->
-            <input type="radio" class="tab-1" name="tab" checked="checked">
-            <span>Home</span><i class="fa fa-home"></i>
-            <span>EMPRESA</span>
-            <input type="radio" class="tab-2" name="tab">
+
+
+
+            <input type="radio" class="tab-1" name="tab" checked="checked" >
+            <span>HOME</span><i class="fa fa-home"></i>
+            <span>EMPRESA</span><i class="fa fa-building"></i>
+            <input type="radio" class="tab-2" name="tab" onclick="refresh()">
             <span>Registrar</span><i class="fa fa-book"></i>
-            
-            <input type="radio" class="tab-3" name="tab">
+
+            <input id="refresh" type="radio" class="tab-3" name="tab" onclick="refresh()">
             <span>Listado</span><i class="fa fa-list-alt"></i>
 
-            <span>SERVICIOS</span>
+            <span>SERVICIOS</span><i class="fa fa-cogs"></i>
             <input type="radio" class="tab-4" name="tab">
             <span>Registrar</span><i class="fa fa-book"></i>
             
             <input type="radio" class="tab-5" name="tab">
             <span>Listado</span><i class="fa fa-list-alt"></i>
 
-            <span>PAGOS</span>
+            <span>PAGOS</span><i class="fa fa-credit-card"></i>
             <input type="radio" class="tab-4" name="tab">
             <span>Registrar</span><i class="fa fa-book"></i>
             
@@ -95,8 +100,10 @@
     </div>
     <footer class="footer">
 
+      <!-- No hay footer  -->
+
     </footer>
-        <!-- No hay footer  -->
+      
       
     </div> <!-- /container -->        
         {!!Html::script('//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js')!!}

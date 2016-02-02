@@ -2,12 +2,12 @@
 namespace yavu\Http\Controllers;
 use Illuminate\Http\Request;
 use yavu\Http\Requests;
-use yavu\Http\Requests\EmpresaCreateRequest;
-use yavu\Http\Requests\EmpresaUpdateRequest;
+use yavu\Http\Requests\ServicioCreateRequest;
+use yavu\Http\Requests\ServicioUpdateRequest;
 use yavu\Http\Controllers\Controller;
 use Session;
 use Redirect;
-use yavu\Empresa;
+use yavu\Servicio;
 use Illuminate\Routing\Route;
 class ServicioController extends Controller
 {
@@ -27,11 +27,11 @@ class ServicioController extends Controller
   {
       return view('servicios.create');
   }
-  public function store(EmpresaCreateRequest $request)
+  public function store(ServicioCreateRequest $request)
   {
-      Empresa::create($request->all());
-      Session::flash('message', 'Empresa creada correctamente');
-      return Redirect::to('/empresas');
+      Servicio::create($request->all());
+      Session::flash('message', 'Servicio creado correctamente');
+      return Redirect::to('/admins');
   }
   public function show($id)
   {
@@ -39,19 +39,19 @@ class ServicioController extends Controller
   }
   public function edit($id)
   {
-      return view('empresas.edit', ['empresa' => $this->empresa]); 
+      return view('servicios.edit', ['servicio' => $this->empresa]); 
   }
-  public function update(EmpresaUpdateRequest $request, $id)
+  public function update(ServicioUpdateRequest $request, $id)
   {
-      $this->empresa->fill($request->all());
-      $this->empresa->save();
-      Session::flash('message', 'Empresa editada correctamente');
-      return Redirect::to('/empresas');
+      $this->servicio->fill($request->all());
+      $this->servicio->save();
+      Session::flash('message', 'Servicio editado correctamente');
+      return Redirect::to('/admins');
   }
   public function destroy($id)
   {
-      $this->empresa->delete();
-      Session::flash('message', 'Empresa eliminada correctamente');
-      return Redirect::to('/empresas');
+      $this->servicio->delete();
+      Session::flash('message', 'Servicio eliminado correctamente');
+      return Redirect::to('/admins');
   }
 }

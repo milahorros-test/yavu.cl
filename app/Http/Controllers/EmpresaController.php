@@ -31,7 +31,7 @@ class EmpresaController extends Controller
   {
       Empresa::create($request->all());
       Session::flash('message', 'Empresa creada correctamente');
-      return Redirect::to('/empresas');
+      return Redirect::to('/empresas/create');
   }
   public function show($id)
   {
