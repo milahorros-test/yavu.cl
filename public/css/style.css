@@ -100,10 +100,10 @@
 
 
 #contentMiddle {
-	width: 70%;
+	width: 65%;
 	margin: 0px auto 0 auto;
 	/*Arriba-Derecha-Abajo-Izquierda*/
-	padding: 15px 15px 15px 15px;
+	padding: 10px 10px 10px 10px;
 	/*padding: 0 60px 30px 60px;*/
 	border: solid 0px #cbcbcb;
 	border-radius: 2px;
@@ -128,17 +128,17 @@
 }
 @media (min-width: 992px) {
   #contentMiddle {
-    width: 75%;
+    width: 70%;
   }
 }
 @media (min-width: 1096px) {
   #contentMiddle {
-    width: 70%;
+    width: 65%;
   }
 }
 @media (min-width: 1200px) {
   #contentMiddle {
-    width: 70%; /*a escala , old : 1200x1170*/
+    width: 65%; /*a escala , old : 1200x1170*/
 
   }
 }
