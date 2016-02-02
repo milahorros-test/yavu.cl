@@ -23,49 +23,129 @@
 	-webkit-box-shadow: 0px 10px 20px 2px #cbcbcb;
 }
 
+
+@media (min-width: 768px) {
+  #contentIn {
+    width: 90%;
+  }
+}
+@media (min-width: 880px) {
+  #contentIn {
+    width: 85%;
+  }
+}
+@media (min-width: 992px) {
+  #contentIn {
+    width: 80%;
+  }
+}
+@media (min-width: 1096px) {
+  #contentIn {
+    width: 75%;
+  }
+}
+@media (min-width: 1200px) {
+  #contentIn {
+    width: 70%; /*a escala , old : 1200x1170*/
+
+  }
+}
+
+
+/*Login*/
 #contentMini {
-	width: 25%;
+	width: 30%;
 	margin: 0px auto 0 auto;
 	/*Arriba-Derecha-Abajo-Izquierda*/
-	padding: 25px 15px 15px 15px;
+	padding: 15px 15px 15px 15px;
 	/*padding: 0 60px 30px 60px;*/
 	border: solid 0px #cbcbcb;
 	border-radius: 2px;
 }
+@media (min-width: 400px) {
+  #contentMini {
+    width: 95%;
+  }
+@media (min-width: 500px) {
+  #contentMini {
+    width: 75%;
+  }
+@media (min-width: 768px) {
+  #contentMini {
+    width: 55%;
+  }
+}	
+@media (min-width: 880px) {
+  #contentMini {
+    width: 50%;
+  }
+}
+@media (min-width: 992px) {
+  #contentMini {
+    width: 45%;
+  }
+}
+@media (min-width: 1096px) {
+  #contentMini {
+    width: 40%;
+  }
+}
+@media (min-width: 1200px) {
+  #contentMini {
+    width: 35%; /*a escala , old : 1200x1170*/
+
+  }
+}
+
+
+
 #contentMiddle {
-	width: 80%;
+	width: 65%;
 	margin: 0px auto 0 auto;
 	/*Arriba-Derecha-Abajo-Izquierda*/
-	padding: 25px 15px 15px 15px;
+	padding: 10px 10px 10px 10px;
 	/*padding: 0 60px 30px 60px;*/
 	border: solid 0px #cbcbcb;
 	border-radius: 2px;
 }
+@media (min-width: 400px) {
+  #contentMiddle {
+    width: 95%;
+  }
 
-	@media (min-width: 768px) {
-	  #contentIn {
-	    width: 90%;
-	  }
-	}
-	@media (min-width: 880px) {
-	  #contentIn {
-	    width: 85%;
-	  }
-	}
-	@media (min-width: 992px) {
-	  #contentIn {
-	    width: 80%;
-	  }
-	}
-	@media (min-width: 1096px) {
-	  #contentIn {
-	    width: 75%;
-	  }
-	}
-	@media (min-width: 1200px) {
-	  #contentIn {
-	    width: 70%; /*a escala , old : 1200x1170*/
+@media (min-width: 500px) {
+  #contentMiddle {
+    width: 95%;
+  }
 
-	  }
-	}
+@media (min-width: 768px) {
+  #contentMiddle {
+    width: 85%;
+  }
 
+} 
+@media (min-width: 880px) {
+  #contentMiddle {
+    width: 80%;
+  }
+
+}
+@media (min-width: 992px) {
+  #contentMiddle {
+    width: 70%;
+  }
+  #Usuario {
+    float:initial;
+  }
+}
+@media (min-width: 1096px) {
+  #contentMiddle {
+    width: 65%;
+  }
+}
+@media (min-width: 1200px) {
+  #contentMiddle {
+    width: 65%; /*a escala , old : 1200x1170*/
+
+  }
+}

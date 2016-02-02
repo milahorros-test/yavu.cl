@@ -1,127 +1,108 @@
 @extends('layouts.front')
 @section('content')
 <div class="jumbotron">
-	<div id="contentIn">
+	<div id="contentMiddle">
 		@include('alerts.alertFields')
 		@include('alerts.errorsMessage')
 		@include('alerts.successMessage')
 		@include('alerts.warningMessage')
-		<h2>Perfil</h2>
-		<div class="panel panel-info">
-			<div class="panel-heading">Perfil - Datos personales</div>
-		  	<div class="panel-body">
-			<table class="table">
-				{!!Form::model($user, ['method'=>'PUT', 'route' => ['usuarios.update', $user->id] ])!!}
-				@include('usuarios.forms.fieldsUser')			
-				<tr>
-					<th colspan="2">¡Mantenga sus datos actualizados!</th>
-					<th>* <small>(Campos requeridos)</small></th>	
-				</tr>	
-				<tr>
-					<td>Nombre</td>
-					<td>{!!Form::text('nombre',null,['class'=>'form-control','placeholder'=>'Ingrese su nombre','required'=>'required','width'=>'100%'])!!}</td>	
-					<td>*</td>							
-				</tr>
-				<tr>
-					<td>Apellido</td>
-					<td>{!!Form::text('apellido',null,['class'=>'form-control','placeholder'=>'Ingrese su apellido','required'=>'required'])!!}</td>	
-					<td>*</td>							
-				</tr>
-				<tr>
-					<td>Rut</td>
-					<td>{!!Form::text('rut',null,['class'=>'form-control','placeholder'=>'Ingrese su rut','required'=>'required'])!!}</td>	
-					<td></td>							
-				</tr>
-				<tr>
-					<td>Fecha de nacimiento</td>
-					<td>{!!Form::date('fecha_nacimiento',null,['class'=>'form-control','placeholder'=>'Ingrese fecha de nacimiento','required'=>'required'])!!}</td>	
-					<td></td>
-				</tr>				
-				<tr>
-					<td>Foto de avatar</td>
-					<td>
-						<a href="#">
-							<img alt="Imagen corfo" src= "images/default-img.gif" height="140px" width="210px" />
-						</a> 
-					</td>
-					<td></td>
-				</tr>				
-				<tr>
-					<td>Guadar</td>
-					<td colspan="2">
-						{!!Form::submit('Guardar', ['class'=>'btn btn-success','width'=>'100%']) !!}﻿
-						{!!Form::close()!!}	
-					</td>		
-				</tr>
-			</table>
-		  </div>
+
+		<div class="row" style="margin-top:-40px;">
+
+		    <div class="col-sm-4">
+				<div class="list-group" >
+
+					<div class="list-group-item">
+						<div class="thumbnail">
+						    <img src="images/default-img.gif" alt="...">
+					        <div class="caption">
+
+					    		{!!Auth::user()->get()->nombre . ' ' . Auth::user()->get()->apellido!!}
+					    		{!!Auth::user()->get()->email!!}
+					    		{!!Auth::user()->get()->ciudad!!}
+					    		<p>
+					    			<a href="#" class="btn btn-primary btn-xs" role="button">Button</a> 
+					    			<a href="#" class="btn btn-default btn-xs" role="button">Button</a>
+					    		</p>
+
+					  		</div>
+						</div>
+					</div>
+
+				</div>
+		    </div>
+
+		    <div class="col-sm-8"><!--style="position:fixed;z-index:1000;"-->
+
+				<div class="list-group">
+					<div class="list-group-item">
+						<h4>Información</h4>
+					</div>
+
+					<div class="list-group-item">
+						Estado de coins
+					</div>
+					<div class="list-group-item">
+						Estado de cuenta
+					</div>
+					<div class="list-group-item">
+						Estado de empresas
+					</div>	
+					<div class="list-group-item">
+						Noticias de las empresas a las que sigues
+					</div>	
+					<div class="list-group-item">
+						Últimas novedades en yavu
+					</div>	
+					{!!link_to_route('usuarios.edit', $title = 'Modificar datos de mi cuenta', $parameters = Auth::user()->get()->id, $attributes = ['class'=>'list-group-item list-group-item-info'])!!}
+				</div>	
+		    </div>
+
 		</div>
-		<div class="panel panel-info">
-			<div class="panel-heading">Perfil - Datos de usuario y acceso</div>
-		  	<div class="panel-body">
-			<table class="table">
-				<tr>
-					<th colspan="2">¡Mantenga sus datos actualizados!</th>
-					<th>* <small>(Campos requeridos)</small></th>	
-				</tr>	
-				<tr>
-					<td>Email</td>
-					<td>{!!Form::email('email',null,['class'=>'form-control','placeholder'=>'Ingrese su email','required'=>'required'])!!}</td>	
-					<td>*</td>							
-				</tr>				
-				<tr>
-					<td>Nombre de usuario</td>
-					<td>{!!Form::text('login',null,['class'=>'form-control','placeholder'=>'Ingrese su nombre de usuario','required'=>'required'])!!}</td>	
-					<td>*</td>							
-				</tr>				
-				<tr>
-					<td>Clave</td>
-					<td>{!!Form::password('password',['class'=>'form-control','placeholder'=>'Ingrese una clave'])!!}</td>	
-					<td></td>							
-				</tr>
-				<tr>
-					<td>Guardar</td>
-					<td colspan="2">
-						{!!Form::submit('Guardar', ['class'=>'btn btn-success','width'=>'100%']) !!}﻿
-						
-					</td>						
-				</tr>
-			</table>
-		  </div>
-		</div>			
-		<div class="panel panel-info">
-			<div class="panel-heading">Perfil - Datos de Contacto y Ubicación</div>
-		  	<div class="panel-body">
-			
-			<table class="table">
-				<tr>
-					<th colspan="2">¡Mantenga sus datos actualizados!</th>
-					<th>* <small>(Campos requeridos)</small></th>	
-				</tr>	
-				<tr>
-					<td>Teléfono movil de contacto</td>
-					<td>{!!Form::text('fono',null,['class'=>'form-control','placeholder'=>'Ingrese número movil','required'=>'required','width'=>'100%'])!!}</td>	
-					<td></td>							
-				</tr>				
-				<tr>
-					<td>Teléfono adicional</td>
-					<td>{!!Form::text('fono_2',null,['class'=>'form-control','placeholder'=>'Ingrese número adicional', 'width'=>'100%'])!!}</td>	
-					<td></td>							
-				</tr>				
-				<tr>
-					<td></td>
-					<td></td>	
-					<td></td>							
-				</tr>	
-				<tr>
-					<td>Guardar</td>
-					<td colspan="2">
-						{!!Form::submit('Guardar', ['class'=>'btn btn-success','width'=>'100%']) !!}﻿
-					</td>						
-				</tr>
-			</table>
-		  </div>
-		</div>		
+
+		<br />
+
+		<div class="row" style="margin-top:-40px;">
+
+
+
+
+		<!-- ESTO se va a validar siempre que el cliente tenga una empresa
+		
+		    <div class="col-sm-4" style="float:left;">
+
+				<div class="list-group">
+					<div class="list-group-item">
+						<h4><span class="label label-info">#MiEmpresa <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span></span></h4>
+					</div>							
+					<div class="list-group-item">
+						Inicia actividad en yavu.cl con tu empresa registrandote aquí.<br>
+
+					</div>
+					<a href="{!!URL::to('/empresas/create')!!}" class="list-group-item list-group-item-warning">Saber más e ir a registrar mi empresa</a>
+				</div>
+
+		    </div>		    
+		-->
+		    <div class="col-sm-8" style="float:right;">
+				<div class="list-group" >
+					<div class="list-group-item">
+						<h4><span class="label label-info">#Publicaciones <span class="glyphicon glyphicon-fire" aria-hidden="true"></span></span></h4>
+					</div>							
+					<div class="list-group-item">
+						Mira lo que otros interatúan con la variedad de publicaciones de tiendas que podrían interesarte.
+					</div>
+					<div class="list-group-item-full-classic">
+						@include('layouts.bannerFront')
+					</div>	
+					<div class="list-group-item">
+						No te pierdas las publicaciones pendientes
+					</div>		
+					<a href="#" class="list-group-item list-group-item-info">Cargar publicaciones <span class="badge">14<small>  ¡Publicaciones nuevas!</small></span></a>
+				</div>
+		    </div>
+
+		</div>
 
 
 	</div><!-- Fin del div id contentIn -->
