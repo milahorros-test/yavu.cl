@@ -80,7 +80,8 @@
                 <ul class="dropdown-menu">
                   <li><a href="{!!URL::to('#')!!}">Inicio</a></li>
                   <li><a href="{!!URL::to('/panel')!!}">Panel</a></li>
-                  <li><a href="{!!URL::to('/logout/')!!}">Cerrar sesión</a></li>
+                  <li><a href="{!!URL::to('/profile')!!}">Perfil</a></li>
+                  <li><a href="{!!URL::to('/logout')!!}">Cerrar sesión</a></li>
                 </ul>
               </li>
             @elseif(Auth::empresa()->check())

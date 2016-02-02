@@ -13,6 +13,7 @@ Route::resource('log', 'LogController');
 
 Route::resource('usuarios','UserController');
 Route::resource('panel', 'UserController@panel');
+Route::resource('profile', 'UserController@profile');
 
 
 Route::resource('empresas','EmpresaController');

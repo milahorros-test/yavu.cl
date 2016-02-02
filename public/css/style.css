@@ -112,23 +112,30 @@
   #contentMiddle {
     width: 95%;
   }
+
 @media (min-width: 500px) {
   #contentMiddle {
     width: 95%;
   }
+
 @media (min-width: 768px) {
   #contentMiddle {
     width: 85%;
   }
+
 } 
 @media (min-width: 880px) {
   #contentMiddle {
     width: 80%;
   }
+
 }
 @media (min-width: 992px) {
   #contentMiddle {
     width: 70%;
+  }
+  #Usuario {
+    float:initial;
   }
 }
 @media (min-width: 1096px) {

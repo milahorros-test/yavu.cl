@@ -6,10 +6,9 @@
 		@include('alerts.errorsMessage')
 		@include('alerts.successMessage')
 		@include('alerts.warningMessage')
-		
+		<h1>Panel</h1>
 		<div class="row">
-
-		    <div class="col-sm-12">
+		    <div class="col-sm-8">
 				<div class="list-group" >
 					<div class="list-group-item">
 						<h4><span class="label label-info">#Publicaciones <span class="glyphicon glyphicon-fire" aria-hidden="true"></span></span></h4>
@@ -27,7 +26,7 @@
 				</div>
 		    </div>
 
-		    <div class="col-sm-4"><!--style="position:fixed;z-index:1000;"-->
+		    <div class="col-sm-4" style="float:right;"><!--style="position:fixed;z-index:1000;"-->
 				<div class="list-group">
 					<div class="list-group-item">
 						<h4><span class="label label-info">#MiCuenta <span class="glyphicon glyphicon-cog" aria-hidden="true"></span></span></h4>
@@ -43,7 +42,8 @@
 							<li>Mi empresa (aquí es donde se registra la empresa).</li>
 						</ol>			
 					</div>
-					{!!link_to_route('usuarios.edit', $title = 'Ir a mi perfil', $parameters = Auth::user()->get()->id, $attributes = ['class'=>'list-group-item list-group-item-info'])!!}
+					<!--{!!link_to_route('usuarios.edit', $title = 'Ir a mi perfil', $parameters = Auth::user()->get()->id, $attributes = ['class'=>'list-group-item list-group-item-info'])!!}-->
+					<a href="{!!URL::to('/profile')!!}" class="list-group-item list-group-item-info">Ir a mi perfil</a>
 				</div>	
 		    </div>
 
@@ -77,7 +77,7 @@
 		    </div>
 
 
-		    <div class="col-sm-4">
+		    <div class="col-sm-4" style="float:right;">
 
 				<div class="list-group" >
 					<div class="list-group-item">
@@ -100,10 +100,6 @@
 					<a href="#" class="list-group-item list-group-item-info">Ir a informes</a>
 					
 				</div>	  
-
-		    </div>
-
-		    <div class="col-sm-4">
 
 				<div class="list-group" >
 					<div class="list-group-item">
