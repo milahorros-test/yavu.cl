@@ -16,7 +16,7 @@
 					<div class="list-group-item">
 						Mira lo que otros interatúan con la variedad de publicaciones de tiendas que podrían interesarte.
 					</div>
-					<div class="list-group-item-full">
+					<div class="list-group-item-full-classic">
 						@include('layouts.bannerFront')
 					</div>	
 					<div class="list-group-item">

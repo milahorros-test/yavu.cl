@@ -7,69 +7,69 @@
 		@include('alerts.successMessage')
 		@include('alerts.warningMessage')
 
-		<div class="row">
-		    <div class="col-sm-12">
-				<div class="list-group" >
-					<div class="list-group-item">
-						<h4>Perfil</h4>
-					</div>							
-					<div class="list-group-item">
-						Mira lo que otros interatúan con la variedad de publicaciones de tiendas que podrían interesarte.
-					</div>
+		<div class="row" style="margin-top:-40px;">
 
-					<div class="list-group-item col-sm-6">
+		    <div class="col-sm-4">
+				<div class="list-group" >
+
+					<div class="list-group-item">
 						<div class="thumbnail">
 						    <img src="images/default-img.gif" alt="...">
 					        <div class="caption">
-					    		<h3>{!!Auth::user()->get()->nombre . ' ' . Auth::user()->get()->apellido !!}</h3>
-					    		<p>...</p>
-					    		<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+
+					    		{!!Auth::user()->get()->nombre . ' ' . Auth::user()->get()->apellido!!}
+					    		{!!Auth::user()->get()->email!!}
+					    		{!!Auth::user()->get()->ciudad!!}
+					    		<p>
+					    			<a href="#" class="btn btn-primary btn-xs" role="button">Button</a> 
+					    			<a href="#" class="btn btn-default btn-xs" role="button">Button</a>
+					    		</p>
+
 					  		</div>
 						</div>
 					</div>
-					<div class="list-group-item col-sm-6">
-						Acciones
-					</div>
-				</div>
-		    </div>
-		</div>
-		<br />
-		<div class="row">
 
-		    <div class="col-sm-8">
-				<div class="list-group" >
-					<div class="list-group-item">
-						<h4><span class="label label-info">#Publicaciones <span class="glyphicon glyphicon-fire" aria-hidden="true"></span></span></h4>
-					</div>							
-					<div class="list-group-item">
-						Mira lo que otros interatúan con la variedad de publicaciones de tiendas que podrían interesarte.
-					</div>
-					<div class="list-group-item-full">
-						@include('layouts.bannerFront')
-					</div>	
-					<div class="list-group-item">
-						No te pierdas las publicaciones pendientes
-					</div>												
-					<a href="#" class="list-group-item list-group-item-info">Cargar publicaciones <span class="badge">14<small>  ¡Publicaciones nuevas!</small></span></a>
 				</div>
 		    </div>
 
-		    <div class="col-sm-4" style="float:right;"><!--style="position:fixed;z-index:1000;"-->
+		    <div class="col-sm-8"><!--style="position:fixed;z-index:1000;"-->
 
 				<div class="list-group">
 					<div class="list-group-item">
-						<h4><span class="label label-info"> Usuario : {!!Auth::user()->get()->nombre . ' ' . Auth::user()->get()->apellido !!} <span class="glyphicon glyphicon-cog" aria-hidden="true"></span></span></h4>
+						<h4>Información</h4>
 					</div>
 
 					<div class="list-group-item">
-						Accesos directos											
+						Estado de coins
 					</div>
+					<div class="list-group-item">
+						Estado de cuenta
+					</div>
+					<div class="list-group-item">
+						Estado de empresas
+					</div>	
+					<div class="list-group-item">
+						Noticias de las empresas a las que sigues
+					</div>	
+					<div class="list-group-item">
+						Últimas novedades en yavu
+					</div>	
 					{!!link_to_route('usuarios.edit', $title = 'Modificar datos de mi cuenta', $parameters = Auth::user()->get()->id, $attributes = ['class'=>'list-group-item list-group-item-info'])!!}
 				</div>	
 		    </div>
 
+		</div>
 
-		    <div class="col-sm-4" style="float:right;">
+		<br />
+
+		<div class="row" style="margin-top:-40px;">
+
+
+
+
+		<!-- ESTO se va a validar siempre que el cliente tenga una empresa
+		
+		    <div class="col-sm-4" style="float:left;">
 
 				<div class="list-group">
 					<div class="list-group-item">
@@ -82,8 +82,25 @@
 					<a href="{!!URL::to('/empresas/create')!!}" class="list-group-item list-group-item-warning">Saber más e ir a registrar mi empresa</a>
 				</div>
 
+		    </div>		    
+		-->
+		    <div class="col-sm-8" style="float:right;">
+				<div class="list-group" >
+					<div class="list-group-item">
+						<h4><span class="label label-info">#Publicaciones <span class="glyphicon glyphicon-fire" aria-hidden="true"></span></span></h4>
+					</div>							
+					<div class="list-group-item">
+						Mira lo que otros interatúan con la variedad de publicaciones de tiendas que podrían interesarte.
+					</div>
+					<div class="list-group-item-full-classic">
+						@include('layouts.bannerFront')
+					</div>	
+					<div class="list-group-item">
+						No te pierdas las publicaciones pendientes
+					</div>		
+					<a href="#" class="list-group-item list-group-item-info">Cargar publicaciones <span class="badge">14<small>  ¡Publicaciones nuevas!</small></span></a>
+				</div>
 		    </div>
-
 
 		</div>
 
