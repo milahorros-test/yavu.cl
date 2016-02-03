@@ -11,11 +11,16 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        {!!Html::script('//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js')!!}
+        {!!Html::script('js/vendor/bootstrap.min.js')!!}
+        {!!Html::script('js/plugins.js')!!}
+        {!!Html::script('js/main.js')!!}
         {!!Html::style('css/bootstrap.css')!!}
         {!!Html::style('css/style.css')!!}
         {!!Html::style('css/main.css')!!}
         {!!Html::style('css/bootstrap-theme.min.css')!!}
         {!!Html::script('js/vendor/modernizr-2.8.3-respond-1.4.2.min.js')!!}
+
         <style>
             body {
                 padding-top: 50px;
@@ -167,10 +172,6 @@
 <!-- /footer -
       
     </div> <!-- /container -->        
-        {!!Html::script('//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js')!!}
-        {!!Html::script('js/vendor/bootstrap.min.js')!!}
-        {!!Html::script('js/plugins.js')!!}
-        {!!Html::script('js/main.js')!!}
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>

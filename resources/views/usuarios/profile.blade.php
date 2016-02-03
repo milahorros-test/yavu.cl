@@ -2,10 +2,6 @@
 @section('content')
 <div class="jumbotron">
 	<div id="contentMiddle">
-		@include('alerts.alertFields')
-		@include('alerts.errorsMessage')
-		@include('alerts.successMessage')
-		@include('alerts.warningMessage')
 
 		<div class="row" style="margin-top:-35px;">
 
@@ -16,7 +12,7 @@
 					</div>
 					<div class="list-group-item">
 						<div class="thumbnail">
-						    <img src="images/default-img.gif" alt="...">
+						    <img src="http://www.atletaergo.com/wp-content/uploads/2011/03/visionComputador12.jpg" alt="...">
 					        <div class="caption">
 
 					    		
@@ -142,14 +138,24 @@
 		    </div>		    
 		-->
 
-		    <div class="col-sm-8" style="float:left;">
+		    <div class="col-sm-8">
+		    		@include('alerts.alertFields')
+					@include('alerts.errorsMessage')
+					@include('alerts.successMessage')
+					@include('alerts.warningMessage')
 				<div class="list-group" >
 					<div class="list-group-item">
 						<h4><span class="label label-info">#Publicaciones&Estados <span class="glyphicon glyphicon-fire" aria-hidden="true"></span></span></h4>
 					</div>	
+
+					{!!Form::open(['action'=>'EstadoController@store', 'method'=>'POST'])!!}
 					<div class="list-group-item">
 						{!!Form::textarea('status',null,['class'=>'form-control-stat','placeholder'=>'¿Qué deseas compartir en yavu?', 'maxlength'=>'500', 'style'=>'resize:none;', 'rows'=>'10'])!!}
-					</div>						
+						{!!Form::submit('Publicar', ['class'=>'btn btn-primary btn-xs'])!!}
+					</div>		
+					{!!Form::close()!!}		
+
+
 					<div class="list-group-item">
 						Mira lo que otros interatúan con la variedad de publicaciones de tiendas que podrían interesarte.
 					</div>

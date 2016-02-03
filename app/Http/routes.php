@@ -18,6 +18,7 @@ Route::resource('usuarios','UserController');
 Route::resource('panel', 'UserController@panel');
 Route::resource('profile', 'UserController@profile');
 
+Route::resource('estados','EstadoController');
 
 Route::resource('empresas','EmpresaController');
 Route::resource('servicios','ServicioController');
