@@ -14,7 +14,12 @@
 	{!!Form::email('email',null,['class'=>'form-control','placeholder'=>'Ingrese su email'])!!}			
 </div>
 <div class="form-group has-feedback has-feedback-left col-sm-6">
-	{!!Form::label('Clave:')!!}
+	@if(Auth::user()->check())
+		{!!Form::label('Cambio de clave:')!!}		
+	@else
+		{!!Form::label('Nueva clave:')!!}
+	@endif
+
 	{!!Form::password('password',['class'=>'form-control','placeholder'=>'Ingrese una clave'])!!}		
 </div>
 
@@ -79,15 +84,18 @@
 			['I Región' => 'I Región',
 			'II Región' => 'II Región',	
 			'III Región' => 'III Región',	
-			'Colombia' => 'Colombia',	
-			'Chile' => 'Chile',	
-			'Ecuador' => 'Ecuador',	
-			'Mexico' => 'Mexico',	
-			'Panama' => 'Panama',	
-			'Paraguay' => 'Paraguay',	
-			'Venezuela' => 'Venezuela',	
-			'Uruguay' => 'Uruguay',	
-			'Otro' => 'Otro'], 
+			'IV Región' => 'IV Región',
+			'V Región' => 'V Región',
+			'VI Región' => 'VI Región',
+			'VII Región' => 'VII Región',
+			'VIII Región' => 'VIII Región',
+			'IX Región' => 'IX Región',
+			'X Región' => 'X Región',
+			'XI Región' => 'XI Región',
+			'XII Región' => 'XII Región',
+			'XIII Región' => 'XIII Región',
+			'XVI Región' => 'XVI Región',
+			'XV Región' => 'XV Región'],
 			$selected = null, ['class' => 'form-control']) 
 		!!}			
 	</div>

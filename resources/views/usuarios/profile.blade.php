@@ -109,6 +109,7 @@
 						Últimas novedades en yavu
 					</div>	
 					{!!link_to_route('usuarios.edit', $title = 'Modificar datos de mi cuenta', $parameters = Auth::user()->get()->id, $attributes = ['class'=>'list-group-item list-group-item-info'])!!}
+					<a href="{!!URL::to('panel')!!}" class="list-group-item list-group-item-warning">Volver a panel</a>
 				</div>	
 			
 		    </div>
@@ -144,7 +145,10 @@
 				<div class="list-group" >
 					<div class="list-group-item">
 						<h4><span class="label label-info">#Publicaciones&Estados <span class="glyphicon glyphicon-fire" aria-hidden="true"></span></span></h4>
-					</div>							
+					</div>	
+					<div class="list-group-item">
+						{!!Form::textarea('status',null,['class'=>'form-control-stat','placeholder'=>'¿Qué deseas compartir en yavu?', 'maxlength'=>'500', 'style'=>'resize:none;', 'rows'=>'10'])!!}
+					</div>						
 					<div class="list-group-item">
 						Mira lo que otros interatúan con la variedad de publicaciones de tiendas que podrían interesarte.
 					</div>
