@@ -20,7 +20,7 @@
 						</td>
 						<td>
 							{!!Form::open(['action'=> ['EmpresaController@destroy', $empresa->id], 'method'=>'DELETE'])!!}
-								{!!Form::submit('Eliminar', ['class'=>'btn btn-primary btn-danger'])!!}
+								{!!Form::submit('Eliminar', ['class'=>'btn btn-primary btn-danger','data-toggle'=>'tooltip', 'data-placement'=>'top', 'title'=>'Tooltip'])!!}
 							{!!Form::close()!!}							
 						</td>
 					</tr>
@@ -30,3 +30,8 @@
 	</div>
 </div>
 @stop
+<script>
+	$(function () {
+	  $('[data-toggle="tooltip"]').tooltip()
+	})	
+</script>
