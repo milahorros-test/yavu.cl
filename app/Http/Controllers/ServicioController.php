@@ -8,6 +8,7 @@ use yavu\Http\Controllers\Controller;
 use Session;
 use Redirect;
 use yavu\Servicio;
+use yavu\Empresa;
 use Illuminate\Routing\Route;
 class ServicioController extends Controller
 {
@@ -25,7 +26,10 @@ class ServicioController extends Controller
   }
   public function create()
   {
-      return view('servicios.create');
+      //return view('servicios.create');
+    $empresa = ['empresa' => Empresa::all()->lists('nombre', 'id')];
+ 
+    return view('servicios.create', $empresa);
   }
   public function store(ServicioCreateRequest $request)
   {

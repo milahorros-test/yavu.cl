@@ -4,11 +4,7 @@
 
 				<td>Seleccione empresa:</td>
 			<td>
-				{!!Form::select('empresa', 
-					['Tigritos' => 'Tigritos',	
-					'otra' => 'otras...'], 
-					$selected = null, ['class' => 'form-control']) 
-				!!}		
+				{!!Form::select('empresa', $empresa)!!}
 			</td>
 	
 </div>
@@ -26,7 +22,6 @@
 					$selected = null, ['class' => 'form-control']) 
 				!!}
 
-				$picks = Picks::distinct()->select('user_id')->where('weeknum', '=', 1)->groupBy('user_id')->get();		
 			</td>
 
 </div>	
