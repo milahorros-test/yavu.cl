@@ -1,37 +1,21 @@
 
 <div class="form-group has-feedback has-feedback-left col-sm-6">
 	{!!Form::label('Nombre:')!!}
-	{!!Form::text('nombre',null,['class'=>'form-control','placeholder'=>'Ingrese su nombre','required'=>'required'])!!}
+	{!!Form::text('nombre',null,['class'=>'form-control','placeholder'=>'Ingrese su nombre'])!!}
 </div>
 
 <div class="form-group has-feedback has-feedback-left col-sm-6">
 	{!!Form::label('Apellido:')!!}
-	{!!Form::text('apellido',null,['class'=>'form-control','placeholder'=>'Ingrese su apellido','required'=>'required'])!!}
-</div>
-
-<div class="form-group has-feedback has-feedback-left col-sm-6">
-	{!!Form::label('Rut:')!!}
-	{!!Form::text('rut',null,['class'=>'form-control','placeholder'=>'Ingrese su rut','required'=>'required'])!!}
+	{!!Form::text('apellido',null,['class'=>'form-control','placeholder'=>'Ingrese su apellido'])!!}
 </div>
 
 <div class="form-group has-feedback has-feedback-left col-sm-6">
 	{!!Form::label('Email:')!!}
-	{!!Form::email('email',null,['class'=>'form-control','placeholder'=>'Ingrese su email','required'=>'required'])!!}			
+	{!!Form::email('email',null,['class'=>'form-control','placeholder'=>'Ingrese su email'])!!}			
 </div>
-
-<div class="form-group has-feedback has-feedback-left col-sm-6">
-	{!!Form::label('Nickname:')!!}
-	{!!Form::text('login',null,['class'=>'form-control','placeholder'=>'Ingrese su nombre de usuario','required'=>'required'])!!}			
-</div>
-
 <div class="form-group has-feedback has-feedback-left col-sm-6">
 	{!!Form::label('Clave:')!!}
 	{!!Form::password('password',['class'=>'form-control','placeholder'=>'Ingrese una clave'])!!}		
-</div>
-
-<div class="form-group has-feedback has-feedback-left col-sm-6">
-	{!!Form::label('Dirección:')!!}
-	{!!Form::text('direccion',null,['class'=>'form-control','placeholder'=>'Ingrese dirección','required'=>'required'])!!}
 </div>
 
 <div class="form-group has-feedback has-feedback-left col-sm-6">
@@ -72,36 +56,84 @@
 	!!}			
 </div>	
 
-<div class="form-group has-feedback has-feedback-left col-sm-6">
-	{!!Form::label('Región:')!!}
-	{!!Form::text('region',null,['class'=>'form-control','placeholder'=>'Ingrese región actual','required'=>'required'])!!}
-</div>
+@if(Auth::user()->check())
 
-<div class="form-group has-feedback has-feedback-left col-sm-6">
-	{!!Form::label('País:')!!}
-	{!!Form::text('pais',null,['class'=>'form-control','placeholder'=>'Ingrese país de origen','required'=>'required'])!!}
-</div>
+	<div class="form-group has-feedback has-feedback-left col-sm-6">
+		{!!Form::label('Rut:')!!}
+		{!!Form::text('rut',null,['class'=>'form-control','placeholder'=>'Ingrese su rut'])!!}
+	</div>
 
-<div class="form-group has-feedback has-feedback-left col-sm-6">
-	{!!Form::label('Teléfono Movil:')!!}
-	{!!Form::text('fono',null,['class'=>'form-control','placeholder'=>'','required'=>'required'])!!}
-</div>
+	<div class="form-group has-feedback has-feedback-left col-sm-6">
+		{!!Form::label('Nickname:')!!}
+		{!!Form::text('login',null,['class'=>'form-control','placeholder'=>'Ingrese su nombre de usuario'])!!}			
+	</div>
 
-<div class="form-group has-feedback has-feedback-left col-sm-6">
-	{!!Form::label('Teléfono Fijo:')!!}
-	{!!Form::text('fono_2',null,['class'=>'form-control','placeholder'=>'','required'=>'required'])!!}
-</div>
+	<div class="form-group has-feedback has-feedback-left col-sm-6">
+		{!!Form::label('Dirección:')!!}
+		{!!Form::text('direccion',null,['class'=>'form-control','placeholder'=>'Ingrese dirección'])!!}
+	</div>
 
-<div class="form-group has-feedback has-feedback-left col-sm-6">
-	{!!Form::label('Sexo:')!!}
-	{!!Form::select('sexo', 
-		['Masculino' => 'Masculino',
-		'Femenino' => 'Femenino',	
-		'Otro' => 'Otro'], 
-		$selected = null, ['class' => 'form-control']) 
-	!!}		
-</div>
-<div class="form-group has-feedback has-feedback-left col-sm-6">
-	{!!Form::label('Cumpleaños:')!!}
-	{!!Form::date('fecha_nacimiento',null,['class'=>'form-control','placeholder'=>'','required'=>'required'])!!}
-</div>
+	<div class="form-group has-feedback has-feedback-left col-sm-6">
+		{!!Form::label('Región:')!!}
+		{!!Form::select('region', 
+			['I Región' => 'I Región',
+			'II Región' => 'II Región',	
+			'III Región' => 'III Región',	
+			'Colombia' => 'Colombia',	
+			'Chile' => 'Chile',	
+			'Ecuador' => 'Ecuador',	
+			'Mexico' => 'Mexico',	
+			'Panama' => 'Panama',	
+			'Paraguay' => 'Paraguay',	
+			'Venezuela' => 'Venezuela',	
+			'Uruguay' => 'Uruguay',	
+			'Otro' => 'Otro'], 
+			$selected = null, ['class' => 'form-control']) 
+		!!}			
+	</div>
+
+	<div class="form-group has-feedback has-feedback-left col-sm-6">
+		{!!Form::label('País:')!!}
+		{!!Form::select('pais', 
+			['Argentina' => 'Argentina',
+			'Bolivia' => 'Bolivia',	
+			'Brasil' => 'Brasil',	
+			'Colombia' => 'Colombia',	
+			'Chile' => 'Chile',	
+			'Ecuador' => 'Ecuador',	
+			'Mexico' => 'Mexico',	
+			'Panama' => 'Panama',	
+			'Paraguay' => 'Paraguay',	
+			'Venezuela' => 'Venezuela',	
+			'Uruguay' => 'Uruguay',	
+			'Otro' => 'Otro'], 
+			$selected = null, ['class' => 'form-control']) 
+		!!}	
+	</div>
+
+	<div class="form-group has-feedback has-feedback-left col-sm-6">
+		{!!Form::label('Teléfono Movil:')!!}
+		{!!Form::text('fono',null,['class'=>'form-control','placeholder'=>''])!!}
+	</div>
+
+	<div class="form-group has-feedback has-feedback-left col-sm-6">
+		{!!Form::label('Teléfono Fijo:')!!}
+		{!!Form::text('fono_2',null,['class'=>'form-control','placeholder'=>''])!!}
+	</div>
+
+	<div class="form-group has-feedback has-feedback-left col-sm-6">
+		{!!Form::label('Sexo:')!!}
+		{!!Form::select('sexo', 
+			['Masculino' => 'Masculino',
+			'Femenino' => 'Femenino',	
+			'Otro' => 'Otro'], 
+			$selected = null, ['class' => 'form-control']) 
+		!!}		
+	</div>
+
+	<div class="form-group has-feedback has-feedback-left col-sm-6">
+		{!!Form::label('Cumpleaños:')!!}
+		{!!Form::date('fecha_nacimiento',null,['class'=>'form-control','placeholder'=>''])!!}
+	</div>
+
+@endif

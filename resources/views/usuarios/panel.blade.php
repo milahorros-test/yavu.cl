@@ -6,10 +6,17 @@
 		@include('alerts.errorsMessage')
 		@include('alerts.successMessage')
 		@include('alerts.warningMessage')
-		<h4 style="margin-top:-40px;">Panel</h4>
+		<h4 style="margin-top:-40px;"></h4>
 		<div class="row">
 		    <div class="col-sm-8">
 				<div class="list-group" >
+					<div class="list-group-item">
+						@if (Auth::user()->get()->sexo == 'Masculino')
+							Bienvenido! {!!Auth::user()->get()->nombre!!}
+						@elseif (Auth::user()->get()->sexo == 'Femenino')
+							Bienvenida! {!!Auth::user()->get()->nombre!!}
+						@endif
+					</div>					
 					<div class="list-group-item">
 						<h4><span class="label label-info">#Publicaciones <span class="glyphicon glyphicon-fire" aria-hidden="true"></span></span></h4>
 					</div>							

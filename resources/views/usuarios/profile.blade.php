@@ -11,13 +11,15 @@
 
 		    <div class="col-sm-8">
 				<div class="list-group" >
-
+					<div class="list-group-item">
+						<h4>{!!Auth::user()->get()->nombre . ' ' . Auth::user()->get()->apellido!!}</h4>
+					</div>
 					<div class="list-group-item">
 						<div class="thumbnail">
 						    <img src="images/default-img.gif" alt="...">
 					        <div class="caption">
 
-					    		{!!Auth::user()->get()->nombre . ' ' . Auth::user()->get()->apellido!!}
+					    		
 					    		{!!Auth::user()->get()->email!!}
 					    		{!!Auth::user()->get()->ciudad!!}
 					    		<p>
@@ -141,7 +143,7 @@
 		    <div class="col-sm-8" style="float:left;">
 				<div class="list-group" >
 					<div class="list-group-item">
-						<h4><span class="label label-info">#Publicaciones <span class="glyphicon glyphicon-fire" aria-hidden="true"></span></span></h4>
+						<h4><span class="label label-info">#Publicaciones&Estados <span class="glyphicon glyphicon-fire" aria-hidden="true"></span></span></h4>
 					</div>							
 					<div class="list-group-item">
 						Mira lo que otros interatúan con la variedad de publicaciones de tiendas que podrían interesarte.
