@@ -8,6 +8,9 @@ Route::get('contacto','FrontController@contacto');
 Route::get('nosotros','FrontController@nosotros');
 Route::get('terminos','FrontController@terminos');
 Route::get('logout', 'LogController@logout');
+Route::get('sitemap', function(){
+	return view('sitemap');
+});
 
 Route::resource('log', 'LogController');
 

@@ -153,8 +153,8 @@
   <div class="copyright">
     <div class="container">
       <div class="row copyright-img">
-        <div class="col-lg-4 col-sm-4"> Copyright © 2016 - Yavu.cl <a href="https://www.facebook.com/milahorros.cl/"><img alt="Facebook" src= "images/facebook.png" height="100px" width="100px"/></a></div>
-        <div class="col-lg-8 col-sm-8 text-right" id="footertext"> <a href="Pagina de corfo"><img alt="Imagen corfo" src= "images/footer_corfo.jpg" height="110px" width="220px"/></a> </div>
+        <div class="col-lg-4 col-sm-4"> Copyright © 2016 - Yavu.cl <a href="https://www.facebook.com/milahorros.cl/"><img alt="Facebook" src= "{!!URL::to('images/facebook.png')!!}" height="100px" width="100px"/></a></div>
+        <div class="col-lg-8 col-sm-8 text-right" id="footertext"> <a href="Pagina de corfo"><img alt="Imagen corfo" src= "{!!URL::to('images/footer_corfo.jpg')!!}" height="110px" width="220px"/></a> </div>
         <div>
           
         </div>
