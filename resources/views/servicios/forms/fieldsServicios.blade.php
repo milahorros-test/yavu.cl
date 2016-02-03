@@ -25,7 +25,7 @@
 			</td>
 
 </div>	
-			<td>Seleccione fecha:</td>
+			<td>Seleccione fecha de adquisición servicio:</td>
 <div class="container">
     <div class="col-sm-6" style="height:130px;">
         <div class="form-group">
