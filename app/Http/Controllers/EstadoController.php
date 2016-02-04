@@ -16,9 +16,18 @@ class EstadoController extends Controller
     }
     public function store(Request $request)
     {
+        if($request->ajax()){
+            Estado::create($request->all());
+            //Session::flash('message', 'Publicacion creada correctamente');
+            return response()->json([
+                "Mensaje: " => "Creado"                
+            ]);
+        }
+        /*
         Estado::create($request->all());
         Session::flash('message', 'Publicacion creada correctamente');
-        return Redirect::to('/profile');            
+        return Redirect::to('/profile');  
+        */          
     }
     public function show($id)
     {

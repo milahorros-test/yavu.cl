@@ -1,3 +1,5 @@
+{!!Html::script('js/jquery.js')!!}
+{!!Html::script('js/ajax/CrearPublicacion.js')!!}
 @extends('layouts.front')
 @section('content')
 <div class="jumbotron">
@@ -12,7 +14,7 @@
 					</div>
 					<div class="list-group-item">
 						<div class="thumbnail">
-						    <img src="http://www.atletaergo.com/wp-content/uploads/2011/03/visionComputador12.jpg" alt="...">
+						    <img src="images/default-img.gif" alt="...">
 					        <div class="caption">
 
 					    		
@@ -98,20 +100,30 @@
 						<h4><span class="label label-info">#Publicaciones&Estados <span class="glyphicon glyphicon-fire" aria-hidden="true"></span></span></h4>
 					</div>	
 
+
+					
 					{!!Form::open(['action'=>'EstadoController@store', 'method'=>'POST'])!!}
 					<div class="list-group-item">
-						{!!Form::textarea('status',null,['class'=>'form-control-stat','placeholder'=>'¿Qué deseas compartir en yavu?', 'maxlength'=>'500', 'required'=>'required','style'=>'resize:none;', 'rows'=>'10'])!!}
-						{!!Form::hidden('user_id', Auth::user()->get()->id)!!}
-						{!!Form::submit('Publicar', ['class'=>'btn btn-primary btn-xs'])!!}
+						{!!Form::textarea('status',null,['class'=>'form-control-stat','placeholder'=>'¿Qué deseas compartir en yavu?', 'maxlength'=>'500', 'required'=>'required','style'=>'resize:none;', 'rows'=>'10', 'id'=>'status'])!!}
+						{!!Form::hidden('user_id', Auth::user()->get()->id, ['id'=>'user_id'])!!}
+						<input type="hidden" name="_token" value="{{csrf_token()}}" id="token" />
+						{!!link_to('#!', $title="Publicar", $attributes = ['id'=>'publicar', 'class'=>'btn btn-primary btn-xs'], $secure = null)!!}
 					</div>		
 					{!!Form::close()!!}		
 
 
+					<div id="msj-success" class="alert alert-success alert-dismissible" role="alert" style="display:none">
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						Publicacion creada correctamente
+					</div>
+
 					<div class="list-group-item">
 						Mira lo que otros interatúan con la variedad de publicaciones de tiendas que podrían interesarte.
 					</div>
-					<div class="list-group-item-full-classic">
-						@include('layouts.bannerFront')
+					<div class="list-group-item">
+						Publicaciones
 					</div>	
 					<div class="list-group-item">
 						No te pierdas las publicaciones pendientes

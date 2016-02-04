@@ -11,7 +11,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
-        {!!Html::script('//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js')!!}
+        {!!Html::script('js/jquery.js')!!}
         {!!Html::script('js/vendor/bootstrap.min.js')!!}
         {!!Html::script('js/plugins.js')!!}
         {!!Html::script('js/main.js')!!}
