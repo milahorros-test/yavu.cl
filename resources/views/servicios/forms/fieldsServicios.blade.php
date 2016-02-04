@@ -17,8 +17,7 @@
 			<td>
 				{!!Form::select('tipo_servicio', 
 					['Gratis' => 'Gratis',
-					'Pagado' => 'Pagado',		
-					'otro' => 'otro...'], 
+					'Pagado' => 'Pagado'],		
 					$selected = null, ['class' => 'form-control']) 
 				!!}
 
