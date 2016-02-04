@@ -1,6 +1,6 @@
 $(document).ready(function(){	
 	$("#publicar").click(function(){
-		console.log("click");
+		//console.log("click");
 		if (document.getElementById("status").value !== "") {
 			var status = $("#status").val();
 			var user_id = $("#user_id").val();
@@ -26,7 +26,9 @@ $(document).ready(function(){
 		}else{
 			document.getElementById("status").focus();
 		}
-
-		
 	});
+	$("#limpiar").click(function(){
+		document.getElementById("status").value = "";
+	});
+
 });

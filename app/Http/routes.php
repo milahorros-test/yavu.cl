@@ -11,6 +11,7 @@ Route::get('logout', 'LogController@logout');
 Route::get('sitemap', function(){
 	return view('sitemap');
 });
+Route::get('estados/{user_id}', 'EstadoController@CargarEstados');
 
 Route::resource('log', 'LogController');
 

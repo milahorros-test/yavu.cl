@@ -29,8 +29,15 @@ class EstadoController extends Controller
         return Redirect::to('/profile');  
         */          
     }
+    public function CargarEstados($user_id){
+        $estados = Estado::All();
+        return response()->json(
+            $estados->toArray()
+        );
+    }
+
     public function show($id)
-    {
+    {     
     }
     public function edit($id)
     {

@@ -1,5 +1,6 @@
 {!!Html::script('js/jquery.js')!!}
-{!!Html::script('js/ajax/CrearPublicacion.js')!!}
+{!!Html::script('js/ajax/CrearEstado.js')!!}
+{!!Html::script('js/ajax/CargarEstados.js')!!}
 @extends('layouts.front')
 @section('content')
 <div class="jumbotron">
@@ -21,8 +22,8 @@
 					    		{!!Auth::user()->get()->email!!}
 					    		{!!Auth::user()->get()->ciudad!!}
 					    		<p>
-					    			<a href="#" class="btn btn-primary btn-xs" role="button">Button</a> 
-					    			<a href="#" class="btn btn-default btn-xs" role="button">Button</a>
+					    			<a href="#!" class="btn btn-primary btn-xs" role="button">Button</a> 
+					    			<a href="#!" class="btn btn-default btn-xs" role="button">Button</a>
 					    		</p>
 
 					  		</div>
@@ -102,33 +103,36 @@
 
 
 					
-					{!!Form::open(['action'=>'EstadoController@store', 'method'=>'POST'])!!}
 					<div class="list-group-item">
-						{!!Form::textarea('status',null,['class'=>'form-control-stat','placeholder'=>'¿Qué deseas compartir en yavu?', 'maxlength'=>'500', 'required'=>'required','style'=>'resize:none;', 'rows'=>'10', 'id'=>'status'])!!}
-						{!!Form::hidden('user_id', Auth::user()->get()->id, ['id'=>'user_id'])!!}
-						<input type="hidden" name="_token" value="{{csrf_token()}}" id="token" />
-						{!!link_to('#!', $title="Publicar", $attributes = ['id'=>'publicar', 'class'=>'btn btn-primary btn-xs'], $secure = null)!!}
+						{!!Form::open(['action'=>'EstadoController@store', 'method'=>'POST'])!!}
+							{!!Form::textarea('status',null,['class'=>'form-control-stat','placeholder'=>'¿Qué deseas compartir en yavu?', 'maxlength'=>'500', 'required'=>'required','style'=>'resize:none;', 'rows'=>'10', 'id'=>'status'])!!}
+							{!!Form::hidden('user_id', Auth::user()->get()->id, ['id'=>'user_id'])!!}
+							<input type="hidden" name="_token" value="{{csrf_token()}}" id="token" />
+
+							{!!link_to('#!', $title="Publicar estado", $attributes = ['id'=>'publicar', 'class'=>'btn btn-primary'], $secure = null)!!}
+							{!!link_to('#!', $title="Limpiar", $attributes = ['id'=>'limpiar', 'class'=>'btn btn-default'], $secure = null)!!}											
+				
+						{!!Form::close()!!}		
+						
+						<div id="msj-success" class="alert alert-success alert-dismissible" role="alert" style="display:none">
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+							Publicacion creada correctamente
+						</div>						
 					</div>		
-					{!!Form::close()!!}		
-
-
-					<div id="msj-success" class="alert alert-success alert-dismissible" role="alert" style="display:none">
-						<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-						</button>
-						Publicacion creada correctamente
-					</div>
-
-					<div class="list-group-item">
-						Mira lo que otros interatúan con la variedad de publicaciones de tiendas que podrían interesarte.
-					</div>
+					
 					<div class="list-group-item">
 						Publicaciones
 					</div>	
+
+					<div class="list-group-item">
+						Mira lo que otros interatúan con la variedad de publicaciones de tiendas que podrían interesarte.
+					</div>					
 					<div class="list-group-item">
 						No te pierdas las publicaciones pendientes
-					</div>		
-					<a href="#" class="list-group-item list-group-item-info">Cargar publicaciones <span class="badge">14<small>  ¡Publicaciones nuevas!</small></span></a>
+					</div>	
+					<a id="CargarEstados" href="#!" class="list-group-item list-group-item-info">Cargar estados <span class="badge">14<small>  ¡Publicaciones nuevas!</small></span></a>
 				</div>
 		    </div>
 
