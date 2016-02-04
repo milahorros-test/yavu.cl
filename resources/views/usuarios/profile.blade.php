@@ -1,6 +1,7 @@
 {!!Html::script('js/jquery.js')!!}
 {!!Html::script('js/ajax/CrearEstado.js')!!}
 {!!Html::script('js/ajax/CargarEstados.js')!!}
+{!!Html::script('js/jquery/jquery.timeago.js')!!}
 @extends('layouts.front')
 @section('content')
 <div class="jumbotron">
@@ -96,11 +97,17 @@
 					@include('alerts.errorsMessage')
 					@include('alerts.successMessage')
 					@include('alerts.warningMessage')
-				<div class="list-group" >
+				<div class="list-group" id="Estados" >
 					<div class="list-group-item">
 						<h4><span class="label label-info">#Publicaciones&Estados <span class="glyphicon glyphicon-fire" aria-hidden="true"></span></span></h4>
-					</div>	
+					</div>
 
+					<div class="list-group-item">
+						Mira lo que otros interatúan con la variedad de publicaciones de tiendas que podrían interesarte.
+					</div>					
+					<div class="list-group-item">
+						No te pierdas las publicaciones pendientes
+					</div>		
 
 					
 					<div class="list-group-item">
@@ -113,7 +120,7 @@
 							{!!link_to('#!', $title="Limpiar", $attributes = ['id'=>'limpiar', 'class'=>'btn btn-default'], $secure = null)!!}											
 				
 						{!!Form::close()!!}		
-						
+
 						<div id="msj-success" class="alert alert-success alert-dismissible" role="alert" style="display:none">
 							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 								<span aria-hidden="true">&times;</span>
@@ -121,19 +128,13 @@
 							Publicacion creada correctamente
 						</div>						
 					</div>		
-					
-					<div class="list-group-item">
-						Publicaciones
-					</div>	
 
-					<div class="list-group-item">
-						Mira lo que otros interatúan con la variedad de publicaciones de tiendas que podrían interesarte.
-					</div>					
-					<div class="list-group-item">
-						No te pierdas las publicaciones pendientes
-					</div>	
 					<a id="CargarEstados" href="#!" class="list-group-item list-group-item-info">Cargar estados <span class="badge">14<small>  ¡Publicaciones nuevas!</small></span></a>
 				</div>
+
+
+
+
 		    </div>
 
 		</div>

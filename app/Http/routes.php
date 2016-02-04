@@ -11,7 +11,10 @@ Route::get('logout', 'LogController@logout');
 Route::get('sitemap', function(){
 	return view('sitemap');
 });
-Route::get('estados/{user_id}', 'EstadoController@CargarEstados');
+
+Route::get('estadosusuario', 'EstadoController@CargarEstados');
+Route::resource('estados','EstadoController');
+
 
 Route::resource('log', 'LogController');
 
@@ -19,7 +22,7 @@ Route::resource('usuarios','UserController');
 Route::resource('panel', 'UserController@panel');
 Route::resource('profile', 'UserController@profile');
 
-Route::resource('estados','EstadoController');
+
 
 Route::resource('empresas','EmpresaController');
 Route::resource('servicios','ServicioController');
