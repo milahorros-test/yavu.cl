@@ -4,11 +4,7 @@
 
 				<td>Seleccione empresa:</td>
 			<td>
-				{!!Form::select('empresa', 
-					['Tigritos' => 'Tigritos',	
-					'otra' => 'otras...'], 
-					$selected = null, ['class' => 'form-control']) 
-				!!}		
+				{!!Form::select('empresa', $empresa)!!}
 			</td>
 	
 </div>
@@ -21,16 +17,14 @@
 			<td>
 				{!!Form::select('tipo_servicio', 
 					['Gratis' => 'Gratis',
-					'Pagado' => 'Pagado',		
-					'otro' => 'otro...'], 
+					'Pagado' => 'Pagado'],		
 					$selected = null, ['class' => 'form-control']) 
 				!!}
 
-				$picks = Picks::distinct()->select('user_id')->where('weeknum', '=', 1)->groupBy('user_id')->get();		
 			</td>
 
 </div>	
-			<td>Seleccione fecha:</td>
+			<td>Seleccione fecha de adquisición servicio:</td>
 <div class="container">
     <div class="col-sm-6" style="height:130px;">
         <div class="form-group">
