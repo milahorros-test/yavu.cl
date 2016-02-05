@@ -50,6 +50,7 @@ class EstadoController extends Controller
                     ->select('users.*', 'estados.*')    
                     ->where('estados.user_id', '=', Auth::user()->get()->id)   
                     ->orderBy('estados.created_at','desc')   
+                    ->limit('3')
                     ->get();        
 
         //dd($estados);

@@ -115,8 +115,9 @@
 							{!!Form::hidden('user_id', Auth::user()->get()->id, ['id'=>'user_id'])!!}
 							<input type="hidden" name="_token" value="{{csrf_token()}}" id="token" />
 
-							{!!link_to('#!', $title="Publicar estado", $attributes = ['id'=>'publicar', 'class'=>'btn btn-primary'], $secure = null)!!}
-							{!!link_to('#!', $title="Limpiar", $attributes = ['id'=>'limpiar', 'class'=>'btn btn-default'], $secure = null)!!}											
+							{!!link_to('#!', $title="Publicar estado", $attributes = ['id'=>'publicar', 'class'=>'', 'style'=>'color:#3C5B28'], $secure = null)!!}
+							\
+							{!!link_to('#!', $title="Limpiar", $attributes = ['id'=>'limpiar', 'class'=>'', 'style'=>'color:#3C5B28'], $secure = null)!!}											
 				
 						{!!Form::close()!!}		
 
@@ -131,10 +132,7 @@
 					<a id="CargarEstados" href="#!" class="list-group-item list-group-item-info">Cargar estados <span class="badge">14<small>  ¡Publicaciones nuevas!</small></span></a>
 				</div>
 				<div id="Estados">
-					
 				</div>
-
-
 
 
 		    </div>
