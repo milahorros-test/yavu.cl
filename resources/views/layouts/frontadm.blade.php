@@ -16,7 +16,21 @@
         {!!Html::script('js/jquery.js')!!}
         {!!Html::script('js/vendor/modernizr-2.8.3-respond-1.4.2.min.js')!!}
         {!!Html::script('js/refresh.js')!!}
+        {!!Html::script('//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js')!!}
+        
 
+        <!--<script>  Prueba de funcion de refresh   
+          
+        $(document).ready(function(){
+
+            $("#listado").click(function(){
+                window.parent.iframe.location.reload();        
+                window.frames['listado'].location.reload();
+                console.log("Refrescado");
+            });
+        });
+
+        </script> -->
 
     </head>
     <body>
@@ -32,15 +46,13 @@
 
             <!-- tab-menu -->
 
-
-
             <input type="radio" class="tab-1" name="tab" checked="checked" >
             <span>HOME</span><i class="fa fa-home"></i>
             <span>EMPRESA</span><i class="fa fa-building"></i>
-            <input type="radio" class="tab-2" name="tab" onclick="refresh()">
+            <input type="radio" class="tab-2" name="tab">
             <span>Registrar</span><i class="fa fa-book"></i>
 
-            <input id="refresh" type="radio" class="tab-3" name="tab" onclick="refresh()">
+            <input id="listado" type="radio" class="tab-3" name="tab" ">
             <span>Listado</span><i class="fa fa-list-alt"></i>
 
             <span>SERVICIOS</span><i class="fa fa-cogs"></i>
@@ -59,7 +71,6 @@
 
             <input type="radio" class="tab-5" name="tab">
             <span>Deudores</span><i class="fa fa-usd"></i>
-
             
             <input type="radio" class="tab-6" name="tab">
             <span>Settings</span><i class="fa fa-cog"></i>
@@ -76,19 +87,19 @@
                 Si has olvidado tu contraseña, consulta Restablecer la contraseña de administrador. 
                 </section>
                 <section class="tab-item-2">
-                    <iframe width="800" height="700" src="{!!URL::to('/empresas/create')!!}"></a></li>" frameborder="0" allowfullscreen>
+<iframe name="crear_empresa" width="800" height="700" src="{!!URL::to('/empresas/create')!!}"  frameborder="0" allowfullscreen>
                     </iframe>
                 </section>
                 <section class="tab-item-3">
-                    <iframe width="800" height="600" src="{!!URL::to('/empresas/')!!}"></a></li>" frameborder="0" allowfullscreen>
+<iframe name="listado_empresa" id="frame-empresa" width="800" height="600" src="{!!URL::to('/empresas/')!!}"  frameborder="0" allowfullscreen>
                     </iframe>
                 </section>
                 <section class="tab-item-4">
-                    <iframe width="800" height="700" src="{!!URL::to('/servicios/create')!!}"></a></li>" frameborder="0" allowfullscreen>
+<iframe width="800" height="700" src="{!!URL::to('/servicios/create')!!}"  frameborder="0" allowfullscreen>
                     </iframe>
                 </section>
                 <section class="tab-item-5">
-                    <iframe width="800" height="600" src="{!!URL::to('/servicios/')!!}"></a></li>" frameborder="0" allowfullscreen>
+<iframe width="800" height="600" src="{!!URL::to('/empresas/')!!}" frameborder="0" allowfullscreen>
                     </iframe>
                 </section>
                 <section class="tab-item-6">
