@@ -1,7 +1,7 @@
 {!!Html::script('js/jquery.js')!!}
 {!!Html::script('js/ajax/CrearEstado.js')!!}
 {!!Html::script('js/ajax/CargarEstados.js')!!}
-{!!Html::script('js/jquery/jquery.timeago.js')!!}
+{!!Html::script('js/ajax/InteraccionPublicaciones.js')!!}
 @extends('layouts.front')
 @section('content')
 <div class="jumbotron">
@@ -18,7 +18,6 @@
 						<div class="thumbnail">
 						    <img src="images/default-img.gif" alt="...">
 					        <div class="caption">
-
 					    		
 					    		{!!Auth::user()->get()->email!!}
 					    		{!!Auth::user()->get()->ciudad!!}
@@ -97,7 +96,7 @@
 					@include('alerts.errorsMessage')
 					@include('alerts.successMessage')
 					@include('alerts.warningMessage')
-				<div class="list-group" id="Estados" >
+				<div class="list-group">
 					<div class="list-group-item">
 						<h4><span class="label label-info">#Publicaciones&Estados <span class="glyphicon glyphicon-fire" aria-hidden="true"></span></span></h4>
 					</div>
@@ -130,6 +129,9 @@
 					</div>		
 
 					<a id="CargarEstados" href="#!" class="list-group-item list-group-item-info">Cargar estados <span class="badge">14<small>  ¡Publicaciones nuevas!</small></span></a>
+				</div>
+				<div id="Estados">
+					
 				</div>
 
 

@@ -2836,8 +2836,10 @@ fieldset[disabled] .btn {
   color: #333;
   background-color: #fff;
   border-color: #ccc;
+  /*
   will-change: opacity, transform;
   transition: all .1s ease-out;    
+  */
 }
 .btn-default:hover,
 .btn-default:focus,
@@ -2855,11 +2857,12 @@ fieldset[disabled] .btn {
   color: #fff;
   background-color: #26a69a;
   text-align: center;
+  /*
   letter-spacing: .5px;
   cursor: pointer;
-
-  will-change: opacity, transform;
+    will-change: opacity, transform;
   transition: all .1s ease-in-out;
+  */
 }
 .btn-default:active,
 .btn-default.active,
@@ -2895,8 +2898,10 @@ fieldset[disabled] .btn-default.active {
   color: #fff;
   background-color: #337ab7;
   border-color: #2e6da4;
+  /*
   will-change: opacity, transform;
   transition: all .1s ease-out;      
+  */
 }
 .btn-primary:hover,
 .btn-primary:focus,
@@ -2914,11 +2919,12 @@ fieldset[disabled] .btn-default.active {
   color: #fff;
   background-color: #26a69a;
   text-align: center;
+  /*
   letter-spacing: .5px;
   cursor: pointer;
-
   will-change: opacity, transform;
   transition: all .1s ease-in-out;
+  */
 }
 .btn-primary:active,
 .btn-primary.active,
@@ -2954,8 +2960,10 @@ fieldset[disabled] .btn-primary.active {
   color: #fff;
   background-color: #5cb85c;
   border-color: #4cae4c;
+  /*
   will-change: opacity, transform;
   transition: all .1s ease-out;    
+  */
 }
 .btn-success:hover,
 .btn-success:focus,
@@ -2974,11 +2982,12 @@ fieldset[disabled] .btn-primary.active {
   color: #fff;
   background-color: #26a69a;
   text-align: center;
+  /*
   letter-spacing: .5px;
   cursor: pointer;
-
   will-change: opacity, transform;
   transition: all .1s ease-in-out;
+  */
 }
 .btn-success:active,
 .btn-success.active,
@@ -3014,8 +3023,10 @@ fieldset[disabled] .btn-success.active {
   color: #fff;
   background-color: #5bc0de;
   border-color: #46b8da;
+  /*
   will-change: opacity, transform;
   transition: all .1s ease-out;    
+  */
 
 }
 .btn-info:hover,
@@ -3034,11 +3045,12 @@ fieldset[disabled] .btn-success.active {
   color: #fff;
   background-color: #26a69a;
   text-align: center;
+  /*
   letter-spacing: .5px;
   cursor: pointer;
-
   will-change: opacity, transform;
   transition: all .1s ease-in-out;   
+  */
 }
 .btn-info:active,
 .btn-info.active,
@@ -3074,8 +3086,10 @@ fieldset[disabled] .btn-info.active {
   color: #fff;
   background-color: #f0ad4e;
   border-color: #eea236;
+  /*
   will-change: opacity, transform;
   transition: all .1s ease-out;      
+  */
 }
 .btn-warning:hover,
 .btn-warning:focus,
@@ -3093,11 +3107,12 @@ fieldset[disabled] .btn-info.active {
   color: #fff;
   background-color: #26a69a;
   text-align: center;
+  /*
   letter-spacing: .5px;
   cursor: pointer;
-
   will-change: opacity, transform;
   transition: all .1s ease-in-out;  
+  */
 }
 .btn-warning:active,
 .btn-warning.active,
@@ -3133,8 +3148,10 @@ fieldset[disabled] .btn-warning.active {
   color: #fff;
   background-color: #d9534f;
   border-color: #d43f3a;
+  /*
   will-change: opacity, transform;
   transition: all .1s ease-out;      
+  */
 }
 .btn-danger:hover,
 .btn-danger:focus,
@@ -3152,11 +3169,12 @@ fieldset[disabled] .btn-warning.active {
   color: #fff;
   background-color: #26a69a;
   text-align: center;
+  /*
   letter-spacing: .5px;
   cursor: pointer;
-
   will-change: opacity, transform;
   transition: all .1s ease-in-out;   
+  */
 }
 .btn-danger:active,
 .btn-danger.active,
