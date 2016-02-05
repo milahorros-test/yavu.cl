@@ -8,6 +8,7 @@ use yavu\Http\Controllers\Controller;
 use Session;
 use Redirect;
 use yavu\User;
+use yavu\Estado;
 use Illuminate\Routing\Route;
 class UserController extends Controller
 {

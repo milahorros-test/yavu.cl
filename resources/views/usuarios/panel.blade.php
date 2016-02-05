@@ -33,7 +33,7 @@
 				</div>
 		    </div>
 
-		    <div class="col-sm-4" style="float:right;"><!--style="position:fixed;z-index:1000;"-->
+		    <div class="col-sm-4"><!--style="position:fixed;z-index:1000;"-->
 				<div class="list-group">
 					<div class="list-group-item">
 						<h4><span class="label label-info">#MiCuenta <span class="glyphicon glyphicon-cog" aria-hidden="true"></span></span></h4>
@@ -52,11 +52,6 @@
 					<!--{!!link_to_route('usuarios.edit', $title = 'Ir a mi perfil', $parameters = Auth::user()->get()->id, $attributes = ['class'=>'list-group-item list-group-item-info'])!!}-->
 					<a href="{!!URL::to('/profile')!!}" class="list-group-item list-group-item-info">Ir a mi perfil</a>
 				</div>	
-		    </div>
-
-
-		    <div class="col-sm-8">
-
 				<div class="list-group">
 					<div class="list-group-item">
 						<h4><span class="label label-info">#MiEmpresa <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span></span></h4>
@@ -80,11 +75,6 @@
 					</div>
 					<a href="{!!URL::to('/empresas/create')!!}" class="list-group-item list-group-item-warning">Saber más e ir a registrar mi empresa</a>
 				</div>
-
-		    </div>
-
-
-		    <div class="col-sm-4" style="float:right;">
 
 				<div class="list-group" >
 					<div class="list-group-item">
@@ -126,12 +116,9 @@
 						Revisa nuestras sugerencias para una mejor experiencia en yavu.
 					</div>
 					<a href="#" class="list-group-item list-group-item-info">Ir a ayudas generales</a>
-					
-				</div>	  
+				</div>	
 
 		    </div>
-
-
 
 		</div>
 
