@@ -4759,7 +4759,7 @@ a.badge:focus {
   padding: 30px 15px;
   margin-bottom: 30px;
   color: inherit;
-  background-color: #eee;
+  background-color: #EFFBF2;
 }
 .jumbotron h1,
 .jumbotron .h1 {
@@ -6520,6 +6520,7 @@ a:focus {
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
+/*AQUI SE MODIFICA EL PADDING O DISTANCIA DE LOS COSTADOS DE LA NAVBAR*/
 .container,.container-fluid {
   margin-right: auto;
   margin-left: auto;
