@@ -6576,13 +6576,13 @@ a:focus {
   left: 0;
   z-index: 1000;
   visibility: visible;
-  padding: 1px 0;   
-  margin: 1px 0 0;
+  padding: 0px 0;   
+  margin: 0px 0 0;
   display: none;
   list-style: none;
   font-size: 16px;     
-  background-color: #2E2E2E;
-  border-radius: 10px 10px 10px 10px;
+  background-color: #133A1E;
+  border-radius: 4px 4px 4px 4px;
   background-clip: padding-box;  
 }
 .dropdown-menu .dropdown-menu {    
@@ -6766,8 +6766,9 @@ a:focus {
   margin-top: 0px;
   margin-bottom: 15px;
   left: 0;
-  background-color: #FACC2E;
+  background-color: #133A1E;
   z-index: 1030;
+  opacity: 0.8;
   border: 0px solid transparent;
 }
 .navbar-collapse {
