@@ -1,7 +1,7 @@
 {!!Html::script('js/jquery.js')!!}
 {!!Html::script('js/ajax/CrearEstado.js')!!}
 {!!Html::script('js/ajax/CargarEstados.js')!!}
-{!!Html::script('js/ajax/InteraccionPublicaciones.js')!!}
+	{!!Html::script('js/ajax/InteraccionPublicaciones.js')!!}
 @extends('layouts.front')
 @section('content')
 <div class="jumbotron">
@@ -115,9 +115,8 @@
 							{!!Form::hidden('user_id', Auth::user()->get()->id, ['id'=>'user_id'])!!}
 							<input type="hidden" name="_token" value="{{csrf_token()}}" id="token" />
 
-							{!!link_to('#!', $title="Publicar estado", $attributes = ['id'=>'publicar', 'class'=>'', 'style'=>'color:#3C5B28'], $secure = null)!!}
-							\
-							{!!link_to('#!', $title="Limpiar", $attributes = ['id'=>'limpiar', 'class'=>'', 'style'=>'color:#3C5B28'], $secure = null)!!}											
+							{!!link_to('#!', $title="Publicar estado", $attributes = ['id'=>'publicar', 'class'=>'btn btn-success btn-xs'], $secure = null)!!}
+							{!!link_to('#!', $title="Limpiar", $attributes = ['id'=>'limpiar', 'class'=>'btn btn-success btn-xs'], $secure = null)!!}											
 				
 						{!!Form::close()!!}		
 
@@ -128,10 +127,20 @@
 							</button>
 							-->
 							Publicacion creada correctamente
-						</div>						
+						</div>			
+						<div id="msj-error" class="alert alert-error alert-dismissible" role="alert" style="display:none">
+							<!--
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+							-->
+							El texto ingresado contiene caracteres no permitidos
+						</div>										
 					</div>		
 
-					<a id="CargarEstados" href="#!" class="list-group-item list-group-item-info">Cargar estados <span class="badge">14<small>  ¡Publicaciones nuevas!</small></span></a>
+					<a id="CargarEstados" href="#!" class="list-group-item list-group-item-info">Cargar estados 
+						<span id="EstadosNuevos" class="badge"></span>
+					</a>
 				</div>
 				<div id="Estados">
 				</div>

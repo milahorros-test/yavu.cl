@@ -50,7 +50,7 @@ class EstadoController extends Controller
                     ->select('users.*', 'estados.*')    
                     ->where('estados.user_id', '=', Auth::user()->get()->id)   
                     ->orderBy('estados.created_at','desc')   
-                    ->limit('3')
+                    ->limit('5')
                     ->get();        
 
         //dd($estados);
@@ -63,6 +63,28 @@ class EstadoController extends Controller
             );        
         */
     }
+
+    public function ContarEstados(){
+        //$estados = Estado::All();
+        //$estados = DB::select('select * from estados where user_id = :id', ['id' => 1]);
+        $estados = DB::table('estados')                    
+                    ->join('users', 'users.id', '=', 'estados.user_id')
+                    ->select('users.*', 'estados.*')    
+                    ->where('estados.user_id', '=', Auth::user()->get()->id)   
+                    ->orderBy('estados.created_at','desc')   
+                    ->limit('5')
+                    ->get();        
+
+        //dd($estados);
+        return response()->json(
+            $estados
+        );
+        /*
+            return response()->json(
+                $estados->toArray()
+            );        
+        */
+    }    
 
     public function show($id)
     {     
