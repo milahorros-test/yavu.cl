@@ -134,7 +134,7 @@
 								<span aria-hidden="true">&times;</span>
 							</button>
 							-->
-							El texto ingresado contiene caracteres no permitidos
+							El texto ingresado contiene caracteres no permitidos que no se guardarán.
 						</div>										
 					</div>		
 
