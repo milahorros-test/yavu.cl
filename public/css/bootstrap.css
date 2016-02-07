@@ -3372,12 +3372,13 @@ tbody.collapse.in {
   text-decoration: none;
   background-color: #424242;
 }
+/*Aqui se cambia el color de la letra al foco*/
 .dropdown-menu > .active > a,
 .dropdown-menu > .active > a:hover,
 .dropdown-menu > .active > a:focus {
   color: #fff;
   text-decoration: none;
-  background-color: #337ab7;
+  background-color: #D9FFD9;
   outline: 0;
 }
 .dropdown-menu > .disabled > a,
@@ -6589,7 +6590,7 @@ a:focus {
   min-width: 160px;
   padding: 0;
   display: none;
-  margin: 1px 0 0 40px;
+  margin: 1vpx 0 0 40px;
   list-style: none;
   font-size: 14px;
   opacity: 0;
@@ -6748,13 +6749,14 @@ a:focus {
   line-height: 1.42857143;
   white-space: nowrap;
 }
+/*Aqui se cambian los colores de las letras de los sub menu*/
 .dropdown-menu > li > a:hover,
 .dropdown-menu > li > a:focus,
 .dropdown-menu > .active > a,
 .dropdown-menu > .active > a:hover,
 .dropdown-menu > .active > a:focus {      
-  background: #0e6e8c;
-  color: #fff;
+  background: #D9FFD9;
+  color: #000000;
 }
 .open > .dropdown-menu {  
   display: block;
