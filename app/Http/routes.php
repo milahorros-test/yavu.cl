@@ -18,6 +18,7 @@ Route::get('sitemap', function(){
 Route::get('estadosusuario', 'EstadoController@CargarEstados');
 Route::get('contarestados', 'EstadoController@ContarEstados');
 Route::resource('estados','EstadoController');
+Route::get('buscarusuario/{nombre}', 'UserController@BuscarUsuarios');
 /*Gestión de estados*/
 
 /*Gestión de coins*/
