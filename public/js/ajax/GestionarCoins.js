@@ -17,7 +17,11 @@ $(document).ready(function(){
 		$.get(route, function(res){
 			$("#CantidadCoins").value = "";
 			$(res).each(function(key,value){
-				$("#CantidadCoins").append(value.coins);
+				console.log(value.coins);
+				if(parseInt(value.coins)>0){
+					$("#CantidadCoins").append(value.coins);	
+				}
+					//$("#CantidadCoins").html("<p>0</p>");	
 			});
 		});						
 	}	

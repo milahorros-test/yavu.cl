@@ -43,16 +43,24 @@
 					</div>
 					<div class="list-group-item">
 						Coins 
-						<span id="CantidadCoins" class="badge">
-							<img src="http://i601.photobucket.com/albums/tt93/tbg8904/Gaia%20Icon/Coins.png" width="16px" height="16px">
+						<span id="CantidadCoins" style="float:right;" class="label label-warning">
+							<img src="http://i601.photobucket.com/albums/tt93/tbg8904/Gaia%20Icon/Coins.png" width="16px" height="16px">	
 						</span>
-
 					</div>
 					<div class="list-group-item">
-						Estado de cuenta
+						Estado usuario
+						<span id="EstadoUsuario" style="float:right;" class="label label-success">
+						<span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
+							Activo
+						</span>
 					</div>
 					<div class="list-group-item">
 						Estado de empresas
+						<span id="EstadoEmpresa" style="float:right;" class="label label-success">
+						<span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
+							Activo							
+						</span>
+
 					</div>	
 					<div class="list-group-item">
 						Noticias de las empresas a las que sigues
