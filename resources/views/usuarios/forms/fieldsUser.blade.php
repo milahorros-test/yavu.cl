@@ -18,6 +18,7 @@
 				{!!Form::label('Email:')!!}
 				{!!Form::email('email',null,['class'=>'form-control','placeholder'=>'Ingrese su email'])!!}			
 			</div>
+			
 			<div class="form-group has-feedback has-feedback-left">
 				@if(Auth::user()->check())
 					{!!Form::label('Cambio de clave:')!!}		

@@ -3613,7 +3613,7 @@ tbody.collapse.in {
 [data-toggle="buttons"] > .btn input[type="radio"],
 [data-toggle="buttons"] > .btn-group > .btn input[type="radio"],
 [data-toggle="buttons"] > .btn input[type="checkbox"],
-[data-toggle="buttons"] > .btn-group > .btn input[type="checkbox"] {
+[f="buttons"] > .btn-group > .btn input[type="checkbox"] {
   position: absolute;
   clip: rect(0, 0, 0, 0);
   pointer-events: none;
@@ -6513,8 +6513,9 @@ a, .navbar-toggle,.dropdown-menu{
   transition: all .3s; 
 }
 a:hover,
+/*aqui se cambia el color de la letra en los dropdown*/
 a:focus {
-  color: #063847;  
+  color: #D9FFD9;  
 }
 a:focus {
   outline: thin dotted;
