@@ -1,10 +1,15 @@
 $(document).ready(function(){	
 	/*DECLARACION DE VARIABLES GLOBALES*/
 	var Global_idUltimaPublicacion;
+	var Global_ContadorCargaPublicaciones;
 	/*DECLARACION DE VARIABLES GLOBALES*/
+
 	/*MÉTODOS CONSTRUCTORES*/
-	ContarEstados();
+
+	//ContarEstados();
+
 	/*MÉTODOS CONSTRUCTORES*/
+
 	/*SELECTORES*/
 	$("#CargarEstados").click(function(){
 		$("#EstadosNuevos").append("");
@@ -65,6 +70,7 @@ $(document).ready(function(){
 		}	
 	});
 	/*SELECTORES*/
+
 	/*FUNCIONES Y PROCEDIMIENTOS*/
 	function ActualizarEstados(){
 		var EstadosUsuario = $("#Estados"); 
@@ -172,9 +178,10 @@ $(document).ready(function(){
 				}
 				*/					
 			});
+			Global_ContadorCargaPublicaciones += 1 * 5;
 		});						
 	}
-	
+
 	function ContarEstados(){
 		var CargarEstados = $("#CargarEstados"); 
 		var route = "http://localhost:8000/contarestados";

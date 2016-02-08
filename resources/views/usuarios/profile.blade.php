@@ -136,14 +136,15 @@
 							-->
 							El texto ingresado contiene caracteres no permitidos que no se guardarán.
 						</div>										
-					</div>		
-
+					</div>	
+				</div>						
+				<div id="Estados">
+				</div>
 					<a id="CargarEstados" href="#!" class="list-group-item list-group-item-info">Cargar estados 
 						<span id="EstadosNuevos" class="badge"></span>
 					</a>
-				</div>
-				<div id="Estados">
-				</div>
+				
+
 
 
 		    </div>
