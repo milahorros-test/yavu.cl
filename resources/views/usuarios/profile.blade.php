@@ -1,6 +1,7 @@
 {!!Html::script('js/jquery.js')!!}
 {!!Html::script('js/ajax/GestionarEstados.js')!!}
-	{!!Html::script('js/ajax/InteraccionPublicaciones.js')!!}
+{!!Html::script('js/ajax/GestionarCoins.js')!!}
+{!!Html::script('js/ajax/InteraccionPublicaciones.js')!!}
 @extends('layouts.front')
 @section('content')
 <div class="jumbotron">
@@ -40,9 +41,12 @@
 					<div class="list-group-item">
 						<h4>Información</h4>
 					</div>
-
 					<div class="list-group-item">
-						Estado de coins
+						Coins 
+						<span id="CantidadCoins" class="badge">
+							<img src="http://i601.photobucket.com/albums/tt93/tbg8904/Gaia%20Icon/Coins.png" width="16px" height="16px">
+						</span>
+
 					</div>
 					<div class="list-group-item">
 						Estado de cuenta

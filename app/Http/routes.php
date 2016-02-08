@@ -20,6 +20,9 @@ Route::get('contarestados', 'EstadoController@ContarEstados');
 Route::resource('estados','EstadoController');
 /*Gestión de estados*/
 
+/*Gestión de coins*/
+Route::get('contarcoins', 'CoinController@ContarCoins');
+/*Gestión de coins*/
 
 /*Gestión de ingreso login*/
 Route::resource('log', 'LogController');
