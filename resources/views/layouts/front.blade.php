@@ -85,7 +85,7 @@
               <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle"><strong>{!!Auth::user()->get()->nombre!!}</strong><b class="caret"></b></a>                        
                 <ul class="dropdown-menu">
                   <li><a href="{!!URL::to('#')!!}">Inicio</a></li>
-                  <li><a href="{!!URL::to('/panel')!!}">Panel</a></li>
+                  <li><a href="{!!URL::to('/dashboard')!!}">Dashboard</a></li>
                   <li><a href="{!!URL::to('/profile')!!}">Perfil</a></li>
                   <li><a href="{!!URL::to('/logout')!!}">Cerrar sesión</a></li>
                 </ul>
@@ -94,7 +94,7 @@
               <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle"><strong>{!!Auth::empresa()->get()->nombre!!}</strong><b class="caret"></b></a>                        
                 <ul class="dropdown-menu">
                   <li><a href="{!!URL::to('#')!!}">Inicio</a></li>
-                  <li><a href="{!!URL::to('#')!!}">Panel</a></li>
+                  <li><a href="{!!URL::to('#')!!}">Dashboard</a></li>
                   <li><a href="{!!URL::to('/logout/')!!}">Cerrar sesión</a></li>
                 </ul>
               </li>

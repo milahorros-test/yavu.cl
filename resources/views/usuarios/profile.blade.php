@@ -57,7 +57,7 @@
 						Últimas novedades en yavu
 					</div>	
 					{!!link_to_route('usuarios.edit', $title = 'Modificar datos de mi cuenta', $parameters = Auth::user()->get()->id, $attributes = ['class'=>'list-group-item list-group-item-info'])!!}
-					<a href="{!!URL::to('panel')!!}" class="list-group-item list-group-item-warning">Volver a panel</a>
+					<a href="{!!URL::to('dashboard')!!}" class="list-group-item list-group-item-warning">Volver a dashboard</a>
 					<a href="{!!URL::to('sitemap')!!}" class="list-group-item list-group-item-warning">Ir al Sitemap</a>
 				</div>	
 			
@@ -139,12 +139,10 @@
 				</div>						
 				<div id="Estados">
 				</div>
-					<a id="CargarEstados" href="#!" class="list-group-item list-group-item-info">Cargar estados 
-						<span id="EstadosNuevos" class="badge"></span>
-					</a>
 				
-
-
+				<a id="CargarEstados" href="#!" class="list-group-item list-group-item-info">Cargar estados 
+					<span id="EstadosNuevos" class="badge"></span>
+				</a>	
 
 		    </div>
 

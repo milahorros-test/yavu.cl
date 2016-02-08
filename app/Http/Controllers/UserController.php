@@ -39,10 +39,10 @@ class UserController extends Controller
   {
 
   }
-  public function panel()
+  public function dashboard()
   {
     $users = User::All();
-    return view('usuarios.panel', compact('users'));    
+    return view('usuarios.dashboard', compact('users'));    
   }  
   public function profile()
   {
