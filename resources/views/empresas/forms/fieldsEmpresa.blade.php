@@ -62,7 +62,7 @@
 	</div>
 </div>
 
-@if(Auth::user()->check())
+
 	<div class="col-sm-4">
 		<div class="list-group" >
 			<div class="list-group-item">
@@ -140,7 +140,18 @@
 					{!!Form::label('Nombre del encargado:')!!}
 					{!!Form::text('fono_2',null,['class'=>'form-control','placeholder'=>'Encargado de la empresa'])!!}
 				</div>
+				<div class="form-group has-feedback has-feedback-left">
+					{!!Form::label('tipo_servicio:')!!}
+					{!!Form::select('tipo_servicio', 
+						['Gratis' => 'Gratis',
+						'Pagado' => 'Pagado'], 
+						$selected = null, ['class' => 'form-control']) 
+					!!}	
+				</div>
+				<div class="form-group has-feedback has-feedback-left">
+					{!!Form::label('Fecha de pago:')!!}
+					{!!Form::date('fecha_de_pago',null,['class'=>'form-control','placeholder'=>''])!!}
+				</div>
 			</div>
 		</div>
 	</div>
-@endif
