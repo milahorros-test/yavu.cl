@@ -1,6 +1,5 @@
 {!!Html::script('js/jquery.js')!!}
-{!!Html::script('js/ajax/CrearEstado.js')!!}
-{!!Html::script('js/ajax/CargarEstados.js')!!}
+{!!Html::script('js/ajax/GestionarEstados.js')!!}
 	{!!Html::script('js/ajax/InteraccionPublicaciones.js')!!}
 @extends('layouts.front')
 @section('content')
