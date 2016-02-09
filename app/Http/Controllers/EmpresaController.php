@@ -19,9 +19,11 @@ class EmpresaController extends Controller
     $this->empresa = Empresa::find($route->getParameter('empresas'));
     //return $this->empresa.;
   }    
-  public function index()
+  public function index(Request $request)
   {
-      $empresas = Empresa::paginate(10);
+     
+      $empresas = Empresa::nombre($request->get('nombre'))->orderBy('id', 'DESC')->paginate();
+
       return view('empresas.index', compact('empresas'));
   }
   public function create()
@@ -67,4 +69,6 @@ class EmpresaController extends Controller
       Session::flash('message', 'Empresa eliminada correctamente');
       return Redirect::to('/empresas');
   }
+
+
 }

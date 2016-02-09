@@ -23,5 +23,14 @@ class Empresa extends Model implements AuthenticatableContract,
           $this->attributes['password'] = \Hash::make($valor);
         }
     }
+
+     public function scopeNombre($query, $nombre)
+    {   
+        if ($nombre != ""){
+
+            $query->where('nombre', 'like' , '%'.$nombre.'%');
+        }
+        
+    }
 }
 
