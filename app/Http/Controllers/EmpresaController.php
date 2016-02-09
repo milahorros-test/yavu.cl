@@ -9,6 +9,7 @@ use Session;
 use Redirect;
 use yavu\Empresa;
 use Illuminate\Routing\Route;
+use DB;
 class EmpresaController extends Controller
 {
   public function __construct(){
@@ -47,6 +48,18 @@ class EmpresaController extends Controller
       $this->empresa->save();
       Session::flash('message', 'Empresa editada correctamente');
       return Redirect::to('/empresas');
+  }
+  public function MostrarEmpresaPublica($empresa){
+    $empresa = DB::table('empresas')                    
+                ->select('*')    
+                ->where('nombre', 'like', '%'.$empresa.'%')   
+                ->orderBy('created_at','desc')   
+                ->get();
+
+    //dd($usuarios);
+    return response()->json(
+        $empresa
+    );    
   }
   public function destroy($id)
   {
