@@ -33,11 +33,12 @@ Route::resource('log', 'LogController');
 Route::resource('usuarios','UserController');
 Route::resource('dashboard', 'UserController@dashboard');
 Route::resource('profile', 'UserController@profile');
+Route::get('infoempresas/{user_id}','UserController@InfoEmpresas');
 /*Gestión de Usuarios*/
 
 /*Gestión de Empresas*/
 Route::resource('empresas','EmpresaController');
-Route::get('empresas/public/{empresa}', 'EmpresaController@MostrarEmpresaPublica');
+Route::get('empresa/{empresa}', 'EmpresaController@MostrarEmpresaPublica');
 /*Gestión de Empresas*/
 /*Gestión de Servicios*/
 Route::resource('servicios','ServicioController');

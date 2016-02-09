@@ -42,7 +42,8 @@ $(document).ready(function(){
 						+"<td>"+value.fono+"</td>"
 						+"<td>"+value.fecha_nacimiento+"</td>"
 						+"<td>"+value.sexo+"</td>"
-						+"<td> {!!link_to_route('usuarios.edit', $title = 'Editar', $parameters = $user->id, $attributes = ['class'=>'btn btn-primary'])!!} </td>");								 
+						+"<td> <a href='usuarios/" + value.id + "/edit' class='btn btn-primary'>Editar</a> </td>");								 
+
 			});
 		});						
 	}	

@@ -8,10 +8,12 @@ class CreateEmpresasTable extends Migration
         Schema::dropIfExists('empresas');
         Schema::create('empresas', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('user_id', 20);
             $table->string('rut', 16)->unique();
             $table->string('email', 100)->unique();
             $table->string('login', 100);
             $table->string('nombre', 200);
+
             $table->string('direccion', 100);
             $table->string('ciudad', 100);
             $table->string('region', 100);
@@ -23,6 +25,7 @@ class CreateEmpresasTable extends Migration
             $table->string('fecha_de_pago', 100);
             $table->string('nombre_encargado', 100);
             $table->string('password', 100);
+            $table->string('estado',30);
             $table->rememberToken();
             $table->timestamps();
         });

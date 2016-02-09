@@ -152,6 +152,14 @@
 					{!!Form::label('Fecha de pago:')!!}
 					{!!Form::date('fecha_de_pago',null,['class'=>'form-control','placeholder'=>''])!!}
 				</div>
+				@if (Auth::user()->check())
+					<div class="form-group has-feedback has-feedback-left">
+						{!!Form::hidden('user_id', Auth::user()->get()->id )!!}
+					</div>		
+					<div class="form-group has-feedback has-feedback-left">
+						{!!Form::hidden('estado', 'Pendiente')!!}	
+					</div>						
+				@endif				
 			</div>
 		</div>
 	</div>
