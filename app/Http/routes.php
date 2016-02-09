@@ -37,7 +37,7 @@ Route::resource('profile', 'UserController@profile');
 
 /*Gestión de Empresas*/
 Route::resource('empresas','EmpresaController');
-Route::get('public/e/{empresa}', 'EmpresaController@MostrarEmpresaPublica');
+Route::get('perfilpublico/{empresa}', 'EmpresaController@MostrarEmpresaPublica');
 /*Gestión de Empresas*/
 /*Gestión de Servicios*/
 Route::resource('servicios','ServicioController');

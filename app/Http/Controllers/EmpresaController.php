@@ -57,9 +57,11 @@ class EmpresaController extends Controller
                 ->get();
 
     //dd($usuarios);
-    return response()->json(
+
+    /*return response()->json(
         $empresa
-    );    
+    );*/
+    return view('empresas.publicProfile', compact('empresa'));
   }
   public function destroy($id)
   {
