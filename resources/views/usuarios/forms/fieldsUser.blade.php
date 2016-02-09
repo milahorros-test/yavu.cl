@@ -66,6 +66,7 @@
 				!!}			
 			</div>	
 		</div>
+		
 	</div>
 </div>
 
@@ -157,6 +158,8 @@
 					{!!Form::date('fecha_nacimiento',null,['class'=>'form-control','placeholder'=>''])!!}
 				</div>
 			</div>
+			<!--
 		</div>
 	</div>
+			-->
 @endif

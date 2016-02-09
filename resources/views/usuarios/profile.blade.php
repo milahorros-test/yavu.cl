@@ -1,7 +1,7 @@
 {!!Html::script('js/jquery.js')!!}
-{!!Html::script('js/ajax/CrearEstado.js')!!}
-{!!Html::script('js/ajax/CargarEstados.js')!!}
-	{!!Html::script('js/ajax/InteraccionPublicaciones.js')!!}
+{!!Html::script('js/ajax/GestionarEstados.js')!!}
+{!!Html::script('js/ajax/GestionarCoins.js')!!}
+{!!Html::script('js/ajax/InteraccionPublicaciones.js')!!}
 @extends('layouts.front')
 @section('content')
 <div class="jumbotron">
@@ -41,15 +41,26 @@
 					<div class="list-group-item">
 						<h4>Información</h4>
 					</div>
-
 					<div class="list-group-item">
-						Estado de coins
+						Coins 
+						<span id="CantidadCoins" style="float:right;" class="label label-warning">
+							<img src="http://i601.photobucket.com/albums/tt93/tbg8904/Gaia%20Icon/Coins.png" width="16px" height="16px">	
+						</span>
 					</div>
 					<div class="list-group-item">
-						Estado de cuenta
+						Estado usuario
+						<span id="EstadoUsuario" style="float:right;" class="label label-success">
+						<span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
+							Activo
+						</span>
 					</div>
 					<div class="list-group-item">
 						Estado de empresas
+						<span id="EstadoEmpresa" style="float:right;" class="label label-success">
+						<span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
+							Activo							
+						</span>
+
 					</div>	
 					<div class="list-group-item">
 						Noticias de las empresas a las que sigues
@@ -58,7 +69,7 @@
 						Últimas novedades en yavu
 					</div>	
 					{!!link_to_route('usuarios.edit', $title = 'Modificar datos de mi cuenta', $parameters = Auth::user()->get()->id, $attributes = ['class'=>'list-group-item list-group-item-info'])!!}
-					<a href="{!!URL::to('panel')!!}" class="list-group-item list-group-item-warning">Volver a panel</a>
+					<a href="{!!URL::to('dashboard')!!}" class="list-group-item list-group-item-warning">Volver a dashboard</a>
 					<a href="{!!URL::to('sitemap')!!}" class="list-group-item list-group-item-warning">Ir al Sitemap</a>
 				</div>	
 			
@@ -140,12 +151,10 @@
 				</div>						
 				<div id="Estados">
 				</div>
-					<a id="CargarEstados" href="#!" class="list-group-item list-group-item-info">Cargar estados 
-						<span id="EstadosNuevos" class="badge"></span>
-					</a>
 				
-
-
+				<a id="CargarEstados" href="#!" class="list-group-item list-group-item-info">Cargar estados 
+					<span id="EstadosNuevos" class="badge"></span>
+				</a>	
 
 		    </div>
 

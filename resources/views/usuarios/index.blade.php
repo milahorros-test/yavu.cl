@@ -1,7 +1,9 @@
+{!!Html::script('js/jquery.js')!!}
+{!!Html::script('js/ajax/BuscarUsuario.js')!!}
 @extends('layouts.front')
 @section('content')
 <div class="jumbotron">
-	<div id="contentIn">
+	<div id="contentMiddle">
 		@include('alerts.alertFields')
 		@include('alerts.errorsMessage')
 		@include('alerts.successMessage')
@@ -10,7 +12,17 @@
 		<div class="panel panel-default">
 			<div class="panel-heading"><h4>Mantenedor de usuarios</h4></div>
 			<div class="panel-body">
-				<table class="table">
+
+			<form class="">
+			  <div class="form-group">
+				{!!Form::text('usuario',null,['class'=>'form-control','placeholder'=>'buscar...','id'=>'usuario'])!!}
+			  </div>
+			  <a href="#!" class="btn btn-primary btn-sm" id="BuscarUsuario">Buscar</a>
+			</form>
+
+				
+
+				<table id="UserList" class="table">
 					<thead>
 						<th>Nombre</th>
 						<th>Correo</th>

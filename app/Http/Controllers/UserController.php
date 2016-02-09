@@ -10,6 +10,7 @@ use Redirect;
 use yavu\User;
 use yavu\Estado;
 use Illuminate\Routing\Route;
+use DB;
 class UserController extends Controller
 {
   public function __construct(){
@@ -25,6 +26,18 @@ class UserController extends Controller
     //$users = User::onlyTrashed()->paginate(5);
     return view('usuarios.index', compact('users'));
   }
+  public function BuscarUsuarios($nombre){
+    $usuarios = DB::table('users')                    
+                ->select('*')    
+                ->where('nombre', 'like', '%'.$nombre.'%')   
+                ->orderBy('created_at','desc')   
+                ->get();
+
+    //dd($usuarios);
+    return response()->json(
+        $usuarios
+    );
+  }
   public function create()
   {
     return view('usuarios.create');
@@ -39,10 +52,10 @@ class UserController extends Controller
   {
 
   }
-  public function panel()
+  public function dashboard()
   {
     $users = User::All();
-    return view('usuarios.panel', compact('users'));    
+    return view('usuarios.dashboard', compact('users'));    
   }  
   public function profile()
   {

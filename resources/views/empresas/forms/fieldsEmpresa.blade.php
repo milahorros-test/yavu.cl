@@ -123,22 +123,22 @@
 
 				<div class="form-group has-feedback has-feedback-left">
 					{!!Form::label('Teléfono Movil:')!!}
-					{!!Form::text('fono',null,['class'=>'form-control','placeholder'=>''])!!}
+					{!!Form::text('fono',null,['class'=>'form-control','placeholder'=>'Celular'])!!}
 				</div>
 
 				<div class="form-group has-feedback has-feedback-left">
 					{!!Form::label('Teléfono Fijo:')!!}
-					{!!Form::text('fono_2',null,['class'=>'form-control','placeholder'=>''])!!}
+					{!!Form::text('fono_2',null,['class'=>'form-control','placeholder'=>'Teléfono fijo'])!!}
 				</div>
 
 				<div class="form-group has-feedback has-feedback-left">
 					{!!Form::label('Fecha de inicio:')!!}
-					{!!Form::date('fecha_creacion',null,['class'=>'form-control','placeholder'=>''])!!}
+					{!!Form::date('fecha_creacion',null,['class'=>'form-control','placeholder'=>'Inicio de actividad'])!!}
 				</div>
 
 				<div class="form-group has-feedback has-feedback-left">
 					{!!Form::label('Nombre del encargado:')!!}
-					{!!Form::text('fono_2',null,['class'=>'form-control','placeholder'=>''])!!}
+					{!!Form::text('fono_2',null,['class'=>'form-control','placeholder'=>'Encargado de la empresa'])!!}
 				</div>
 				<div class="form-group has-feedback has-feedback-left">
 					{!!Form::label('tipo_servicio:')!!}
