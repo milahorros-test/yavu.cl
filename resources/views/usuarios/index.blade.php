@@ -13,8 +13,14 @@
 			<div class="panel-heading"><h4>Mantenedor de usuarios</h4></div>
 			<div class="panel-body">
 
-				{!!Form::text('usuario',null,['class'=>'form-control','placeholder'=>'Ingrese nombre de referencia','id'=>'usuario'])!!}
-				<a href="#!" class="btn" id="BuscarUsuario">Buscar</a>
+			<form class="">
+			  <div class="form-group">
+				{!!Form::text('usuario',null,['class'=>'form-control','placeholder'=>'buscar...','id'=>'usuario'])!!}
+			  </div>
+			  <a href="#!" class="btn btn-primary btn-sm" id="BuscarUsuario">Buscar</a>
+			</form>
+
+				
 
 				<table id="UserList" class="table">
 					<thead>

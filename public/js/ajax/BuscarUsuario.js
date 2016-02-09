@@ -9,6 +9,11 @@ $(document).ready(function(){
 	/*MÉTODOS CONSTRUCTORES*/
 
 	/*SELECTORES*/
+	/*$("#usuario").on('keypress', function(e) { 		
+	    if(e.which == 13) {
+	        BuscarUsuario();
+	    }
+	});	*/
 	/*SELECTORES*/
 
 	/*FUNCIONES Y PROCEDIMIENTOS*/
@@ -43,5 +48,5 @@ $(document).ready(function(){
 	}	
 	/*FUNCIONES Y PROCEDIMIENTOS*/
 
-	
+		
 });
