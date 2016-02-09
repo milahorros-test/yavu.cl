@@ -8,7 +8,7 @@
 		@include('alerts.warningMessage')
 		<h2>Panel de administración</h2>		
 		<div class="panel panel-default">
-			<div class="panel-heading"><h4>Mantenedor de empresas</h4></div>
+			<div class="panel-heading"><h4>Mantenedor de pagos</h4></div>
 			<div class="panel-body">
 				<table class="table">
 					<thead>
@@ -28,7 +28,7 @@
 						<td>{{$empresa->fono}}</td>
 						<!-- <td>{{$empresa->fecha_creacion}}</td> -->
 						<td>{{$empresa->nombre_encargado}}</td>
-						<td>{!!link_to_route('empresas.edit', $title = 'Editar', $parameters = $empresa->id, $attributes = ['class'=>'btn btn-primary'])!!}
+						<td>{!!link_to_route('pagos.edit', $title = 'Editar', $parameters = $empresa->id, $attributes = ['class'=>'btn btn-primary'])!!}
 						
 						</td>
 

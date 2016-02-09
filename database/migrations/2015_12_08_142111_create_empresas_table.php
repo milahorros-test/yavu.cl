@@ -21,6 +21,7 @@ class CreateEmpresasTable extends Migration
             $table->string('fecha_creacion', 100);
             $table->string('tipo_servicio', 100);
             $table->string('fecha_de_pago', 100);
+            $table->string('monto_pagado',100);
             $table->string('nombre_encargado', 100);
             $table->string('password', 100);
             $table->rememberToken();

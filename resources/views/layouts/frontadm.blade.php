@@ -56,10 +56,15 @@
                   <li><a href="{!!URL::to('/empresas')!!}">Mostrar listado de empresas</a></li>
                 </ul>
               </li> 
-                  <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Registrar pagos<b class="caret"></b></a>                        
+                  <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Pagos<b class="caret"></b></a>                        
                 <ul class="dropdown-menu">      
                 <li><a href="{!!URL::to('/empresas/create')!!}">Registrar pago</a></li> 
-                  <li><a href="{!!URL::to('/empresas')!!}">Mostrar listado de empresas</a></li>
+                  <li><a href="{!!URL::to('/pagos')!!}">Mostrar listado de pagos</a></li>
+                </ul>
+              </li> 
+              <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Deudores<b class="caret"></b></a>                        
+                <ul class="dropdown-menu">      
+                  <li><a href="{!!URL::to('/empresas')!!}">Mostrar listado de deudores</a></li>
                 </ul>
               </li> 
               <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Admintración<b class="caret"></b></a>                        

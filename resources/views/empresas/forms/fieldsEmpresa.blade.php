@@ -152,6 +152,11 @@
 					{!!Form::label('Fecha de pago:')!!}
 					{!!Form::date('fecha_de_pago',null,['class'=>'form-control','placeholder'=>''])!!}
 				</div>
+
+				<div class="form-group has-feedback has-feedback-left">
+					{!!Form::label('Ingrese monto cancelado:')!!}
+					{!!Form::text('monto_pagado',null,['class'=>'form-control','placeholder'=>''])!!}
+				</div>
 			</div>
 		</div>
 	</div>
