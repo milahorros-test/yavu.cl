@@ -9,7 +9,8 @@
 
 			{!!Form::model($user, ['method'=>'PUT', 'route' => ['usuarios.update', $user->id] ])!!}
 			@include('usuarios.forms.fieldsUser')
-
+			<div class="col-sm-4" style="float:right;">
+				<div class="list-group">
 					<div class="list-group-item">
 						<div class="form-group has-feedback has-feedback-left">
 							{!!Form::submit('Guardar', ['class'=>'btn btn-primary btn-success', 'style'=>'width:100%;', 'id'=>'guardar'])!!}
@@ -17,6 +18,7 @@
 							{!!Form::close()!!}				
 						</div>
 					</div>
+					
 					<div class="list-group-item">
 						<div class="form-group has-feedback has-feedback-left">
 							{!!Form::open(['action'=> ['UserController@destroy', $user->id], 'method'=>'DELETE'])!!}
@@ -24,6 +26,7 @@
 							{!!Form::close()!!}													
 						</div>	
 					</div>
+
 					<div class="list-group-item">
 						<h6>Información en tu perfil completa al:</h6>
 						<div class="progress">

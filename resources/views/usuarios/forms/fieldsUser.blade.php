@@ -63,8 +63,17 @@
 					'Magallanes' => 'Magallanes',	
 					'otra' => 'otras...'], 
 					$selected = null, ['class' => 'form-control']) 
-				!!}			
+				!!}		
 			</div>	
+			<div class="form-group has-feedback has-feedback-left">
+				{!!Form::hidden('tipo_usuario', 'usuario')!!}
+			</div>
+			<div class="form-group has-feedback has-feedback-left">
+				{!!Form::hidden('estado', 'Activo')!!}	
+			</div>
+
+							
+				
 		</div>
 		
 	</div>
@@ -158,8 +167,6 @@
 					{!!Form::date('fecha_nacimiento',null,['class'=>'form-control','placeholder'=>''])!!}
 				</div>
 			</div>
-			<!--
 		</div>
 	</div>
-			-->
 @endif
