@@ -24,6 +24,7 @@ Route::get('buscarusuario/{nombre}', 'UserController@BuscarUsuarios');
 
 /*Gestión de coins*/
 Route::get('contarcoins', 'CoinController@ContarCoins');
+Route::get('historialcoins', 'CoinController@HistorialCoins');
 /*Gestión de coins*/
 
 /*Gestión de ingreso login*/

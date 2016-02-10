@@ -34,7 +34,18 @@ class CoinController extends Controller
         return response()->json(
             $coins
         );
-    }     
+    }    
+    public function HistorialCoins(){   
+        $historialcoins = DB::table('registro_coins')
+                    ->select(DB::raw('*'))
+                    ->where('user_id', '=', Auth::user()->get()->id)   
+                    ->orderBy('created_at','desc')   
+                    ->limit('10')
+                    ->get();        
+        return response()->json(
+            $historialcoins
+        );
+    }  
     public function store(Request $request)
     {
 

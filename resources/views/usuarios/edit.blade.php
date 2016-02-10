@@ -4,9 +4,12 @@
 	<div id="contentMiddle">
 
 		<h4>Actualización de usuario : {{$user->nombre .' '. $user->apellido}}</h4>
-
+		
+		@include('alerts.alertFields')
+		@include('alerts.errorsMessage')
+		@include('alerts.successMessage')
+		@include('alerts.warningMessage')	
 		<div class="row">
-
 			{!!Form::model($user, ['method'=>'PUT', 'route' => ['usuarios.update', $user->id] ])!!}
 			@include('usuarios.forms.fieldsUser')
 			<div class="col-sm-4" style="float:right;">
@@ -34,17 +37,10 @@
 						    60%
 						  </div>
 						</div>							
-					</div>	
-
-					@include('alerts.alertFields')
-					@include('alerts.errorsMessage')
-					@include('alerts.successMessage')
-					@include('alerts.warningMessage')	
-
-					</div>
+					</div>		
 				</div>
 			</div>
 		</div>
-
 	</div>
+</div>
 @stop
