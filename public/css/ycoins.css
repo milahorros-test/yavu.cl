@@ -8,11 +8,3 @@ body {
 section { padding: 100px 0; min-height: 380px; }
 section.jumbotron { padding: 160px 0 120px; }
 
-.row {
-    float: left;
-    margin: 5px;
-    padding: 15px;
-    width: 300px;
-    height: 300px;
-    border: 1px solid black;
-} 
