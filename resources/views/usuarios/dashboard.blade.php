@@ -18,6 +18,8 @@
 								Bienvenido! {{$user->nombre}}
 							@elseif ($user->sexo == 'Femenino')
 								Bienvenida! {{$user->nombre}}
+							@else	
+								Te damos la bienvenida a tu primera vez en el sitio, <a class="btn btn-link btn-sm" href="usuarios/{{$user->id}}/edit">actualiza tus datos</a> y gana yavu coins!
 							@endif
 						@endforeach
 						<span style="float:right;" class="label label-info">#Publicaciones <span class="glyphicon glyphicon-fire" aria-hidden="true"></span></span>				

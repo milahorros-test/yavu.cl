@@ -48,11 +48,13 @@ $(document).ready(function(){
 	function InfoEmpresas(){
 		var user_id = $("#user_id").val();
 		var route = "http://localhost:8000/infoempresas/"+user_id;
+		var Pendiente = false;
 		console.log(user_id);
 		$.get(route, function(res){
 			$("#EstadoEmpresa").value = "";
 			$(res).each(function(key,value){
 				if(value.estado === "Pendiente"){
+					Pendiente = true;
 					//$("#EstadoEmpresa").removeClass("label-success");
 					//$("#EstadoEmpresa").addClass("label-warning");
 					$("#EstadoEmpresa").append(
@@ -78,8 +80,17 @@ $(document).ready(function(){
 						+'</div>'
 					);					
 				}					
-	
 			});
+			if(Pendiente){
+				$("#EstadoEmpresa").append(
+					'<div class="list-group-item">'
+						+'<small>El estado '
+						+'<span class="label label-warning">Pendiente</span> '
+						+'indica que ĺa empresa creada, está en espera de validación por parte del equipo de yavü, '
+						+'mantenga la espera y el equipo de yavü se pondrá en contacto con usted.</small>'	
+					+'</div>'
+				);
+			}
 		});	
 	}
 
