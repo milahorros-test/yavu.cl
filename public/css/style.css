@@ -107,6 +107,18 @@
 	border: solid 0px #cbcbcb;
 	border-radius: 2px;
 }
+
+#fullWidth {
+  width: 98%;
+  margin: 2px auto 0 auto;
+  /*Arriba-Derecha-Abajo-Izquierda*/
+  padding: 10px 10px 10px 10px;
+  /*padding: 0 60px 30px 60px;*/
+  border: solid 0px #cbcbcb;
+  border-radius: 2px;
+}
+
+
 @media (min-width: 400px) {
   #contentMiddle {
     width: 95%;
