@@ -106,7 +106,8 @@
                 <li><a href="{!!URL::to('/contacto/')!!}">Contacto</a></li>
                 <li><a href="{!!URL::to('/terminos/')!!}">Terminos</a></li>
               </ul>
-            </li>                     
+            </li> 
+                <li><a href="{!!URL::to('/ycoins/')!!}">YavuCoins</a></li>                    
           </ul>         
         </div><!--/.navbar-collapse -->
       </div>

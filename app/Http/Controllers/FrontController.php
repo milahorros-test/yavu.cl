@@ -33,4 +33,8 @@ class FrontController extends Controller
     {
         return view('terminos');        
     }
+    public function ycoins()
+    {
+        return view('ycoins');        
+    }
 }

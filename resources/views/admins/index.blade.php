@@ -6,13 +6,13 @@
 		@include('alerts.errorsMessage')
 		@include('alerts.successMessage')
 		@include('alerts.warningMessage')
-		<h2>Binvenido Yavu Admin!</h2>		
+		<h2>Bienvenido Yavu Admin!</h2>		
 		<div class="panel panel-default">
 			<div class="panel-heading"></div>
 			<div class="panel-body">
 				<table class="table">
 					<thead>
-					<h3>El Panel de administración es una interfaz intuitiva para configurar y administrar sus empresas, servicios y estados de pagos. Esto es su base para cualquier cosa o todo lo relacionado con la plataforma Yavu.cl.</h3>
+					<h4>El Panel de administración es una interfaz intuitiva para configurar y administrar las empresas, servicios y estados de pagos de estas mismas. Esto es su base para todo lo relacionado con la plataforma y poder administrar de manera correcta Yavu.cl.</h4>
 						<th>Nombre</th>
 						<th>Correo</th>
 						<th>Operaciones</th>

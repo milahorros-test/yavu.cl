@@ -59,7 +59,6 @@
                   <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Pagos<b class="caret"></b></a>                        
                 <ul class="dropdown-menu">      
                 <li><a href="{!!URL::to('/empresas')!!}">Registrar pago</a></li> 
-                  <li><a href="{!!URL::to('/pagos')!!}">Mostrar listado de pagos</a></li>
                 </ul>
               </li> 
               <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Deudores<b class="caret"></b></a>                        
