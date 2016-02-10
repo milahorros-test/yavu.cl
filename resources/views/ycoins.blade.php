@@ -1,25 +1,62 @@
+<style type="text/css">
+a:link {text-decoration:none; color: #00000;} /* Link no visitado*/
+a:visited {text-decoration:none; color:#000000} /*Link visitado*/
+a:active {text-decoration:none; color:#000000; background:#ffffff} /*Link activo*/
+a:hover {text-decoration:underline; color:#000000; background: #ffffff} /*Mause sobre el link*/
+</style>
+
 @extends('layouts.front')
 @section('content')
+
+
 <div class="jumbotron">
-	<div id="contentIn">
-		<div class="panel panel-default">
-			<!-- Default panel contents -->
-			<div class="panel-heading"><h4>Nuestra Empresa</h4></div>
-			<div class="panel-body">
-				
-				Texto coins
-			</div>
-		</div>
-		<div class="panel panel-default">
-			<!-- Default panel contents -->
-			<div class="panel-heading"><h4>Misión</h4></div>
-			<div class="panel-body">
-				
-				Entregar un servicio de publicidad a través de internet, utilizando herramientas informáticas de última generación para aumentar la competitividad de nuestros comercios asociados. Al mismo tiempo, ofrecer a nuestros usuarios un sistema de beneficios claro y sencillo que les permita ahorrar diariamente.
-			</div>
-		</div>
-	</div>
+
+<div class="container">
+      <div class="row">
+        <div class="col-sm-3 sidebar">
+          <ul class="nav nav-list affix">
+            <li><a href="#one">Descripción</a></li>
+            <li><a href="#two">Cómo participar?</a></li>
+            <li><a href="#three">Registrate!</a></li>
+            <li><a href="#four">Empresas Asociadas</a></li>
+            <li><a href="#five">Five</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 content" >
+          <section id="one">
+            <h2>Section One</h2>
+            <p>Lorem ipsum dolor sit cuchuflí barquillo bacán jote gamba listeilor po cahuín, luca melón con vino pichanga coscacho ni ahí peinar la muñeca chuchada al chancho achoclonar. Chorrocientos pituto ubicatex huevo duro bolsero cachureo el hoyo del queque en cana huevón el año del loly hacerla corta impeque de miedo quilterry la raja longi ñecla. Hilo curado rayuela carrete quina guagua lorea piola ni ahí.</p>
+            <p>Lorem ipsum dolor sit cuchuflí barquillo bacán jote gamba listeilor po cahuín, luca melón con vino pichanga coscacho ni ahí peinar la muñeca chuchada al chancho achoclonar. Chorrocientos pituto ubicatex huevo duro bolsero cachureo el hoyo del queque en cana huevón el año del loly hacerla corta impeque de miedo quilterry la raja longi ñecla. Hilo curado rayuela carrete quina guagua lorea piola ni ahí.</p>
+          </section>
+          
+          <section id="two">
+            <h2>Section Two</h2>
+             <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no seaest Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua, ugo consetetur Lorem Ipsum.</p>
+            <p>Lorem ipsum dolor sit cuchuflí barquillo bacán jote gamba listeilor po cahuín, luca melón con vino pichanga coscacho ni ahí peinar la muñeca chuchada al chancho achoclonar. Chorrocientos pituto ubicatex huevo duro bolsero cachureo el hoyo del queque en cana huevón el año del loly hacerla corta impeque de miedo quilterry la raja longi ñecla. Hilo curado rayuela carrete quina guagua lorea piola ni ahí.</p>
+
+          </section>
+          <section id="three">
+          	<h2>Section Three</h2>
+             <p>Lorem ipsum dolor sit cuchuflí barquillo bacán jote gamba listeilor po cahuín, luca melón con vino pichanga coscacho ni ahí peinar la muñeca chuchada al chancho achoclonar. Chorrocientos pituto ubicatex huevo duro bolsero cachureo el hoyo del queque en cana huevón el año del loly hacerla corta impeque de miedo quilterry la raja longi ñecla. Hilo curado rayuela carrete quina guagua lorea piola ni ahí.</p>
+            <p>Lorem ipsum dolor sit cuchuflí barquillo bacán jote gamba listeilor po cahuín, luca melón con vino pichanga coscacho ni ahí peinar la muñeca chuchada al chancho achoclonar. Chorrocientos pituto ubicatex huevo duro bolsero cachureo el hoyo del queque en cana huevón el año del loly hacerla corta impeque de miedo quilterry la raja longi ñecla. Hilo curado rayuela carrete quina guagua lorea piola ni ahí.</p>
+
+          </section>
+          
+          <section id="four">
+            <h2>Section Four</h2>
+             <p>Lorem ipsum dolor sit cuchuflí barquillo bacán jote gamba listeilor po cahuín, luca melón con vino pichanga coscacho ni ahí peinar la muñeca chuchada al chancho achoclonar. Chorrocientos pituto ubicatex huevo duro bolsero cachureo el hoyo del queque en cana huevón el año del loly hacerla corta impeque de miedo quilterry la raja longi ñecla. Hilo curado rayuela carrete quina guagua lorea piola ni ahí.</p>
+            <p>Lorem ipsum dolor sit cuchuflí barquillo bacán jote gamba listeilor po cahuín, luca melón con vino pichanga coscacho ni ahí peinar la muñeca chuchada al chancho achoclonar. Chorrocientos pituto ubicatex huevo duro bolsero cachureo el hoyo del queque en cana huevón el año del loly hacerla corta impeque de miedo quilterry la raja longi ñecla. Hilo curado rayuela carrete quina guagua lorea piola ni ahí.</p>
+          </section>
+          
+          <section id="five">
+            <h2>Section Five</h2>
+             <p>Lorem ipsum dolor sit cuchuflí barquillo bacán jote gamba listeilor po cahuín, luca melón con vino pichanga coscacho ni ahí peinar la muñeca chuchada al chancho achoclonar. Chorrocientos pituto ubicatex huevo duro bolsero cachureo el hoyo del queque en cana huevón el año del loly hacerla corta impeque de miedo quilterry la raja longi ñecla. Hilo curado rayuela carrete quina guagua lorea piola ni ahí.</p>
+            <p>Lorem ipsum dolor sit cuchuflí barquillo bacán jote gamba listeilor po cahuín, luca melón con vino pichanga coscacho ni ahí peinar la muñeca chuchada al chancho achoclonar. Chorrocientos pituto ubicatex huevo duro bolsero cachureo el hoyo del queque en cana huevón el año del loly hacerla corta impeque de miedo quilterry la raja longi ñecla. Hilo curado rayuela carrete quina guagua lorea piola ni ahí.</p>
+
+          </section>
+        </div>
+      </div>
+    </div>
+ 
 </div>
 @stop
-
-<!-- algo -->

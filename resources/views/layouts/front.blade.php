@@ -15,8 +15,10 @@
         {!!Html::script('js/vendor/bootstrap.min.js')!!}
         {!!Html::script('js/plugins.js')!!}
         {!!Html::script('js/main.js')!!}
+        {!!Html::script('js/ycoins.js')!!}
         {!!Html::style('css/bootstrap.css')!!}
         {!!Html::style('css/style.css')!!}
+        {!!Html::style('css/ycoins.css')!!}
         {!!Html::style('css/main.css')!!}
         {!!Html::style('css/bootstrap-theme.min.css')!!}
         {!!Html::script('js/vendor/modernizr-2.8.3-respond-1.4.2.min.js')!!}
@@ -28,7 +30,7 @@
             }
         </style>
     </head>
-    <body>
+    <body >
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
