@@ -54,14 +54,16 @@ class EmpresaController extends Controller
   public function MostrarEmpresaPublica($empresa){
     $empresa = DB::table('empresas')                    
                 ->select('*')    
-                ->where('nombre', 'like', '%'.$empresa.'%')   
+                ->where('nombre', '=', $empresa)   
                 ->orderBy('created_at','desc')   
                 ->get();
 
     //dd($usuarios);
-    return response()->json(
+
+    /*return response()->json(
         $empresa
-    );    
+    );*/
+    return view('empresas.publicProfile', compact('empresa'));
   }
   public function destroy($id)
   {

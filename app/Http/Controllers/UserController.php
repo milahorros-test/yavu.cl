@@ -6,6 +6,7 @@ use yavu\Http\Requests\UserCreateRequest;
 use yavu\Http\Requests\UserUpdateRequest;
 use yavu\Http\Controllers\Controller;
 use Session;
+use Auth;
 use Redirect;
 use yavu\User;
 use yavu\Estado;
@@ -52,13 +53,33 @@ class UserController extends Controller
   {
 
   }
+
+  public function InfoEmpresas($user_id)
+  {
+    $info = DB::table('empresas')                    
+                ->select('*')    
+                ->where('user_id', '=', $user_id)   
+                ->orderBy('created_at','desc')   
+                ->get();
+
+    return response()->json(
+      $info    
+    );
+  }
+
   public function dashboard()
   {
-    $users = User::All();
+    $users = DB::table('users')                    
+                ->select('*')    
+                ->where('id', '=', Auth::user()->get()->id)   
+                ->get();
+
     return view('usuarios.dashboard', compact('users'));    
   }  
   public function profile()
   {
+
+
     return view('usuarios.profile'); 
   }    
   public function edit($id)

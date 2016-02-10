@@ -51,16 +51,17 @@
 						Estado usuario
 						<span id="EstadoUsuario" style="float:right;" class="label label-success">
 						<span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
-							Activo
+							{!!Auth::user()->get()->estado!!}
 						</span>
 					</div>
 					<div class="list-group-item">
 						Estado de empresas
-						<span id="EstadoEmpresa" style="float:right;" class="label label-success">
-						<span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
-							Activo							
-						</span>
-
+						<br>
+						<div id="EstadoEmpresa">
+							
+						</div>
+						
+			
 					</div>	
 					<div class="list-group-item">
 						Noticias de las empresas a las que sigues

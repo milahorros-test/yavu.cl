@@ -15,7 +15,11 @@ class Empresa extends Model implements AuthenticatableContract,
 	use Authenticatable, Authorizable, CanResetPassword, SoftDeletes;
     protected $table = "empresas";
     protected $primaryKey = 'id';
+<<<<<<< HEAD
     protected $fillable = ['rut', 'email', 'login', 'nombre', 'direccion', 'ciudad', 'region', 'pais', 'fono', 'fono_2', 'fecha_creacion', 'tipo_servicio','fecha_de_pago','monto_pagado','nombre_encargado', 'password'];
+=======
+    protected $fillable = ['rut', 'email', 'login', 'nombre', 'direccion', 'ciudad', 'region', 'pais', 'fono', 'fono_2', 'fecha_creacion', 'tipo_servicio','fecha_de_pago','nombre_encargado', 'password', 'user_id', 'estado'];
+>>>>>>> 571d9b4e386d76c58a4ad7bf995002bcb2edc24d
     protected $hidden = ['password', 'remember_token'];
     protected $dates = ['deleted_at'];
     public function setPasswordAttribute($valor){

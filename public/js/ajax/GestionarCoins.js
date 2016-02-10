@@ -4,6 +4,7 @@ $(document).ready(function(){
 
 	/*MÉTODOS CONSTRUCTORES*/
 	ContarCoins();
+	InfoEmpresas();
 	/*MÉTODOS CONSTRUCTORES*/
 
 	/*SELECTORES*/
@@ -24,7 +25,38 @@ $(document).ready(function(){
 					//$("#CantidadCoins").html("<p>0</p>");	
 			});
 		});						
-	}	
+	}
+	function InfoEmpresas(){
+		var user_id = $("#user_id").val();
+		var route = "http://localhost:8000/infoempresas/"+user_id;
+		console.log(user_id);
+		$.get(route, function(res){
+			$("#EstadoEmpresa").value = "";
+			$(res).each(function(key,value){
+				if(value.estado === "Pendiente"){
+					//$("#EstadoEmpresa").removeClass("label-success");
+					//$("#EstadoEmpresa").addClass("label-warning");
+					$("#EstadoEmpresa").append(
+						'<span style="" class="label label-warning">'
+							+'<span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>'
+							+value.nombre+": "+value.estado
+						+"</span>"					
+					);
+				}else if(value.estado === "Activo"){
+					//$("#EstadoEmpresa").removeClass("label-warning");
+					//$("#EstadoEmpresa").addClass("label-success");
+					$("#EstadoEmpresa").append(
+						'<span style="" class="label label-success">'
+							+'<span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>'
+							+value.nombre+": <a href='empresa/"+value.nombre+"'>"+value.estado+"</a>"							
+						+"</span>"					
+					);					
+				}					
+	
+			});
+		});	
+	}
+
 	/*FUNCIONES Y PROCEDIMIENTOS*/
 
 	

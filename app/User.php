@@ -15,7 +15,7 @@ class User extends Model implements AuthenticatableContract,
     use Authenticatable, Authorizable, CanResetPassword, SoftDeletes;
     protected $table = 'users';
     protected $primaryKey = 'id';
-    protected $fillable = ['rut', 'email', 'login', 'nombre', 'apellido', 'direccion', 'ciudad', 'region', 'pais', 'fono', 'fono_2', 'sexo', 'fecha_nacimiento', 'password'];
+    protected $fillable = ['rut', 'email', 'login', 'nombre', 'apellido', 'direccion', 'ciudad', 'region', 'pais', 'fono', 'fono_2', 'sexo', 'fecha_nacimiento', 'password', 'estado', 'tipo_usuario'];
     protected $hidden = ['password', 'remember_token'];
     protected $dates = ['deleted_at'];
     public function setPasswordAttribute($valor){

@@ -11,11 +11,14 @@
 		    <div class="col-sm-8">
 				<div class="list-group" >
 					<div class="list-group-item">
-						@if (Auth::user()->get()->sexo == 'Masculino')
-							Bienvenido! {!!Auth::user()->get()->nombre!!}
-						@elseif (Auth::user()->get()->sexo == 'Femenino')
-							Bienvenida! {!!Auth::user()->get()->nombre!!}
+					@foreach($users as $user)
+						@if ($user->sexo == 'Masculino')
+							Bienvenido! {{$user->nombre}}
+						@elseif ($user->sexo == 'Femenino')
+							Bienvenida! {{$user->nombre}}
 						@endif
+					@endforeach
+					
 					</div>					
 					<div class="list-group-item">
 						<h4><span class="label label-info">#Publicaciones <span class="glyphicon glyphicon-fire" aria-hidden="true"></span></span></h4>

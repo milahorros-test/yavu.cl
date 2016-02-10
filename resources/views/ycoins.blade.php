@@ -7,7 +7,7 @@
 			<div class="panel-heading"><h4>Nuestra Empresa</h4></div>
 			<div class="panel-body">
 				
-				Somos una agencia de publicidad enfocada al publico de internet, siendo un canal de comunicación entre sus productos y nuestra comunidad que crece día a día. Hacia nuestros ususarios nos perfilamos como un sitio de beneficios, en el cual trabajamos diariamente para ofrecer la mayor variedad en descuentos y premios.
+				Texto coins
 			</div>
 		</div>
 		<div class="panel panel-default">
