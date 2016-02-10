@@ -1,3 +1,5 @@
+{!!Html::script('js/jquery.js')!!}
+{!!Html::script('js/ajax/HistorialCoins.js')!!}
 @extends('layouts.front')
 @section('content')
 <div class="jumbotron">
@@ -33,6 +35,12 @@
 						No te pierdas las publicaciones pendientes
 					</div>												
 					<a href="#" class="list-group-item list-group-item-info">Ir a publicaciones <span class="badge">14<small>  ¡Publicaciones nuevas!</small></span></a>
+				</div>
+				<div class="list-group" id="HistorialCoins">
+					<div class="list-group-item">
+						Resumen de carga de yavu coins
+					</div>
+
 				</div>
 		    </div>
 
