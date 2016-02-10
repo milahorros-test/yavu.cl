@@ -1,66 +1,62 @@
+<style type="text/css">
+a:link {text-decoration:none; color: #99CC00;} /* Link no visitado*/
+a:visited {text-decoration:none; color:#99CC66} /*Link visitado*/
+a:active {text-decoration:none; color:#99FF00; background:#EEEEEE} /*Link activo*/
+a:hover {text-decoration:underline; color:#99FF00; background: #EEEEEE} /*Mause sobre el link*/
+</style>
+
 @extends('layouts.front')
-@section('content')	
+@section('content')
+
+
 <div class="jumbotron">
 
-    <div id="fullWidth" class='row' >
-      <div class='col-md-8'>
-        <div class="panel panel-default">
-          <img src="{!!URL::to('images/logo-example.jpg')!!}" class="img-responsive">
+<div class="container">
+      <div class="row">
+        <div class="col-sm-3 sidebar">
+          <ul class="nav nav-list affix">
+            <li><a href="#one">One</a></li>
+            <li><a href="#two">Two</a></li>
+            <li><a href="#three">Three</a></li>
+            <li><a href="#four">Four</a></li>
+            <li><a href="#five">Five</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 content" >
+          <section id="one">
+            <h2>Section One</h2>
+            <p>Lorem ipsum dolor sit cuchuflí barquillo bacán jote gamba listeilor po cahuín, luca melón con vino pichanga coscacho ni ahí peinar la muñeca chuchada al chancho achoclonar. Chorrocientos pituto ubicatex huevo duro bolsero cachureo el hoyo del queque en cana huevón el año del loly hacerla corta impeque de miedo quilterry la raja longi ñecla. Hilo curado rayuela carrete quina guagua lorea piola ni ahí.</p>
+            <p>Lorem ipsum dolor sit cuchuflí barquillo bacán jote gamba listeilor po cahuín, luca melón con vino pichanga coscacho ni ahí peinar la muñeca chuchada al chancho achoclonar. Chorrocientos pituto ubicatex huevo duro bolsero cachureo el hoyo del queque en cana huevón el año del loly hacerla corta impeque de miedo quilterry la raja longi ñecla. Hilo curado rayuela carrete quina guagua lorea piola ni ahí.</p>
+          </section>
+          
+          <section id="two">
+            <h2>Section Two</h2>
+             <p>Lorem ipsum dolor sit cuchuflí barquillo bacán jote gamba listeilor po cahuín, luca melón con vino pichanga coscacho ni ahí peinar la muñeca chuchada al chancho achoclonar. Chorrocientos pituto ubicatex huevo duro bolsero cachureo el hoyo del queque en cana huevón el año del loly hacerla corta impeque de miedo quilterry la raja longi ñecla. Hilo curado rayuela carrete quina guagua lorea piola ni ahí.</p>
+            <p>Lorem ipsum dolor sit cuchuflí barquillo bacán jote gamba listeilor po cahuín, luca melón con vino pichanga coscacho ni ahí peinar la muñeca chuchada al chancho achoclonar. Chorrocientos pituto ubicatex huevo duro bolsero cachureo el hoyo del queque en cana huevón el año del loly hacerla corta impeque de miedo quilterry la raja longi ñecla. Hilo curado rayuela carrete quina guagua lorea piola ni ahí.</p>
+
+          </section>
+          <section id="three">
+          	<h2>Section Three</h2>
+             <p>Lorem ipsum dolor sit cuchuflí barquillo bacán jote gamba listeilor po cahuín, luca melón con vino pichanga coscacho ni ahí peinar la muñeca chuchada al chancho achoclonar. Chorrocientos pituto ubicatex huevo duro bolsero cachureo el hoyo del queque en cana huevón el año del loly hacerla corta impeque de miedo quilterry la raja longi ñecla. Hilo curado rayuela carrete quina guagua lorea piola ni ahí.</p>
+            <p>Lorem ipsum dolor sit cuchuflí barquillo bacán jote gamba listeilor po cahuín, luca melón con vino pichanga coscacho ni ahí peinar la muñeca chuchada al chancho achoclonar. Chorrocientos pituto ubicatex huevo duro bolsero cachureo el hoyo del queque en cana huevón el año del loly hacerla corta impeque de miedo quilterry la raja longi ñecla. Hilo curado rayuela carrete quina guagua lorea piola ni ahí.</p>
+
+          </section>
+          
+          <section id="four">
+            <h2>Section Four</h2>
+             <p>Lorem ipsum dolor sit cuchuflí barquillo bacán jote gamba listeilor po cahuín, luca melón con vino pichanga coscacho ni ahí peinar la muñeca chuchada al chancho achoclonar. Chorrocientos pituto ubicatex huevo duro bolsero cachureo el hoyo del queque en cana huevón el año del loly hacerla corta impeque de miedo quilterry la raja longi ñecla. Hilo curado rayuela carrete quina guagua lorea piola ni ahí.</p>
+            <p>Lorem ipsum dolor sit cuchuflí barquillo bacán jote gamba listeilor po cahuín, luca melón con vino pichanga coscacho ni ahí peinar la muñeca chuchada al chancho achoclonar. Chorrocientos pituto ubicatex huevo duro bolsero cachureo el hoyo del queque en cana huevón el año del loly hacerla corta impeque de miedo quilterry la raja longi ñecla. Hilo curado rayuela carrete quina guagua lorea piola ni ahí.</p>
+          </section>
+          
+          <section id="five">
+            <h2>Section Five</h2>
+             <p>Lorem ipsum dolor sit cuchuflí barquillo bacán jote gamba listeilor po cahuín, luca melón con vino pichanga coscacho ni ahí peinar la muñeca chuchada al chancho achoclonar. Chorrocientos pituto ubicatex huevo duro bolsero cachureo el hoyo del queque en cana huevón el año del loly hacerla corta impeque de miedo quilterry la raja longi ñecla. Hilo curado rayuela carrete quina guagua lorea piola ni ahí.</p>
+            <p>Lorem ipsum dolor sit cuchuflí barquillo bacán jote gamba listeilor po cahuín, luca melón con vino pichanga coscacho ni ahí peinar la muñeca chuchada al chancho achoclonar. Chorrocientos pituto ubicatex huevo duro bolsero cachureo el hoyo del queque en cana huevón el año del loly hacerla corta impeque de miedo quilterry la raja longi ñecla. Hilo curado rayuela carrete quina guagua lorea piola ni ahí.</p>
+
+          </section>
         </div>
       </div>
-     <div class='col-md-4 pull-right'>
-        <div class="panel panel-default">
-          <img src="{!!URL::to('images/sorteos.jpg')!!}" class="img-responsive">
-        </div>
-     </div>
     </div>
-     <div id="fullWidth" class='row' >
-      <div class='col-md-4'>
-        <div class="panel panel-default">
-          Menu
-          Descripcion
-          Como funciona
-          Unete a yavu.cl
-          Empresas asociadas!
-          <ul class="nav nav-pills">
-			  <li role="presentation" class="active"><a href="#">Home</a></li>
-			  <li role="presentation"><a href="#">Profile</a></li>
-			  <li role="presentation"><a href="#">Messages</a></li>
-		</ul>
-        </div>
-      </div>
-     <div class='col-md-8 pull-right'>
-        <div class="panel panel-default">
-          Mostrar info yavu
-        </div>
-     </div>
-    </div>
-
-    <div id="pagewrap">
-
-	<header>
-		<h1>3 Column Responsive Layout</h1>
-	</header>
-		
-	<section id="content">
-		<h2>1st Content Area</h2>
-		<p>This page demonstrates a 3 column responsive layout, complete with responsive images and jquery slideshow.</p>
-	</section>
-	
-	<section id="middle">
-		<h2>2nd Content Area</h2>
-		<p>At full width all three columns will be displayed side by side. As the page is resized the third column will collapse under the first and second. At the smallest screen size all three columns will be stacked on top of one another.</p>
-		<p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
-	</section>
-
-	<aside id="sidebar">
-		<h2>3rd Content Area</h2>
-		<p>Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.</p>
-		<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-		<p>Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.</p>
-	</aside>
-  </div>
-
-
-
-@stop 
+ 
+</div>
+@stop

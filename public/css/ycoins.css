@@ -1,0 +1,33 @@
+
+
+body { 
+  position: relative;
+  line-height: 1.6;
+}
+
+section { padding: 100px 0; min-height: 380px; }
+section.jumbotron { padding: 160px 0 120px; }
+
+.stail {
+
+/* unvisited link */
+a:link {
+    color: red;
+}
+
+/* visited link */
+a:visited {
+    color: green;
+}
+
+/* mouse over link */
+a:hover {
+    color: hotpink;
+}
+
+/* selected link */
+a:active {
+    color: blue;
+}
+
+}
