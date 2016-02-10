@@ -1,8 +1,8 @@
 <style type="text/css">
-a:link {text-decoration:none; color: #99CC00;} /* Link no visitado*/
-a:visited {text-decoration:none; color:#99CC66} /*Link visitado*/
-a:active {text-decoration:none; color:#99FF00; background:#EEEEEE} /*Link activo*/
-a:hover {text-decoration:underline; color:#99FF00; background: #EEEEEE} /*Mause sobre el link*/
+a:link {text-decoration:none; color: #00000;} /* Link no visitado*/
+a:visited {text-decoration:none; color:#000000} /*Link visitado*/
+a:active {text-decoration:none; color:#000000; background:#ffffff} /*Link activo*/
+a:hover {text-decoration:underline; color:#000000; background: #ffffff} /*Mause sobre el link*/
 </style>
 
 @extends('layouts.front')
@@ -15,10 +15,10 @@ a:hover {text-decoration:underline; color:#99FF00; background: #EEEEEE} /*Mause 
       <div class="row">
         <div class="col-sm-3 sidebar">
           <ul class="nav nav-list affix">
-            <li><a href="#one">One</a></li>
-            <li><a href="#two">Two</a></li>
-            <li><a href="#three">Three</a></li>
-            <li><a href="#four">Four</a></li>
+            <li><a href="#one">Descripción</a></li>
+            <li><a href="#two">Cómo participar?</a></li>
+            <li><a href="#three">Registrate!</a></li>
+            <li><a href="#four">Empresas Asociadas</a></li>
             <li><a href="#five">Five</a></li>
           </ul>
         </div>
@@ -31,7 +31,7 @@ a:hover {text-decoration:underline; color:#99FF00; background: #EEEEEE} /*Mause 
           
           <section id="two">
             <h2>Section Two</h2>
-             <p>Lorem ipsum dolor sit cuchuflí barquillo bacán jote gamba listeilor po cahuín, luca melón con vino pichanga coscacho ni ahí peinar la muñeca chuchada al chancho achoclonar. Chorrocientos pituto ubicatex huevo duro bolsero cachureo el hoyo del queque en cana huevón el año del loly hacerla corta impeque de miedo quilterry la raja longi ñecla. Hilo curado rayuela carrete quina guagua lorea piola ni ahí.</p>
+             <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no seaest Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua, ugo consetetur Lorem Ipsum.</p>
             <p>Lorem ipsum dolor sit cuchuflí barquillo bacán jote gamba listeilor po cahuín, luca melón con vino pichanga coscacho ni ahí peinar la muñeca chuchada al chancho achoclonar. Chorrocientos pituto ubicatex huevo duro bolsero cachureo el hoyo del queque en cana huevón el año del loly hacerla corta impeque de miedo quilterry la raja longi ñecla. Hilo curado rayuela carrete quina guagua lorea piola ni ahí.</p>
 
           </section>
