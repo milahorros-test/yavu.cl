@@ -152,13 +152,12 @@
 					{!!Form::label('Fecha de pago:')!!}
 					{!!Form::date('fecha_de_pago',null,['class'=>'form-control','placeholder'=>''])!!}
 				</div>
-<<<<<<< HEAD
 
 				<div class="form-group has-feedback has-feedback-left">
 					{!!Form::label('Ingrese monto cancelado:')!!}
 					{!!Form::text('monto_pagado',null,['class'=>'form-control','placeholder'=>''])!!}
 				</div>
-=======
+				
 				@if (Auth::user()->check())
 					<div class="form-group has-feedback has-feedback-left">
 						{!!Form::hidden('user_id', Auth::user()->get()->id )!!}
@@ -167,7 +166,7 @@
 						{!!Form::hidden('estado', 'Pendiente')!!}	
 					</div>						
 				@endif				
->>>>>>> 571d9b4e386d76c58a4ad7bf995002bcb2edc24d
+
 			</div>
 		</div>
 	</div>
