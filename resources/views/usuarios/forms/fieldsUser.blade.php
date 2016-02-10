@@ -81,9 +81,8 @@
 		
 	</div>
 </div>
-
-@if(Auth::user()->check())
-	<div class="col-sm-4">
+<div class="col-sm-4">
+	@if(Auth::user()->check())
 		<div class="list-group" >
 			<div class="list-group-item">
 				<h4>Datos de Contacto</h4>
@@ -186,5 +185,5 @@
 
 			</div>
 		</div>
-	</div>
-@endif
+	@endif
+<!--</div>-->
