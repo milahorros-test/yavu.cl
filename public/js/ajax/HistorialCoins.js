@@ -48,8 +48,10 @@ $(document).ready(function(){
 	function HistorialCoins(){
 		var route = "http://localhost:8000/historialcoins";
 		var TotalCoins = 0;
+		var Contador = 0;
 		$.get(route, function(res){
 			$(res).each(function(key,value){
+				Contador += 1;
 				TotalCoins += parseInt(value.cantidad);
 				$("#HistorialCoins").append(
 					'<div class="list-group-item">'
@@ -62,9 +64,9 @@ $(document).ready(function(){
 				);
 			});
 			$("#HistorialCoins").append(
-				'<div class="list-group-item" style="text-align:right;">'
-					+'<div"><strong>Total Histórico </strong>'+formatNumber.new(TotalCoins, "$ ")+'</div>'				
-				+'</div>'				
+				'<a href="#HistorialCoins"><div class="list-group-item list-group-item-info" style="text-align:right;">'
+					+'<div"><strong>Total Histórico </strong><small>(Últimos '+Contador+' registros)</small> '+formatNumber.new(TotalCoins, "$ ")+'</div>'				
+				+'</div></a>'				
 			);			
 		});			
 	}

@@ -56,19 +56,26 @@ $(document).ready(function(){
 					//$("#EstadoEmpresa").removeClass("label-success");
 					//$("#EstadoEmpresa").addClass("label-warning");
 					$("#EstadoEmpresa").append(
-						'<span style="" class="label label-warning">'
-							+'<span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>'
-							+value.nombre+": "+value.estado
-						+"</span>"					
+						'<div class="list-group-item">'
+							+"<strong>"+value.nombre+"</strong>"
+							+'<span style="float:right;" class="label label-warning">'								
+								+'<span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>'
+								+value.estado
+							+"</span>"	
+						+'</div>'				
 					);
 				}else if(value.estado === "Activo"){
 					//$("#EstadoEmpresa").removeClass("label-warning");
 					//$("#EstadoEmpresa").addClass("label-success");
 					$("#EstadoEmpresa").append(
-						'<span style="" class="label label-success">'
-							+'<span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>'
-							+value.nombre+": <a href='empresa/"+value.nombre+"'>"+value.estado+"</a>"							
-						+"</span>"					
+						'<div class="list-group-item">'
+							+"<strong>"+value.nombre+"</strong>"						
+							+'<span style="float:right;" class="label label-success">'
+								+'<span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>'
+								+"<a href='empresa/"+value.nombre+"/'>"+value.estado+"</a>"											
+							+"</span>"	
+							+'<a class="btn-xs btn-link" style="float:right;" href="empresas/'+value.id+'/edit">Editar</a>'	
+						+'</div>'
 					);					
 				}					
 	

@@ -8,7 +8,10 @@
 	<div id="contentMiddle">
 
 		<div class="row" style="margin-top:-35px;">
-
+    		@include('alerts.alertFields')
+			@include('alerts.errorsMessage')
+			@include('alerts.successMessage')
+			@include('alerts.warningMessage')
 		    <div class="col-sm-8">
 				<div class="list-group" >
 					<div class="list-group-item">
@@ -31,83 +34,6 @@
 					</div>
 
 				</div>
-		    </div>
-
-		    <div class="col-sm-4"><!--style="position:fixed;z-index:1000;"-->
-
-		   
-			
-				<div class="list-group">
-					<div class="list-group-item">
-						<h4>Información</h4>
-					</div>
-					<div class="list-group-item">
-						Coins 
-						<span id="CantidadCoins" style="float:right;" class="label label-warning">
-							<img src="http://i601.photobucket.com/albums/tt93/tbg8904/Gaia%20Icon/Coins.png" width="16px" height="16px">	
-						</span>
-					</div>
-					<div class="list-group-item">
-						Estado usuario
-						<span id="EstadoUsuario" style="float:right;" class="label label-success">
-						<span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
-							{!!Auth::user()->get()->estado!!}
-						</span>
-					</div>
-					<div class="list-group-item">
-						Estado de empresas
-						<br>
-						<div id="EstadoEmpresa">
-							
-						</div>
-						
-			
-					</div>	
-					<div class="list-group-item">
-						Noticias de las empresas a las que sigues
-					</div>	
-					<div class="list-group-item">
-						Últimas novedades en yavu
-					</div>	
-					{!!link_to_route('usuarios.edit', $title = 'Modificar datos de mi cuenta', $parameters = Auth::user()->get()->id, $attributes = ['class'=>'list-group-item list-group-item-info'])!!}
-					<a href="{!!URL::to('dashboard')!!}" class="list-group-item list-group-item-warning">Volver a dashboard</a>
-					<a href="{!!URL::to('sitemap')!!}" class="list-group-item list-group-item-warning">Ir al Sitemap</a>
-				</div>	
-			
-		    </div>
-
-		</div>
-
-		<br />
-
-		<div class="row" style="margin-top:-40px;">
-
-
-
-
-		<!-- ESTO se va a validar siempre que el cliente tenga una empresa
-
-		    <div class="col-sm-4" style="float:right;">
-
-				<div class="list-group">
-					<div class="list-group-item">
-						<h4><span class="label label-info">#MiEmpresa <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span></span></h4>
-					</div>							
-					<div class="list-group-item">
-						Inicia actividad en yavu.cl con tu empresa registrandote aquí.<br>
-
-					</div>
-					<a href="{!!URL::to('/empresas/create')!!}" class="list-group-item list-group-item-warning">Saber más e ir a registrar mi empresa</a>
-				</div>
-
-		    </div>		    
-		-->
-
-		    <div class="col-sm-8">
-		    		@include('alerts.alertFields')
-					@include('alerts.errorsMessage')
-					@include('alerts.successMessage')
-					@include('alerts.warningMessage')
 				<div class="list-group">
 					<div class="list-group-item">
 						<h4><span class="label label-info">#Publicaciones&Estados <span class="glyphicon glyphicon-fire" aria-hidden="true"></span></span></h4>
@@ -157,10 +83,60 @@
 					<span id="EstadosNuevos" class="badge"></span>
 				</a>	
 
+
+		    </div>
+
+		    <div class="col-sm-4"><!--style="position:fixed;z-index:1000;"-->
+			
+				<div class="list-group">
+					<div class="list-group-item">
+						<h4>Información</h4>
+					</div>
+					<div class="list-group-item">
+						Coins 
+						<span id="CantidadCoins" style="float:right;" class="label label-warning">
+							<img src="http://i601.photobucket.com/albums/tt93/tbg8904/Gaia%20Icon/Coins.png" width="16px" height="16px">	
+						</span>
+					</div>
+					<div class="list-group-item">
+						Estado usuario
+						<span id="EstadoUsuario" style="float:right;" class="label label-success">
+						<span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
+							{!!Auth::user()->get()->estado!!}
+						</span>
+					</div>
+				</div>
+				<div class="list-group"  id="EstadoEmpresa">
+					<div class="list-group-item">
+						<h4><span class="label label-info">#MiEmpresa <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span></span></h4>
+					</div>							
+					<div class="list-group-item">
+						Inicia actividad en yavu.cl con tu empresa registrandote aquí.<br>
+
+					</div>
+					<a href="{!!URL::to('/empresas/create')!!}" class="list-group-item list-group-item-warning">Ir a registrar una empresa</a>	
+					<div class="list-group-item">
+						<h4>Estado de empresas</h4>
+					</div>					
+				</div>
+
+				<div class="list-group">					
+					<div class="list-group-item">
+						Noticias de las empresas a las que sigues
+					</div>	
+					<div class="list-group-item">
+						Últimas novedades en yavu
+					</div>	
+					{!!link_to_route('usuarios.edit', $title = 'Modificar datos de mi cuenta', $parameters = Auth::user()->get()->id, $attributes = ['class'=>'list-group-item list-group-item-info'])!!}
+					<a href="{!!URL::to('dashboard')!!}" class="list-group-item list-group-item-warning">Volver a dashboard</a>
+					<a href="{!!URL::to('sitemap')!!}" class="list-group-item list-group-item-warning">Ir al Sitemap</a>
+				</div>	
+
+
+			
 		    </div>
 
 		</div>
-
 
 	</div><!-- Fin del div id contentIn -->
 </div>

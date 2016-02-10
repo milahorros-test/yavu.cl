@@ -13,34 +13,30 @@
 		    <div class="col-sm-8">
 				<div class="list-group" >
 					<div class="list-group-item">
-					@foreach($users as $user)
-						@if ($user->sexo == 'Masculino')
-							Bienvenido! {{$user->nombre}}
-						@elseif ($user->sexo == 'Femenino')
-							Bienvenida! {{$user->nombre}}
-						@endif
-					@endforeach
-					
+						@foreach($users as $user)
+							@if ($user->sexo == 'Masculino')
+								Bienvenido! {{$user->nombre}}
+							@elseif ($user->sexo == 'Femenino')
+								Bienvenida! {{$user->nombre}}
+							@endif
+						@endforeach
+						<span style="float:right;" class="label label-info">#Publicaciones <span class="glyphicon glyphicon-fire" aria-hidden="true"></span></span>				
 					</div>					
 					<div class="list-group-item">
-						<h4><span class="label label-info">#Publicaciones <span class="glyphicon glyphicon-fire" aria-hidden="true"></span></span></h4>
+						
 					</div>							
 					<div class="list-group-item">
 						Mira lo que otros interatúan con la variedad de publicaciones de tiendas que podrían interesarte.
-					</div>
-					<div class="list-group-item-full-classic">
-						@include('layouts.bannerFront')
 					</div>	
 					<div class="list-group-item">
 						No te pierdas las publicaciones pendientes
 					</div>												
-					<a href="#" class="list-group-item list-group-item-info">Ir a publicaciones <span class="badge">14<small>  ¡Publicaciones nuevas!</small></span></a>
+					<a href="#!" class="list-group-item list-group-item-info">Ir a publicaciones <span class="badge">14<small>  ¡Publicaciones nuevas!</small></span></a>
 				</div>
 				<div class="list-group" id="HistorialCoins">
 					<div class="list-group-item">
 						Resumen de carga de yavu coins
 					</div>
-
 				</div>
 		    </div>
 
