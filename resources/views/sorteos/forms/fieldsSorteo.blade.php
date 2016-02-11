@@ -16,13 +16,10 @@
 
 
         <div class="form-group has-feedback has-feedback-left">
-          {!!Form::label('Fecha de pago:')!!}
-          {!!Form::date('fecha_de_pago',null,['class'=>'form-control','placeholder'=>''])!!}
+          {!!Form::label('Fecha de inicio Sorteo:')!!}
+          {!!Form::date('fecha_inicio_sorteo',null,['class'=>'form-control','placeholder'=>''])!!}
 
         </div>
-
-
-
 </div>
 		</div>
     </div>
