@@ -10,7 +10,6 @@
 		<div class="row">
 			{!!Form::model($user, ['method'=>'PUT', 'route' => ['usuarios.update', $user->id] ])!!}
 			@include('usuarios.forms.fieldsUser')
-			<div class="col-sm-4" style="float:right;">
 				<div class="list-group">
 					<div class="list-group-item">
 						<div class="form-group has-feedback has-feedback-left">
@@ -37,7 +36,7 @@
 						</div>							
 					</div>		
 				</div>
-			</div>
+			</div><!--Este fin del div cierra el div que se abre en fieldsUser-->	
 		</div>
 	</div>
 </div>

@@ -95,6 +95,4 @@ $(document).ready(function(){
 	}
 
 	/*FUNCIONES Y PROCEDIMIENTOS*/
-
-	
 });

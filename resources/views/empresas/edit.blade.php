@@ -1,3 +1,5 @@
+{!!Html::script('js/jquery.js')!!}
+{!!Html::script('js/ajax/SolicitudEliminacionEmpresa.js')!!}
 @extends('layouts.frontadm')
 @section('content')
 <div class="jumbotron">
@@ -10,7 +12,6 @@
 		<div class="row">
 			{!!Form::model($empresa, ['method'=>'PUT', 'route' => ['empresas.update', $empresa->id] ])!!}
 			@include('empresas.forms.fieldsEmpresa')
-			<div class="col-sm-4" style="float:right;">
 				<div class="list-group">
 					<div class="list-group-item">				
 						<div class="form-group has-feedback has-feedback-left">
@@ -18,23 +19,35 @@
 							{!!Form::close()!!}
 						</div>
 					</div>
+
 					<div class="list-group-item">		
 						<div class="form-group has-feedback has-feedback-left">
-							{!!Form::open(['action'=> ['EmpresaController@destroy', $empresa->id], 'method'=>'DELETE'])!!}
-								{!!Form::submit('Eliminar', ['class'=>'btn btn-primary btn-danger', 'style'=>'width:100%;'])!!}
-							{!!Form::close()!!}		
+							<!--  Reemplaza->{!!Form::open(['action'=> ['EmpresaController@destroy', $empresa->id], 'method'=>'DELETE'])!!}
+								{!!Form::submit('Solicitar eliminación', ['class'=>'btn btn-primary btn-danger', 'style'=>'width:100%;'])!!}
+							{!!Form::close()!!}-->
+							{!!Form::button('Solicitar eliminación', ['class'=>'btn btn-primary btn-danger', 'style'=>'width:100%;', 'id' => 'SolicitudEliminacion', 'value'=>$empresa->id])!!}
 						</div>
+					</div>
+					<div class="list-group-item">		
+						<div id="msj-info" class="alert alert-info alert-dismissible" role="alert" style="display:none">
+							<!--
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+							-->
+							La solicitud se ha enviado al equipo de yavü.
+						</div>						
 					</div>
 					<div class="list-group-item">
 						<h6>Información completa al:</h6>
 						<div class="progress">
-						  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-						    60%
+						  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 99%;">
+						    99%
 						  </div>
 						</div>							
 					</div>						
 				</div>				
-			</div>
+			</div><!--Este fin del div cierra el div que se abre en fieldsEmpresa-->		
 		</div>
 	</div>
 </div>
