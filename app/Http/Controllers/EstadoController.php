@@ -42,16 +42,29 @@ class EstadoController extends Controller
 
 
 
-    public function CargarEstados(){
+    public function CargarEstados($idUltima){
         //$estados = Estado::All();
         //$estados = DB::select('select * from estados where user_id = :id', ['id' => 1]);
-        $estados = DB::table('estados')                    
-                    ->join('users', 'users.id', '=', 'estados.user_id')
-                    ->select('users.*', 'estados.*')    
-                    ->where('estados.user_id', '=', Auth::user()->get()->id)   
-                    ->orderBy('estados.created_at','desc')   
-                    ->limit('1')
-                    ->get();        
+        if((int) $idUltima == "0"){
+            $estados = DB::table('estados')                    
+                        ->join('users', 'users.id', '=', 'estados.user_id')
+                        ->select('users.*', 'estados.*')    
+                        ->where('estados.user_id', '=', Auth::user()->get()->id)   
+                        ->where('estados.id', '>', (int) $idUltima)
+                        ->orderBy('estados.created_at','desc')   
+                        ->limit('1')
+                        ->get();  
+        }else{
+            $estados = DB::table('estados')                    
+                        ->join('users', 'users.id', '=', 'estados.user_id')
+                        ->select('users.*', 'estados.*')    
+                        ->where('estados.user_id', '=', Auth::user()->get()->id)   
+                        ->where('estados.id', '<', (int) $idUltima)
+                        ->orderBy('estados.created_at','desc')   
+                        ->limit('1')
+                        ->get();              
+        }
+      
 
         //dd($estados);
         return response()->json(

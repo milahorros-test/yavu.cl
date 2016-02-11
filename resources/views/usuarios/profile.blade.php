@@ -78,7 +78,8 @@
 				</div>						
 				<div>
 					<div id="Estados">
-					</div>				
+					</div>
+					{!!Form::hidden('idUltima', "0", ['id'=>'idUltima'])!!}									
 				</div>
 
 				

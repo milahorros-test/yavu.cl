@@ -6,7 +6,7 @@ $(document).ready(function(){
 
 	/*MÉTODOS CONSTRUCTORES*/
 
-	//ContarEstados();
+	CargarEstados();
 
 	/*MÉTODOS CONSTRUCTORES*/
 
@@ -149,8 +149,8 @@ $(document).ready(function(){
 
 	function CargarEstados(){
 		var EstadosUsuario = $("#Estados"); 
-		
-		var route = "http://localhost:8000/estadosusuario";
+		Global_idUltimaPublicacion = $("#idUltima").val();
+		var route = "http://localhost:8000/estadosusuario/"+Global_idUltimaPublicacion;
 		var user_id = $("#user_id");
 		var Contador = 0;
 		$.get(route, function(res){
@@ -176,12 +176,14 @@ $(document).ready(function(){
 						+"</div>"
 					+"</div>"
 				);
+				document.getElementById("idUltima").value =  Global_idUltimaPublicacion;
 
-				Contador += 1;
-				if (Contador === 4){
-					Global_idUltimaPublicacion = value.id;
-					EstadosUsuario.append("Ultima publicacion: "+Global_idUltimaPublicacion);
-				}
+				//Contador += 1;
+				//if (Contador === 1){					
+					
+				EstadosUsuario.append("Ultima publicacion: "+Global_idUltimaPublicacion);
+				console.log(Global_idUltimaPublicacion);
+				//}
 
 							
 			});
@@ -190,7 +192,7 @@ $(document).ready(function(){
 		});						
 	}
 	function mostrarCargando(){		
-			$("#msj-estado").fadeIn();
+		$("#msj-estado").fadeIn();
 	}
 	function ocultarCargando(){
 		$("#msj-estado").fadeOut();
