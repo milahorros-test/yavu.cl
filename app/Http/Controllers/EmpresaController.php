@@ -65,12 +65,17 @@ class EmpresaController extends Controller
     );*/
     return view('empresas.publicProfile', compact('empresa'));
   }
+  public function SolicitarEliminacion($id)
+  {
+    DB::table('empresas')
+            ->where('id', $id)
+            ->update(['estado' => 'eliminar']);            
+    return Redirect::to('/profile');
+  }  
   public function destroy($id)
   {
       $this->empresa->delete();
       Session::flash('message', 'Empresa eliminada correctamente');
       return Redirect::to('/empresas');
   }
-
-
 }
