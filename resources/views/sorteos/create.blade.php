@@ -17,6 +17,7 @@
 							{!!Form::submit('Registrar', ['class'=>'btn btn-primary btn-success', 'style'=>'width:100%;'])!!}
 							{!!Form::close()!!}
 						</div>
+						
 
 					</div>
 				</div>

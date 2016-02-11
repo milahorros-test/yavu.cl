@@ -40,7 +40,7 @@ class SorteoController extends Controller
     {
         Sorteo::create($request->all());
         Session::flash('message', 'Sorteo creado correctamente');
-    return Redirect::to('/');
+    return Redirect::to('/sorteos.index');
     }
 
     /**
