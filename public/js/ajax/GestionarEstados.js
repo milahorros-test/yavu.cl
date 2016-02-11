@@ -92,8 +92,8 @@ $(document).ready(function(){
 			}
 			$(res).each(function(key,value){
 				var TimeAgo = value.created_at;
-				EstadosUsuario.append(
-					"<div class='list-group'>"
+				var Estado = 
+					"<div id='status' class='list-group'>"
 						+"<div class='list-group-item'>"												  	
 							  	+"<h4><a href='/profile' style='color:#3C5B28;'>"
 							  		+"<img class='media-object' src='http://localhost:8000/images/user.png' data-holder-rendered='true' style='width: 32px; height: 32px;'/>"
@@ -108,8 +108,12 @@ $(document).ready(function(){
 						+"<span class='glyphicon glyphicon-thumbs-up'>&nbsp;</span>"
 							+"<a name='like' class='inter' role='button' id='estado_"+value.id+"' value='"+value.id+"' href='#!' style='color:#3C5B28;'><span>Me gusta</span></a>"
 						+"</div>"
-					+"</div>"
-				);
+					+"</div>";
+
+				EstadosUsuario.appendTo("#e").effects("highlight", {}, 12000);
+				//$("#Estados").appendTo('#Estados').effects("highlight", {}, 12000);
+
+
 			});
 		});						
 	}
@@ -197,7 +201,7 @@ $(document).ready(function(){
 		});						
 	}
 	function mostrarCargando(){		
-		$("#msj-estado").fadeIn();
+		$("#msj-estado").fadeIn(1000);
 	}
 	function ocultarCargando(){
 		$("#msj-estado").fadeOut();
