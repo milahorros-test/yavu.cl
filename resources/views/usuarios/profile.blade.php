@@ -77,11 +77,8 @@
 					</div>	
 				</div>						
 				<div>
-					
 					<div id="Estados">
-					
 					</div>				
-					
 				</div>
 
 				

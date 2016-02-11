@@ -223,7 +223,7 @@ $(document).ready(function(){
 	/*FUNCIONES Y PROCEDIMIENTOS*/
 });
  $(window).scroll(function () {
-     if ($(window).scrollTop() == $(window).height() - $(document).height() ) {
+     if ($(window).scrollTop() == $(document).height() - $(window).height() ) {
      	CargarEstados();
      }
  });	

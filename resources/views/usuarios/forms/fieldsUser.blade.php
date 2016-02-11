@@ -82,7 +82,7 @@
 	</div>
 </div>
 <div class="col-sm-4">
-	@if(Auth::user()->check())
+	@if(Auth::user()->check() or Auth::admin()->check())
 		<div class="list-group" >
 			<div class="list-group-item">
 				<h4>Datos de Contacto</h4>
