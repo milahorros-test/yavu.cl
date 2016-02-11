@@ -127,6 +127,16 @@
 					<a href="#" class="list-group-item list-group-item-info">Ir a ayudas generales</a>
 				</div>	
 
+				<div class="list-group" >
+					<div class="list-group-item">
+						<h4><span class="label label-info">#SolicitatuSorteo <span class="glyphicon glyphicon glyphicon-usd" aria-hidden="true"></span></span></h4>
+					</div>							
+					<div class="list-group-item" style="height:80px;">
+						Genera algún sorteo (Esto debe ser verificado por el admin)
+					</div>
+					<a href="#" class="list-group-item list-group-item-info">Ir a formulario de sorteos</a>
+				</div>
+
 		    </div>
 
 		</div>
