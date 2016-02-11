@@ -6,7 +6,7 @@ $(document).ready(function(){
 
 	/*MÉTODOS CONSTRUCTORES*/
 
-	//ContarEstados();
+	CargarEstados();
 
 	/*MÉTODOS CONSTRUCTORES*/
 
@@ -18,10 +18,11 @@ $(document).ready(function(){
 	});
 
 	$("#publicar").click(function(e){
+		document.getElementById("idUltima").value = "0";				    
+		$("#Estados").empty();		
 		if (document.getElementById("status").value !== "") {
 			var status = $("#status").val();
 			status = limpiar(status);
-
 			var user_id = $("#user_id").val();
 			var token = $("#token").val();
 			var route = "http://localhost:8000/estados";
@@ -39,14 +40,16 @@ $(document).ready(function(){
 				    setTimeout(function() {
 				        $("#msj-success").fadeOut(1000);
 				    },800);				
-				    document.getElementById("status").value = "";				    
+				    document.getElementById("status").value = "";
+				    console.log("La ultima publicacion ID: "+$("#idUltima").val());
 				}
-			});			
-			CargarEstados();
-			ContarEstados();
+			});	
+			
+			//ContarEstados();
 		}else{
 			document.getElementById("status").focus();
 		}	
+		CargarEstados();
 		e.preventDefault();	
 	});
 
@@ -77,7 +80,8 @@ $(document).ready(function(){
 
 	/*FUNCIONES Y PROCEDIMIENTOS*/
 	function ActualizarEstados(){
-		var EstadosUsuario = $("#Estados"); 
+		var EstadosUsuario = $("#Estados").val(); 
+		$("#Estados").val() ="";
 		var route = "http://localhost:8000/estadosusuario";
 		var user_id = $("#user_id");
 		var Contador = 0;
@@ -149,13 +153,15 @@ $(document).ready(function(){
 
 	function CargarEstados(){
 		var EstadosUsuario = $("#Estados"); 
-		var route = "http://localhost:8000/estadosusuario";
+		Global_idUltimaPublicacion = $("#idUltima").val();
+		var route = "http://localhost:8000/estadosusuario/"+Global_idUltimaPublicacion;
 		var user_id = $("#user_id");
 		var Contador = 0;
 		$.get(route, function(res){
-			$(res).each(function(key,value){
+			mostrarCargando();
+			$(res).each(function(key,value){				
 				var TimeAgo = value.created_at;
-				Global_idUltimaPublicacion = value.id;
+				Global_idUltimaPublicacion = value.id;		
 				EstadosUsuario.append(
 					"<div class='list-group'>"
 						+"<div class='list-group-item'>"												  	
@@ -174,16 +180,27 @@ $(document).ready(function(){
 						+"</div>"
 					+"</div>"
 				);
-				/*
-				Contador += 1;
-				if (Contador === 4){
-					Global_idUltimaPublicacion = value.id;
-					EstadosUsuario.append("Ultima publicacion: "+Global_idUltimaPublicacion);
-				}
-				*/					
+				document.getElementById("idUltima").value =  Global_idUltimaPublicacion;
+
+				Contador += 1;							
 			});
+			if(Contador < 5){					
+				//EstadosUsuario.append("Ultima publicacion: "+Global_idUltimaPublicacion);
+				console.log("Hay menos de 5 registros");
+				$("#msj-finPublicaciones").fadeIn();	
+				setTimeout(function() {
+				    $("#msj-finPublicaciones").fadeOut(3000);
+				},1000);		
+			}
+			ocultarCargando();		
 			Global_ContadorCargaPublicaciones += 1 * 5;
 		});						
+	}
+	function mostrarCargando(){		
+		$("#msj-estado").fadeIn();
+	}
+	function ocultarCargando(){
+		$("#msj-estado").fadeOut();
 	}
 
 	function ContarEstados(){
@@ -208,5 +225,27 @@ $(document).ready(function(){
 			//console.log(Contador);
 		});						
 	}
+
 	/*FUNCIONES Y PROCEDIMIENTOS*/
+    // EVENTO CUANDO SE MUEVE EL SCROLL, EL MISMO APLICA TAMBIEN CUANDO SE RESIZA
+    var change = false;
+    var window_y = $(window).scrollTop();
+	$(window).scroll(function(){
+		var EstadosUsuario = $("#Estados"); 
+         // VALOR QUE SE HA MOVIDO DEL SCROLL
+        scroll_critical = parseInt($("#Estados").height()); // VALOR DE TU DIV
+        console.log(scroll_critical);
+        if (window_y > scroll_critical) { // SI EL SCROLL HA SUPERADO EL ALTO DE TU DIV
+           // ACA MUESTRAS EL OTRO DIV Y EL OCULTAS EL DIV QUE QUIERES
+           CargarEstados();
+        }
+	});	
 });
+
+/*
+				EstadosUsuario.append(
+					"<div class='list-group'>"
+					+"No hay mas publicaciones"
+					+"</div>"
+				);   
+*/

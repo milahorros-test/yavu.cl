@@ -17,7 +17,7 @@ Route::get('sitemap', function(){
 /*Gestión del front*/
 
 /*Gestión de estados*/
-Route::get('estadosusuario', 'EstadoController@CargarEstados');
+Route::get('estadosusuario/{idUltima}', 'EstadoController@CargarEstados');
 Route::get('contarestados', 'EstadoController@ContarEstados');
 Route::resource('estados','EstadoController');
 Route::get('buscarusuario/{nombre}', 'UserController@BuscarUsuarios');
@@ -41,7 +41,7 @@ Route::get('infoempresas/{user_id}','UserController@InfoEmpresas');
 
 /*Gestión de Empresas*/
 Route::resource('empresas','EmpresaController');
-Route::get('empresa/{empresa}', 'EmpresaController@MostrarEmpresaPublica');
+Route::get('empresa/{empresa}/', 'EmpresaController@MostrarEmpresaPublica');
 Route::get('solicitareliminacionempresa/{id}', 'EmpresaController@SolicitarEliminacion');
 /*Gestión de Empresas*/
 /*Gestión de Servicios*/
