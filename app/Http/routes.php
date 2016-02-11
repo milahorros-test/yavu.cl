@@ -48,6 +48,9 @@ Route::get('solicitareliminacionempresa/{id}', 'EmpresaController@SolicitarElimi
 Route::resource('servicios','ServicioController');
 /*Gestión de Servicios*/
 
+/*Gestión de Sorteos*/
+Route::resource('sorteos', 'SorteoController');
+/*Gestión de Sortes*/
 
 /*Gestión de Admins*/
 Route::resource('admins','AdminController');

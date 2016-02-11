@@ -1,10 +1,3 @@
-<style type="text/css">
-a:link {text-decoration:none; color: #00000;} /* Link no visitado*/
-a:visited {text-decoration:none; color:#000000} /*Link visitado*/
-a:active {text-decoration:none; color:#000000; background:#ffffff} /*Link activo*/
-a:hover {text-decoration:underline; color:#000000; background: #ffffff} /*Mause sobre el link*/
-</style>
-
 @extends('layouts.front')
 @section('content')
 <div class="jumbotron">
