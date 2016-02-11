@@ -1,5 +1,5 @@
 $(document).ready(function(){	
-	$("a[name='like']").click(function () {
+	$("a[name='like']").click(function(e) {
 		console.log('Like');
 	/*   
 		var id_publicacin = $(this).val();
@@ -13,6 +13,7 @@ $(document).ready(function(){
 			}
 		});				
 	*/
+	e.preventDefault();
 	});	
 });
 

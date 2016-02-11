@@ -11,12 +11,13 @@ $(document).ready(function(){
 	/*MÉTODOS CONSTRUCTORES*/
 
 	/*SELECTORES*/
-	$("#CargarEstados").click(function(){
+	$("#CargarEstados").click(function(e){
 		$("#EstadosNuevos").append("");
 		CargarEstados();			
+		e.preventDefault();
 	});
 
-	$("#publicar").click(function(){
+	$("#publicar").click(function(e){
 		if (document.getElementById("status").value !== "") {
 			var status = $("#status").val();
 			status = limpiar(status);
@@ -45,14 +46,16 @@ $(document).ready(function(){
 			ContarEstados();
 		}else{
 			document.getElementById("status").focus();
-		}		
+		}	
+		e.preventDefault();	
 	});
 
-	$("#limpiar").click(function(){
+	$("#limpiar").click(function(e){
 		document.getElementById("status").value = "";
+		e.preventDefault();
 	});
 
-	$( "#status" ).change(function() {
+	$( "#status" ).change(function(e) {
 		var status = $("#status").val();
 		var status_2 = limpiar(status);
 		status_2 = limpiar(status);
@@ -68,6 +71,7 @@ $(document).ready(function(){
 				},800);			
 			}		
 		}	
+		e.preventDefault();
 	});
 	/*SELECTORES*/
 

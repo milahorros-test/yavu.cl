@@ -6,8 +6,9 @@ $(document).ready(function(){
 	/*MÉTODOS CONSTRUCTORES*/
 
 	/*SELECTORES*/
-	$("#SolicitudEliminacion").click(function(){
+	$("#SolicitudEliminacion").click(function(e){
 		SolicitarEliminacion();
+		e.preventDefault();
 	});		
 	/*SELECTORES*/
 
@@ -27,6 +28,4 @@ $(document).ready(function(){
 		});			
 	}
 	/*FUNCIONES Y PROCEDIMIENTOS*/
-
-	
 });

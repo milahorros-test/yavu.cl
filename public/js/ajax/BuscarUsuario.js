@@ -3,8 +3,9 @@ $(document).ready(function(){
 	/*DECLARACIÓN DE VARIABLES GLOBALES*/
 
 	/*MÉTODOS CONSTRUCTORES*/
-	$("#BuscarUsuario").click(function(){
+	$("#BuscarUsuario").click(function(e){
 		BuscarUsuario();
+		e.preventDefault();
 	});
 	/*MÉTODOS CONSTRUCTORES*/
 
@@ -48,6 +49,4 @@ $(document).ready(function(){
 		});						
 	}	
 	/*FUNCIONES Y PROCEDIMIENTOS*/
-
-		
 });
