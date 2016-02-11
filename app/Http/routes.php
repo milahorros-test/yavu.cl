@@ -6,6 +6,7 @@ Route::get('index','FrontController@index');
 Route::get('login','FrontController@login');
 Route::get('registro','FrontController@registro');
 Route::get('ycoins','FrontController@ycoins');
+Route::get('ysorteos','FrontController@ysorteos');
 Route::get('contacto','FrontController@contacto');
 Route::get('nosotros','FrontController@nosotros');
 Route::get('terminos','FrontController@terminos');

@@ -40,6 +40,8 @@ class FrontController extends Controller
 
     public function ysorteos()
     {
-        return view('ycoins');        
+        return view('ysorteos');        
     }
+
+
 }
