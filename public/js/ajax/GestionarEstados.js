@@ -149,6 +149,7 @@ $(document).ready(function(){
 
 	function CargarEstados(){
 		var EstadosUsuario = $("#Estados"); 
+		
 		var route = "http://localhost:8000/estadosusuario";
 		var user_id = $("#user_id");
 		var Contador = 0;
@@ -176,13 +177,11 @@ $(document).ready(function(){
 					+"</div>"
 				);
 
-				/*
 				Contador += 1;
 				if (Contador === 4){
 					Global_idUltimaPublicacion = value.id;
 					EstadosUsuario.append("Ultima publicacion: "+Global_idUltimaPublicacion);
 				}
-				*/
 
 							
 			});
