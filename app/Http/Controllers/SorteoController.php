@@ -38,9 +38,9 @@ class SorteoController extends Controller
      */
     public function store(Request $request)
     {
-        User::create($request->all());
+        Sorteo::create($request->all());
         Session::flash('message', 'Sorteo creado correctamente');
-    return Redirect::to('/dashboard');
+    return Redirect::to('/');
     }
 
     /**

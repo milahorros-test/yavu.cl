@@ -3,10 +3,10 @@
 <div class="jumbotron">
 	<div id="contentMiddle">
 		@include('alerts.alertFields')
-		<h4>Registro de cliente </h4>
+		<h4>Solicitar Sorteo </h4>
 		<div class="row">
-			{!!Form::open(['route'=>'sorteo.store', 'method'=>'POST'])!!}
-			@include('forms.fieldsSorteo')
+			{!!Form::open(['route'=>'sorteos.store', 'method'=>'POST'])!!}
+			@include('sorteos.forms.fieldsSorteo')
 				<div class="list-group">
 					<div class="list-group-item">
 						<h4>Todos los campos son requeridos</h4>
