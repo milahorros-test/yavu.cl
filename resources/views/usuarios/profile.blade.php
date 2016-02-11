@@ -1,4 +1,4 @@
-{!!Html::script('js/jquery.js')!!}
+	{!!Html::script('js/jquery.js')!!}
 {!!Html::script('js/ajax/GestionarEstados.js')!!}
 {!!Html::script('js/ajax/GestionarCoins.js')!!}
 {!!Html::script('js/ajax/InteraccionPublicaciones.js')!!}
@@ -78,7 +78,7 @@
 						</div>										
 					</div>	
 				</div>						
-				<div>
+				<div id="e">
 					<div id="Estados">
 					</div>
 					{!!Form::hidden('idUltima', "0", ['id'=>'idUltima'])!!}									
