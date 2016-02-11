@@ -45,6 +45,80 @@
 						</div>
 
 					</div>
+
+				@if(isset(Auth::user()->get()->id))
+					@if($e->user_id == Auth::user()->get()->id)
+						<div class="list-group">
+							<div class="list-group-item">
+								<h4><span class="label label-info">#Publicaciones&Estados <span class="glyphicon glyphicon-fire" aria-hidden="true"></span></span></h4>
+							</div>
+
+							<div class="list-group-item">
+								Mira lo que otros interatúan con la variedad de publicaciones de tiendas que podrían interesarte.
+							</div>					
+							<div class="list-group-item">
+								No te pierdas las publicaciones pendientes
+							</div>		
+
+							
+							<div class="list-group-item">
+								{!!Form::open(['action'=>'EstadoController@store', 'method'=>'POST'])!!}
+									{!!Form::textarea('status',null,['class'=>'form-control-stat','placeholder'=>'¿Qué deseas compartir en yavu?', 'maxlength'=>'500', 'required'=>'required','style'=>'resize:none;', 'rows'=>'10', 'id'=>'status'])!!}
+									{!!Form::hidden('user_id', Auth::user()->get()->id, ['id'=>'user_id'])!!}
+									<input type="hidden" name="_token" value="{{csrf_token()}}" id="token" />
+
+									{!!link_to('#!', $title="Publicar estado", $attributes = ['id'=>'publicar', 'class'=>'btn btn-success btn-xs'], $secure = null)!!}
+									{!!link_to('#!', $title="Limpiar", $attributes = ['id'=>'limpiar', 'class'=>'btn btn-success btn-xs'], $secure = null)!!}											
+						
+								{!!Form::close()!!}		
+
+								<div id="msj-success" class="alert alert-success alert-dismissible" role="alert" style="display:none">
+									<!--
+									<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+									-->
+									Publicacion creada correctamente
+								</div>			
+								<div id="msj-error" class="alert alert-error alert-dismissible" role="alert" style="display:none">
+									<!--
+									<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+									-->
+									El texto ingresado contiene caracteres no permitidos que no se guardarán.
+								</div>										
+							</div>	
+						</div>
+					@endif
+				@endif
+
+				<div>
+					<div id="Estados">
+					</div>
+					{!!Form::hidden('idUltima', "0", ['id'=>'idUltima'])!!}									
+				</div>
+
+				
+				<div>
+					
+					<div id="msj-estado" class="alert alert-dismissible list-group-item" role="alert" style="display:none;">
+						<img width="30%"  src='/images/iconoCargando.gif'/>
+					</div>
+					<div id='msj-finPublicaciones' class="alert alert-dismissible list-group-item" role="alert" style="display:none;">
+							No hay mas publicaciones.
+					</div>
+
+					<a id="CargarEstados" href="#!" class="list-group-item list-group-item-info">
+						Cargar estados 
+						<span id="EstadosNuevos" class="badge"></span>					
+					</a>	
+						
+				</div>	
+				
+				<br>
+
+
 				</div>
 
 				<div class="col-sm-4"><!--style="position:fixed;z-index:1000;"-->
@@ -73,46 +147,6 @@
 
 			<br />
 
-			<div class="row" style="margin-top:-40px;">
-
-
-
-
-			<!-- ESTO se va a validar siempre que el cliente tenga una empresa
-
-				<div class="col-sm-4" style="float:right;">
-
-					<div class="list-group">
-						<div class="list-group-item">
-							<h4><span class="label label-info">#MiEmpresa <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span></span></h4>
-						</div>							
-						<div class="list-group-item">
-							Inicia actividad en yavu.cl con tu empresa registrandote aquí.<br>
-
-						</div>
-						<a href="{!!URL::to('/empresas/create')!!}" class="list-group-item list-group-item-warning">Saber más e ir a registrar mi empresa</a>
-					</div>
-
-				</div>		    
-			-->
-
-				<div class="col-sm-8">
-						@include('alerts.alertFields')
-						@include('alerts.errorsMessage')
-						@include('alerts.successMessage')
-						@include('alerts.warningMessage')
-
-						
-					<div id="Estados">
-					</div>
-					
-					<a id="CargarEstados" href="#!" class="list-group-item list-group-item-info">Cargar estados 
-						<span id="EstadosNuevos" class="badge"></span>
-					</a>	
-
-				</div>
-
-			</div>
 		@endforeach
 	</div>
 </div>

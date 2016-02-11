@@ -34,6 +34,8 @@
 					</div>
 
 				</div>
+
+				
 				<div class="list-group">
 					<div class="list-group-item">
 						<h4><span class="label label-info">#Publicaciones&Estados <span class="glyphicon glyphicon-fire" aria-hidden="true"></span></span></h4>
