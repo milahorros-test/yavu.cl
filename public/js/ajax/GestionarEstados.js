@@ -153,9 +153,10 @@ $(document).ready(function(){
 		var user_id = $("#user_id");
 		var Contador = 0;
 		$.get(route, function(res){
+			mostrarCargando();
 			$(res).each(function(key,value){
 				var TimeAgo = value.created_at;
-				Global_idUltimaPublicacion = value.id;
+				Global_idUltimaPublicacion = value.id;		
 				EstadosUsuario.append(
 					"<div class='list-group'>"
 						+"<div class='list-group-item'>"												  	
@@ -174,16 +175,26 @@ $(document).ready(function(){
 						+"</div>"
 					+"</div>"
 				);
+
 				/*
 				Contador += 1;
 				if (Contador === 4){
 					Global_idUltimaPublicacion = value.id;
 					EstadosUsuario.append("Ultima publicacion: "+Global_idUltimaPublicacion);
 				}
-				*/					
+				*/
+
+							
 			});
+			ocultarCargando();		
 			Global_ContadorCargaPublicaciones += 1 * 5;
 		});						
+	}
+	function mostrarCargando(){		
+			$("#msj-estado").fadeIn();
+	}
+	function ocultarCargando(){
+		$("#msj-estado").fadeOut();
 	}
 
 	function ContarEstados(){
@@ -208,5 +219,11 @@ $(document).ready(function(){
 			//console.log(Contador);
 		});						
 	}
+
 	/*FUNCIONES Y PROCEDIMIENTOS*/
 });
+ $(window).scroll(function () {
+     if ($(window).scrollTop() == $(window).height() - $(document).height() ) {
+     	CargarEstados();
+     }
+ });	
