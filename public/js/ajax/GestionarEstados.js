@@ -41,9 +41,7 @@ $(document).ready(function(){
 				        $("#msj-success").fadeOut(1000);
 				    },800);				
 				    document.getElementById("status").value = "";
-
 				    console.log("La ultima publicacion ID: "+$("#idUltima").val());
-				    
 				}
 			});	
 			
