@@ -18,10 +18,11 @@ $(document).ready(function(){
 	});
 
 	$("#publicar").click(function(e){
+		document.getElementById("idUltima").value = "0";				    
+		$("#Estados").empty();		
 		if (document.getElementById("status").value !== "") {
 			var status = $("#status").val();
 			status = limpiar(status);
-
 			var user_id = $("#user_id").val();
 			var token = $("#token").val();
 			var route = "http://localhost:8000/estados";
@@ -39,14 +40,18 @@ $(document).ready(function(){
 				    setTimeout(function() {
 				        $("#msj-success").fadeOut(1000);
 				    },800);				
-				    document.getElementById("status").value = "";				    
+				    document.getElementById("status").value = "";
+
+				    console.log("La ultima publicacion ID: "+$("#idUltima").val());
+				    
 				}
-			});			
-			CargarEstados();
-			ContarEstados();
+			});	
+			
+			//ContarEstados();
 		}else{
 			document.getElementById("status").focus();
 		}	
+		CargarEstados();
 		e.preventDefault();	
 	});
 
@@ -77,7 +82,8 @@ $(document).ready(function(){
 
 	/*FUNCIONES Y PROCEDIMIENTOS*/
 	function ActualizarEstados(){
-		var EstadosUsuario = $("#Estados"); 
+		var EstadosUsuario = $("#Estados").val(); 
+		$("#Estados").val() ="";
 		var route = "http://localhost:8000/estadosusuario";
 		var user_id = $("#user_id");
 		var Contador = 0;
