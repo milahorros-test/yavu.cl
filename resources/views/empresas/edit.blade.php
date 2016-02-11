@@ -28,7 +28,16 @@
 							{!!Form::button('Solicitar eliminación', ['class'=>'btn btn-primary btn-danger', 'style'=>'width:100%;', 'id' => 'SolicitudEliminacion', 'value'=>$empresa->id])!!}
 						</div>
 					</div>
-					
+					<div class="list-group-item">		
+						<div id="msj-info" class="alert alert-info alert-dismissible" role="alert" style="display:none">
+							<!--
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+							-->
+							La solicitud se ha enviado al equipo de yavü.
+						</div>						
+					</div>
 					<div class="list-group-item">
 						<h6>Información completa al:</h6>
 						<div class="progress">
