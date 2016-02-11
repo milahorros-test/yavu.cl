@@ -155,7 +155,7 @@ $(document).ready(function(){
 		var Contador = 0;
 		$.get(route, function(res){
 			mostrarCargando();
-			$(res).each(function(key,value){
+			$(res).each(function(key,value){				
 				var TimeAgo = value.created_at;
 				Global_idUltimaPublicacion = value.id;		
 				EstadosUsuario.append(
@@ -178,15 +178,16 @@ $(document).ready(function(){
 				);
 				document.getElementById("idUltima").value =  Global_idUltimaPublicacion;
 
-				//Contador += 1;
-				//if (Contador === 1){					
-					
-				EstadosUsuario.append("Ultima publicacion: "+Global_idUltimaPublicacion);
-				console.log(Global_idUltimaPublicacion);
-				//}
-
-							
+				Contador += 1;							
 			});
+			if(Contador < 5){					
+				//EstadosUsuario.append("Ultima publicacion: "+Global_idUltimaPublicacion);
+				console.log("Hay menos de 5 registros");
+				$("#msj-finPublicaciones").fadeIn();	
+				setTimeout(function() {
+				    $("#msj-finPublicaciones").fadeOut(3000);
+				},1000);		
+			}
 			ocultarCargando();		
 			Global_ContadorCargaPublicaciones += 1 * 5;
 		});						
@@ -224,13 +225,23 @@ $(document).ready(function(){
 	/*FUNCIONES Y PROCEDIMIENTOS*/
     // EVENTO CUANDO SE MUEVE EL SCROLL, EL MISMO APLICA TAMBIEN CUANDO SE RESIZA
     var change = false;
+    var window_y = $(window).scrollTop();
 	$(window).scroll(function(){
-        window_y = $(window).scrollTop(); // VALOR QUE SE HA MOVIDO DEL SCROLL
+		var EstadosUsuario = $("#Estados"); 
+         // VALOR QUE SE HA MOVIDO DEL SCROLL
         scroll_critical = parseInt($("#Estados").height()); // VALOR DE TU DIV
+        console.log(scroll_critical);
         if (window_y > scroll_critical) { // SI EL SCROLL HA SUPERADO EL ALTO DE TU DIV
            // ACA MUESTRAS EL OTRO DIV Y EL OCULTAS EL DIV QUE QUIERES
            CargarEstados();
-        } 
+        }
 	});	
 });
 
+/*
+				EstadosUsuario.append(
+					"<div class='list-group'>"
+					+"No hay mas publicaciones"
+					+"</div>"
+				);   
+*/

@@ -52,19 +52,19 @@ class EstadoController extends Controller
                         ->where('estados.user_id', '=', Auth::user()->get()->id)   
                         ->where('estados.id', '>', (int) $idUltima)
                         ->orderBy('estados.created_at','desc')   
-                        ->limit('1')
+                        ->limit('5')
                         ->get();  
-        }else{
+        }elseif((int) $idUltima <> "0"){
             $estados = DB::table('estados')                    
                         ->join('users', 'users.id', '=', 'estados.user_id')
                         ->select('users.*', 'estados.*')    
                         ->where('estados.user_id', '=', Auth::user()->get()->id)   
                         ->where('estados.id', '<', (int) $idUltima)
                         ->orderBy('estados.created_at','desc')   
-                        ->limit('1')
-                        ->get();              
+                        ->limit('5')
+                        ->get();
         }
-      
+        
 
         //dd($estados);
         return response()->json(
