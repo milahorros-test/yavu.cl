@@ -13,6 +13,7 @@ class EstadoEmpresaController extends Controller
 {
     public function __construct(){
         $this->beforeFilter('@find', ['only' => ['edit', 'update', 'destroy']]);
+        global $Nempresa;
     }
     public function find(Route $route){
         $this->user = User::find($route->getParameter('usuarios'));
@@ -42,14 +43,26 @@ class EstadoEmpresaController extends Controller
         return Redirect::to('/profile');  
         */           
     }
-    public function CargarEstadoEmpresa($idUltima){
+    public function CargarEstadoEmpresa($idUltima, $empresa){
         //$estados = Estado::All();
         //$estados = DB::select('select * from estados where user_id = :id', ['id' => 1]);
+
+
+        $nombreEmp;
+        $nombreEmp = DB::table('empresas')
+                            ->select('user_id')
+                            ->where('nombre', '=', $empresa)
+                            ->limit('1')
+                            ->get();
+
+        //dd($nombreEmp[0]->user_id);
+
         if((int) $idUltima == "0"){
             $estado_empresas = DB::table('estado_empresas')                    
                         ->join('users', 'users.id', '=', 'estado_empresas.user_id')
-                        ->select('users.*', 'estado_empresas.*')    
-                        ->where('estado_empresas.user_id', '=', Auth::user()->get()->id)   
+                        ->join('empresas'  , 'empresas.id', '=', 'estado_empresas.empresa_id')
+                        ->select('users.*', 'estado_empresas.*', 'empresas.nombre as nombreEmp')    
+                        ->where('estado_empresas.user_id', '=', $nombreEmp[0]->user_id)
                         ->where('estado_empresas.id', '>', (int) $idUltima)
                         ->orderBy('estado_empresas.created_at','desc')   
                         ->limit('5')
@@ -57,8 +70,9 @@ class EstadoEmpresaController extends Controller
         }elseif((int) $idUltima <> "0"){
             $estado_empresas = DB::table('estado_empresas')                    
                         ->join('users'  , 'users.id', '=', 'estado_empresas.user_id')
-                        ->select('users.*', 'estado_empresas.*')    
-                        ->where('estado_empresas.user_id', '=', Auth::user()->get()->id)   
+                        ->join('empresas'  , 'empresas.id', '=', 'estado_empresas.empresa_id')
+                        ->select('users.*', 'estado_empresas.*', 'empresas.nombre as nombreEmp')    
+                        ->where('estado_empresas.user_id', '=', $nombreEmp[0]->user_id)   
                         ->where('estado_empresas.id', '<', (int) $idUltima)
                         ->orderBy('estado_empresas.created_at','desc')   
                         ->limit('5')
