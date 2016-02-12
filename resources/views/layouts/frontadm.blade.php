@@ -60,11 +60,7 @@
                   <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Pagos<b class="caret"></b></a>                        
                 <ul class="dropdown-menu">      
                 <li><a href="{!!URL::to('/empresas')!!}">Registrar pago</a></li> 
-                </ul>
-              </li> 
-              <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Deudores<b class="caret"></b></a>                        
-                <ul class="dropdown-menu">      
-                  <li><a href="{!!URL::to('/empresas')!!}">Mostrar listado de deudores</a></li>
+                <li><a href="{!!URL::to('/empresas')!!}">Mostrar listado de deudores</a></li>
                 </ul>
               </li> 
               <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Admintración<b class="caret"></b></a>                        
@@ -72,6 +68,10 @@
               <li><a href="{!!URL::to('/admins/create')!!}">Registro de Administradores</a></li>
                   <li><a href="{!!URL::to('/admins')!!}">Mostrar listado de Administradores</a></li>
                 </ul>
+
+                <li>
+              <a href="{!!URL::to('/')!!}">Salir</a>
+            </li>
 
               </li>   
             @endif            
