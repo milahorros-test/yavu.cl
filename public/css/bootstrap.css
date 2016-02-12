@@ -960,7 +960,13 @@ img {
           transition: all .2s ease-in-out;
 }
 .img-circle {
-  border-radius: 50%;
+  display: inherit;
+  position: absolute;
+  border-radius: 2%;
+  top:15%;
+  right:2%;
+  z-index: 1010;
+  border: 1px solid #ddd;
 }
 hr {
   margin-top: 20px;
@@ -4797,12 +4803,12 @@ a.badge:focus {
 }
 .thumbnail {
   display: block;
-  padding: 4px;
+  padding: 1px;
   margin-bottom: 20px;
   line-height: 1.42857143;
   background-color: #fff;
   border: 1px solid #ddd;
-  border-radius: 4px;
+  border-radius: 0px 0px 6px 6px;
   -webkit-transition: border .2s ease-in-out;
        -o-transition: border .2s ease-in-out;
           transition: border .2s ease-in-out;
@@ -5041,6 +5047,15 @@ a.thumbnail.active {
   display: block;
   /*Arriba-Derecha-Abajo-Izquierda*/
   padding: 0px 10px 0px 0px;
+  margin-bottom: -1px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+.list-group-item-full-header {
+  position: relative;
+  display: block;
+  /*Arriba-Derecha-Abajo-Izquierda*/
+  padding: 0px 10px 0px 10px;
   margin-bottom: -1px;
   background-color: #fff;
   border: 1px solid #ddd;
