@@ -12,7 +12,7 @@ class EmpresaUpdateRequest extends Request
       return [
          'rut' => 'required',
          'email' => 'required',
-         'login' => 'required',
+         //'login' => 'required',
          'nombre' => 'required',
       ];
    }
