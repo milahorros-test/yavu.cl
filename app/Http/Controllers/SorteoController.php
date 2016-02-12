@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use yavu\Http\Requests;
 use yavu\Http\Controllers\Controller;
 use yavu\Sorteo;
+use Session;
+use Redirect;
 use DB;
 
 class SorteoController extends Controller
@@ -42,7 +44,7 @@ class SorteoController extends Controller
     {
         Sorteo::create($request->all());
         Session::flash('message', 'Sorteo creado correctamente');
-    return Redirect::to('/sorteos.index');
+    return Redirect::to('sorteos/create');
     }
 
     /**
