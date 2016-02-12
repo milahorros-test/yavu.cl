@@ -34,6 +34,7 @@ Route::resource('log', 'LogController');
 /*Gestión de ingreso login*/
 
 /*Gestión de Usuarios*/
+Route::get('estadosusuario/{idUltima}', 'EstadoController@CargarEstadosEmpresa');
 Route::resource('usuarios','UserController');
 Route::resource('dashboard', 'UserController@dashboard');
 Route::resource('profile', 'UserController@profile');

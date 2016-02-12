@@ -76,6 +76,41 @@ class EstadoController extends Controller
             );        
         */
     }
+    public function CargarEstadosEmpresa($idUltima){
+        //$estados = Estado::All();
+        //$estados = DB::select('select * from estados where user_id = :id', ['id' => 1]);
+        if((int) $idUltima == "0"){
+            $estados = DB::table('estados')                    
+                        ->join('users', 'users.id', '=', 'estados.user_id')
+                        ->select('users.*', 'estados.*')    
+                        ->where('estados.user_id', '=', Auth::user()->get()->id)   
+                        ->where('estados.id', '>', (int) $idUltima)
+                        ->orderBy('estados.created_at','desc')   
+                        ->limit('5')
+                        ->get();  
+        }elseif((int) $idUltima <> "0"){
+            $estados = DB::table('estados')                    
+                        ->join('users', 'users.id', '=', 'estados.user_id')
+                        ->select('users.*', 'estados.*')    
+                        ->where('estados.user_id', '=', Auth::user()->get()->id)   
+                        ->where('estados.id', '<', (int) $idUltima)
+                        ->orderBy('estados.created_at','desc')   
+                        ->limit('5')
+                        ->get();
+        }
+        
+
+        //dd($estados);
+        return response()->json(
+            $estados
+        );
+        /*
+            return response()->json(
+                $estados->toArray()
+            );        
+        */
+    }
+
 
     public function ContarEstados(){
         //$estados = Estado::All();
