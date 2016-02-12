@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use yavu\Http\Requests;
 use yavu\Http\Controllers\Controller;
+use yavu\Sorteo;
+use DB;
 
 class SorteoController extends Controller
 {
