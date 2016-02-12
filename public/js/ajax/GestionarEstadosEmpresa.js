@@ -159,8 +159,9 @@ $(document).ready(function(){
 
 	function CargarEstados(){
 		var EstadosUsuario = $("#Estados"); 
+		var empresa = $("#empresa").val();
 		Global_idUltimaPublicacion = $("#idUltima").val();
-		var route = "http://localhost:8000/estadosempresa/"+Global_idUltimaPublicacion;
+		var route = "http://localhost:8000/estadosempresa/"+Global_idUltimaPublicacion+"/"+empresa;
 		var user_id = $("#user_id");
 		var empresa_id = $("#empresa_id");
 		var Contador = 0;

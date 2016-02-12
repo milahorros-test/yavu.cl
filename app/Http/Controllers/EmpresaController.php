@@ -54,10 +54,11 @@ class EmpresaController extends Controller
       return Redirect::to('/empresas');
   }
   public function MostrarEmpresaPublica($empresa){
-    $empresa = DB::table('empresas')                    
-                ->select('*')    
-                ->where('nombre', '=', $empresa)   
-                ->orderBy('created_at','desc')   
+    $empresa = DB::table('empresas')
+                ->join('users', 'users.id', '=', 'empresas.user_id')   
+                ->select('empresas.*', 'users.id as user_id')    
+                ->where('empresas.nombre', '=', $empresa)   
+                ->orderBy('empresas.created_at','desc')   
                 ->get();
 
     //dd($usuarios);

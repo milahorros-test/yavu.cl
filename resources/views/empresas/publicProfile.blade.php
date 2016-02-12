@@ -1,7 +1,7 @@
 {!!Html::script('js/jquery.js')!!}
 {!!Html::script('js/ajax/GestionarEstadosEmpresa.js')!!}
-{!!Html::script('js/ajax/GestionarCoinsEmpresa.js')!!}
-{!!Html::script('js/ajax/InteraccionPublicacionesEmpresa.js')!!}
+<!--{!!Html::script('js/ajax/GestionarCoinsEmpresa.js')!!}-->
+<!--{!!Html::script('js/ajax/InteraccionPublicacionesEmpresa.js')!!}-->
 @extends('layouts.front')
 @section('content')
 <div class="jumbotron">
@@ -26,7 +26,7 @@
 				<div class="col-sm-8">
 					<div class="list-group" >
 						<div class="list-group-item">
-							
+							{!!Form::hidden('empresa', $e->nombre, ['id'=>'empresa'])!!}
 							<h4>Perfil publico de : {{$e->nombre}}</h4>
 						</div>
 						<div class="list-group-item">
@@ -67,8 +67,14 @@
 							<div class="list-group-item">
 								{!!Form::open(['route'=>'estadoempresa.store', 'method'=>'POST'])!!}
 									{!!Form::textarea('status',null,['class'=>'form-control-stat','placeholder'=>'¿Qué deseas compartir en yavu?', 'maxlength'=>'500', 'required'=>'required','style'=>'resize:none;', 'rows'=>'10', 'id'=>'status'])!!}
-									{!!Form::hidden('user_id', Auth::user()->get()->id, ['id'=>'user_id'])!!}
+									@if(Auth::user()->check())
+										{!!Form::hidden('user_id', Auth::user()->get()->id, ['id'=>'user_id'])!!}
+									@else
+										{!!Form::hidden('user_id', $e->user_id, ['id'=>'user_id'])!!}
+									@endif
+
 									{!!Form::hidden('empresa_id', $e->id, ['id'=>'empresa_id'])!!}
+									
 									<input type="hidden" name="_token" value="{{csrf_token()}}" id="token" />
 
 									{!!link_to('#!', $title="Publicar estado", $attributes = ['id'=>'publicar', 'class'=>'btn btn-success btn-xs'], $secure = null)!!}
