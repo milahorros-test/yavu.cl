@@ -19,34 +19,27 @@
 							@elseif ($user->sexo == 'Femenino')
 								Bienvenida! {{$user->nombre}}
 							@else	
-								Te damos la bienvenida a tu primera vez en el sitio, <a class="btn btn-link btn-sm" href="usuarios/{{$user->id}}/edit">actualiza tus datos</a> y gana yavu coins!
+								Te damos la bienvenida a tu primera vez en el sitio, <a class="btn btn-primary btn-sm" href="usuarios/{{$user->id}}/edit">actualiza tus datos</a> y gana yavu coins!
 							@endif
 						@endforeach
-						<span style="float:right;" class="label label-info">#Publicaciones <span class="glyphicon glyphicon-fire" aria-hidden="true"></span></span>				
 					</div>					
 					<div class="list-group-item">
 						
-					</div>							
-					<div class="list-group-item">
-						Mira lo que otros interatúan con la variedad de publicaciones de tiendas que podrían interesarte.
-					</div>	
-					<div class="list-group-item">
-						No te pierdas las publicaciones pendientes
-					</div>												
+					</div>																	
 					<a href="#!" class="list-group-item list-group-item-info">Ir a publicaciones <span class="badge">14<small>  ¡Publicaciones nuevas!</small></span></a>
 				</div>
 				<div class="list-group" id="HistorialCoins">
-					<div class="list-group-item">
-						Resumen de carga de yavu coins
+					<div class="list-group-item-full-header">
+						<h6>RESUMEN DE GARGAS DE COINS</h6>
 					</div>
 				</div>
 		    </div>
 
 		    <div class="col-sm-4"><!--style="position:fixed;z-index:1000;"-->
 				<div class="list-group">
-					<div class="list-group-item">
-						<h4><span class="label label-info">#MiCuenta <span class="glyphicon glyphicon-cog" aria-hidden="true"></span></span></h4>
-					</div>							
+					<div class="list-group-item-full-header">
+						<h6>MI CUENTA</h6>
+					</div>
 					<div class="list-group-item">
 						Mira tu perfil y añade nuevas características, completa tus datos y revisa el estado de tus coins.<br>
 						<ol>
@@ -62,9 +55,9 @@
 					<a href="{!!URL::to('/profile')!!}" class="list-group-item list-group-item-info">Ir a mi perfil</a>
 				</div>	
 				<div class="list-group">
-					<div class="list-group-item">
-						<h4><span class="label label-info">#MiEmpresa <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span></span></h4>
-					</div>							
+					<div class="list-group-item-full-header">
+						<h6>MI EMPRESA</h6>
+					</div>						
 					<div class="list-group-item">
 						Inicia actividad en yavu.cl con tu empresa registrandote aquí.<br>
 						<ol>
@@ -87,10 +80,9 @@
 				</div>
 
 				<div class="list-group" >
-					<div class="list-group-item">
-					
-						<h4><span class="label label-info">#Politicas&Servicios <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span></span></h4>
-					</div>							
+					<div class="list-group-item-full-header">
+						<h6>POLÍTICAS Y SERVICIOS</h6>
+					</div>						
 					<div class="list-group-item" style="height:80px;">
 						Entérate de nuestras politicas para comenzar una actividad en Yavu.<span class="badge">14</span>
 					</div>
@@ -98,8 +90,8 @@
 				</div>	
 
 				<div class="list-group" >
-					<div class="list-group-item">
-						<h4><span class="label label-info">#Informes <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span></span></h4>
+					<div class="list-group-item-full-header">
+						<h6>INFORMES</h6>
 					</div>							
 					<div class="list-group-item" style="height:80px;">
 						Revisa estadisticas
@@ -109,9 +101,9 @@
 				</div>	  
 
 				<div class="list-group" >
-					<div class="list-group-item">
-						<h4><span class="label label-info">#Configuraciones <span class="glyphicon glyphicon-wrench" aria-hidden="true"></span></span></h4>
-					</div>							
+					<div class="list-group-item-full-header">
+						<h6>CONFIGURACIONES</h6>
+					</div>						
 					<div class="list-group-item" style="height:80px;">	
 						Revisa algunas configuraciones de seguridad para ti.					
 					</div>
@@ -119,9 +111,9 @@
 				</div>	
 
 				<div class="list-group" >
-					<div class="list-group-item">
-						<h4><span class="label label-info">#AyudasGenerales <span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span></span></h4>
-					</div>							
+					<div class="list-group-item-full-header">
+						<h6>AYUDAS GENERALES</h6>
+					</div>
 					<div class="list-group-item" style="height:80px;">
 						Revisa nuestras sugerencias para una mejor experiencia en yavu.
 					</div>
