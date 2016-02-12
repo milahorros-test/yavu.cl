@@ -62,7 +62,7 @@
 
 							
 							<div class="list-group-item">
-								{!!Form::open(['action'=>'EstadoController@store', 'method'=>'POST'])!!}
+								{!!Form::open(['action'=>'EstadoController@storeEstadoEmpresa', 'method'=>'POST'])!!}
 									{!!Form::textarea('status',null,['class'=>'form-control-stat','placeholder'=>'¿Qué deseas compartir en yavu?', 'maxlength'=>'500', 'required'=>'required','style'=>'resize:none;', 'rows'=>'10', 'id'=>'status'])!!}
 									{!!Form::hidden('user_id', Auth::user()->get()->id, ['id'=>'user_id'])!!}
 									<input type="hidden" name="_token" value="{{csrf_token()}}" id="token" />
