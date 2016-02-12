@@ -32,7 +32,7 @@ class EstadoController extends Controller
             return response()->json([
                 "Mensaje: " => "Creado"                
             ]);
-            CargarEstados();
+            //CargarEstados();
         }
         /*
         Estado::create($request->all());
@@ -40,23 +40,6 @@ class EstadoController extends Controller
         return Redirect::to('/profile');  
         */          
     }
-    public function storeEstadoEmpresa(Request $request)
-    {
-        if($request->ajax()){
-            EstadoEmpresa::create($request->all());
-            //Session::flash('message', 'Publicacion creada correctamente');
-            return response()->json([
-                "Mensaje: " => "Creado"                
-            ]);
-            CargarEstadoEmpresa();
-        }
-        /*
-        Estado::create($request->all());
-        Session::flash('message', 'Publicacion creada correctamente');
-        return Redirect::to('/profile');  
-        */          
-    }
-
 
     public function CargarEstados($idUltima){
         //$estados = Estado::All();
@@ -92,40 +75,7 @@ class EstadoController extends Controller
             );        
         */
     }
-    public function CargarEstadoEmpresa($idUltima){
-        //$estados = Estado::All();
-        //$estados = DB::select('select * from estados where user_id = :id', ['id' => 1]);
-        if((int) $idUltima == "0"){
-            $estado_empresas = DB::table('estado_empresas')                    
-                        ->join('users', 'users.id', '=', 'estados.user_id')
-                        ->select('users.*', 'estados.*')    
-                        ->where('estados.user_id', '=', Auth::user()->get()->id)   
-                        ->where('estados.id', '>', (int) $idUltima)
-                        ->orderBy('estados.created_at','desc')   
-                        ->limit('5')
-                        ->get();  
-        }elseif((int) $idUltima <> "0"){
-            $estado_empresas = DB::table('estado_empresas')                    
-                        ->join('users'  , 'users.id', '=', 'estados.user_id')
-                        ->select('users.*', 'estados.*')    
-                        ->where('estados.user_id', '=', Auth::user()->get()->id)   
-                        ->where('estados.id', '<', (int) $idUltima)
-                        ->orderBy('estados.created_at','desc')   
-                        ->limit('5')
-                        ->get();
-        }
-        
 
-        //dd($estados);
-        return response()->json(
-            $estado_empresas
-        );
-        /*
-            return response()->json(
-                $estados->toArray()
-            );        
-        */
-    }
 
 
     public function ContarEstados(){

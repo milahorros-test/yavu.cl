@@ -24,8 +24,9 @@ $(document).ready(function(){
 			var status = $("#status").val();
 			status = limpiar(status);
 			var user_id = $("#user_id").val();
+			var empresa_id = $("#empresa_id").val();
 			var token = $("#token").val();
-			var route = "http://localhost:8000/estados";
+			var route = "http://localhost:8000/estadosempresa";
 			$.ajax({
 				url: route,
 				headers: {'X-CSRF-TOKEN': token},
@@ -33,7 +34,8 @@ $(document).ready(function(){
 				dataType: 'json',
 				data: {
 					status: status,
-					user_id: user_id
+					user_id: user_id,
+					empresa_id: empresa_id
 				},
 				success:function(){
 					$("#msj-success").fadeIn();
@@ -82,7 +84,7 @@ $(document).ready(function(){
 	function ActualizarEstados(){
 		var EstadosUsuario = $("#Estados").val(); 
 		$("#Estados").val() ="";
-		var route = "http://localhost:8000/estadosusuario";
+		var route = "http://localhost:8000/estadosempresa";
 		var user_id = $("#user_id");
 		var Contador = 0;
 		$.get(route, function(res){
@@ -158,8 +160,9 @@ $(document).ready(function(){
 	function CargarEstados(){
 		var EstadosUsuario = $("#Estados"); 
 		Global_idUltimaPublicacion = $("#idUltima").val();
-		var route = "http://localhost:8000/estadosusuario/"+Global_idUltimaPublicacion;
+		var route = "http://localhost:8000/estadosempresa/"+Global_idUltimaPublicacion;
 		var user_id = $("#user_id");
+		var empresa_id = $("#empresa_id");
 		var Contador = 0;
 		$.get(route, function(res){
 			mostrarCargando();

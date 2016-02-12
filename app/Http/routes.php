@@ -17,7 +17,8 @@ Route::get('sitemap', function(){
 /*Gestión del front*/
 
 /*Gestión de estados*/
-Route::get('estadosusuario/{idUltima}', 'EstadoController@CargarEstadosEmpresa');
+Route::resource('estadoempresa', 'EstadoEmpresaController');
+Route::get('estadosempresa/{idUltima}', 'EstadoEmpresaController@CargarEstadoEmpresa');
 Route::get('contarestados', 'EstadoController@ContarEstados');
 Route::resource('estados','EstadoController');
 Route::get('buscarusuario/{nombre}', 'UserController@BuscarUsuarios');
