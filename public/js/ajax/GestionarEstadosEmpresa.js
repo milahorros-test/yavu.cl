@@ -172,9 +172,9 @@ $(document).ready(function(){
 				EstadosUsuario.append(
 					"<div class='list-group'>"
 						+"<div class='list-group-item'>"												  	
-							  	+"<h4><a href='/profile' style='color:#3C5B28;'>"
+							  	+"<h4><a href='/empresa/"+value.nombreEmp+"/' style='color:#3C5B28;'>"
 							  		+"<img class='media-object' src='http://localhost:8000/images/user.png' data-holder-rendered='true' style='width: 32px; height: 32px;'/>"
-									+value.nombre+" "+value.apellido+" Idp:("+Global_idUltimaPublicacion+")"
+									+value.nombreEmp+" "+value.apellido+" Idp:("+Global_idUltimaPublicacion+")"
 								+"</a></h4>"
 								+"<small>"
 									+"Publicó <abbr class=\'timeago\' title=\'"+TimeAgo+"\'>"+TimeAgo+"</abbr>"
