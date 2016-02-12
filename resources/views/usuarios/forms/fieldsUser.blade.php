@@ -4,22 +4,22 @@
 			<h4>Datos principales</h4>
 		</div>
 		<div class="list-group-item">
-			<div class="form-group has-feedback has-feedback-left">
+			<div class="form-group has-feedback has-feedback-left col-sm-6">
 				{!!Form::label('Nombre:')!!}
 				{!!Form::text('nombre',null,['class'=>'form-control','placeholder'=>'Ingrese su nombre'])!!}
 			</div>
 
-			<div class="form-group has-feedback has-feedback-left">
+			<div class="form-group has-feedback has-feedback-left col-sm-6">
 				{!!Form::label('Apellido:')!!}
 				{!!Form::text('apellido',null,['class'=>'form-control','placeholder'=>'Ingrese su apellido'])!!}
 			</div>
 
-			<div class="form-group has-feedback has-feedback-left">
+			<div class="form-group has-feedback has-feedback-left col-sm-6">
 				{!!Form::label('Email:')!!}
 				{!!Form::email('email',null,['class'=>'form-control','placeholder'=>'Ingrese su email'])!!}			
 			</div>
 			
-			<div class="form-group has-feedback has-feedback-left">
+			<div class="form-group has-feedback has-feedback-left col-sm-6">
 				@if(Auth::user()->check())
 					{!!Form::label('Cambio de clave:')!!}		
 				@else

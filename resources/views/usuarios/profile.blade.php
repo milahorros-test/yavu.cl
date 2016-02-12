@@ -14,12 +14,15 @@
 			@include('alerts.warningMessage')
 		    <div class="col-sm-8">
 				<div class="list-group" >
-					<div class="list-group-item">
-						<h4>{!!Auth::user()->get()->nombre . ' ' . Auth::user()->get()->apellido!!}</h4>
+					<div class="list-group-item-full-header">
+						<h6>{!!strtoupper(Auth::user()->get()->nombre . ' ' . Auth::user()->get()->apellido)!!}</h6	>
 					</div>
-					<div class="list-group-item">
-						<div class="thumbnail">
+
+					<div class="">
+						<div class="thumbnail">				
 						    <img src="images/default-img.gif" alt="...">
+
+							<img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTQwIiBoZWlnaHQ9IjE0MCIgdmlld0JveD0iMCAwIDE0MCAxNDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzE0MHgxNDAKQ3JlYXRlZCB3aXRoIEhvbGRlci5qcyAyLjYuMC4KTGVhcm4gbW9yZSBhdCBodHRwOi8vaG9sZGVyanMuY29tCihjKSAyMDEyLTIwMTUgSXZhbiBNYWxvcGluc2t5IC0gaHR0cDovL2ltc2t5LmNvCi0tPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PCFbQ0RBVEFbI2hvbGRlcl8xNTJkNjZiYjE0YiB0ZXh0IHsgZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQgfSBdXT48L3N0eWxlPjwvZGVmcz48ZyBpZD0iaG9sZGVyXzE1MmQ2NmJiMTRiIj48cmVjdCB3aWR0aD0iMTQwIiBoZWlnaHQ9IjE0MCIgZmlsbD0iI0VFRUVFRSIvPjxnPjx0ZXh0IHg9IjQ1LjUiIHk9Ijc0LjgiPjE0MHgxNDA8L3RleHQ+PC9nPjwvZz48L3N2Zz4=" alt="..." class="img-circle">								    
 					        <div class="caption">
 					    		
 					    		{!!Auth::user()->get()->email!!}
@@ -37,8 +40,8 @@
 
 				
 				<div class="list-group">
-					<div class="list-group-item">
-						<h4><span class="label label-info">#Publicaciones&Estados <span class="glyphicon glyphicon-fire" aria-hidden="true"></span></span></h4>
+					<div class="list-group-item-full-header">
+						<h6>PUBLICAR NUEVO ESTADO</h6>
 					</div>
 
 					<div class="list-group-item">
@@ -49,12 +52,13 @@
 					</div>		
 
 					
-					<div class="list-group-item">
+					<div class="list-group-item-full-classic">
 						{!!Form::open(['action'=>'EstadoController@store', 'method'=>'POST'])!!}
 							{!!Form::textarea('status',null,['class'=>'form-control-stat','placeholder'=>'¿Qué deseas compartir en yavu?', 'maxlength'=>'500', 'required'=>'required','style'=>'resize:none;', 'rows'=>'10', 'id'=>'status'])!!}
 							{!!Form::hidden('user_id', Auth::user()->get()->id, ['id'=>'user_id'])!!}
 							<input type="hidden" name="_token" value="{{csrf_token()}}" id="token" />
-
+					</div>
+					<div class="list-group-item">
 							{!!link_to('#!', $title="Publicar estado", $attributes = ['id'=>'publicar', 'class'=>'btn btn-success btn-xs'], $secure = null)!!}
 							{!!link_to('#!', $title="Limpiar", $attributes = ['id'=>'limpiar', 'class'=>'btn btn-success btn-xs'], $secure = null)!!}											
 				
@@ -108,8 +112,8 @@
 		    <div class="col-sm-4"><!--style="position:fixed;z-index:1000;"-->
 			
 				<div class="list-group">
-					<div class="list-group-item">
-						<h4>Información</h4>
+					<div class="list-group-item-full-header">
+						<h6>INFORMACIÓN</h6>
 					</div>
 					<div class="list-group-item">
 						Coins 
@@ -126,8 +130,8 @@
 					</div>
 				</div>
 				<div class="list-group"  id="EstadoEmpresa">
-					<div class="list-group-item">
-						<h4><span class="label label-info">#MiEmpresa <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span></span></h4>
+					<div class="list-group-item-full-header">
+						<h6>MI EMPRESA</h6>
 					</div>							
 					<div class="list-group-item">
 						Inicia actividad en yavu.cl con tu empresa registrandote aquí.<br>
