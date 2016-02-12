@@ -2,11 +2,16 @@
 namespace yavu\Http\Controllers;
 use Illuminate\Http\Request;
 use yavu\Http\Requests;
+use yavu\Http\Requests\CoinCreateRequest;
+use yavu\Http\Requests\CoinUpdateRequest;
+use yavu\Http\Controllers\Controller;
 use Session;
 use Redirect;
+use yavu\RegistroCoin;
+use Illuminate\Routing\Route;
 use Auth;
-use yavu\Http\Controllers\Controller;
 use DB;
+
 class CoinController extends Controller
 {
     public function __construct(){
@@ -18,11 +23,11 @@ class CoinController extends Controller
     }     
     public function index()
     {
-
+      return view('coins.create');   
     }
     public function create()
     {
-
+        return view('coins.create');
     }
     public function ContarCoins(){   
         $coins = DB::table('registro_coins')
@@ -46,9 +51,11 @@ class CoinController extends Controller
             $historialcoins
         );
     }  
-    public function store(Request $request)
+    public function store(CoinCreateRequest $request)
     {
-
+        RegistroCoin::create($request->all());
+        Session::flash('message', 'Carga creada correctamente');
+        return Redirect::to('/coins/create');
     }
     public function show($id)
     {
@@ -58,9 +65,12 @@ class CoinController extends Controller
     {
 
     }
-    public function update(Request $request, $id)
+    public function update(CoinUpdateRequest $request, $id)
     {
-
+      $this->coin->fill($request->all());
+      $this->coin->save();
+      Session::flash('message', 'Carga editada correctamente');
+      return Redirect::to('/coins');
     }
     public function destroy($id)
     {

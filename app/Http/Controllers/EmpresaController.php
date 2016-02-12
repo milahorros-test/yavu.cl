@@ -9,7 +9,9 @@ use Session;
 use Redirect;
 use yavu\Empresa;
 use Illuminate\Routing\Route;
+use Auth;
 use DB;
+
 class EmpresaController extends Controller
 {
   public function __construct(){
