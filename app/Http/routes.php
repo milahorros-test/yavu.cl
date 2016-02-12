@@ -17,7 +17,7 @@ Route::get('sitemap', function(){
 /*Gestión del front*/
 
 /*Gestión de estados*/
-Route::get('estadosusuario/{idUltima}', 'EstadoController@CargarEstados');
+Route::get('estadosusuario/{idUltima}', 'EstadoController@CargarEstadosEmpresa');
 Route::get('contarestados', 'EstadoController@ContarEstados');
 Route::resource('estados','EstadoController');
 Route::get('buscarusuario/{nombre}', 'UserController@BuscarUsuarios');
@@ -34,7 +34,7 @@ Route::resource('log', 'LogController');
 /*Gestión de ingreso login*/
 
 /*Gestión de Usuarios*/
-Route::get('estadosusuario/{idUltima}', 'EstadoController@CargarEstadosEmpresa');
+Route::get('estadosusuario/{idUltima}', 'EstadoController@CargarEstados');
 Route::resource('usuarios','UserController');
 Route::resource('dashboard', 'UserController@dashboard');
 Route::resource('profile', 'UserController@profile');

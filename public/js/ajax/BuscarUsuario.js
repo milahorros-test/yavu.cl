@@ -1,4 +1,4 @@
-$(document).ready(function(){	
+	$(document).ready(function(){	
 	/*DECLARACIÓN DE VARIABLES GLOBALES*/
 	/*DECLARACIÓN DE VARIABLES GLOBALES*/
 

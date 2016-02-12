@@ -1,5 +1,8 @@
 {!!Html::script('js/jquery.js')!!}
-@extends('layouts.frontadm')
+{!!Html::script('js/ajax/GestionarEstadosEmpresa.js')!!}
+{!!Html::script('js/ajax/GestionarCoinsEmpresa.js')!!}
+{!!Html::script('js/ajax/InteraccionPublicacionesEmpresa.js')!!}
+@extends('layouts.front')
 @section('content')
 <div class="jumbotron">
 	<div id="contentMiddle">
@@ -65,6 +68,7 @@
 								{!!Form::open(['action'=>'EstadoController@storeEstadoEmpresa', 'method'=>'POST'])!!}
 									{!!Form::textarea('status',null,['class'=>'form-control-stat','placeholder'=>'¿Qué deseas compartir en yavu?', 'maxlength'=>'500', 'required'=>'required','style'=>'resize:none;', 'rows'=>'10', 'id'=>'status'])!!}
 									{!!Form::hidden('user_id', Auth::user()->get()->id, ['id'=>'user_id'])!!}
+									{!!Form::hidden('empresa_id', $e->id, ['id'=>'empresa_id'])!!}
 									<input type="hidden" name="_token" value="{{csrf_token()}}" id="token" />
 
 									{!!link_to('#!', $title="Publicar estado", $attributes = ['id'=>'publicar', 'class'=>'btn btn-success btn-xs'], $secure = null)!!}

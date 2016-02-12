@@ -6583,7 +6583,7 @@ a:focus {
   display: none;
   list-style: none;
   font-size: 16px;     
-  background-color: #133A1E;
+  background-color: #000;
   border-radius: 4px 4px 4px 4px;
   background-clip: padding-box;  
 }
@@ -6769,7 +6769,7 @@ a:focus {
   margin-top: 0px;
   margin-bottom: 15px;
   left: 0;
-  background-color: #133A1E;
+  background-color: #000;
   z-index: 1030;
   opacity: 0.8;
   border: 0px solid transparent;
@@ -6880,6 +6880,7 @@ a:focus {
 .navbar .navbar-nav > li > a:focus { /* AQUI SE CAMBIA EL COLOR DE LOS BOTONES DE INICIO CONTACTO etc */
   background-color: transparent;
   /*
+
   color: #886A08;
   
   
