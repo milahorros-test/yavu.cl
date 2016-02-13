@@ -18,9 +18,11 @@ class SorteoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    {   
+        
         $sorteos = Sorteo::all();
         return view('sorteos.index', compact('sorteos'));
+
     }
 
     /**
@@ -64,7 +66,9 @@ class SorteoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
+
+    {   
+        $sorteos = Sorteo::all();
         return view('sorteos.edit', ['sorteo' => $this->sorteo]); 
     }
 
@@ -93,7 +97,7 @@ class SorteoController extends Controller
      */
     public function destroy($id)
     {
-        $this->admin->delete();
+        $this->sorteo->delete();
         Session::flash('message', 'Sorteo eliminado correctamente');
         return Redirect::to('/admins');
     }

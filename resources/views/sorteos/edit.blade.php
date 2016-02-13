@@ -3,13 +3,13 @@
 <div class="jumbotron">
 	<div id="contentIn">
 		@include('alerts.alertFields')
-		<h4>Actualización de administrador : {{$sorteo->estado_sorteo}}</h4>
+		
 		<div class="panel panel-default">
 			<div class="panel-heading"><h4>Mantenedor de sorteos</h4></div>
 			<div class="panel-body">
 				<table class="table">
 					{!!Form::model($sorteo, ['method'=>'PUT', 'route' => ['sorteo.update', $sorteo->id] ])!!}
-						@include('admins.forms.fieldsAdmin')
+						@include('sorteos.forms.fieldsSorteo')
 						<tr>
 							<td>
 								Guardar o Eliminar
