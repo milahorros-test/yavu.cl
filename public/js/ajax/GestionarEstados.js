@@ -45,7 +45,7 @@ $(document).ready(function(){
 				    },800);				
 						*/
 				    document.getElementById("status").value = "";
-				    console.log("La ultima publicacion ID: "+$("#idUltima").val());
+				    //console.log("La ultima publicacion ID: "+$("#idUltima").val());
 				}
 			});	
 			
@@ -68,7 +68,7 @@ $(document).ready(function(){
 		status_2 = limpiar(status);
 		status_2 = limpiar(status);
 		if (status != status_2){
-			console.log("son distintos");
+			//console.log("son distintos");
 			var status = $("#status").val();
 			if (status !== limpiar(status)){
 			  $('#msj-error').append();
@@ -181,6 +181,7 @@ $(document).ready(function(){
 	*/
 	function humanTiming(time)
 	{
+		console.log(time);
 		var now = new Date();
 	    var tokens = [
 	        [31536000, 'año'],
@@ -196,7 +197,7 @@ $(document).ready(function(){
 			for(var x = 0, len = tokens.length; x < len; x++){
 				//console.log(now-Date.parse(time));
 				//console.log(tokens[i][x]);
-					console.log(now / tokens[i]);
+					//console.log(now / tokens[i]);
 			}
 		}	    	
 	    	
@@ -265,7 +266,7 @@ letters.forEach(ShowResults);
 								+value.nombre+" "+value.apellido+" Idp:("+Global_idUltimaPublicacion+")"
 							+"</a></h4>"
 							+"<small>"
-								+"Publicó <abbr class='timeago' title='"+TimeAgo+"\'>"+TimeAgo+"</abbr>"
+								+"Publicó <abbr class='timeago' title='"+TimeAgo+"\'>"+humanTiming(TimeAgo)+"</abbr>"
 							+"</small><hr>"		
 							+"<p>"+value.status+"</p>"
 						+"</div>"
@@ -281,7 +282,7 @@ letters.forEach(ShowResults);
 			});
 			if(Contador < 5){					
 				//EstadosUsuario.append("Ultima publicacion: "+Global_idUltimaPublicacion);
-				console.log("Hay menos de 5 registros");
+				//console.log("Hay menos de 5 registros");
 				$("#msj-finPublicaciones").fadeIn();	
 				setTimeout(function() {
 				    $("#msj-finPublicaciones").fadeOut(3000);
@@ -329,7 +330,7 @@ letters.forEach(ShowResults);
 		var EstadosUsuario = $("#Estados"); 
          // VALOR QUE SE HA MOVIDO DEL SCROLL
         scroll_critical = parseInt($("#Estados").height()); // VALOR DE TU DIV
-        console.log(scroll_critical);
+        //console.log(scroll_critical);
         if (window_y > scroll_critical) { // SI EL SCROLL HA SUPERADO EL ALTO DE TU DIV
            // ACA MUESTRAS EL OTRO DIV Y EL OCULTAS EL DIV QUE QUIERES
            CargarEstados();
