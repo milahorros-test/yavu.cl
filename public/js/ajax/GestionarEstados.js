@@ -236,11 +236,6 @@ letters.forEach(ShowResults);
 //  value: ef index: 2 
 */
 
-	function eliminarEstado(id){
-		alert("oli");
-		//$("#publicacion"+id).hide();
-	}
-	
 	function CargarEstados(){
 		var EstadosUsuario = $("#Estados"); 
 		Global_idUltimaPublicacion = $("#idUltima").val();
@@ -252,8 +247,6 @@ letters.forEach(ShowResults);
 			$(res).each(function(key,value){				
 				var TimeAgo = value.created_at;
 				Global_idUltimaPublicacion = value.id;		
-
-
 
 				EstadosUsuario.append(
 					"<div id='publicacion"+value.id+"' class='list-group'>"
