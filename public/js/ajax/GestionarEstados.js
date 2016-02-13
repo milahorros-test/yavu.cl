@@ -38,10 +38,12 @@ $(document).ready(function(){
 					user_id: user_id
 				},
 				success:function(){
+					/*
 					$("#msj-success").fadeIn();
 				    setTimeout(function() {
 				        $("#msj-success").fadeOut(1000);
 				    },800);				
+						*/
 				    document.getElementById("status").value = "";
 				    console.log("La ultima publicacion ID: "+$("#idUltima").val());
 				}
@@ -234,7 +236,11 @@ letters.forEach(ShowResults);
 //  value: ef index: 2 
 */
 
-
+	function eliminarEstado(id){
+		alert("oli");
+		//$("#publicacion"+id).hide();
+	}
+	
 	function CargarEstados(){
 		var EstadosUsuario = $("#Estados"); 
 		Global_idUltimaPublicacion = $("#idUltima").val();
@@ -250,7 +256,7 @@ letters.forEach(ShowResults);
 
 
 				EstadosUsuario.append(
-					"<div class='list-group'>"
+					"<div id='publicacion"+value.id+"' class='list-group'>"
 						+"<div class='list-group-item'>"	
 							+'<div class="dropdown">'
 								+'<button class="btn btn-sm dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">'
@@ -258,11 +264,7 @@ letters.forEach(ShowResults);
 									+'<span class="caret"></span>'
 								+'</button>'
 								+'<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">'
-									+'<li><a href="#">Action</a></li>'
-									+'<li><a href="#">Another action</a></li>'
-									+'<li><a href="#">Something else here</a></li>'
-									+'<li role="separator" class="divider"></li>'
-									+'<li><a href="#">Separated link</a></li>'
+									+'<li><a onclick="eliminarEstado('+value.id+')" href="#!">Eliminar publicación</a></li>'
 								+'</ul>'
 							+'</div>'																	  	
 						  	+"<h4><a href='/profile' style='color:#3C5B28;'>"
@@ -270,7 +272,7 @@ letters.forEach(ShowResults);
 								+value.nombre+" "+value.apellido+" Idp:("+Global_idUltimaPublicacion+")"
 							+"</a></h4>"
 							+"<small>"
-								+"Publicó <abbr class='timeago' title='"+TimeAgo+"\'>"+humanTiming(TimeAgo)+"</abbr>"
+								+"Publicó <abbr class='timeago' title='"+TimeAgo+"\'>"+TimeAgo+"</abbr>"
 							+"</small><hr>"		
 							+"<p>"+value.status+"</p>"
 						+"</div>"

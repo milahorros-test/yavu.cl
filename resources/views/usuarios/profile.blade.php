@@ -125,3 +125,11 @@
 </div>
 @stop
 
+<script>
+  
+  function eliminarEstado(id){
+    //alert("oli");
+    $("#publicacion"+id).fadeOut();
+  }
+  
+</script>
