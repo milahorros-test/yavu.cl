@@ -3350,8 +3350,8 @@ tbody.collapse.in {
   background-color: #fff;
   -webkit-background-clip: padding-box;
           background-clip: padding-box;
-  border: 3px solid #ccc;
-  border: 3px solid rgba(0, 0, 0, .15);
+  border: 1px 0px 0px 0px solid #ccc;
+  border: 1px 0px 0px 0px solid rgba(0, 0, 0, .15);
   border-radius: 9px;
   -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
           box-shadow: 0 6px 12px rgba(0, 0, 0, .175);

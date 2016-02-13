@@ -14,7 +14,7 @@
             <div class="col-sm-8">
                 <div class="list-group" >
                     <div class="list-group-item-full-header">
-                        <h6>{!!strtoupper(Auth::user()->get()->nombre . ' ' . Auth::user()->get()->apellido)!!}</h6 >
+                        <h6>{!!strtoupper(Auth::user()->get()->nombre . ' ' . Auth::user()->get()->apellido)!!}</h6>
                     </div>
                     <div class="">
                         <div class="thumbnail">             
@@ -124,3 +124,4 @@
     </div><!-- Fin del div id contentIn -->
 </div>
 @stop
+

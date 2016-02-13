@@ -33,6 +33,8 @@
 						<h6>RESUMEN DE GARGAS DE COINS</h6>
 					</div>
 				</div>
+
+
 		    </div>
 
 		    <div class="col-sm-4"><!--style="position:fixed;z-index:1000;"-->
