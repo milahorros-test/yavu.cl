@@ -7,6 +7,8 @@ $(document).ready(function(){
 	/*MÉTODOS CONSTRUCTORES*/
 
 	CargarEstados();
+	
+
 
 	/*MÉTODOS CONSTRUCTORES*/
 
@@ -94,15 +96,15 @@ $(document).ready(function(){
 				var TimeAgo = value.created_at;
 				var Estado = 
 					"<div id='status' class='list-group'>"
-						+"<div class='list-group-item'>"												  	
-							  	+"<h4><a href='/profile' style='color:#3C5B28;'>"
-							  		+"<img class='media-object' src='http://localhost:8000/images/user.png' data-holder-rendered='true' style='width: 32px; height: 32px;'/>"
-									+value.nombre+" "+value.apellido
-								+"</a></h4>"
-								+"<small>"
-									+"Publicó <abbr class=\'timeago\' title=\'"+TimeAgo+"\'>"+TimeAgo+"</abbr>"
-								+"</small><hr>"		
-								+"<p>"+value.status+"</p>"
+						+"<div class='list-group-item'>"	
+						  	+"<h4><a href='/profile' style='color:#3C5B28;'>"
+						  		+"<img class='media-object' src='http://localhost:8000/images/user.png' data-holder-rendered='true' style='width: 32px; height: 32px;'/>"
+								+value.nombre+" "+value.apellido
+							+"</a></h4>"
+							+"<small>"
+								+"Publicó <abbr class=\'timeago\' title=\'"+TimeAgo+"\'>"+TimeAgo+"</abbr>"
+							+"</small><hr>"		
+							+"<p>"+value.status+"</p>"
 						+"</div>"
 						+"<div class='list-group-item panel-footer'>"
 						+"<span class='glyphicon glyphicon-thumbs-up'>&nbsp;</span>"
@@ -154,6 +156,84 @@ $(document).ready(function(){
 		status = status.replace("')<", ""); 
 		return status;
 	}
+	/* LA DE PHP
+	function humanTiming ($time)
+	{
+	    $time = time() - $time; // to get the time since that moment
+	    $time = ($time<1)? 1 : $time;
+	    $tokens = array (
+	        31536000 => 'año',
+	        2592000 => 'mese',
+	        604800 => 'semana',
+	        86400 => 'día',
+	        3600 => 'hora',
+	        60 => 'minuto',
+	        1 => 'segundo'
+	    );
+	    foreach ($tokens as $unit => $text) {
+	        if ($time < $unit) continue;
+	        $numberOfUnits = floor($time / $unit);
+	        return $numberOfUnits.' '.$text.(($numberOfUnits>1)?'s':'');
+	    }
+	}
+	*/
+	function humanTiming(time)
+	{
+		var now = new Date();
+	    var tokens = [
+	        [31536000, 'año'],
+	        [2592000, 'mes'],
+	        [604800, 'semana'],
+	        [86400, 'día'],
+	        [3600, 'hora'],
+	        [60, 'minuto'],
+	        [1, 'segundo']
+	   ];
+
+		for(var i = 0, len = tokens.length; i < len; i++){
+			for(var x = 0, len = tokens.length; x < len; x++){
+				//console.log(now-Date.parse(time));
+				//console.log(tokens[i][x]);
+					console.log(now / tokens[i]);
+			}
+		}	    	
+	    	
+
+
+		//console.log(now-Date.parse(time));		
+		/*
+	    time = getTime() - time; // to get the time since that moment
+	    time = (time<1)? 1 : time;
+
+	    foreach ($tokens as $unit => $text) {
+	        if (time < unit) continue;
+	        var numberOfUnits = floor($time / $unit);
+	        return $numberOfUnits.' '.$text.(($numberOfUnits>1)?'s':'');
+	    }
+		*/
+	}
+/*
+Math.floor(1.6); 
+// Define the callback function.
+function ShowResults(value, index, ar) {
+    document.write("value: " + value);
+    document.write(" index: " + index);
+    document.write("<br />");
+}
+
+// Create an array.
+var letters = ['ab', 'cd', 'ef'];
+
+// Call the ShowResults callback function for each
+// array element.
+letters.forEach(ShowResults);
+
+// Output:
+//  value: ab index: 0 
+//  value: cd index: 1 
+//  value: ef index: 2 
+*/
+
 
 	function CargarEstados(){
 		var EstadosUsuario = $("#Estados"); 
@@ -166,17 +246,33 @@ $(document).ready(function(){
 			$(res).each(function(key,value){				
 				var TimeAgo = value.created_at;
 				Global_idUltimaPublicacion = value.id;		
+
+
+
 				EstadosUsuario.append(
 					"<div class='list-group'>"
-						+"<div class='list-group-item'>"												  	
-							  	+"<h4><a href='/profile' style='color:#3C5B28;'>"
-							  		+"<img class='media-object' src='http://localhost:8000/images/user.png' data-holder-rendered='true' style='width: 32px; height: 32px;'/>"
-									+value.nombre+" "+value.apellido+" Idp:("+Global_idUltimaPublicacion+")"
-								+"</a></h4>"
-								+"<small>"
-									+"Publicó <abbr class=\'timeago\' title=\'"+TimeAgo+"\'>"+TimeAgo+"</abbr>"
-								+"</small><hr>"		
-								+"<p>"+value.status+"</p>"
+						+"<div class='list-group-item'>"	
+							+'<div class="dropdown">'
+								+'<button class="btn btn-sm dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">'
+									+'<span class="glyphicon glyphicon-cog" aria-hidden="true"></span>'
+									+'<span class="caret"></span>'
+								+'</button>'
+								+'<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">'
+									+'<li><a href="#">Action</a></li>'
+									+'<li><a href="#">Another action</a></li>'
+									+'<li><a href="#">Something else here</a></li>'
+									+'<li role="separator" class="divider"></li>'
+									+'<li><a href="#">Separated link</a></li>'
+								+'</ul>'
+							+'</div>'																	  	
+						  	+"<h4><a href='/profile' style='color:#3C5B28;'>"
+						  		+"<img class='media-object' src='http://localhost:8000/images/user.png' data-holder-rendered='true' style='width: 32px; height: 32px;'/>"
+								+value.nombre+" "+value.apellido+" Idp:("+Global_idUltimaPublicacion+")"
+							+"</a></h4>"
+							+"<small>"
+								+"Publicó <abbr class='timeago' title='"+TimeAgo+"\'>"+humanTiming(TimeAgo)+"</abbr>"
+							+"</small><hr>"		
+							+"<p>"+value.status+"</p>"
 						+"</div>"
 						+"<div class='list-group-item panel-footer'>"
 						+"<span class='glyphicon glyphicon-thumbs-up'>&nbsp;</span>"
@@ -243,7 +339,7 @@ $(document).ready(function(){
            // ACA MUESTRAS EL OTRO DIV Y EL OCULTAS EL DIV QUE QUIERES
            CargarEstados();
         }
-	});	
+	});		
 });
 
 /*
@@ -253,3 +349,4 @@ $(document).ready(function(){
 					+"</div>"
 				);   
 */
+
