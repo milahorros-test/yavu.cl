@@ -125,8 +125,12 @@
   border-radius: 2px;
 }
 
-
-@media (min-width: 400px) {
+@media (min-width: 100px) {
+  #contentMiddle {
+    width: 100%;
+  }
+}
+@media (min-width: 300px) {
   #contentMiddle {
     width: 100%;
   }

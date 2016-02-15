@@ -38,12 +38,14 @@ $(document).ready(function(){
 					user_id: user_id
 				},
 				success:function(){
+					/*
 					$("#msj-success").fadeIn();
 				    setTimeout(function() {
 				        $("#msj-success").fadeOut(1000);
 				    },800);				
+						*/
 				    document.getElementById("status").value = "";
-				    console.log("La ultima publicacion ID: "+$("#idUltima").val());
+				    //console.log("La ultima publicacion ID: "+$("#idUltima").val());
 				}
 			});	
 			
@@ -66,7 +68,7 @@ $(document).ready(function(){
 		status_2 = limpiar(status);
 		status_2 = limpiar(status);
 		if (status != status_2){
-			console.log("son distintos");
+			//console.log("son distintos");
 			var status = $("#status").val();
 			if (status !== limpiar(status)){
 			  $('#msj-error').append();
@@ -179,7 +181,14 @@ $(document).ready(function(){
 	*/
 	function humanTiming(time)
 	{
+		//console.log(time);
 		var now = new Date();
+		var nowTime = now.getTime()
+		console.log(nowTime+"///"+Date.parse(time));
+		nowTime = nowTime - Date.parse(time);
+		nowTime = (time<1)? 1 : time;
+		console.log(nowTime);
+		//console.log(nowTime);
 	    var tokens = [
 	        [31536000, 'año'],
 	        [2592000, 'mes'],
@@ -189,13 +198,15 @@ $(document).ready(function(){
 	        [60, 'minuto'],
 	        [1, 'segundo']
 	   ];
-
+	   //console.log(JSON.stringify(tokens[0][1])); //unidad
+	   //console.log(JSON.stringify(tokens[0][0])); //cantidad
 		for(var i = 0, len = tokens.length; i < len; i++){
-			for(var x = 0, len = tokens.length; x < len; x++){
-				//console.log(now-Date.parse(time));
-				//console.log(tokens[i][x]);
-					console.log(now / tokens[i]);
+			if (nowTime < tokens[i][0]) {
+
+				console.log(Math.floor(nowTime/tokens[i][0])+tokens[i][1]);
+				break;
 			}
+
 		}	    	
 	    	
 
@@ -234,7 +245,6 @@ letters.forEach(ShowResults);
 //  value: ef index: 2 
 */
 
-
 	function CargarEstados(){
 		var EstadosUsuario = $("#Estados"); 
 		Global_idUltimaPublicacion = $("#idUltima").val();
@@ -247,10 +257,8 @@ letters.forEach(ShowResults);
 				var TimeAgo = value.created_at;
 				Global_idUltimaPublicacion = value.id;		
 
-
-
 				EstadosUsuario.append(
-					"<div class='list-group'>"
+					"<div id='publicacion"+value.id+"' class='list-group'>"
 						+"<div class='list-group-item'>"	
 							+'<div class="dropdown">'
 								+'<button class="btn btn-sm dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">'
@@ -258,11 +266,7 @@ letters.forEach(ShowResults);
 									+'<span class="caret"></span>'
 								+'</button>'
 								+'<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">'
-									+'<li><a href="#">Action</a></li>'
-									+'<li><a href="#">Another action</a></li>'
-									+'<li><a href="#">Something else here</a></li>'
-									+'<li role="separator" class="divider"></li>'
-									+'<li><a href="#">Separated link</a></li>'
+									+'<li><a onclick="eliminarEstado('+value.id+')" href="#!">Eliminar publicación</a></li>'
 								+'</ul>'
 							+'</div>'																	  	
 						  	+"<h4><a href='/profile' style='color:#3C5B28;'>"
@@ -286,7 +290,7 @@ letters.forEach(ShowResults);
 			});
 			if(Contador < 5){					
 				//EstadosUsuario.append("Ultima publicacion: "+Global_idUltimaPublicacion);
-				console.log("Hay menos de 5 registros");
+				//console.log("Hay menos de 5 registros");
 				$("#msj-finPublicaciones").fadeIn();	
 				setTimeout(function() {
 				    $("#msj-finPublicaciones").fadeOut(3000);
@@ -334,7 +338,7 @@ letters.forEach(ShowResults);
 		var EstadosUsuario = $("#Estados"); 
          // VALOR QUE SE HA MOVIDO DEL SCROLL
         scroll_critical = parseInt($("#Estados").height()); // VALOR DE TU DIV
-        console.log(scroll_critical);
+        //console.log(scroll_critical);
         if (window_y > scroll_critical) { // SI EL SCROLL HA SUPERADO EL ALTO DE TU DIV
            // ACA MUESTRAS EL OTRO DIV Y EL OCULTAS EL DIV QUE QUIERES
            CargarEstados();
