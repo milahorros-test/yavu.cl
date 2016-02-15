@@ -70,7 +70,7 @@
                 </ul>
 
                 <li>
-              <a href="{!!URL::to('/')!!}">Salir</a>
+              <a href="{!!URL::to('/logout')!!}">Salir</a>
             </li>
 
               </li>   

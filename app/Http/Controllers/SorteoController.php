@@ -1,12 +1,13 @@
 <?php
 
 namespace yavu\Http\Controllers;
-
 use Illuminate\Http\Request;
-
 use yavu\Http\Requests;
+use yavu\Http\Requests\SorteoCreateRequest;
 use yavu\Http\Controllers\Controller;
 use yavu\Sorteo;
+use Session;
+use Redirect;
 use DB;
 
 class SorteoController extends Controller
@@ -17,9 +18,11 @@ class SorteoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-  
-    return view('sorteos.index');
+    {   
+        
+        $sorteos = Sorteo::all();
+        return view('sorteos.index', compact('sorteos'));
+
     }
 
     /**
@@ -42,7 +45,7 @@ class SorteoController extends Controller
     {
         Sorteo::create($request->all());
         Session::flash('message', 'Sorteo creado correctamente');
-    return Redirect::to('/sorteos.index');
+    return Redirect::to('/sorteos/create');
     }
 
     /**
@@ -63,8 +66,10 @@ class SorteoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
-        //
+
+    {   
+        $sorteos = Sorteo::all();
+        return view('sorteos.edit', ['sorteo' => $this->sorteo]); 
     }
 
     /**
@@ -74,9 +79,14 @@ class SorteoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(SorteoUpdateRequest $request, $id)
+
     {
-        //
+
+        $this->sorteo->fill($request->all());
+        $this->sorteo->save();
+        Session::flash('message', 'sorteo validado correctamente');
+        return Redirect::to('/admins');
     }
 
     /**
@@ -87,6 +97,8 @@ class SorteoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $this->sorteo->delete();
+        Session::flash('message', 'Sorteo eliminado correctamente');
+        return Redirect::to('/admins');
     }
 }

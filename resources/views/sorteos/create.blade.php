@@ -15,10 +15,10 @@
 						<div class="form-group has-feedback has-feedback-left">							
 							{!!Form::label('Registrar')!!}						
 							{!!Form::submit('Registrar', ['class'=>'btn btn-primary btn-success', 'style'=>'width:100%;'])!!}
-							{!!Form::close()!!}
-						</div>
-						
 
+							{!!Form::close()!!}
+
+					</div>
 					</div>
 				</div>
 			</div><!--Este fin del div cierra el div que se abre en fieldsUser-->	
