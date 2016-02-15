@@ -8,7 +8,7 @@
 			<div class="panel-heading"><h4>Mantenedor de sorteos</h4></div>
 			<div class="panel-body">
 				<table class="table">
-					{!!Form::model($sorteo, ['method'=>'PUT', 'route' => ['sorteo.update', $sorteo->id] ])!!}
+					{!!Form::model($sorteo, ['method'=>'PUT', 'route' => ['sorteos.update', $sorteo->id] ])!!}
 						@include('sorteos.forms.fieldsSorteo')
 						<tr>
 							<td>
