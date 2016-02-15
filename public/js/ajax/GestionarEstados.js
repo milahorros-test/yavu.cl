@@ -209,19 +209,30 @@ $(document).ready(function(){
 			//numberOfUnits = Math.floor(nowTime/tokens[i][0]);
 			if (nowTime < tokens[i][0]) {	
 
-				//console.log(nowTime+" -> "+tokens[i][1]);
-				//console.log(nowTime/(tokens[i-1][0])*10+"=>"+tokens[i][1]);
-				
-				if(nowTime>24){
-					console.log(nowTime);
-					numberOfUnits = Math.floor(nowTime/(tokens[i-1][0])*10);
-					return "hace "+numberOfUnits+" "+tokens[i][1]+((numberOfUnits>1)?'s':'');						
-				}else{
-					console.log("Fue en horas");
-				}
-				
+				numberOfUnits = nowTime/(tokens[i-1][0])*10;
+				//console.log(nowTime+" -> "+tokens[i][1]+" -> "+Math.floor(numberOfUnits)+"#########");
+				console.log("=>>"+numberOfUnits);
 
+				if(Math.floor(numberOfUnits) > 7 && Math.floor(numberOfUnits) < 30){
+					return "hace "+Math.floor(numberOfUnits)+" "+tokens[i+1][1]+((Math.floor(numberOfUnits)>1)?'s':'');
 
+				}else if(Math.floor(numberOfUnits) > 1 && Math.floor(numberOfUnits) < 7){
+					return "hace "+Math.floor(numberOfUnits)+" "+tokens[i][1]+((Math.floor(numberOfUnits)>1)?'s':'');						
+
+				}else if(Math.floor(numberOfUnits) < 1){
+
+					if (numberOfUnits > 4.16){
+						return "hace "+Math.floor(24*numberOfUnits)+" "+tokens[i-1][1]+((Math.floor(24*numberOfUnits)>1)?'s':'');				
+
+					}else if ((numberOfUnits/100) < 0.000693333 && tokens[i-1][1]==='minuto'){
+						return 'hace segundos';
+
+					}else if(numberOfUnits < 4.16 && numberOfUnits > 0.000693333 ){
+						numberOfUnits = Math.floor(((numberOfUnits*100)/4.16)*60);
+						return "hace "+numberOfUnits+" "+tokens[i-2][1]+((numberOfUnits>1)?'s':'');
+
+					}
+				}	
 
 			}else{				
 				nowTime = Math.floor(nowTime/tokens[i][0]);				
