@@ -20,11 +20,20 @@
           {!!Form::date('fecha_inicio_sorteo',null,['class'=>'form-control','placeholder'=>''])!!}
 
         </div>  
-  
-          <div class="form-group has-feedback has-feedback-left">
-            {!!Form::hidden('estado_sorteo', 'Pendiente')!!} 
-          </div>            
-      
+  		
+			<div class="form-group has-feedback has-feedback-left">
+				{!!Form::label('Estado Sorteo:')!!}		
+				{!!Form::select('estado_sorteo', 
+					['Pendiente' => 'Pendiente',	
+					'Aprobado' => 'Aprobado'], 
+					$selected = null, ['class' => 'form-control', 'disabled' => 'disabled']) 
+				!!}	
+				
+			</div>	
+		</div>
+	</div>
+</div>
+
 </div>
 		</div>
     </div>

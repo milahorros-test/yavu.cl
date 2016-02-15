@@ -11,7 +11,11 @@ class SorteoUpdateRequest extends Request
     {
         return [
 
-         'estado_sorteo' => 'required',
+        'nombre_sorteo' => 'required',
+        'descripcion' => 'required',
+        'fecha_inicio_sorteo' => 'required',   
+        'estado_sorteo' => 'required',
+        
         ];
     }
 }
