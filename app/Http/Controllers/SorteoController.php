@@ -92,7 +92,8 @@ class SorteoController extends Controller
 
     {
 
-        $sorteos = Sorteo::all();
+        $this->sorteo->fill($request->all());
+        $this->sorteo->save();
         Session::flash('message', 'sorteo validado correctamente');
         return Redirect::to('/sorteos');
     }

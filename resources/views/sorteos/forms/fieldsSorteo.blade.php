@@ -19,9 +19,14 @@
           {!!Form::label('Fecha de inicio Sorteo:')!!}
           {!!Form::date('fecha_inicio_sorteo',null,['class'=>'form-control','placeholder'=>''])!!}
 
-        </div>  
+        </div> 
+
+        	 <div class="form-group has-feedback has-feedback-left">
+            {!!Form::hidden('estado_sorteo', 'Pendiente')!!} 
+          </div>             
+       
   		
-          		@if (Auth::admin()->check())
+         		@if (Auth::admin()->check()) 
 
 			<div class="form-group has-feedback has-feedback-left">
 				{!!Form::label('Estado Sorteo:')!!}		
@@ -35,9 +40,9 @@
 
 				@endif 
 
-          <div class="form-group has-feedback has-feedback-left">
+          <!--<div class="form-group has-feedback has-feedback-left">
             {!!Form::hidden('estado_sorteo', 'Pendiente')!!} 
-          </div>            
+          </div>       
       
 </div>
 		</div>
