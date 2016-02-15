@@ -1,4 +1,4 @@
-@extends('layouts.frontadm')
+@extends('layouts.front')
 @section('content')
 <div class="jumbotron">
 	<div id="contentMiddle">

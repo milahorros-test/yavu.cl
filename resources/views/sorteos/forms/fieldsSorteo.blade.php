@@ -21,19 +21,24 @@
 
         </div>  
   		
+          		@if (Auth::admin()->check())
+
 			<div class="form-group has-feedback has-feedback-left">
 				{!!Form::label('Estado Sorteo:')!!}		
 				{!!Form::select('estado_sorteo', 
 					['Pendiente' => 'Pendiente',	
 					'Aprobado' => 'Aprobado'], 
-					$selected = null, ['class' => 'form-control', 'disabled' => 'disabled']) 
+					$selected = null, ['class' => 'form-control']) 
 				!!}	
-				
-			</div>	
-		</div>
-	</div>
-</div>
 
+			</div>
+
+				@endif 
+
+          <div class="form-group has-feedback has-feedback-left">
+            {!!Form::hidden('estado_sorteo', 'Pendiente')!!} 
+          </div>            
+      
 </div>
 		</div>
     </div>
