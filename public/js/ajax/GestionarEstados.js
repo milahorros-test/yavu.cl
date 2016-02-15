@@ -212,9 +212,16 @@ $(document).ready(function(){
 				//console.log(nowTime+" -> "+tokens[i][1]);
 				//console.log(nowTime/(tokens[i-1][0])*10+"=>"+tokens[i][1]);
 				
-				numberOfUnits = Math.floor(nowTime/(tokens[i-1][0])*10);
+				if(nowTime>24){
+					console.log(nowTime);
+					numberOfUnits = Math.floor(nowTime/(tokens[i-1][0])*10);
+					return "hace "+numberOfUnits+" "+tokens[i][1]+((numberOfUnits>1)?'s':'');						
+				}else{
+					console.log("Fue en horas");
+				}
+				
 
-				return "hace "+numberOfUnits+" "+tokens[i][1]+((numberOfUnits>1)?'s':'');
+
 
 			}else{				
 				nowTime = Math.floor(nowTime/tokens[i][0]);				
