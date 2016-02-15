@@ -40,10 +40,6 @@
 
 				@endif 
 
-          <!--<div class="form-group has-feedback has-feedback-left">
-            {!!Form::hidden('estado_sorteo', 'Pendiente')!!} 
-          </div>       
-      
 </div>
 		</div>
     </div>

@@ -1,6 +1,6 @@
 @extends('layouts.front')
+{!!Html::style('css/ycoins.css')!!}
 @section('content')
-
 
 <div class="jumbotron">
 
@@ -8,15 +8,14 @@
       <div class="row">
         <div class="col-sm-3 sidebar">
           <ul class="nav nav-list affix">
-            <li><a href="#one">Descripción</a></li>
-            <li><a href="#two">Sistemas de coins</a></li>
-            <li><a href="#three">Sorteos!</a></li>
-            <li><a href="#four">Empresas Asociadas</a></li>
-            <li><a href="#five">Five</a></li>
+            <li><a class="label color1" href="#one">Descripción</a></li>
+            <li><a class="label mus" href="#two">Sistemas de coins</a></li>
+            <li><a class="label har" href="#three">Sorteos!</a></li>
+            <li><a class="label vih"href="#four">Empresas Asociadas</a></li>
+            <li><a class="label vrk"href="#five">Five</a></li>
           </ul>
-        </div>
+        </div>     
 
-        
         <div class="col-sm-9 content" >
           <section id="one">
             <h2>Section One</h2>

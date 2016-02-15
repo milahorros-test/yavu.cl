@@ -154,10 +154,14 @@
 					{!!Form::date('fecha_de_pago',null,['class'=>'form-control','placeholder'=>''])!!}
 				</div>
 
+					@if (Auth::admin()->check()) 
+
 				<div class="form-group has-feedback has-feedback-left">
 					{!!Form::label('Ingrese monto cancelado:')!!}
 					{!!Form::text('monto_pagado',null,['class'=>'form-control','placeholder'=>''])!!}
 				</div>
+
+					@endif	
 				
 				@if (Auth::user()->check())
 					<div class="form-group has-feedback has-feedback-left">
@@ -171,3 +175,23 @@
 			</div>
 		</div>
 	<!--</div>-->
+
+
+        	 <div class="form-group has-feedback has-feedback-left">
+            {!!Form::hidden('estado_sorteo', 'Pendiente')!!} 
+          </div>             
+       
+  		
+         		@if (Auth::admin()->check()) 
+
+			<div class="form-group has-feedback has-feedback-left">
+				{!!Form::label('Estado Sorteo:')!!}		
+				{!!Form::select('estado_sorteo', 
+					['Pendiente' => 'Pendiente',	
+					'Aprobado' => 'Aprobado'], 
+					$selected = null, ['class' => 'form-control']) 
+				!!}	
+
+			</div>
+
+				@endif 

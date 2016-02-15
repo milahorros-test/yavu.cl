@@ -3,8 +3,65 @@
 body { 
   position: relative;
   line-height: 1.6;
+  font-family: "Helvetica Neue", Helvetica, Arial;
+	font-size: 12px;
 }
 
 section { padding: 100px 0; min-height: 380px; }
 section.jumbotron { padding: 160px 0 120px; }
 
+
+.label,
+.badge {
+  -webkit-box-sizing:border-box;
+  box-sizing:border-box;
+  display: inline-block;
+  line-height: 1.4em;
+  padding: 0 0.4em;
+  color: #ffffff;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius:3px;
+  margin:5px; /* for demonstration purposes */
+}
+
+
+.color1 {
+background-color: rgba(20,158,203,1);
+}
+
+.vih {
+background-color: rgba(82,154,90,1);
+}
+
+.mus {
+background-color: rgba(0,0,0,1);
+}
+
+.har {
+background-color: rgba(136,136,136,1);
+}
+
+.vrk {
+  background-color: #00539F;
+  color:#ffffff;
+}
+
+.turva {
+  background-color: #feedbd;
+  color:#C09853;
+  border:solid 1px #D5BA8B;
+  line-height:30px;
+}
+
+.rajaus {
+  background-color: #8BCFE3; 
+  line-height:24px;
+  color:#333333;
+  background-image:url(https://dl.dropboxusercontent.com/u/1218812/close.png) no-repeat;
+}
+
+
+.turva > img {
+  vertical-align:-7px; 
+}
