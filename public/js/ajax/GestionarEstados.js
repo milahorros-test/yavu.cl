@@ -184,29 +184,41 @@ $(document).ready(function(){
 		//console.log(time);
 		var now = new Date();
 		var nowTime = now.getTime()
-		console.log(nowTime+"///"+Date.parse(time));
+		//console.log(nowTime+"///"+Date.parse(time));
 		nowTime = nowTime - Date.parse(time);
-		nowTime = (time<1)? 1 : time;
-		console.log(nowTime);
+
+		//nowTime = (time<1)? 1 : time;
+		//console.log(nowTime);
+		//console.log(nowTime);
 		//console.log(nowTime);
 	    var tokens = [
-	        [31536000, 'año'],
-	        [2592000, 'mes'],
-	        [604800, 'semana'],
-	        [86400, 'día'],
-	        [3600, 'hora'],
-	        [60, 'minuto'],
-	        [1, 'segundo']
+	    	[1, 'segundo'],
+	    	[60, 'minuto'],
+	    	[3600, 'hora'],
+	    	[86400, 'día'],
+	    	[604800, 'semana'],
+	    	[2592000, 'mes'],
+	    	[31536000, 'año']
 	   ];
 	   //console.log(JSON.stringify(tokens[0][1])); //unidad
 	   //console.log(JSON.stringify(tokens[0][0])); //cantidad
+	   //console.log(nowTime);
+	   	var numberOfUnits = 0;
 		for(var i = 0, len = tokens.length; i < len; i++){
-			if (nowTime < tokens[i][0]) {
+			//console.log(tokens[i][0]);
+			//numberOfUnits = Math.floor(nowTime/tokens[i][0]);
+			if (nowTime < tokens[i][0]) {	
 
-				console.log(Math.floor(nowTime/tokens[i][0])+tokens[i][1]);
-				break;
+				//console.log(nowTime+" -> "+tokens[i][1]);
+				//console.log(nowTime/(tokens[i-1][0])*10+"=>"+tokens[i][1]);
+				
+				numberOfUnits = Math.floor(nowTime/(tokens[i-1][0])*10);
+
+				return "hace "+numberOfUnits+" "+tokens[i][1]+((numberOfUnits>1)?'s':'');
+
+			}else{				
+				nowTime = Math.floor(nowTime/tokens[i][0]);				
 			}
-
 		}	    	
 	    	
 
