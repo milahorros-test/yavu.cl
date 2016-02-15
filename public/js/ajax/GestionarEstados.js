@@ -181,8 +181,14 @@ $(document).ready(function(){
 	*/
 	function humanTiming(time)
 	{
-		console.log(time);
+		//console.log(time);
 		var now = new Date();
+		var nowTime = now.getTime()
+		console.log(nowTime+"///"+Date.parse(time));
+		nowTime = nowTime - Date.parse(time);
+		nowTime = (time<1)? 1 : time;
+		console.log(nowTime);
+		//console.log(nowTime);
 	    var tokens = [
 	        [31536000, 'año'],
 	        [2592000, 'mes'],
@@ -192,13 +198,15 @@ $(document).ready(function(){
 	        [60, 'minuto'],
 	        [1, 'segundo']
 	   ];
-
+	   //console.log(JSON.stringify(tokens[0][1])); //unidad
+	   //console.log(JSON.stringify(tokens[0][0])); //cantidad
 		for(var i = 0, len = tokens.length; i < len; i++){
-			for(var x = 0, len = tokens.length; x < len; x++){
-				//console.log(now-Date.parse(time));
-				//console.log(tokens[i][x]);
-					//console.log(now / tokens[i]);
+			if (nowTime < tokens[i][0]) {
+
+				console.log(Math.floor(nowTime/tokens[i][0])+tokens[i][1]);
+				break;
 			}
+
 		}	    	
 	    	
 
