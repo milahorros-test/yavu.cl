@@ -16,7 +16,9 @@
 					{!!Form::open(['action' => 'EmpresaController@ListaEmpresas', 'method' => 'GET', 'class' => 'navbar-form navbar-left pull-right', 'role' => 'search' ])!!}
   						<div class="form-group">
   								
-   						 {!!Form::text('nombre',null,['class' => 'form-control', 'placeholder' => 'Nombre de empresa',])!!}
+   					{!!Form::text('nombre',null,['class' => 'form-control', 'placeholder' => 'Nombre de empresa',])!!}
+   					
+
   						</div>
  						 <button type="submit" class="btn btn-default">Buscar</button>				
 
