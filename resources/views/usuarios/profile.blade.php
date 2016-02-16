@@ -150,15 +150,17 @@
           },
           success:function(){
             $('#'+valor).addClass("text-info").fadeIn();
-            //$('#'+valor).text("Ya me gusta").fadeIn();
+            $('#'+valor).css('font-style','oblique');
             console.log('exito');
             ContarInteracciones(status_id);
           }          
         }); 
         ContarInteracciones(status_id);
+        $('#'+valor).css('font-style','normal');
         $('#'+valor).removeClass("text-info").fadeIn();
       return true;
     }  
+
     function ContarInteracciones(status_id){
       status_id = status_id;
       var route = "http://localhost:8000/contarinteracciones/"+status_id;
@@ -167,7 +169,7 @@
       $.get(route, function(res){
         $(res).each(function(key,value){
             Contador += 1;
-        });
+        });        
         $("#badge_"+status_id).text(Contador);
       });   
     }    

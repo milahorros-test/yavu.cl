@@ -23,7 +23,7 @@ class InteraccionEstadoController extends Controller
     }
     public function ContarInteracciones($status_id){
         $interacciones = DB::table('interaccion_estados')                    
-                ->select('status_id')   
+                ->select('status_id', 'user_id')   
                 ->where('status_id', '=', $status_id)   
                 ->get();  
 

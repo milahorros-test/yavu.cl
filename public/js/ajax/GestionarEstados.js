@@ -310,11 +310,18 @@ letters.forEach(ShowResults);
     function ContarInteracciones(status_id){
       status_id = status_id;
       var route = "http://localhost:8000/contarinteracciones/"+status_id;
-      var user_id = $("#user_id");
+      var user_id = $("#user_id").val();
       var Contador = 0;
       $.get(route, function(res){
         $(res).each(function(key,value){
-        	console.log(value.status_id);
+        	//console.log(value.status_id);
+        	//console.log(value.user_id +"/"+ user_id);
+
+            if(value.user_id === user_id){
+              $('#estado_'+status_id).addClass("text-info").fadeIn();
+              $('#estado_'+status_id).css('font-style','oblique');            
+            }
+
             Contador += 1;
         });
         $("#badge_"+status_id).text(Contador);
@@ -355,11 +362,13 @@ letters.forEach(ShowResults);
 							+"<p>"+value.status+"</p>"
 						+"</div>"
 						+"<div class='list-group-item panel-footer'>"					
+							+"<span id='badge_"+value.id+"' class='label label-info'></span>"+"&nbsp;"
 							+"<a role='button'  href='#!' style='color:#000;'>"
 								+"<span name='megusta' onclick='Interactuar(this.id)' id='estado_"+value.id+"' value='"+value.id+"'>"
+
 									+"<span class='glyphicon glyphicon-thumbs-up'>"
 										+"&nbsp;"
-										+"<span id='badge_"+value.id+"' class='label label-info'></span>"+"&nbsp;"
+
 									+"</span>"
 									+"Me gusta"
 								+"</span>"
