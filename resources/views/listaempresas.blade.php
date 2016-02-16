@@ -23,25 +23,20 @@
 
 				@foreach($empresas as $empresa)	
 
-				    <div class="container" id="tourpackages-carousel">
-      
-      <div class="row">
-        
-        <div class="col-xs-18 col-sm-6 col-md-3">
-          <div class="thumbnail">
-            <img src="http://placehold.it/500x300" alt="">
-              <div class="caption">
-                <h4>{{$empresa->nombre}}</h4>
-				<td>{{$empresa->fono}}</td>
+				  <div class="container" id="tourpackages-carousel">
+				      <div class="row">				        
+				        <div class="col-md-6">
+				          <div class="thumbnail">
+				            <img src="http://placehold.it/500x300" alt="">
+				              <div class="caption">
+				                <h4>{{$empresa->nombre}}</h4>
+				            </div>
+				            <p>texto</p>
+				          </div>
+				        </div>
 
-            </div>
-          </div>
-        </div>
-			@endforeach
-
+				@endforeach
 				</table>	
-				
-
 			</div>
 		</div>	
 		{!!$empresas->render()!!}
