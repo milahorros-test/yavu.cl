@@ -74,7 +74,16 @@ class EmpresaController extends Controller
             ->where('id', $id)
             ->update(['estado' => 'eliminar']);            
     return Redirect::to('/profile');
-  }  
+  }
+
+      public function ListaEmpresas(Request $request)
+    {
+        $empresas = Empresa::nombre($request->get('nombre'))->orderBy('id', 'DESC')->paginate();
+
+      return view('listaempresas', compact('empresas'));      
+    }
+
+
   public function destroy($id)
   {
       $this->empresa->delete();

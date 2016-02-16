@@ -5,9 +5,9 @@ Route::get('/','FrontController@index');
 Route::get('index','FrontController@index');
 Route::get('login','FrontController@login');
 Route::get('registro','FrontController@registro');
-Route::get('ycoins','FrontController@ycoins');
+Route::get('yavucoins','FrontController@yavucoins');
 Route::get('ysorteos','FrontController@ysorteos');
-Route::get('yempresas','FrontController@yempresas');
+Route::get('listaempresas','FrontController@listaempresas');
 Route::get('contacto','FrontController@contacto');
 Route::get('nosotros','FrontController@nosotros');
 Route::get('terminos','FrontController@terminos');
@@ -48,6 +48,7 @@ Route::get('infoempresas/{user_id}','UserController@InfoEmpresas');
 /*Gestión de Empresas*/
 Route::resource('empresas','EmpresaController');
 Route::get('empresa/{empresa}/', 'EmpresaController@MostrarEmpresaPublica');
+Route::get('listaempresas', 'EmpresaController@ListaEmpresas');
 Route::get('solicitareliminacionempresa/{id}', 'EmpresaController@SolicitarEliminacion');
 /*Gestión de Empresas*/
 /*Gestión de Servicios*/

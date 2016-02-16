@@ -31,5 +31,13 @@ class Empresa extends Model implements AuthenticatableContract,
         }
         
     }
+
+    public function scopeEmpresa($query, $nombre)
+    {   
+        if (trim($nombre) != ""){
+            $query->where('nombre', 'like' , '%'.$nombre.'%');
+        }
+        
+    }
 }
 

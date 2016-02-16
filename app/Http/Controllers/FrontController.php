@@ -3,6 +3,8 @@ namespace yavu\Http\Controllers;
 use Illuminate\Http\Request;
 use yavu\Http\Requests;
 use yavu\Http\Controllers\Controller;
+use yavu\Empresa;
+
 class FrontController extends Controller
 {
     public function index()
@@ -33,9 +35,9 @@ class FrontController extends Controller
     {
         return view('terminos');        
     }
-    public function ycoins()
+    public function yavucoins()
     {
-        return view('ycoins');        
+        return view('yavucoins');        
     }
 
     public function ysorteos()
@@ -43,9 +45,5 @@ class FrontController extends Controller
         return view('ysorteos');        
     }
 
-    public function yempresas()
-    {
-        return view('yempresas');        
-    }
 
 }
