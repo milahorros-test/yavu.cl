@@ -8,7 +8,31 @@ $(document).ready(function(){
 
 	CargarEstados();
 	
+	setInterval(function(){
+		var a = $(".timeago");
+		for(var i = 0; i < a.length ; i++){
 
+
+			//$('#'+a[i].id).empty();
+			//$('#'+a[i].id).text("" + humanTiming( $('#'+a[i].title) ) );
+			//console.log ( document.getElementById( a[i].id ) );
+			var elemento = document.getElementById( a[i].id );
+			$('#'+a[i].id).text("" + humanTiming( elemento.title ) );
+			//console.log($(elemento.title));
+			//console.log(elemento.title);
+			//console.log(document.getElementById(a[i].id).value);
+			//console.log(document.getElementById(a[i].id).id);
+			//console.log(document.getElementById(a[i].id).title);
+			//console.log("################################################");
+			//console.log(a[i].value);
+			//break;
+		}
+
+		
+		//$(".timeago").val = humanTiming(document.getElementById("timeago").title);
+	},2000);
+	
+	
 
 	/*MÉTODOS CONSTRUCTORES*/
 
@@ -209,29 +233,33 @@ $(document).ready(function(){
 			//numberOfUnits = Math.floor(nowTime/tokens[i][0]);
 			if (nowTime < tokens[i][0]) {	
 
-				numberOfUnits = nowTime/(tokens[i-1][0])*10;
-				//console.log(nowTime+" -> "+tokens[i][1]+" -> "+Math.floor(numberOfUnits)+"#########");
-				console.log("=>>"+numberOfUnits);
+				if (tokens[i][1] === "día"){
+					numberOfUnits = nowTime/(tokens[i-1][0])*10;
+				}
+				//console.log(nowTime+" -> "+tokens[i-2][1]+" -> "+Math.floor(numberOfUnits)+"#########");	
+				
+				
 
-				if(Math.floor(numberOfUnits) > 7 && Math.floor(numberOfUnits) < 30){
-					return "hace "+Math.floor(numberOfUnits)+" "+tokens[i+1][1]+((Math.floor(numberOfUnits)>1)?'s':'');
+				if(Math.floor(numberOfUnits) >= 7 && Math.floor(numberOfUnits) < 30){
+					return "hace "+Math.floor(numberOfUnits/7)+" "+tokens[i+1][1]+((Math.floor(numberOfUnits/7)>1)?'s':'');
 
-				}else if(Math.floor(numberOfUnits) > 1 && Math.floor(numberOfUnits) < 7){
+				}else if(Math.floor(numberOfUnits) >= 1 && Math.floor(numberOfUnits) < 7){
 					return "hace "+Math.floor(numberOfUnits)+" "+tokens[i][1]+((Math.floor(numberOfUnits)>1)?'s':'');						
 
 				}else if(Math.floor(numberOfUnits) < 1){
 
-					if (numberOfUnits > 4.16){
+					if (numberOfUnits > 0.0416 ){
 						return "hace "+Math.floor(24*numberOfUnits)+" "+tokens[i-1][1]+((Math.floor(24*numberOfUnits)>1)?'s':'');				
 
-					}else if ((numberOfUnits/100) < 0.000693333 && tokens[i-1][1]==='minuto'){
-						return 'hace segundos';
-
-					}else if(numberOfUnits < 4.16 && numberOfUnits > 0.000693333 ){
-						numberOfUnits = Math.floor(((numberOfUnits*100)/4.16)*60);
+					}else if(numberOfUnits < 0.0416 && numberOfUnits > 0.000693333 ){
+						numberOfUnits = Math.floor(((numberOfUnits*100)/4.)*60);
 						return "hace "+numberOfUnits+" "+tokens[i-2][1]+((numberOfUnits>1)?'s':'');
 
+					}else if(numberOfUnits < 0.000293333 ){
+						return 'hace pocos minutos';
+
 					}
+
 				}	
 
 			}else{				
@@ -304,7 +332,7 @@ letters.forEach(ShowResults);
 								+value.nombre+" "+value.apellido+" Idp:("+Global_idUltimaPublicacion+")"
 							+"</a></h4>"
 							+"<small>"
-								+"Publicó <abbr class='timeago' title='"+TimeAgo+"\'>"+humanTiming(TimeAgo)+"</abbr>"
+								+"Publicó <span	 class='timeago' id='timeago"+value.id+"' value='"+TimeAgo+"' title='"+TimeAgo+"\'>"+humanTiming(TimeAgo)+"</span	>"
 							+"</small><hr>"		
 							+"<p>"+value.status+"</p>"
 						+"</div>"
