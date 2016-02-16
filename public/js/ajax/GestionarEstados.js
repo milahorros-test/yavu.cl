@@ -308,25 +308,17 @@ letters.forEach(ShowResults);
 //  value: ef index: 2 
 */
     function ContarInteracciones(status_id){
-
       status_id = status_id;
-
       var route = "http://localhost:8000/contarinteracciones/"+status_id;
-
       var user_id = $("#user_id");
-
       var Contador = 0;
-
       $.get(route, function(res){
         $(res).each(function(key,value){
-            
-            console.log("=>"+Contador+"/"+value.id);
+        	console.log(value.status_id);
             Contador += 1;
         });
-
+        $("#badge_"+status_id).text(Contador);
       });   
-		$("#badge_"+status_id).text(Contador);
-        console.log(Contador);      
     }    
 
 	function CargarEstados(){
@@ -367,16 +359,17 @@ letters.forEach(ShowResults);
 								+"<span name='megusta' onclick='Interactuar(this.id)' id='estado_"+value.id+"' value='"+value.id+"'>"
 									+"<span class='glyphicon glyphicon-thumbs-up'>"
 										+"&nbsp;"
+										+"<span id='badge_"+value.id+"' class='label label-info'></span>"+"&nbsp;"
 									+"</span>"
 									+"Me gusta"
 								+"</span>"
-							+"</a>"
-							+"<span id='badge_"+value.id+"' class='badge'></span>"
+							+"</a>"							
 						+"</div>"
 					+"</div>"
 				);				
 				document.getElementById("idUltima").value =  Global_idUltimaPublicacion;
-				Contador += 1;							
+				Contador += 1;	
+				ContarInteracciones(value.id);
 			});
 			if(Contador < 5){					
 				//EstadosUsuario.append("Ultima publicacion: "+Global_idUltimaPublicacion);

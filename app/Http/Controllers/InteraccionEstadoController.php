@@ -27,9 +27,9 @@ class InteraccionEstadoController extends Controller
                 ->where('status_id', '=', $status_id)   
                 ->get();  
 
-        return response()->json([
+        return response()->json(
                 $interacciones
-            ]);
+            );
     }
     public function store(Request $request)
     {
