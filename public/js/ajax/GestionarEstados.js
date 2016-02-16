@@ -30,7 +30,7 @@ $(document).ready(function(){
 
 		
 		//$(".timeago").val = humanTiming(document.getElementById("timeago").title);
-	},20000);
+	},40000);
 	
 	
 
@@ -147,6 +147,8 @@ $(document).ready(function(){
 			});
 		});						
 	}
+
+
 
 	function limpiar(status){
 		status = status.replace("<script>", "");
@@ -305,6 +307,27 @@ letters.forEach(ShowResults);
 //  value: cd index: 1 
 //  value: ef index: 2 
 */
+    function ContarInteracciones(status_id){
+
+      status_id = status_id;
+
+      var route = "http://localhost:8000/contarinteracciones/"+status_id;
+
+      var user_id = $("#user_id");
+
+      var Contador = 0;
+
+      $.get(route, function(res){
+        $(res).each(function(key,value){
+            
+            console.log("=>"+Contador+"/"+value.id);
+            Contador += 1;
+        });
+
+      });   
+		$("#badge_"+status_id).text(Contador);
+        console.log(Contador);      
+    }    
 
 	function CargarEstados(){
 		var EstadosUsuario = $("#Estados"); 
@@ -348,12 +371,11 @@ letters.forEach(ShowResults);
 									+"Me gusta"
 								+"</span>"
 							+"</a>"
-							+"<span id='badge_"+value.id+"' class='badge'><small>42</small></span>"
+							+"<span id='badge_"+value.id+"' class='badge'></span>"
 						+"</div>"
 					+"</div>"
-				);
+				);				
 				document.getElementById("idUltima").value =  Global_idUltimaPublicacion;
-
 				Contador += 1;							
 			});
 			if(Contador < 5){					
@@ -364,7 +386,8 @@ letters.forEach(ShowResults);
 				    $("#msj-finPublicaciones").fadeOut(3000);
 				},1000);		
 			}
-			ocultarCargando();		
+
+			ocultarCargando();	
 			Global_ContadorCargaPublicaciones += 1 * 5;
 		});						
 	}

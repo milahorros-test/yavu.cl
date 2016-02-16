@@ -21,15 +21,31 @@ class InteraccionEstadoController extends Controller
     {
         //
     }
+    public function ContarInteracciones($status_id){
+        $interacciones = DB::table('interaccion_estados')                    
+                ->select('status_id')   
+                ->where('status_id', '=', $status_id)   
+                ->get();  
+
+        return response()->json([
+                $interacciones
+            ]);
+    }
     public function store(Request $request)
     {
-        if($request->ajax()){
+        $estado = InteraccionEstado::where('user_id', $request->user_id)->where('status_id', $request->status_id)->first();
+        if($request->ajax() && !$estado){
             InteraccionEstado::create($request->all());
             //Session::flash('message', 'Publicacion creada correctamente');
             return response()->json([
                 "Mensaje: " => "Creado"                
             ]);
             //CargarEstados();
+        }else{
+            DB::table('interaccion_estados')
+                ->where('status_id', '=', $request->status_id)
+                ->where('user_id', '=', $request->user_id)
+                ->delete();  
         }           
     }
     public function show($id)
@@ -47,6 +63,6 @@ class InteraccionEstadoController extends Controller
     }
     public function destroy($id)
     {
-        //
+
     }
 }

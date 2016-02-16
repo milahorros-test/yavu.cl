@@ -135,30 +135,48 @@
 
     function Interactuar(valor){
 
-      var status_id = valor.replace('estado_','');
-      var user_id = $("#user_id").val();
-      var token = $("#token").val();
-      var route = "http://localhost:8000/interactuar";
-
-      $.ajax({
-        url: route,
-        headers: {'X-CSRF-TOKEN': token},
-        type: 'POST',
-        dataType: 'json',
-        data: {
-          status_id: status_id,
-          user_id: user_id
-        },
-        success:function(){
-          console.log('Exito');
-        }
-      }); 
-
-
-      //$('#'+valor).addClass("text-info").fadeIn();
-      //$('#'+valor).text("Ya me gusta").fadeIn();
+        var status_id = valor.replace('estado_','');
+        var user_id = $("#user_id").val();
+        var token = $("#token").val();
+        var route = "http://localhost:8000/interactuar";
+        $.ajax({
+          url: route,
+          headers: {'X-CSRF-TOKEN': token},
+          type: 'POST',
+          dataType: 'json',
+          data: {
+            status_id: status_id,
+            user_id: user_id
+          },
+          success:function(){
+            $('#'+valor).addClass("text-info").fadeIn();
+            //$('#'+valor).text("Ya me gusta").fadeIn();
+            console.log('exito');
+            ContarInteracciones(status_id);
+          }          
+        }); 
+        ContarInteracciones(status_id);
 
       return true;
     }  
+    function ContarInteracciones(status_id){
+
+      status_id = status_id;
+
+      var route = "http://localhost:8000/contarinteracciones/"+status_id;
+
+      var user_id = $("#user_id");
+
+      var Contador = 0;
+
+      $.get(route, function(res){
+        $(res).each(function(key,value){
+            Contador += 1;
+        });
+        $("#badge_"+status_id).text(Contador);
+        console.log(Contador);
+      });   
+      
+    }    
 
 </script>

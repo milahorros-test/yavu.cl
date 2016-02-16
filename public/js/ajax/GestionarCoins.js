@@ -49,7 +49,7 @@ $(document).ready(function(){
 		var user_id = $("#user_id").val();
 		var route = "http://localhost:8000/infoempresas/"+user_id;
 		var Pendiente = false;
-		console.log(user_id);
+		//console.log(user_id);
 		$.get(route, function(res){
 			$("#EstadoEmpresa").value = "";
 			$(res).each(function(key,value){
