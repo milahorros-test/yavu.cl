@@ -6,6 +6,7 @@ use Session;
 use Redirect;
 use Auth;
 use yavu\Estado;
+use yavu\InteraccionEstado;
 use yavu\EstadoEmpresa;
 use yavu\Http\Controllers\Controller;
 use DB;

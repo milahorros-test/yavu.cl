@@ -1,5 +1,6 @@
 {!!Html::script('js/jquery.js')!!}
 {!!Html::script('js/ajax/GestionarEstados.js')!!}
+{!!Html::script('js/ajax/GestionarInteraccionesEstadosUsuario.js')!!}
 {!!Html::script('js/ajax/GestionarCoins.js')!!}
 {!!Html::script('js/ajax/InteraccionPublicaciones.js')!!}
 @extends('layouts.front')
@@ -126,10 +127,38 @@
 @stop
 
 <script>
-  
-  function eliminarEstado(id){
-    //alert("oli");
-    $("#publicacion"+id).fadeOut();
-  }
-  
+
+
+    function eliminarEstado(id){
+      $("#publicacion"+id).fadeOut();
+    }
+
+    function Interactuar(valor){
+
+      var status_id = valor.replace('estado_','');
+      var user_id = $("#user_id").val();
+      var token = $("#token").val();
+      var route = "http://localhost:8000/interactuar";
+
+      $.ajax({
+        url: route,
+        headers: {'X-CSRF-TOKEN': token},
+        type: 'POST',
+        dataType: 'json',
+        data: {
+          status_id: status_id,
+          user_id: user_id
+        },
+        success:function(){
+          console.log('Exito');
+        }
+      }); 
+
+
+      //$('#'+valor).addClass("text-info").fadeIn();
+      //$('#'+valor).text("Ya me gusta").fadeIn();
+
+      return true;
+    }  
+
 </script>

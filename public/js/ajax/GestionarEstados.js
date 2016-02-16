@@ -30,13 +30,14 @@ $(document).ready(function(){
 
 		
 		//$(".timeago").val = humanTiming(document.getElementById("timeago").title);
-	},2000);
+	},20000);
 	
 	
 
 	/*MÉTODOS CONSTRUCTORES*/
 
 	/*SELECTORES*/
+
 	$("#CargarEstados").click(function(e){
 		$("#EstadosNuevos").append("");
 		CargarEstados();			
@@ -134,7 +135,8 @@ $(document).ready(function(){
 						+"</div>"
 						+"<div class='list-group-item panel-footer'>"
 						+"<span class='glyphicon glyphicon-thumbs-up'>&nbsp;</span>"
-							+"<a name='like' class='inter' role='button' id='estado_"+value.id+"' value='"+value.id+"' href='#!' style='color:#3C5B28;'><span>Me gusta</span></a>"
+							+"<a name='like' class='inter' role='button' id='estado_"+value.id+"' value='"+value.id+"' href='#!' style='color:#3C5B28;'>"
+							+"<span>Me gusta</span></a>"
 						+"</div>"
 					+"</div>";
 
@@ -337,9 +339,16 @@ letters.forEach(ShowResults);
 							+"</small><hr>"		
 							+"<p>"+value.status+"</p>"
 						+"</div>"
-						+"<div class='list-group-item panel-footer'>"
-						+"<span class='glyphicon glyphicon-thumbs-up'>&nbsp;</span>"
-							+"<a name='like' class='inter' role='button' id='estado_"+value.id+"' value='"+value.id+"' href='#!' style='color:#3C5B28;'><span>Me gusta</span></a>"
+						+"<div class='list-group-item panel-footer'>"					
+							+"<a role='button'  href='#!' style='color:#000;'>"
+								+"<span name='megusta' onclick='Interactuar(this.id)' id='estado_"+value.id+"' value='"+value.id+"'>"
+									+"<span class='glyphicon glyphicon-thumbs-up'>"
+										+"&nbsp;"
+									+"</span>"
+									+"Me gusta"
+								+"</span>"
+							+"</a>"
+							+"<span id='badge_"+value.id+"' class='badge'><small>42</small></span>"
 						+"</div>"
 					+"</div>"
 				);
