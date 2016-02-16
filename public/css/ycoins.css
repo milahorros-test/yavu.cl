@@ -22,7 +22,7 @@ section.jumbotron { padding: 160px 0 120px; }
   white-space: nowrap;
   vertical-align: baseline;
   border-radius:3px;
-  margin:5px; /* for demonstration purposes */
+  margin:10px; /* for demonstration purposes */
 }
 
 
@@ -65,3 +65,5 @@ background-color: rgba(136,136,136,1);
 .turva > img {
   vertical-align:-7px; 
 }
+
+
