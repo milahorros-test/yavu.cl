@@ -43,5 +43,9 @@ class FrontController extends Controller
         return view('ysorteos');        
     }
 
+    public function yempresas()
+    {
+        return view('yempresas');        
+    }
 
 }

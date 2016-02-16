@@ -4,14 +4,23 @@ namespace yavu\Http\Controllers;
 use Illuminate\Http\Request;
 use yavu\Http\Requests;
 use yavu\Http\Requests\SorteoCreateRequest;
+use yavu\Http\Requests\SorteoUpdateRequest;
 use yavu\Http\Controllers\Controller;
 use yavu\Sorteo;
 use Session;
 use Redirect;
 use DB;
+use Illuminate\Routing\Route;
 
 class SorteoController extends Controller
 {
+    public function __construct(){
+        $this->beforeFilter('@find', ['only' => ['edit', 'update', 'destroy']]);
+    }
+    public function find(Route $route){
+        $this->sorteo = Sorteo::find($route->getParameter('sorteos'));
+        //return $this->user;
+    }        
     /**
      * Display a listing of the resource.
      *
@@ -68,8 +77,8 @@ class SorteoController extends Controller
     public function edit($id)
 
     {   
-        $sorteos = Sorteo::all();
-        return view('sorteos.edit', ['sorteo' => $this->sorteo]); 
+                
+                return view('sorteos.edit', ['sorteo' => $this->sorteo]); 
     }
 
     /**
@@ -86,7 +95,7 @@ class SorteoController extends Controller
         $this->sorteo->fill($request->all());
         $this->sorteo->save();
         Session::flash('message', 'sorteo validado correctamente');
-        return Redirect::to('/admins');
+        return Redirect::to('/sorteos');
     }
 
     /**
@@ -99,6 +108,6 @@ class SorteoController extends Controller
     {
         $this->sorteo->delete();
         Session::flash('message', 'Sorteo eliminado correctamente');
-        return Redirect::to('/admins');
+        return Redirect::to('/sorteos');
     }
 }

@@ -17,7 +17,7 @@ $(document).ready(function(){
 			//$('#'+a[i].id).text("" + humanTiming( $('#'+a[i].title) ) );
 			//console.log ( document.getElementById( a[i].id ) );
 			var elemento = document.getElementById( a[i].id );
-			$('#'+a[i].id).text("" + humanTiming( elemento.title ) );
+			$('#'+a[i].id).text("" + humanTiming( elemento.title 	) );
 			//console.log($(elemento.title));
 			//console.log(elemento.title);
 			//console.log(document.getElementById(a[i].id).value);
@@ -239,8 +239,9 @@ $(document).ready(function(){
 				//console.log(nowTime+" -> "+tokens[i-2][1]+" -> "+Math.floor(numberOfUnits)+"#########");	
 				
 				
-
 				if(Math.floor(numberOfUnits) >= 7 && Math.floor(numberOfUnits) < 30){
+
+				}else if(Math.floor(numberOfUnits) >= 7 && Math.floor(numberOfUnits) < 30){
 					return "hace "+Math.floor(numberOfUnits/7)+" "+tokens[i+1][1]+((Math.floor(numberOfUnits/7)>1)?'s':'');
 
 				}else if(Math.floor(numberOfUnits) >= 1 && Math.floor(numberOfUnits) < 7){
