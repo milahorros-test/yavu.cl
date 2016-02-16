@@ -7,16 +7,14 @@
 <div class="container">
       <div class="row">
         <div class="col-sm-3 sidebar">
-          <ul class="nav nav-list affix">
+          <ul class="nav nav-list affix mover">
             <li><a class="label color1" href="#one">Descripción</a></li>
-            <li><a class="label mus" href="#two">Sistemas de coins</a></li>
-            <li><a class="label har" href="#three">Sorteos!</a></li>
-            <li><a class="label vih"href="#four">Empresas Asociadas</a></li>
-            <li><a class="label vrk"href="#five">Five</a></li>
+            <li><a class="label color2" href="#two">Sistemas de coins</a></li>
+            <li><a class="label color3" href="#three">Sorteos!</a></li>
+            <li><a class="label color4"href="#four">Empresas Asociadas</a></li>
+            <li><a class="label color5"href="#five">Five</a></li>
           </ul>
         </div> 
-
-            
 
         <div class="col-sm-9 content" >
           <section id="one">
@@ -52,7 +50,6 @@
           </section>
         </div>
       </div>
-    </div>
- 
+    </div> 
 </div>
 @stop

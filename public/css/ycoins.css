@@ -1,10 +1,10 @@
 
 
 body { 
-  position: relative;
+  position: static;
   line-height: 1.6;
-  font-family: "Helvetica Neue", Helvetica, Arial;
-	font-size: 12px;
+	font-size: 100px;
+
 }
 
 section { padding: 100px 0; min-height: 380px; }
@@ -15,14 +15,12 @@ section.jumbotron { padding: 160px 0 120px; }
 .badge {
   -webkit-box-sizing:border-box;
   box-sizing:border-box;
-  display: inline-block;
-  line-height: 1.4em;
-  padding: 0 0.4em;
   color: #ffffff;
   white-space: nowrap;
   vertical-align: baseline;
   border-radius:3px;
   margin:10px; /* for demonstration purposes */
+
 }
 
 
@@ -30,40 +28,20 @@ section.jumbotron { padding: 160px 0 120px; }
 background-color: rgba(20,158,203,1);
 }
 
-.vih {
+.color2 {
 background-color: rgba(82,154,90,1);
 }
 
-.mus {
+.color3 {
 background-color: rgba(0,0,0,1);
 }
 
-.har {
+.color4 {
 background-color: rgba(136,136,136,1);
 }
 
-.vrk {
+.color5 {
   background-color: #00539F;
   color:#ffffff;
 }
-
-.turva {
-  background-color: #feedbd;
-  color:#C09853;
-  border:solid 1px #D5BA8B;
-  line-height:30px;
-}
-
-.rajaus {
-  background-color: #8BCFE3; 
-  line-height:24px;
-  color:#333333;
-  background-image:url(https://dl.dropboxusercontent.com/u/1218812/close.png) no-repeat;
-}
-
-
-.turva > img {
-  vertical-align:-7px; 
-}
-
 
