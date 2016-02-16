@@ -13,13 +13,12 @@
 				<table class="table">
 
 					
-					{!!Form::open(['route' => 'empresas.index', 'method' => 'GET', 'class' => 'navbar-form navbar-left pull-right', 'role' => 'search' ])!!}
+					{!!Form::open(['action' => 'EmpresaController@ListaEmpresas', 'method' => 'GET', 'class' => 'navbar-form navbar-left pull-right', 'role' => 'search' ])!!}
   						<div class="form-group">
   								
    						 {!!Form::text('nombre',null,['class' => 'form-control', 'placeholder' => 'Nombre de empresa',])!!}
   						</div>
- 						 <button type="submit" class="btn btn-default">Buscar</button>
-				
+ 						 <button type="submit" class="btn btn-default">Buscar</button>				
 
 				@foreach($empresas as $empresa)	
 
@@ -27,11 +26,12 @@
 				      <div class="row">				        
 				        <div class="col-md-6">
 				          <div class="thumbnail">
-				            <img src="http://placehold.it/500x300" alt="">
+				            <img src="{!!URL::to('images/empresa.png')!!}" alt="">
 				              <div class="caption">
 				                <h4>{{$empresa->nombre}}</h4>
 				            </div>
-				            <p>texto</p>
+				            <h4>Descripcion empresa</h4>
+				            <h4>Mas info</h4>
 				          </div>
 				        </div>
 
