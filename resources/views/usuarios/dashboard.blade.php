@@ -22,17 +22,22 @@
 								Te damos la bienvenida a tu primera vez en el sitio, <a class="btn btn-primary btn-sm" href="usuarios/{{$user->id}}/edit">actualiza tus datos</a> y gana yavu coins!
 							@endif
 						@endforeach
+
 					</div>					
 					<div class="list-group-item">
 						
 					</div>																	
 					<a href="#!" class="list-group-item list-group-item-info">Ir a publicaciones <span class="badge">14<small>  ¡Publicaciones nuevas!</small></span></a>
 				</div>
+					
 				<div class="list-group" id="HistorialCoins">
+
 					<div class="list-group-item-full-header">
 						<h6>RESUMEN DE GARGAS DE COINS</h6>
 					</div>
-				</div>
+
+				</div>				
+
 
 
 		    </div>

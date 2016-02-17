@@ -1,5 +1,6 @@
 {!!Html::script('js/jquery.js')!!}
 {!!Html::script('js/ajax/BuscarUsuario.js')!!}
+{!!Html::script('js/ajax/GestionarCoins.js')!!}
 @extends('layouts.front')
 @section('content')
 <div class="jumbotron">
@@ -8,48 +9,74 @@
 		@include('alerts.errorsMessage')
 		@include('alerts.successMessage')
 		@include('alerts.warningMessage')
-		<h2>Reportes de información</h2>		
-		<div class="panel panel-default">
-			<div class="panel-heading"><h4>Mantenedor de usuarios</h4></div>
-			<div class="panel-body">
+		<h2>Reportes de información</h2>	
+		<div class="row">
+			<div class="col-md-8">
+				<div class="list-group">
+					<div class="list-group-item">
+						<h6>HISTORIAL DE USO DE COINS</h6>
+					</div>
+					<div class="list-group-item wrap">
+						<table id="UserList" class="table table-hover" style="font-size: 0.8em;">
+							<thead>
+								<!--<th>Identificador</th>
+								<th>Usuario</th>-->
+								<th>Motivo</th>
+								<th>Cantidad</th>
+								<th>Fecha</th>
+								@if(Auth::admin()->check())
+									<th>Operaciones</th>
+								@endif
+							</thead>
 
-			<!--
-			<form class="">
-			  <div class="form-group">
-				{!!Form::text('usuario',null,['class'=>'form-control','placeholder'=>'buscar...','id'=>'usuario'])!!}
-			  </div>
-			  <a href="#!" class="btn btn-primary btn-sm" id="BuscarUsuario">Buscar</a>
-			</form>
-			-->
-				
+							@foreach($historialcoins as $hcoin)	
 
-				<table id="UserList" class="table table-hover">
-					<thead>
-						<th>Identificador</th>
-						<th>Usuario</th>
-						<th>Motivo</th>
-						<th>Cantidad</th>
-						<th>Fecha</th>
-						<th>Operaciones</th>
-					</thead>
+							<tbody>
+								<!--<td>{{$hcoin->user_id}}</td>
+								<td>{{$hcoin->nombre}}</td>-->
+								<td>{{$hcoin->motivo}}</td>
+								<td>{{$hcoin->cantidad}}</td>
+								<td id="date{{$hcoin->id}}" title="{{$hcoin->created_at}}" class="timeago"></td>
+								
+								@if(Auth::admin()->check())
+									<td>{!!link_to_route('coins.edit', $title = 'Editar', $parameters = $hcoin->id, $attributes = ['class'=>'', 'style' => 'color:#000;'])!!}</td>
+								@endif
 
-					@foreach($historialcoins as $hcoin)	
+							</tbody>
 
-					<tbody>
-						<td>{{$hcoin->user_id}}</td>
-						<td>{{$hcoin->nombre}}</td>
-						<td>{{$hcoin->motivo}}</td>
-						<td>{{$hcoin->cantidad}}</td>
-						<td id="date{{$hcoin->id}}" title="{{$hcoin->created_at}}" class="timeago" style="font-size: 0.85em;"></td>
-						<td>{!!link_to_route('coins.edit', $title = 'Editar', $parameters = $hcoin->id, $attributes = ['class'=>'', 'style' => 'color:#000;'])!!}</td>
-					</tbody>
+							@endforeach
+							
+						</table>	
+			
+					</div>
 
-					@endforeach
-					
-				</table>	
 
-			</div>
+					<a class="list-group-item list-group-item-info" href="#!"><small>CARGAR MÁS</small></a>
+					<!--
+					<div class="list-group-item list-group-item-info">
+						SALDO DE COINS
+					</div>
+					-->
+				</div>				
+			</div>			
+         <div class="col-sm-4"><!--style="position:fixed;z-index:1000;"-->
+         
+             <div class="list-group">
+                 <div class="list-group-item-full-header">
+                     <h6>INFORMACIÓN</h6>
+                 </div>
+                 <div class="list-group-item">
+                     Coins 
+                     <span id="CantidadCoins" style="float:right;" class="label label-warning">
+                         <img src="http://i601.photobucket.com/albums/tt93/tbg8904/Gaia%20Icon/Coins.png" width="16px" height="16px">    
+                     </span>
+                 </div>
+             </div>
+         </div>
+
 		</div>
+
+
 	</div>
 </div>
 @stop
@@ -60,12 +87,12 @@
 			var a = $(".timeago");
 			for(var i = 0; i < a.length ; i++){
 				var elemento = document.getElementById( a[i].id );
-				console.log(elemento);
+
 				$('#'+a[i].id).text( humanTiming( elemento.title ) );
 			}		
 			Control = false;				
 		}
-	},1000);
+	},100);
 
 	function humanTiming(time)
 	{

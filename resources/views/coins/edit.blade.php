@@ -30,10 +30,6 @@
 						</div>	
 					</div>
 
-					
-
-
-
 				</div>
 			</div><!--Este fin del div cierra el div que se abre en fieldscoin-->	
 		</div>
