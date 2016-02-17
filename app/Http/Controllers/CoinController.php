@@ -8,8 +8,8 @@ use yavu\Http\Controllers\Controller;
 use Session;
 use Redirect;
 use yavu\RegistroCoin;
-use Illuminate\Routing\Route;
 use Auth;
+use Illuminate\Routing\Route;
 use DB;
 
 class CoinController extends Controller
@@ -18,7 +18,7 @@ class CoinController extends Controller
         $this->beforeFilter('@find', ['only' => ['edit', 'update', 'destroy']]);
     }
     public function find(Route $route){
-        $this->user = User::find($route->getParameter('usuarios'));
+        $this->coin = RegistroCoin::find($route->getParameter('coins'));
         //return $this->user;   
     }     
     public function index()
@@ -34,7 +34,7 @@ class CoinController extends Controller
                     //->limit('10')
                     ->get();  
 
-        return view('coins.index', $historialcoins);   
+        return view('coins.index', compact('historialcoins'));   
     }
     public function create()
     {
@@ -57,7 +57,7 @@ class CoinController extends Controller
                     ->select('registro_coins.*', 'users.nombre')
                     ->where('user_id', '=', Auth::user()->get()->id)   
                     ->orderBy('created_at','desc')   
-                    //->limit('10')
+                    ->limit('10')
                     ->get();        
         return response()->json(
             $historialcoins
@@ -75,7 +75,7 @@ class CoinController extends Controller
     }
     public function edit($id)
     {
-
+		return view('coins.edit', ['coin' => $this->coin]); 
     }
     public function update(CoinUpdateRequest $request, $id)
     {
@@ -86,6 +86,8 @@ class CoinController extends Controller
     }
     public function destroy($id)
     {
-
+	    $this->coin->delete();
+	    Session::flash('message', 'Carga eliminada correctamente');
+	    return Redirect::to('/coins');
     }
 }
