@@ -1,6 +1,8 @@
 @extends('layouts.front')
 {!!Html::style('css/ycoins.css')!!}
+{!!Html::script('js/ycoins.js')!!}
 @section('content')
+
 
 <html>
   <head>
@@ -52,46 +54,11 @@
   
   <div id="fifth">
     <div class="story">
-        <p>Check out my new plugin <a href="http://www.sequencejs.com" title="Sequence.js">Sequence.js</a> for parallax effects and a whole lot more!</p>
-          
-          <h2>Ian Lunn</h2>
-          <ul>
-              <li><strong>Twitter</strong>: <a href="http://www.twitter.com/IanLunn" title="Follow Ian on Twitter">@IanLunn</a></li>
-              <li><strong>GitHub</strong>: <a href="http://www.github.com/IanLunn" title="Follow Ian on GitHub">IanLunn</a></li>
-              <li><strong>Website</strong>: <a href="http://www.ianlunn.co.uk/" title="Ian Lunn Design">www.ianlunn.co.uk</a></li>
-          </ul>
-          
-          <p>This demo is based on the <a href="http://www.nikebetterworld.com" title="Nike Better World">Nikebetterworld.com</a> website.</p>
-          
-          <h2>Credits</h2>
-          <p>This plugin makes use of some scripts and images made by others:</p>
-          <ul>
-            <li><a href="http://flesler.blogspot.com/2007/10/jqueryscrollto.html" title="jQuery ScrollTo">jQuery ScrollTo</a></li>
-              <li><a href="http://downloads.dvq.co.nz/" title="Background Textures">Wooden and Pyschedlic Background Textures</a></li>
-              <li><a href="http://www.sxc.hu/photo/931435" title="Trainers Image">Trainers Image</a></li>
-              <li><a href="http://www.sxc.hu/photo/1015485" title="Basketball Image">Basketball Image</a></li>
-              <li><a href="http://www.sxc.hu/photo/563767" title="Bottles Image">Bottles Image</a></li>
-          </ul>
+
       </div> <!--.story-->
   </div> <!--#fifth-->
 </body>
 </html>
 
-<script>
- 
- $(document).ready(function(){
-  $('#nav').localScroll(800);
-  
-  //.parallax(xPosition, speedFactor, outerHeight) options:
-  //xPosition - Horizontal position of the element
-  //inertia - speed to move relative to vertical scroll. Example: 0.1 is one tenth the speed of scrolling, 2 is twice the speed of scrolling
-  //outerHeight (true/false) - Whether or not jQuery should use it's outerHeight option to determine when a section is in the viewport
-  $('#intro').parallax("50%", 0.1);
-  $('#second').parallax("50%", 0.1);
-  $('.bg').parallax("50%", 0.4);
-  $('#third').parallax("50%", 0.3);
 
-}) 
-
-</script>
 @stop
