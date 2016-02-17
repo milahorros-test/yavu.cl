@@ -25,25 +25,23 @@
 
 				<table id="UserList" class="table">
 					<thead>
-						<th>Nombre</th>
-						<th>Correo</th>
-						<th>Ciudad</th>
-						<th>Fono</th>
-						<th>Cumplea&ntilde;os</th>
-						<th>Sexo</th>
+						<th>Identificador</th>
+						<th>Usuario</th>
+						<th>Motivo</th>
+						<th>Cantidad</th>
+						<th>Fecha</th>
 						<th>Operaciones</th>
 					</thead>
 
-					@foreach($users as $user)	
+					@foreach($historialcoins as $hcoin)	
 
 					<tbody>
-						<td>{{$user->nombre}}</td>
-						<td>{{$user->email}}</td>
-						<td>{{$user->ciudad}}</td>
-						<td>{{$user->fono}}</td>
-						<td>{{$user->fecha_nacimiento}}</td>
-						<td>{{$user->sexo}}</td>
-						<td>{!!link_to_route('usuarios.edit', $title = 'Editar', $parameters = $user->id, $attributes = ['class'=>'btn btn-primary'])!!}</td>
+						<td>{{$hcoin->user_id}}</td>
+						<td>{{$hcoin->nombre}}</td>
+						<td>{{$hcoin->motivo}}</td>
+						<td>{{$hcoin->cantidad}}</td>
+						<td>{{$hcoin->created_at}}</td>
+						<td>{!!link_to_route('coins.edit', $title = 'Editar', $parameters = $hcoin->id, $attributes = ['class'=>'btn btn-primary'])!!}</td>
 					</tbody>
 
 					@endforeach
@@ -52,7 +50,7 @@
 
 			</div>
 		</div>
-		{!!$users->render()!!}
+		{!!$hcoin->render()!!}
 	</div>
 </div>
 @stop
