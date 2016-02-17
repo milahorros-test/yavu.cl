@@ -22,7 +22,7 @@
 
 				
 
-				<table id="UserList" class="table">
+				<table id="UserList" class="table table-hover">
 					<thead>
 						<th>Nombre</th>
 						<th>Correo</th>

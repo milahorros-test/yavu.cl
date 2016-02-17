@@ -7,8 +7,8 @@ $(document).ready(function(){
 	/*MÉTODOS CONSTRUCTORES*/
 
 	CargarEstados();
-	LimpiarEstados();
-
+	//LimpiarEstados();
+	/*
 	function LimpiarEstados(){
 
 		var scriptOpen = "<script>";
@@ -17,20 +17,12 @@ $(document).ready(function(){
 		var i = 0;
 		var str = "Hello world!";
 		var res = str.substring(6, 11);
-
 	  	console.log(scriptOpen.substring(i, scriptOpen.length));
-
-
 		while(i<scriptOpen.length){
-
 		    break; //cuando sea mayor o igual a 10, rompe el ciclo
-			
-
 		}
-
-
 	}
-
+	*/
 
 
 	setInterval(function(){

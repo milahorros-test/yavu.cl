@@ -98,7 +98,7 @@
 					<div class="list-group-item" style="height:80px;">
 						Revisa estadisticas
 					</div>
-					<a href="#" class="list-group-item list-group-item-info">Ir a informes</a>
+					<a href="{!!URL::to('/reports')!!}" class="list-group-item list-group-item-info">Ir a informes</a>
 					
 				</div>	  
 
