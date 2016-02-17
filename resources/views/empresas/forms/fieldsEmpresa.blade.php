@@ -139,7 +139,7 @@
 
 				<div class="form-group has-feedback has-feedback-left">
 					{!!Form::label('Nombre del encargado:')!!}
-					{!!Form::text('fono_2',null,['class'=>'form-control','placeholder'=>'Encargado de la empresa'])!!}
+					{!!Form::text('nombre_ecargado',null,['class'=>'form-control','placeholder'=>'Encargado de la empresa'])!!}
 				</div>
 				<div class="form-group has-feedback has-feedback-left">
 					{!!Form::label('tipo_servicio:')!!}

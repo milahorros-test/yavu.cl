@@ -69,20 +69,19 @@ class EmpresaController extends Controller
     return view('empresas.publicProfile', compact('empresa'));
   }
   public function SolicitarEliminacion($id)
-  {
-    DB::table('empresas')
-            ->where('id', $id)
-            ->update(['estado' => 'eliminar']);            
-    return Redirect::to('/profile');
-  }
-
-      public function ListaEmpresas(Request $request)
     {
-        $empresas = Empresa::nombre($request->get('nombre'))->orderBy('id', 'DESC')->paginate();
-
-      return view('listaempresas', compact('empresas'));      
+      DB::table('empresas')
+              ->where('id', $id)
+              ->update(['estado' => 'eliminar']);            
+      return Redirect::to('/profile');
     }
 
+  public function ListaEmpresas(Request $request)
+    {
+      $empresas = Empresa::nombre($request->get('nombre'))->orderBy('id', 'DESC')->paginate();
+
+    return view('listaempresas', compact('empresas'));      
+    } 
 
   public function destroy($id)
   {
@@ -90,4 +89,5 @@ class EmpresaController extends Controller
       Session::flash('message', 'Empresa eliminada correctamente');
       return Redirect::to('/empresas');
   }
+  
 }
