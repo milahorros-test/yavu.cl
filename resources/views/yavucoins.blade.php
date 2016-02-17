@@ -4,52 +4,44 @@
 
 <div class="jumbotron">
 
-<div class="container">
-      <div class="row">
-        <div class="col-sm-3 sidebar">
-          <ul class="nav nav-list affix mover">
-            <li><a class="label color1" href="#one">Descripción</a></li>
-            <li><a class="label color2" href="#two">Sistemas de coins</a></li>
-            <li><a class="label color3" href="#three">Sorteos!</a></li>
-            <li><a class="label color4"href="#four">Empresas Asociadas</a></li>
-            <li><a class="label color5"href="#five">Five</a></li>
-          </ul>
-        </div> 
+<body>
+  <nav id="nav">
+    <ul>
+      <li>MENU</li>
+      <li><a href="#section1" >Section 1</a></li>
+      <li><a href="#section2" >Section 2</a></li>
+      <li><a href="#section3" >Section 3</a></li>
+      <li><a href="#section4" >Section 4</a></li>
+    </ul>
+  </nav>
 
-        <div class="col-sm-9 content" >
-          <section id="one">
-            <h2>Section One</h2>
-            <p>Lorem ipsum dolor sit cuchuflí barquillo bacán jote gamba listeilor po cahuín, luca melón con vino pichanga coscacho ni ahí peinar la muñeca chuchada al chancho achoclonar. Chorrocientos pituto ubicatex huevo duro bolsero cachureo el hoyo del queque en cana huevón el año del loly hacerla corta impeque de miedo quilterry la raja longi ñecla. Hilo curado rayuela carrete quina guagua lorea piola ni ahí.</p>
-            <p>Lorem ipsum dolor sit cuchuflí barquillo bacán jote gamba listeilor po cahuín, luca melón con vino pichanga coscacho ni ahí peinar la muñeca chuchada al chancho achoclonar. Chorrocientos pituto ubicatex huevo duro bolsero cachureo el hoyo del queque en cana huevón el año del loly hacerla corta impeque de miedo quilterry la raja longi ñecla. Hilo curado rayuela carrete quina guagua lorea piola ni ahí.</p>
-          </section>
-          
-          <section id="two">
-            <h2>Section Two</h2>
-             <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no seaest Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua, ugo consetetur Lorem Ipsum.</p>
-            <p>Lorem ipsum dolor sit cuchuflí barquillo bacán jote gamba listeilor po cahuín, luca melón con vino pichanga coscacho ni ahí peinar la muñeca chuchada al chancho achoclonar. Chorrocientos pituto ubicatex huevo duro bolsero cachureo el hoyo del queque en cana huevón el año del loly hacerla corta impeque de miedo quilterry la raja longi ñecla. Hilo curado rayuela carrete quina guagua lorea piola ni ahí.</p>
+  <section  id="section1" >
+    <h1>Dynamic Navigation Bar</h1>
+    <p class="intro">
+      Inspired by the new Android Lollipop UI, the navbar gets colored dynamically with a tinted background-color of each following section.
+    </p>
+  </section>
 
-          </section>
-          <section id="three">
-          	<h2>Section Three</h2>
-             <p>Lorem ipsum dolor sit cuchuflí barquillo bacán jote gamba listeilor po cahuín, luca melón con vino pichanga coscacho ni ahí peinar la muñeca chuchada al chancho achoclonar. Chorrocientos pituto ubicatex huevo duro bolsero cachureo el hoyo del queque en cana huevón el año del loly hacerla corta impeque de miedo quilterry la raja longi ñecla. Hilo curado rayuela carrete quina guagua lorea piola ni ahí.</p>
-            <p>Lorem ipsum dolor sit cuchuflí barquillo bacán jote gamba listeilor po cahuín, luca melón con vino pichanga coscacho ni ahí peinar la muñeca chuchada al chancho achoclonar. Chorrocientos pituto ubicatex huevo duro bolsero cachureo el hoyo del queque en cana huevón el año del loly hacerla corta impeque de miedo quilterry la raja longi ñecla. Hilo curado rayuela carrete quina guagua lorea piola ni ahí.</p>
+  <section  id="section2" >
+    <h2>Another Section…</h2>
+    <p>
+      By the way each section is displayed full screen just by one line of css.
+      You can use viewport untis for flexible heights and widths.
+    </p>
+  </section>
 
-          </section>
-          
-          <section id="four">
-            <h2>Section Four</h2>
-             <p>Lorem ipsum dolor sit cuchuflí barquillo bacán jote gamba listeilor po cahuín, luca melón con vino pichanga coscacho ni ahí peinar la muñeca chuchada al chancho achoclonar. Chorrocientos pituto ubicatex huevo duro bolsero cachureo el hoyo del queque en cana huevón el año del loly hacerla corta impeque de miedo quilterry la raja longi ñecla. Hilo curado rayuela carrete quina guagua lorea piola ni ahí.</p>
-            <p>Lorem ipsum dolor sit cuchuflí barquillo bacán jote gamba listeilor po cahuín, luca melón con vino pichanga coscacho ni ahí peinar la muñeca chuchada al chancho achoclonar. Chorrocientos pituto ubicatex huevo duro bolsero cachureo el hoyo del queque en cana huevón el año del loly hacerla corta impeque de miedo quilterry la raja longi ñecla. Hilo curado rayuela carrete quina guagua lorea piola ni ahí.</p>
-          </section>
-          
-          <section id="five">
-            <h2>Section Five</h2>
-             <p>Lorem ipsum dolor sit cuchuflí barquillo bacán jote gamba listeilor po cahuín, luca melón con vino pichanga coscacho ni ahí peinar la muñeca chuchada al chancho achoclonar. Chorrocientos pituto ubicatex huevo duro bolsero cachureo el hoyo del queque en cana huevón el año del loly hacerla corta impeque de miedo quilterry la raja longi ñecla. Hilo curado rayuela carrete quina guagua lorea piola ni ahí.</p>
-            <p>Lorem ipsum dolor sit cuchuflí barquillo bacán jote gamba listeilor po cahuín, luca melón con vino pichanga coscacho ni ahí peinar la muñeca chuchada al chancho achoclonar. Chorrocientos pituto ubicatex huevo duro bolsero cachureo el hoyo del queque en cana huevón el año del loly hacerla corta impeque de miedo quilterry la raja longi ñecla. Hilo curado rayuela carrete quina guagua lorea piola ni ahí.</p>
+  <section id="section3" >
+    <h2>And Another Section…</h2>
+  </section>
 
-          </section>
-        </div>
-      </div>
-    </div> 
+  <section  id="section4" >
+    <h2>Wohoo! One more…</h2>
+  </section>
+
+    </body>
+</html>
+
+
+
 </div>
 @stop

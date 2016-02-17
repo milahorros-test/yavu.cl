@@ -107,7 +107,7 @@
                 <li><a href="{!!URL::to('/terminos/')!!}">Terminos</a></li>
               </ul>
             </li> 
-                <li><a href="{!!URL::to('/ycoins/')!!}">YavuCoins</a></li>                    
+                <li><a href="{!!URL::to('/yavucoins/')!!}">YavuCoins</a></li>                    
           </ul>         
         </div><!--/.navbar-collapse -->
       </div>
