@@ -24,9 +24,16 @@ class CoinController extends Controller
     public function index()
     {
         //$coin = new CoinController;
+        //$historialcoins = $this->HistorialCoins();
+        //dd($historialcoins);
+        $historialcoins = DB::table('registro_coins')
+                    ->join('users', 'users.id', '=', 'registro_coins.user_id')   
+                    ->select('registro_coins.*', 'users.nombre')
+                    ->where('user_id', '=', Auth::user()->get()->id)   
+                    ->orderBy('created_at','desc')   
+                    //->limit('10')
+                    ->get();  
 
-        $historialcoins = $this->HistorialCoins();
-        
         return view('coins.index', $historialcoins);   
     }
     public function create()
