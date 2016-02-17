@@ -7,42 +7,49 @@ $(document).ready(function(){
 	/*MÉTODOS CONSTRUCTORES*/
 
 	CargarEstados();
-	
+	LimpiarEstados();
+
+	function LimpiarEstados(){
+
+		var scriptOpen = "<script>";
+		var scriptClose = "</script>";
+
+		var i = 0;
+		var str = "Hello world!";
+		var res = str.substring(6, 11);
+
+	  	console.log(scriptOpen.substring(i, scriptOpen.length));
+
+
+		while(i<scriptOpen.length){
+
+		    break; //cuando sea mayor o igual a 10, rompe el ciclo
+			
+
+		}
+
+
+	}
+
+
+
 	setInterval(function(){
 		var a = $(".timeago");
 		for(var i = 0; i < a.length ; i++){
-
-
-			//$('#'+a[i].id).empty();
-			//$('#'+a[i].id).text("" + humanTiming( $('#'+a[i].title) ) );
-			//console.log ( document.getElementById( a[i].id ) );
 			var elemento = document.getElementById( a[i].id );
-			$('#'+a[i].id).text("" + humanTiming( elemento.title 	) );
-			//console.log($(elemento.title));
-			//console.log(elemento.title);
-			//console.log(document.getElementById(a[i].id).value);
-			//console.log(document.getElementById(a[i].id).id);
-			//console.log(document.getElementById(a[i].id).title);
-			//console.log("################################################");
-			//console.log(a[i].value);
-			//break;
+			$('#'+a[i].id).text("" + humanTiming( elemento.title ) );
 		}
-
-		
-		//$(".timeago").val = humanTiming(document.getElementById("timeago").title);
-	},2000);
-	
-	
+	},40000);
 
 	/*MÉTODOS CONSTRUCTORES*/
 
 	/*SELECTORES*/
+
 	$("#CargarEstados").click(function(e){
 		$("#EstadosNuevos").append("");
 		CargarEstados();			
 		e.preventDefault();
 	});
-
 	$("#publicar").click(function(e){
 		document.getElementById("idUltima").value = "0";				    
 		$("#Estados").empty();		
@@ -62,30 +69,20 @@ $(document).ready(function(){
 					user_id: user_id
 				},
 				success:function(){
-					/*
-					$("#msj-success").fadeIn();
-				    setTimeout(function() {
-				        $("#msj-success").fadeOut(1000);
-				    },800);				
-						*/
 				    document.getElementById("status").value = "";
-				    //console.log("La ultima publicacion ID: "+$("#idUltima").val());
 				}
 			});	
 			
-			//ContarEstados();
 		}else{
 			document.getElementById("status").focus();
 		}	
 		CargarEstados();
 		e.preventDefault();	
 	});
-
 	$("#limpiar").click(function(e){
 		document.getElementById("status").value = "";
 		e.preventDefault();
 	});
-
 	$( "#status" ).change(function(e) {
 		var status = $("#status").val();
 		var status_2 = limpiar(status);
@@ -134,19 +131,18 @@ $(document).ready(function(){
 						+"</div>"
 						+"<div class='list-group-item panel-footer'>"
 						+"<span class='glyphicon glyphicon-thumbs-up'>&nbsp;</span>"
-							+"<a name='like' class='inter' role='button' id='estado_"+value.id+"' value='"+value.id+"' href='#!' style='color:#3C5B28;'><span>Me gusta</span></a>"
+							+"<a name='like' class='inter' role='button' id='estado_"+value.id+"' value='"+value.id+"' href='#!' style='color:#3C5B28;'>"
+							+"<span>Me gusta</span></a>"
 						+"</div>"
 					+"</div>";
-
 				EstadosUsuario.appendTo("#e").effects("highlight", {}, 12000);
-				//$("#Estados").appendTo('#Estados').effects("highlight", {}, 12000);
-
-
 			});
 		});						
 	}
 
 	function limpiar(status){
+
+
 		status = status.replace("<script>", "");
 		status = status.replace("<script", "");
 		status = status.replace("<scrip", "");
@@ -154,9 +150,10 @@ $(document).ready(function(){
 		status = status.replace("<scr", "");
 		status = status.replace("<sc", "");
 		status = status.replace("<s", "");
+		status = status.replace("<", ""); 
 		status = status.replace("<<<", "");
 		status = status.replace("<<", "");
-		status = status.replace("<", ""); 
+		
 		status = status.replace(">>>", "");
 		status = status.replace(">>", "");
 		status = status.replace(">", ""); 
@@ -182,39 +179,11 @@ $(document).ready(function(){
 		status = status.replace("')<", ""); 
 		return status;
 	}
-	/* LA DE PHP
-	function humanTiming ($time)
-	{
-	    $time = time() - $time; // to get the time since that moment
-	    $time = ($time<1)? 1 : $time;
-	    $tokens = array (
-	        31536000 => 'año',
-	        2592000 => 'mese',
-	        604800 => 'semana',
-	        86400 => 'día',
-	        3600 => 'hora',
-	        60 => 'minuto',
-	        1 => 'segundo'
-	    );
-	    foreach ($tokens as $unit => $text) {
-	        if ($time < $unit) continue;
-	        $numberOfUnits = floor($time / $unit);
-	        return $numberOfUnits.' '.$text.(($numberOfUnits>1)?'s':'');
-	    }
-	}
-	*/
 	function humanTiming(time)
 	{
-		//console.log(time);
 		var now = new Date();
 		var nowTime = now.getTime()
-		//console.log(nowTime+"///"+Date.parse(time));
 		nowTime = nowTime - Date.parse(time);
-
-		//nowTime = (time<1)? 1 : time;
-		//console.log(nowTime);
-		//console.log(nowTime);
-		//console.log(nowTime);
 	    var tokens = [
 	    	[1, 'segundo'],
 	    	[60, 'minuto'],
@@ -226,19 +195,13 @@ $(document).ready(function(){
 	   ];
 	   //console.log(JSON.stringify(tokens[0][1])); //unidad
 	   //console.log(JSON.stringify(tokens[0][0])); //cantidad
-	   //console.log(nowTime);
 	   	var numberOfUnits = 0;
 		for(var i = 0, len = tokens.length; i < len; i++){
-			//console.log(tokens[i][0]);
-			//numberOfUnits = Math.floor(nowTime/tokens[i][0]);
 			if (nowTime < tokens[i][0]) {	
 
 				if (tokens[i][1] === "día"){
 					numberOfUnits = nowTime/(tokens[i-1][0])*10;
 				}
-				//console.log(nowTime+" -> "+tokens[i-2][1]+" -> "+Math.floor(numberOfUnits)+"#########");	
-				
-				
 				if(Math.floor(numberOfUnits) >= 7 && Math.floor(numberOfUnits) < 30){
 
 				}else if(Math.floor(numberOfUnits) >= 7 && Math.floor(numberOfUnits) < 30){
@@ -260,49 +223,31 @@ $(document).ready(function(){
 						return 'hace pocos minutos';
 
 					}
-
 				}	
-
 			}else{				
 				nowTime = Math.floor(nowTime/tokens[i][0]);				
 			}
 		}	    	
-	    	
-
-
-		//console.log(now-Date.parse(time));		
-		/*
-	    time = getTime() - time; // to get the time since that moment
-	    time = (time<1)? 1 : time;
-
-	    foreach ($tokens as $unit => $text) {
-	        if (time < unit) continue;
-	        var numberOfUnits = floor($time / $unit);
-	        return $numberOfUnits.' '.$text.(($numberOfUnits>1)?'s':'');
-	    }
-		*/
 	}
-/*
-Math.floor(1.6); 
-// Define the callback function.
-function ShowResults(value, index, ar) {
-    document.write("value: " + value);
-    document.write(" index: " + index);
-    document.write("<br />");
-}
+    function ContarInteracciones(status_id){
+      status_id = status_id;
+      var route = "http://localhost:8000/contarinteracciones/"+status_id;
+      var user_id = $("#user_id").val();
+      var Contador = 0;
+      $.get(route, function(res){
+        $(res).each(function(key,value){
+        	//console.log(value.status_id);
+        	//console.log(value.user_id +"/"+ user_id);
 
-// Create an array.
-var letters = ['ab', 'cd', 'ef'];
+            if(value.user_id === user_id){
+              $('#estado_'+status_id).addClass("text-info").fadeIn();
+            }
 
-// Call the ShowResults callback function for each
-// array element.
-letters.forEach(ShowResults);
-
-// Output:
-//  value: ab index: 0 
-//  value: cd index: 1 
-//  value: ef index: 2 
-*/
+            Contador += 1;
+        });
+        $("#badge_"+status_id).text(Contador);
+      });   
+    }    
 
 	function CargarEstados(){
 		var EstadosUsuario = $("#Estados"); 
@@ -337,15 +282,24 @@ letters.forEach(ShowResults);
 							+"</small><hr>"		
 							+"<p>"+value.status+"</p>"
 						+"</div>"
-						+"<div class='list-group-item panel-footer'>"
-						+"<span class='glyphicon glyphicon-thumbs-up'>&nbsp;</span>"
-							+"<a name='like' class='inter' role='button' id='estado_"+value.id+"' value='"+value.id+"' href='#!' style='color:#3C5B28;'><span>Me gusta</span></a>"
+						+"<div class='list-group-item panel-footer'>"					
+							+"<span id='badge_"+value.id+"' class='label label-info'></span>"+"&nbsp;"
+							+"<a role='button'  href='#!' style='color:#000;'>"
+								+"<span name='megusta' onclick='Interactuar(this.id)' id='estado_"+value.id+"' value='"+value.id+"'>"
+
+									+"<span class='glyphicon glyphicon-thumbs-up'>"
+										+"&nbsp;"
+
+									+"</span>"
+									+"Me gusta"
+								+"</span>"
+							+"</a>"							
 						+"</div>"
 					+"</div>"
-				);
+				);				
 				document.getElementById("idUltima").value =  Global_idUltimaPublicacion;
-
-				Contador += 1;							
+				Contador += 1;	
+				ContarInteracciones(value.id);
 			});
 			if(Contador < 5){					
 				//EstadosUsuario.append("Ultima publicacion: "+Global_idUltimaPublicacion);
@@ -355,7 +309,8 @@ letters.forEach(ShowResults);
 				    $("#msj-finPublicaciones").fadeOut(3000);
 				},1000);		
 			}
-			ocultarCargando();		
+
+			ocultarCargando();	
 			Global_ContadorCargaPublicaciones += 1 * 5;
 		});						
 	}
