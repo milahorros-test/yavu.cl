@@ -20,20 +20,27 @@ class LogController extends Controller
     {
     }
     public function CargarCoinSesion($id){
-        /*
-        $cargaDiaria = RegistroCoin::where('user_id', $user_id)
+        $fechaRegistro = "";
+        $fechaActual = strftime( "%m/%d/%Y", time());
+        $cargaDiaria = RegistroCoin::where('user_id', $id)
                                     ->where('motivo', 'Inicio sesión')
-                                    ->where('', '')
+                                    ->orderby('created_at', 'desc')
+                                    ->limit('1')
                                     ->first();
-        */
+        if($cargaDiaria){
+            $fechaRegistro = $cargaDiaria->created_at->format('m/d/Y');
+        }
 
-        DB::table('registro_coins')->insert(
-            ['user_id' => $id, 
-            'cantidad' => '100', 
-            'motivo'   => 'Inicio sesión',
-            'created_at' => strftime( "%Y-%m-%d-%H-%M-%S", time()),
-            'updated_at' => strftime( "%Y-%m-%d-%H-%M-%S", time())]
-        );
+        if( $fechaRegistro !== $fechaActual ){
+            DB::table('registro_coins')->insert(
+                ['user_id' => $id, 
+                'cantidad' => '100', 
+                'motivo'   => 'Inicio sesión',
+                'created_at' => strftime( "%Y-%m-%d-%H-%M-%S", time()),
+                'updated_at' => strftime( "%Y-%m-%d-%H-%M-%S", time())]
+            );
+        }
+            
     }
     public function create()
     {
