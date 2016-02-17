@@ -10,16 +10,13 @@ use yavu\Estado;
 use yavu\InteraccionEstado;
 use yavu\EstadoEmpresa;
 use DB;
-
 class InteraccionEstadoController extends Controller
 {
     public function index()
     {
-        //
     }
     public function create()
     {
-        //
     }
     public function ContarInteracciones($status_id){
         $interacciones = DB::table('interaccion_estados')                    
@@ -36,11 +33,9 @@ class InteraccionEstadoController extends Controller
         $estado = InteraccionEstado::where('user_id', $request->user_id)->where('status_id', $request->status_id)->first();
         if($request->ajax() && !$estado){
             InteraccionEstado::create($request->all());
-            //Session::flash('message', 'Publicacion creada correctamente');
             return response()->json([
                 "Mensaje: " => "Creado"                
             ]);
-            //CargarEstados();
         }else{
             DB::table('interaccion_estados')
                 ->where('status_id', '=', $request->status_id)
@@ -50,19 +45,14 @@ class InteraccionEstadoController extends Controller
     }
     public function show($id)
     {
-        //
     }
-
     public function edit($id)
     {
-        //
     }
     public function update(Request $request, $id)
     {
-        //
     }
     public function destroy($id)
     {
-
     }
 }

@@ -150,13 +150,11 @@
           },
           success:function(){
             $('#'+valor).addClass("text-info").fadeIn();
-            $('#'+valor).css('font-style','oblique');
             console.log('exito');
             ContarInteracciones(status_id);
           }          
         }); 
         ContarInteracciones(status_id);
-        $('#'+valor).css('font-style','normal');
         $('#'+valor).removeClass("text-info").fadeIn();
       return true;
     }  

@@ -17,7 +17,6 @@ class EstadoController extends Controller
     }
     public function find(Route $route){
         $this->user = User::find($route->getParameter('usuarios'));
-        //return $this->user;   
     }    
     public function index()
     {
@@ -29,22 +28,12 @@ class EstadoController extends Controller
     {
         if($request->ajax()){
             Estado::create($request->all());
-            //Session::flash('message', 'Publicacion creada correctamente');
             return response()->json([
                 "Mensaje: " => "Creado"                
             ]);
-            //CargarEstados();
         }
-        /*
-        Estado::create($request->all());
-        Session::flash('message', 'Publicacion creada correctamente');
-        return Redirect::to('/profile');  
-        */          
     }
-
     public function CargarEstados($idUltima){
-        //$estados = Estado::All();
-        //$estados = DB::select('select * from estados where user_id = :id', ['id' => 1]);
         if((int) $idUltima == "0"){
             $estados = DB::table('estados')                    
                         ->join('users', 'users.id', '=', 'estados.user_id')
@@ -54,6 +43,7 @@ class EstadoController extends Controller
                         ->orderBy('estados.created_at','desc')   
                         ->limit('5')
                         ->get();  
+                        
         }elseif((int) $idUltima <> "0"){
             $estados = DB::table('estados')                    
                         ->join('users', 'users.id', '=', 'estados.user_id')
@@ -65,42 +55,22 @@ class EstadoController extends Controller
                         ->get();
         }
         
-
-        //dd($estados);
         return response()->json(
             $estados
         );
-        /*
-            return response()->json(
-                $estados->toArray()
-            );        
-        */
     }
-
-
-
     public function ContarEstados(){
-        //$estados = Estado::All();
-        //$estados = DB::select('select * from estados where user_id = :id', ['id' => 1]);
         $estados = DB::table('estados')                    
                     ->join('users', 'users.id', '=', 'estados.user_id')
                     ->select('users.*', 'estados.*')    
                     ->where('estados.user_id', '=', Auth::user()->get()->id)   
                     ->orderBy('estados.created_at','desc')   
-                    //->limit('5')
                     ->get();        
 
-        //dd($estados);
         return response()->json(
             $estados
         );
-        /*
-            return response()->json(
-                $estados->toArray()
-            );        
-        */
     }    
-
     public function show($id)
     {     
     }
