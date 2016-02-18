@@ -57,7 +57,7 @@ class CoinController extends Controller
                     ->select('registro_coins.*', 'users.nombre')
                     ->where('user_id', '=', Auth::user()->get()->id)   
                     ->orderBy('created_at','desc')   
-                    ->limit('10')
+                    ->limit('5')
                     ->get();        
         return response()->json(
             $historialcoins
