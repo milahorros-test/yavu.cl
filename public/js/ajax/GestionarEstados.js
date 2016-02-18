@@ -38,6 +38,7 @@ $(document).ready(function(){
 
 	/*SELECTORES*/
 
+	/*FALTA TERMINAR
     // EVENTO CUANDO SE MUEVE EL SCROLL, EL MISMO APLICA TAMBIEN CUANDO SE RESIZA
     var change = false;
     var EstadosUsuario = $("#Estados"); 
@@ -52,15 +53,22 @@ $(document).ready(function(){
 	        //console.log(scroll_critical);			
 		},1000);	
         console.log(window_y+"//"+scroll_critical);
-        if ( window_y > scroll_critical+300 ) { // SI EL SCROLL HA SUPERADO EL ALTO DE TU DIV
-           // ACA MUESTRAS EL OTRO DIV Y EL OCULTAS EL DIV QUE QUIERES
-			if(Global_Control){
-				CargarEstados();
-				scroll_critical = parseInt($("#Estados").height());
-			}
-           return
-        }
+        setTimeout(function(){
+	        if ( window_y - 200 > scroll_critical ) { // SI EL SCROLL HA SUPERADO EL ALTO DE TU DIV
+	           // ACA MUESTRAS EL OTRO DIV Y EL OCULTAS EL DIV QUE QUIERES
+				
+				if(Global_Control){
+					CargarEstados();
+					scroll_critical = parseInt($("#Estados").height());
+					return
+				}
+			
+	           
+	        }
+        },1000);
 	});		
+	*/
+
 	$("#CargarEstados").click(function(e){
 		$("#EstadosNuevos").append("");
 		CargarEstados();			

@@ -15,6 +15,7 @@
         {!!Html::script('js/vendor/bootstrap.min.js')!!}
         {!!Html::script('js/plugins.js')!!}
         {!!Html::script('js/main.js')!!}
+        {!!Html::script('js/ajax/FrontNotificaciones.js')!!}
         {!!Html::style('css/bootstrap.css')!!}
         {!!Html::style('css/style.css')!!}
         {!!Html::style('css/main.css')!!}
@@ -43,6 +44,22 @@
             <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand" href="/">Yavu</a>
+
+          <div class="navbar-brand">
+            <a href="#!"> 
+              <span id="Notificaciones" title="Notificaciones" data-toggle="popover" title="Popover title" data-placement="bottom"  class="glyphicon glyphicon-flash" style="font-size: 1em;" aria-hidden="true">
+                <small><span id="CantidadNotificaciones" class="label label-danger">1</span></small>
+              </span>    
+            </a>           
+          </div>
+          <div class="navbar-brand">
+            <a href="#!">
+              <span id="Mensajes" title="Mensajes" data-toggle="popover" title="Popover title" data-placement="bottom" class="glyphicon glyphicon-envelope" style="font-size: 1em;" aria-hidden="true">
+                <small><span id="CantidadMensajes" class="label label-danger">2</span></small>
+              </span>
+            </a>
+          </div>
+
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">                
@@ -82,6 +99,10 @@
             </li>
             -->  
             @if (Auth::user()->check())
+              
+              
+
+
               <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle"><strong>{!!Auth::user()->get()->nombre!!}</strong><b class="caret"></b></a>                        
                 <ul class="dropdown-menu">
                   <li><a href="{!!URL::to('#')!!}">Inicio</a></li>
@@ -157,6 +178,8 @@
   </div>
   
   <!-- Copyright -->
+  <button type="button" class="btn btn-lg btn-danger" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?">Click to toggle popover</button>
+
   <div class="copyright">
     <div class="container">
       <div class="row copyright-img">
