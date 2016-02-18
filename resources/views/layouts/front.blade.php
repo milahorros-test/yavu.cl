@@ -55,7 +55,7 @@
           <div class="navbar-brand">
             <a href="#!">
               <span id="Mensajes" title="Mensajes" data-toggle="popover" title="Popover title" data-placement="bottom" class="glyphicon glyphicon-envelope" style="font-size: 1em;" aria-hidden="true">
-                <small><span id="CantidadMensajes" class="label label-danger">2</span></small>
+                <small><span id="CantidadMensajes" class="label label-danger">2</span></small>          
               </span>
             </a>
           </div>
@@ -178,8 +178,6 @@
   </div>
   
   <!-- Copyright -->
-  <button type="button" class="btn btn-lg btn-danger" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?">Click to toggle popover</button>
-
   <div class="copyright">
     <div class="container">
       <div class="row copyright-img">

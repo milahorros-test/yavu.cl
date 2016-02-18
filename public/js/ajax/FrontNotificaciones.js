@@ -1,5 +1,7 @@
 	$(document).ready(function(){	
 	/*DECLARACIÓN DE VARIABLES GLOBALES*/
+	var Global_swap_notificaciones = true;
+	var Global_swap_mensajes = true;
 	/*DECLARACIÓN DE VARIABLES GLOBALES*/
 
 	/*MÉTODOS CONSTRUCTORES*/
@@ -11,40 +13,49 @@
 
   	$(function () {
   		var popover = $('[data-toggle="popover"]');
-    	popover.popover({ html : true }); 
+    	popover.popover({ html : true , trigger : 'manual'}); 
 
-		$('#Notificaciones').click(function(){
-			var data = 
-						"<a class='list-group-item-full-header list-group-item-default text-info' href='#!' class='text-info'>Texto 1</a>"
-						+"<a class='list-group-item-full-header list-group-item-default text-info' href='#!' class='text-info'>Texto 2</a>";
+		$('#Notificaciones, #CantidadNotificaciones').click(function(){
+			var data = "<div class='list-group'>";
+				data +=	"<div class='list-group-item'><a class='text-info' href='#!'>Notificacion 1</a></div>";
+				data += "<div class='list-group-item'><a class='text-info' href='#!'>Notificacion 2</a></div>";
+				data += "<div class='list-group-item-full-header'><a class='text-warning' href='#!'>ver más</a></div>";
+				data += "</div>";
 
-        	$('#Notificaciones').attr('data-content', "<div class='list-group'>"+data+"</div>");
+        	$('#Notificaciones').attr('data-content', data);
 
-        	$('#Notificaciones').popover();     
-
-			$('#Mensajes').popover('hide');
+        	if(Global_swap_notificaciones){
+        		$('#Notificaciones').popover('show');
+        		$('#Mensajes').popover('hide');
+        		Global_swap_notificaciones = false;	
+        	}else{
+        		$('#Notificaciones').popover('hide');
+        		Global_swap_notificaciones = true;
+        	}
+        	
+			
 			
 
 
 		});
 
-		$('#Mensajes').click(function(){
-			var data = "<ul>"
-							+"<li>"
-								+"<a href='#!'>Texto 1</a>"
-							+"</li>"
-							+"<li>"
-								+"<a href='#!'>Texto 2</a>"
-							+"</li>"
-						+"</ul>";
+		$('#Mensajes, #CantidadMensajes').click(function(){
+			var data = "<div class='list-group'>";
+				data +=	"<div class='list-group-item'><a class='text-info' href='#!'>Mensaje 1</a></div>";
+				data += "<div class='list-group-item'><a class='text-info' href='#!'>Mensaje 2</a></div>";
+				data += "<div class='list-group-item-full-header'><a class='text-warning' href='#!'>ver más</a></div>";
+				data += "</div>";
 
         	$('#Mensajes').attr('data-content', data);
 
-        	$('#Notificaciones').popover();   			
-			$('#Mensajes').popover();
-			$('#Notificaciones').popover('hide');
-
-
+        	if(Global_swap_mensajes){
+        		$('#Mensajes').popover('show');	
+        		$('#Notificaciones').popover('hide');
+        		Global_swap_mensajes = false;
+        	}else{
+        		$('#Mensajes').popover('hide');	
+        		Global_swap_mensajes = true;
+        	}
 
 
 		});

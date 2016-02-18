@@ -5872,6 +5872,7 @@ button.close {
   left: 0;
   z-index: 1060;
   display: none;
+  min-width: 450px;
   max-width: 450px;
   padding: 0px;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -5890,6 +5891,24 @@ button.close {
   -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
           box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
 }
+@media (max-width: 700px) {
+  .popover { 
+    min-width: 100%;
+  }
+}
+@media (max-width: 500px) {
+  .popover { 
+    min-width: 100%;
+  }
+}
+@media (max-width: 300px) {
+  .popover { 
+    min-width: 100%;
+  }
+}
+
+
+
 .popover.top {
   margin-top: -10px;
 }
@@ -5912,7 +5931,7 @@ button.close {
   border-radius: 5px 5px 0 0;
 }
 .popover-content {
-  padding: 0px 0px;
+  padding: 1px 1px;
 }
 .popover > .arrow,
 .popover > .arrow:after {
