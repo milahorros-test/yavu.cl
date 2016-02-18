@@ -2,6 +2,7 @@ $(document).ready(function(){
 	/*DECLARACION DE VARIABLES GLOBALES*/
 	var Global_idUltimaPublicacion;
 	var Global_ContadorCargaPublicaciones;
+	var Global_Control = true;
 	/*DECLARACION DE VARIABLES GLOBALES*/
 
 	/*MÉTODOS CONSTRUCTORES*/
@@ -37,6 +38,29 @@ $(document).ready(function(){
 
 	/*SELECTORES*/
 
+    // EVENTO CUANDO SE MUEVE EL SCROLL, EL MISMO APLICA TAMBIEN CUANDO SE RESIZA
+    var change = false;
+    var EstadosUsuario = $("#Estados"); 
+    var window_y, scroll_critical;
+
+	$(window).scroll(function(){
+
+		setTimeout(function() {
+			window_y = $(window).scrollTop();
+	         // VALOR QUE SE HA MOVIDO DEL SCROLL
+	        scroll_critical = parseInt($("#Estados").height()); // VALOR DE TU DIV
+	        //console.log(scroll_critical);			
+		},1000);	
+        console.log(window_y+"//"+scroll_critical);
+        if ( window_y > scroll_critical+300 ) { // SI EL SCROLL HA SUPERADO EL ALTO DE TU DIV
+           // ACA MUESTRAS EL OTRO DIV Y EL OCULTAS EL DIV QUE QUIERES
+			if(Global_Control){
+				CargarEstados();
+				scroll_critical = parseInt($("#Estados").height());
+			}
+           return
+        }
+	});		
 	$("#CargarEstados").click(function(e){
 		$("#EstadosNuevos").append("");
 		CargarEstados();			
@@ -86,9 +110,9 @@ $(document).ready(function(){
 			if (status !== limpiar(status)){
 			  $('#msj-error').append();
 				$("#msj-error").fadeIn();
-				setTimeout(function() {
-				    $("#msj-error").fadeOut(8000);
-				},800);			
+					setTimeout(function() {
+					    $("#msj-error").fadeOut(8000);
+					},800);			
 			}		
 		}	
 		e.preventDefault();
@@ -189,44 +213,30 @@ $(document).ready(function(){
 	   //console.log(JSON.stringify(tokens[0][0])); //cantidad
 	   	var numberOfUnits = 0;
 		for(var i = 0, len = tokens.length; i < len; i++){
-
 			if (nowTime < tokens[i][0]) {	
-
 				if (tokens[i][1] === "día"){
 					numberOfUnits = nowTime/(tokens[i-1][0])*10;
 				}else{
-					//numberOfUnits = nowTime/(tokens[i-2][0])*10;
-					//console.log(tokens[i][1]+"/"+tokens[i][0]+"/"+numberOfUnits);
 					numberOfUnits = nowTime*tokens[i][0]*10;
-					//console.log(numberOfUnits);
 				}
-
 				if(Math.floor(numberOfUnits) > 356 && tokens[i][1] === 'año'){
 					var anio = Math.floor((numberOfUnits/tokens[i][0]/12));
 					if ( anio === 0 ){ anio = 1; }
 					return "hace "+anio+" "+tokens[i][1]+((anio>1)?'s':'');
-
 				}else if(Math.floor(numberOfUnits) >= 30 && Math.floor(numberOfUnits) < 356){
 					return "hace "+Math.floor(numberOfUnits/12)+" "+tokens[i+3][1]+((Math.floor(numberOfUnits/12)>1)?'es':'');
-
 				}else if(Math.floor(numberOfUnits) >= 7 && Math.floor(numberOfUnits) < 30){
 					return "hace "+Math.floor(numberOfUnits/7)+" "+tokens[i+1][1]+((Math.floor(numberOfUnits/7)>1)?'s':'');
-
 				}else if(Math.floor(numberOfUnits) >= 1 && Math.floor(numberOfUnits) < 7){
 					return "hace "+Math.floor(numberOfUnits)+" "+tokens[i][1]+((Math.floor(numberOfUnits)>1)?'s':'');						
-
 				}else if(Math.floor(numberOfUnits) < 1){
-
 					if (numberOfUnits > 0.0416 ){
 						return "hace "+Math.floor(24*numberOfUnits)+" "+tokens[i-1][1]+((Math.floor(24*numberOfUnits)>1)?'s':'');				
-
 					}else if(numberOfUnits < 0.0416 && numberOfUnits > 0.000693333 ){
 						numberOfUnits = Math.floor(((numberOfUnits*100)/4.)*60);
 						return "hace "+numberOfUnits+" "+tokens[i-2][1]+((numberOfUnits>1)?'s':'');
-
 					}else if(numberOfUnits < 0.000293333 ){
 						return 'hace pocos minutos';
-
 					}
 				}	
 			}else{	
@@ -241,13 +251,9 @@ $(document).ready(function(){
       var Contador = 0;
       $.get(route, function(res){
         $(res).each(function(key,value){
-        	//console.log(value.status_id);
-        	//console.log(value.user_id +"/"+ user_id);
-
             if(value.user_id === user_id){
               $('#estado_'+status_id).addClass("text-info").fadeIn();
             }
-
             Contador += 1;
         });
         $("#badge_"+status_id).text(Contador);
@@ -261,7 +267,9 @@ $(document).ready(function(){
 		var user_id = $("#user_id");
 		var Contador = 0;
 		$.get(route, function(res){
-			mostrarCargando();
+
+			if(Global_Control){mostrarCargando();}
+
 			$(res).each(function(key,value){				
 				var TimeAgo = value.created_at;
 				Global_idUltimaPublicacion = value.id;		
@@ -294,7 +302,6 @@ $(document).ready(function(){
 
 									+"<span class='glyphicon glyphicon-thumbs-up'>"
 										+"&nbsp;"
-
 									+"</span>"
 									+"Me gusta"
 								+"</span>"
@@ -306,15 +313,15 @@ $(document).ready(function(){
 				Contador += 1;	
 				ContarInteracciones(value.id);
 			});
-			if(Contador < 5){					
-				//EstadosUsuario.append("Ultima publicacion: "+Global_idUltimaPublicacion);
-				//console.log("Hay menos de 5 registros");
-				$("#msj-finPublicaciones").fadeIn();	
-				setTimeout(function() {
-				    $("#msj-finPublicaciones").fadeOut(3000);
-				},1000);		
+			if(Contador < 5){	
+				if (Global_Control) { 
+					$("#msj-finPublicaciones").fadeIn();	
+					setTimeout(function() {
+					    $("#msj-finPublicaciones").fadeOut(3000);
+					},1000);		
+					Global_Control = false;	
+				}			
 			}
-
 			ocultarCargando();	
 			Global_ContadorCargaPublicaciones += 1 * 5;
 		});						
@@ -325,7 +332,6 @@ $(document).ready(function(){
 	function ocultarCargando(){
 		$("#msj-estado").fadeOut();
 	}
-
 	function ContarEstados(){
 		var CargarEstados = $("#CargarEstados"); 
 		var route = "http://localhost:8000/contarestados";
@@ -338,38 +344,12 @@ $(document).ready(function(){
 				if (Contador === 5){
 					Global_idUltimaPublicacion = value.id;
 					$("#EstadosNuevos").append(Contador + " <small>¡Publicaciones Nuevas!</small>");
-					//CargarEstados.append(Contador);
-					//console.log(Contador);
 				}else{
 					$("#EstadosNuevos").append("");
 				}
 			});
 			$("#EstadosNuevos").append(Contador + " <small>¡Publicaciones Nuevas!</small>");
-			//console.log(Contador);
 		});						
 	}
-
 	/*FUNCIONES Y PROCEDIMIENTOS*/
-    // EVENTO CUANDO SE MUEVE EL SCROLL, EL MISMO APLICA TAMBIEN CUANDO SE RESIZA
-    var change = false;
-    var window_y = $(window).scrollTop();
-	$(window).scroll(function(){
-		var EstadosUsuario = $("#Estados"); 
-         // VALOR QUE SE HA MOVIDO DEL SCROLL
-        scroll_critical = parseInt($("#Estados").height()); // VALOR DE TU DIV
-        //console.log(scroll_critical);
-        if (window_y > scroll_critical) { // SI EL SCROLL HA SUPERADO EL ALTO DE TU DIV
-           // ACA MUESTRAS EL OTRO DIV Y EL OCULTAS EL DIV QUE QUIERES
-           CargarEstados();
-        }
-	});		
 });
-
-/*
-				EstadosUsuario.append(
-					"<div class='list-group'>"
-					+"No hay mas publicaciones"
-					+"</div>"
-				);   
-*/
-
