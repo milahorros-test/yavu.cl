@@ -10,7 +10,7 @@
 		@include('alerts.warningMessage')
 		<h4 style="margin-top:-40px;"></h4>
 		<div class="row">
-		    <div class="col-sm-8">
+		   <div class="col-sm-8">
 				<div class="list-group" >
 					<div class="list-group-item">
 						@foreach($users as $user)
@@ -22,27 +22,24 @@
 								Te damos la bienvenida a tu primera vez en el sitio, <a class="btn btn-primary btn-sm" href="usuarios/{{$user->id}}/edit">actualiza tus datos</a> y gana yavu coins!
 							@endif
 						@endforeach
-
 					</div>					
 					<div class="list-group-item">
-						
 					</div>																	
-					<a href="#!" class="list-group-item list-group-item-info">Ir a publicaciones <span class="badge">14<small>  ¡Publicaciones nuevas!</small></span></a>
+					<a href="#!" class="list-group-item list-group-item-info">
+						Ir a publicaciones 
+						<span class="badge">
+							14
+							<small>  ¡Publicaciones nuevas!</small>
+						</span>
+					</a>
 				</div>
-					
 				<div class="list-group" id="HistorialCoins">
-
 					<div class="list-group-item-full-header">
 						<h6>RESUMEN DE GARGAS DE COINS</h6>
 					</div>
-
 				</div>				
-
-
-
-		    </div>
-
-		    <div class="col-sm-4"><!--style="position:fixed;z-index:1000;"-->
+		   </div>
+		   <div class="col-sm-4"><!--style="position:fixed;z-index:1000;"-->
 				<div class="list-group">
 					<div class="list-group-item-full-header">
 						<h6>MI CUENTA</h6>
@@ -85,7 +82,6 @@
 					</div>
 					<a href="{!!URL::to('/empresas/create')!!}" class="list-group-item list-group-item-warning">Saber más e ir a registrar mi empresa</a>
 				</div>
-
 				<div class="list-group" >
 					<div class="list-group-item-full-header">
 						<h6>POLÍTICAS Y SERVICIOS</h6>
@@ -95,7 +91,6 @@
 					</div>
 					<a href="#" class="list-group-item list-group-item-info">Leer políticas</a>
 				</div>	
-
 				<div class="list-group" >
 					<div class="list-group-item-full-header">
 						<h6>INFORMES</h6>
@@ -104,9 +99,7 @@
 						Revisa estadisticas
 					</div>
 					<a href="{!!URL::to('/reports')!!}" class="list-group-item list-group-item-info">Ir a informes</a>
-					
 				</div>	  
-
 				<div class="list-group" >
 					<div class="list-group-item-full-header">
 						<h6>CONFIGURACIONES</h6>
@@ -116,7 +109,6 @@
 					</div>
 					<a href="#" class="list-group-item list-group-item-info">Ir a configuraciones</a>
 				</div>	
-
 				<div class="list-group" >
 					<div class="list-group-item-full-header">
 						<h6>AYUDAS GENERALES</h6>
@@ -126,11 +118,8 @@
 					</div>
 					<a href="#" class="list-group-item list-group-item-info">Ir a ayudas generales</a>
 				</div>	
-
 		    </div>
-
 		</div>
-
 	</div><!-- Fin del div id contentIn -->
 </div>
 @stop

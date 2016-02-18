@@ -19,48 +19,32 @@
 					<div class="list-group-item wrap">
 						<table id="UserList" class="table table-hover" style="font-size: 0.8em;">
 							<thead>
-								<!--<th>Identificador</th>
-								<th>Usuario</th>-->
 								<th>Motivo</th>
 								<th>Cantidad</th>
 								<th>Fecha</th>
-								@if(Auth::admin()->check())
-									<th>Operaciones</th>
-								@endif
+							@if(Auth::admin()->check())
+								<th>Operaciones</th>
+							@endif
 							</thead>
-
-							@foreach($historialcoins as $hcoin)	
-
+						@foreach($historialcoins as $hcoin)	
 							<tbody>
-								<!--<td>{{$hcoin->user_id}}</td>
 								<td>{{$hcoin->nombre}}</td>-->
 								<td>{{$hcoin->motivo}}</td>
 								<td>{{$hcoin->cantidad}}</td>
 								<td id="date{{$hcoin->id}}" title="{{$hcoin->created_at}}" class="timeago"></td>
-								
-								@if(Auth::admin()->check())
-									<td>{!!link_to_route('coins.edit', $title = 'Editar', $parameters = $hcoin->id, $attributes = ['class'=>'', 'style' => 'color:#000;'])!!}</td>
-								@endif
-
+							@if(Auth::admin()->check())
+								<td>
+									{!!link_to_route('coins.edit', $title = 'Editar', $parameters = $hcoin->id, $attributes = ['class'=>'', 'style' => 'color:#000;'])!!}
+								</td>
+							@endif
 							</tbody>
-
-							@endforeach
-							
+						@endforeach
 						</table>	
-			
 					</div>
-
-
 					<a class="list-group-item list-group-item-info" href="#!"><small>CARGAR MÁS</small></a>
-					<!--
-					<div class="list-group-item list-group-item-info">
-						SALDO DE COINS
-					</div>
-					-->
 				</div>				
 			</div>			
          <div class="col-sm-4"><!--style="position:fixed;z-index:1000;"-->
-         
              <div class="list-group">
                  <div class="list-group-item-full-header">
                      <h6>INFORMACIÓN</h6>
@@ -73,10 +57,7 @@
                  </div>
              </div>
          </div>
-
 		</div>
-
-
 	</div>
 </div>
 @stop
@@ -87,7 +68,6 @@
 			var a = $(".timeago");
 			for(var i = 0; i < a.length ; i++){
 				var elemento = document.getElementById( a[i].id );
-
 				$('#'+a[i].id).text( humanTiming( elemento.title ) );
 			}		
 			Control = false;				
@@ -112,12 +92,25 @@
 	   //console.log(JSON.stringify(tokens[0][0])); //cantidad
 	   	var numberOfUnits = 0;
 		for(var i = 0, len = tokens.length; i < len; i++){
+
 			if (nowTime < tokens[i][0]) {	
 
 				if (tokens[i][1] === "día"){
 					numberOfUnits = nowTime/(tokens[i-1][0])*10;
+				}else{
+					//numberOfUnits = nowTime/(tokens[i-2][0])*10;
+					//console.log(tokens[i][1]+"/"+tokens[i][0]+"/"+numberOfUnits);
+					numberOfUnits = nowTime*tokens[i][0]*10;
+					//console.log(numberOfUnits);
 				}
-				if(Math.floor(numberOfUnits) >= 7 && Math.floor(numberOfUnits) < 30){
+
+				if(Math.floor(numberOfUnits) > 356 && tokens[i][1] === 'año'){
+					var anio = Math.floor((numberOfUnits/tokens[i][0]/12));
+					if ( anio === 0 ){ anio = 1; }
+					return "hace "+anio+" "+tokens[i][1]+((anio>1)?'s':'');
+
+				}else if(Math.floor(numberOfUnits) >= 30 && Math.floor(numberOfUnits) < 356){
+					return "hace "+Math.floor(numberOfUnits/12)+" "+tokens[i+3][1]+((Math.floor(numberOfUnits/12)>1)?'es':'');
 
 				}else if(Math.floor(numberOfUnits) >= 7 && Math.floor(numberOfUnits) < 30){
 					return "hace "+Math.floor(numberOfUnits/7)+" "+tokens[i+1][1]+((Math.floor(numberOfUnits/7)>1)?'s':'');
@@ -139,9 +132,9 @@
 
 					}
 				}	
-			}else{				
-				nowTime = Math.floor(nowTime/tokens[i][0]);				
+			}else{	
+				nowTime = Math.floor(nowTime/tokens[i][0]);					
 			}
 		}	    	
-	}	
+	}
 </script>

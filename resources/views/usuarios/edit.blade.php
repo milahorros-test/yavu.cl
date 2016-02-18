@@ -18,7 +18,6 @@
 							{!!Form::close()!!}				
 						</div>
 					</div>
-					
 					<div class="list-group-item">
 						<div class="form-group has-feedback has-feedback-left">
 							{!!Form::open(['action'=> ['UserController@destroy', $user->id], 'method'=>'DELETE'])!!}
@@ -26,7 +25,6 @@
 							{!!Form::close()!!}													
 						</div>	
 					</div>
-
 					<div class="list-group-item">
 						<h6>Información en tu perfil completa al:</h6>
 						<div class="progress">

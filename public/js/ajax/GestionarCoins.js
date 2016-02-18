@@ -37,7 +37,7 @@ $(document).ready(function(){
 		$.get(route, function(res){
 			$("#CantidadCoins").value = "";
 			$(res).each(function(key,value){
-				console.log(value.coins);
+				//console.log(value.coins);
 				if(parseInt(value.coins)>0){
 					$("#CantidadCoins").append(formatNumber.new(value.coins, "$ "));	
 				}

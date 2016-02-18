@@ -189,12 +189,25 @@ $(document).ready(function(){
 	   //console.log(JSON.stringify(tokens[0][0])); //cantidad
 	   	var numberOfUnits = 0;
 		for(var i = 0, len = tokens.length; i < len; i++){
+
 			if (nowTime < tokens[i][0]) {	
 
 				if (tokens[i][1] === "día"){
 					numberOfUnits = nowTime/(tokens[i-1][0])*10;
+				}else{
+					//numberOfUnits = nowTime/(tokens[i-2][0])*10;
+					//console.log(tokens[i][1]+"/"+tokens[i][0]+"/"+numberOfUnits);
+					numberOfUnits = nowTime*tokens[i][0]*10;
+					//console.log(numberOfUnits);
 				}
-				if(Math.floor(numberOfUnits) >= 7 && Math.floor(numberOfUnits) < 30){
+
+				if(Math.floor(numberOfUnits) > 356 && tokens[i][1] === 'año'){
+					var anio = Math.floor((numberOfUnits/tokens[i][0]/12));
+					if ( anio === 0 ){ anio = 1; }
+					return "hace "+anio+" "+tokens[i][1]+((anio>1)?'s':'');
+
+				}else if(Math.floor(numberOfUnits) >= 30 && Math.floor(numberOfUnits) < 356){
+					return "hace "+Math.floor(numberOfUnits/12)+" "+tokens[i+3][1]+((Math.floor(numberOfUnits/12)>1)?'es':'');
 
 				}else if(Math.floor(numberOfUnits) >= 7 && Math.floor(numberOfUnits) < 30){
 					return "hace "+Math.floor(numberOfUnits/7)+" "+tokens[i+1][1]+((Math.floor(numberOfUnits/7)>1)?'s':'');
@@ -216,8 +229,8 @@ $(document).ready(function(){
 
 					}
 				}	
-			}else{				
-				nowTime = Math.floor(nowTime/tokens[i][0]);				
+			}else{	
+				nowTime = Math.floor(nowTime/tokens[i][0]);					
 			}
 		}	    	
 	}
