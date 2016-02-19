@@ -33,10 +33,6 @@
         		Global_swap_notificaciones = true;
         	}
         	
-			
-			
-
-
 		});
 
 		$('#Mensajes, #CantidadMensajes').click(function(){
@@ -56,7 +52,6 @@
         		$('#Mensajes').popover('hide');	
         		Global_swap_mensajes = true;
         	}	
-
 
 		});
 

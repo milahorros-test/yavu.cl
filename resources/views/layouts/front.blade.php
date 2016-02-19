@@ -44,7 +44,7 @@
             <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand" href="/">Yavu</a>
-
+        @if(Auth::user()->check())
           <div class="navbar-brand">
             <a href="#!"> 
               <span id="Notificaciones" title="Notificaciones" data-toggle="popover" title="Popover title" data-placement="bottom"  class="glyphicon glyphicon-flash" style="font-size: 1em;" aria-hidden="true">
@@ -59,7 +59,7 @@
               </span>
             </a>
           </div>
-
+        @endif
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">                

@@ -208,6 +208,7 @@ $(document).ready(function(){
 		var now = new Date();
 		var nowTime = now.getTime()
 		nowTime = nowTime - Date.parse(time);
+		console.log(nowTime);
 	    var tokens = [
 	    	[1, 'segundo'],
 	    	[60, 'minuto'],
@@ -222,29 +223,59 @@ $(document).ready(function(){
 	   	var numberOfUnits = 0;
 		for(var i = 0, len = tokens.length; i < len; i++){
 			if (nowTime < tokens[i][0]) {	
-				if (tokens[i][1] === "día"){
+				
+
+
+				if (tokens[i][1] === 'día'){
 					numberOfUnits = nowTime/(tokens[i-1][0])*10;
-				}else{
+
+				}else if(tokens[i][1] === 'semana'){
 					numberOfUnits = nowTime*tokens[i][0]*10;
+
+				}else if(tokens[i][1] === 'mes'){
+
+					//numberOfUnits = nowTime*tokens[i+1][0]*10;
+					console.log(tokens[i][1]+"/"+tokens[i][0]+"/"+numberOfUnits+"/"+nowTime);
 				}
-				if(Math.floor(numberOfUnits) > 356 && tokens[i][1] === 'año'){
-					var anio = Math.floor((numberOfUnits/tokens[i][0]/12));
-					if ( anio === 0 ){ anio = 1; }
-					return "hace "+anio+" "+tokens[i][1]+((anio>1)?'s':'');
-				}else if(Math.floor(numberOfUnits) >= 30 && Math.floor(numberOfUnits) < 356){
-					return "hace "+Math.floor(numberOfUnits/12)+" "+tokens[i+3][1]+((Math.floor(numberOfUnits/12)>1)?'es':'');
-				}else if(Math.floor(numberOfUnits) >= 7 && Math.floor(numberOfUnits) < 30){
-					return "hace "+Math.floor(numberOfUnits/7)+" "+tokens[i+1][1]+((Math.floor(numberOfUnits/7)>1)?'s':'');
+
+				if(Math.floor(numberOfUnits) > 365 && tokens[i][1] === 'año'){
+					
+					//console.log(numberOfUnits+"//"+tokens[i][0]);
+					var mes = Math.floor(numberOfUnits/tokens[i][0]);
+
+					//console.log(mes+"//"+i+"//"+tokens[i][0]+"//"+numberOfUnits);
+
+					if ( mes === 0 ){ mes = 1; }
+					return "hace "+mes+" "+tokens[i][1]+((mes>1)?'s':'');
+
+				}else if(Math.floor(numberOfUnits) >= 31 && Math.floor(numberOfUnits) < 365){
+					var semana = Math.round(numberOfUnits/12);
+					return "hace "+semana+" "+tokens[i+1][1]+((semana>1)?'s':'');
+
+				}else if(Math.floor(numberOfUnits) >= 7 && Math.floor(numberOfUnits) < 31){
+					var dia = Math.round(numberOfUnits/7);
+					return "hace "+dia+" "+tokens[i+1][1]+((dia>1)?'s':'');
+
 				}else if(Math.floor(numberOfUnits) >= 1 && Math.floor(numberOfUnits) < 7){
-					return "hace "+Math.floor(numberOfUnits)+" "+tokens[i][1]+((Math.floor(numberOfUnits)>1)?'s':'');						
+					var hora = Math.floor(numberOfUnits);
+					return "hace "+hora+" "+tokens[i][1]+((hora>1)?'s':'');	
+
 				}else if(Math.floor(numberOfUnits) < 1){
+					//console.log(nowTime+"(nowTime)/"+i+"(i)/"+tokens[i][0]+"(cant)/"+tokens[i][1]+"(text)/");
+					//console.log(numberOfUnits+"/"+tokens[i][1]);
+
+
 					if (numberOfUnits > 0.0416 ){
-						return "hace "+Math.floor(24*numberOfUnits)+" "+tokens[i-1][1]+((Math.floor(24*numberOfUnits)>1)?'s':'');				
-					}else if(numberOfUnits < 0.0416 && numberOfUnits > 0.000693333 ){
+						var minuto = Math.floor(24*numberOfUnits);
+						return "hace "+minuto+" "+tokens[i-1][1]+((minuto>1)?'s':'');	
+
+					}else if(numberOfUnits < 0.0416 && numberOfUnits > 0.000693333 ){						
 						numberOfUnits = Math.floor(((numberOfUnits*100)/4.)*60);
 						return "hace "+numberOfUnits+" "+tokens[i-2][1]+((numberOfUnits>1)?'s':'');
+
 					}else if(numberOfUnits < 0.000293333 ){
 						return 'hace pocos minutos';
+
 					}
 				}	
 			}else{	

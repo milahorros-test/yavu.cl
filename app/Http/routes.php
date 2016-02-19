@@ -63,3 +63,7 @@ Route::resource('sorteos', 'SorteoController');
 /*Gestión de Admins*/
 Route::resource('admins','AdminController');
 /*Gestión de Admins*/
+
+/*Gestión de Notificaciones -> Pops*/
+Route::resource('pops', 'PopController');
+/*Gestión de Notificaciones -> Pops*/
