@@ -28,7 +28,6 @@
 							</thead>
 						@foreach($historialcoins as $hcoin)	
 							<tbody>
-								<td>{{$hcoin->nombre}}</td>-->
 								<td>{{$hcoin->motivo}}</td>
 								<td>{{$hcoin->cantidad}}</td>
 								<td id="date{{$hcoin->id}}" title="{{$hcoin->created_at}}" class="timeago"></td>

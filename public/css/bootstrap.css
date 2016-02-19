@@ -5879,7 +5879,7 @@ button.close {
   font-size: 14px;
   font-weight: normal;
   line-height: 1.42857143;
-  text-align: left;
+  text-align: center;
   white-space: normal;
   background-color: #fff;
   color: #000;
@@ -5891,23 +5891,12 @@ button.close {
   -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
           box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
 }
-@media (max-width: 700px) {
-  .popover { 
-    min-width: 100%;
-  }
-}
-@media (max-width: 500px) {
-  .popover { 
-    min-width: 100%;
-  }
-}
-@media (max-width: 300px) {
-  .popover { 
-    min-width: 100%;
-  }
-}
 
-
+@media (max-width: 767px) {
+  .popover { 
+    min-width: 100%;
+  }
+}
 
 .popover.top {
   margin-top: -10px;

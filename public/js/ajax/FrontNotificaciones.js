@@ -55,7 +55,7 @@
         	}else{
         		$('#Mensajes').popover('hide');	
         		Global_swap_mensajes = true;
-        	}
+        	}	
 
 
 		});
