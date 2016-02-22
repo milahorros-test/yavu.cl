@@ -19,18 +19,25 @@
 					<a href="#!" class="btn btn-primary btn-sm" id="BuscarEmpresa">Buscar</a>
 				</form>
 				<table id="EmpresaList" class="table table-hover">
-					<thead>
-						<th>Nombre</th>
-
-					</thead>
 					@foreach($empresas as $empresa)	
-					<tbody>
-						<td>{{$empresa->nombre}}</td>
 
-						
-					</tbody>
-					@endforeach
-				</table>	
+				  <div class="container" id="tourpackages-carousel">
+				      <div class="row">				        
+				        <div class="col-md-6">
+				          <div class="thumbnail">
+				            <img src="{!!URL::to('images/empresa.png')!!}" alt="">
+				              <div class="caption">
+				                <h4>{{$empresa->nombre}}</h4>
+				            </div>
+				            <h4>Descripcion empresa</h4>
+				            <h4>Mas info</h4>
+				          </div>
+				        </div>
+
+				@endforeach
+				</table>
+
+					
 			</div>
 		</div>
 		{!!$empresas->render()!!}
