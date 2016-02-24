@@ -20,6 +20,7 @@
           </tbody>
           @endforeach
         </table>  
+      {!!$servicios->render()!!}
   </div>
 </div>
 @stop

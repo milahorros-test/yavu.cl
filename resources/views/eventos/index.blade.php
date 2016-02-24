@@ -20,6 +20,7 @@
           </tbody>
           @endforeach
         </table>  
+      {!!$eventos->render()!!}
   </div>
 </div>
 @stop

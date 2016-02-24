@@ -20,6 +20,7 @@
           </tbody>
           @endforeach
         </table>  
+      {!!$pagos->render()!!}
   </div>
 </div>
 @stop

@@ -20,6 +20,7 @@
           </tbody>
           @endforeach
         </table>  
+      {!!$roles->render()!!}
   </div>
 </div>
 @stop
