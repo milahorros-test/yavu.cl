@@ -91,3 +91,7 @@ Route::resource('servicios', 'PopController');
 Route::resource('banners', 'BannerController');
 /*Gestión de Banners */
 
+/*Gestión de Categorías */
+Route::resource('categorias', 'CategoriaController');
+/*Gestión de Categorías */
+
