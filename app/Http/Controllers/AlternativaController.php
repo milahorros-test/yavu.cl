@@ -3,6 +3,8 @@ namespace yavu\Http\Controllers;
 use Illuminate\Http\Request;
 use yavu\Http\Requests;
 use yavu\Http\Controllers\Controller;
+use yavu\Http\Requests\AlternativaCreateRequest;
+use yavu\Http\Requests\AlternativaUpdateRequest;
 use yavu\Alternativa;
 use Session;
 use Auth;
@@ -15,7 +17,7 @@ class AlternativaController extends Controller
         $this->beforeFilter('@find', ['only' => ['edit', 'update', 'destroy']]);
     }
     public function find(Route $route){
-        $this->Alternativa = Alternativa::find($route->getParameter('alternativas'));
+        $this->alternativa = Alternativa::find($route->getParameter('alternativas'));
     }        
     public function index()
     {
@@ -27,6 +29,7 @@ class AlternativaController extends Controller
         return view('alternativas.create');
     }
     public function store(AlternativaCreateRequest $request)
+    {
         Alternativa::create($request->all());
         Session::flash('message', 'Alternativa creada correctamente');
         return Redirect::to('/alternativas');

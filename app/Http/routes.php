@@ -69,24 +69,29 @@ Route::resource('admins','AdminController');
 Route::resource('pops', 'PopController');
 /*Gestión de Notificaciones -> Pops*/
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 2fadd2de307a05be53426de0a4ead119d8e0bcbc
 
 
 /*Gestión de Encuestas*/
-Route::resource('encuestas', 'PopController');
+Route::resource('encuestas', 'EncuestaController');
 /*Gestión de Encuestas*/
 
 /*Gestión de Preguntas*/
-Route::resource('preguntas', 'PopController');
+Route::resource('preguntas', 'PreguntaController');
 /*Gestión de Preguntas*/
 
 /*Gestión de Alternativas*/
-Route::resource('alternativas', 'PopController');
+Route::resource('alternativas', 'AlternativaController');
 /*Gestión de Alternativas*/
 
 /*Gestión de Servicio*/
-Route::resource('servicios', 'PopController');
+Route::resource('servicios', 'ServicioController');
 /*Gestión de Servicio*/
 
+<<<<<<< HEAD
 /*Gestión de Banners */
 Route::resource('banners', 'BannerController');
 /*Gestión de Banners */
@@ -95,3 +100,17 @@ Route::resource('banners', 'BannerController');
 Route::resource('categorias', 'CategoriaController');
 /*Gestión de Categorías */
 
+=======
+/*Gestión de Pago*/
+Route::resource('Pagos', 'PagoController');
+/*Gestión de Pago*/
+
+/*Gestión de Beneficio*/
+Route::resource('Beneficios', 'BeneficioController');
+/*Gestión de Beneficio*/
+
+
+/*Gestión de Banners */
+Route::resource('banners', 'BannerController');
+/*Gestión de Banners */
+>>>>>>> 2fadd2de307a05be53426de0a4ead119d8e0bcbc

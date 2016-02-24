@@ -1,7 +1,7 @@
 <?php
 namespace yavu\Http\Requests;
 use yavu\Http\Requests\Request;
-class ServicioCreateRequest extends Request
+class BeneficioCreateRequest extends Request
 {
     public function authorize()
     {
@@ -10,8 +10,7 @@ class ServicioCreateRequest extends Request
     public function rules()
     {
         return [
-            'nombre' => 'required',
-            'descripcion' => 'required',
+            
         ];
     }
 }

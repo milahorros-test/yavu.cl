@@ -3,6 +3,8 @@ namespace yavu\Http\Controllers;
 use Illuminate\Http\Request;
 use yavu\Http\Requests;
 use yavu\Http\Controllers\Controller;
+use yavu\Http\Requests\EncuestaCreateRequest;
+use yavu\Http\Requests\EncuestaUpdateRequest;
 use yavu\Encuesta;
 use Session;
 use Auth;

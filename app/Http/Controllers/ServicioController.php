@@ -3,6 +3,8 @@ namespace yavu\Http\Controllers;
 use Illuminate\Http\Request;
 use yavu\Http\Requests;
 use yavu\Http\Controllers\Controller;
+use yavu\Http\Requests\ServicioCreateRequest;
+use yavu\Http\Requests\ServicioUpdateRequest;
 use yavu\Servicio;
 use Session;
 use Auth;
@@ -15,7 +17,7 @@ class ServicioController extends Controller
         $this->beforeFilter('@find', ['only' => ['edit', 'update', 'destroy']]);
     }
     public function find(Route $route){
-        $this->Servicio = Servicio::find($route->getParameter('servicios'));
+        $this->servicio = Servicio::find($route->getParameter('servicios'));
     }    
     public function index()
     {
