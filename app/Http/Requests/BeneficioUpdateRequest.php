@@ -10,7 +10,8 @@ class BeneficioUpdateRequest extends Request
     public function rules()
     {
         return [
-            
+	    	'nombre' => 'required',
+	    	'descripcion' => 'required'            
         ];
     }
 }

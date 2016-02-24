@@ -97,11 +97,11 @@ Route::resource('categorias', 'CategoriaController');
 
 
 /*Gestión de Pago*/
-Route::resource('Pagos', 'PagoController');
+Route::resource('pagos', 'PagoController');
 /*Gestión de Pago*/
 
 /*Gestión de Beneficio*/
-Route::resource('Beneficios', 'BeneficioController');
+Route::resource('beneficios', 'BeneficioController');
 /*Gestión de Beneficio*/
 
 
