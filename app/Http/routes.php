@@ -104,6 +104,13 @@ Route::resource('pagos', 'PagoController');
 Route::resource('beneficios', 'BeneficioController');
 /*Gestión de Beneficio*/
 
+/*Gestión de Role*/
+Route::resource('roles', 'RoleController');
+/*Gestión de Role*/
+
+/*Gestión de Evento*/
+Route::resource('eventos', 'EventoController');
+/*Gestión de Evento*/
 
 /*Gestión de Banners */
 Route::resource('banners', 'BannerController');
