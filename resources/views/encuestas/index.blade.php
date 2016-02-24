@@ -6,9 +6,6 @@
     @include('alerts.errorsMessage')
     @include('alerts.successMessage')
     @include('alerts.warningMessage') 
-    <div class="panel panel-default">
-      <div class="panel-heading"></div>
-      <div class="panel-body">
         <table class="table">
           <thead>
             <th>Nombre</th>
@@ -25,11 +22,7 @@
           </tbody>
           @endforeach
         </table>  
-        </div>
-      </div>    
   </div>
 </div>
-
-
 @stop
 

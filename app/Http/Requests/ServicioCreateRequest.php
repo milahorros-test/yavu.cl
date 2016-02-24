@@ -12,5 +12,6 @@ class ServicioCreateRequest extends Request
         return [
             'nombre' => 'required',
             'descripcion' => 'required',
+        ];
     }
 }

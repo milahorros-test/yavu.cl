@@ -17,7 +17,7 @@ class ServicioController extends Controller
         $this->beforeFilter('@find', ['only' => ['edit', 'update', 'destroy']]);
     }
     public function find(Route $route){
-        $this->Servicio = Servicio::find($route->getParameter('servicios'));
+        $this->servicio = Servicio::find($route->getParameter('servicios'));
     }    
     public function index()
     {
