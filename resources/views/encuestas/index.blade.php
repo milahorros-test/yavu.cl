@@ -12,22 +12,20 @@
         <table class="table">
           <thead>
             <th>Nombre</th>
+            <th>Título</th>
             <th>Descripcion</th>
-            <th>Fecha</th>
-            <th>Estado</th>
+            <th>Operaciones</th>
           </thead>
-          @foreach($sorteos as $sorteo) 
+          @foreach($encuestas as $encuesta) 
           <tbody>
-            <td>{{$sorteo->nombre_sorteo}}</td>
-            <td>{{$sorteo->descripcion}}</td>
-            <td>{{$sorteo->fecha_inicio_sorteo}}</td>            
-            <td>{{$sorteo->estado_sorteo}}</td>
-            <td>{!!link_to_route('sorteos.edit', $title = 'Editar', $parameters = $sorteo->id, $attributes = ['class'=>'btn btn-primary'])!!}</td>
+            <td>{{$encuesta->nombre}}</td>
+            <td>{{$encuesta->titulo}}</td>
+            <td>{{$encuesta->descripcion}}</td>            
+            <td>{!!link_to_route('encuestas.edit', $title = 'Editar', $parameters = $encuesta->id, $attributes = ['class'=>'btn btn-primary'])!!}</td>
           </tbody>
           @endforeach
         </table>  
-
-      </div>
+        </div>
       </div>    
   </div>
 </div>

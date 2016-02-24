@@ -3,6 +3,8 @@ namespace yavu\Http\Controllers;
 use Illuminate\Http\Request;
 use yavu\Http\Requests;
 use yavu\Http\Controllers\Controller;
+use yavu\Http\Requests\AlternativaCreateRequest;
+use yavu\Http\Requests\AlternativaUpdateRequest;
 use yavu\Alternativa;
 use Session;
 use Auth;
