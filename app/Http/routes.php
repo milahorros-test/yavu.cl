@@ -68,3 +68,22 @@ Route::resource('admins','AdminController');
 /*Gestión de Notificaciones -> Pops*/
 Route::resource('pops', 'PopController');
 /*Gestión de Notificaciones -> Pops*/
+
+
+
+
+/*Gestión de Encuestas*/
+Route::resource('encuestas', 'PopController');
+/*Gestión de Encuestas*/
+
+/*Gestión de Preguntas*/
+Route::resource('preguntas', 'PopController');
+/*Gestión de Preguntas*/
+
+/*Gestión de Alternativas*/
+Route::resource('alternativas', 'PopController');
+/*Gestión de Alternativas*/
+
+/*Gestión de Servicio*/
+Route::resource('servicios', 'PopController');
+/*Gestión de Servicio*/
