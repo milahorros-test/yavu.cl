@@ -70,5 +70,5 @@ Route::resource('pops', 'PopController');
 /*Gestión de Notificaciones -> Pops*/
 
 /*Gestión de Banners */
-Route::resource('banner', 'BannerController');
+Route::resource('banners', 'BannerController');
 /*Gestión de Banners */
