@@ -70,8 +70,6 @@ Route::resource('pops', 'PopController');
 /*Gestión de Notificaciones -> Pops*/
 
 
-
-
 /*Gestión de Encuestas*/
 Route::resource('encuestas', 'EncuestaController');
 /*Gestión de Encuestas*/
@@ -88,6 +86,16 @@ Route::resource('alternativas', 'AlternativaController');
 Route::resource('servicios', 'ServicioController');
 /*Gestión de Servicio*/
 
+
+/*Gestión de Banners */
+Route::resource('banners', 'BannerController');
+/*Gestión de Banners */
+
+/*Gestión de Categorías */
+Route::resource('categorias', 'CategoriaController');
+/*Gestión de Categorías */
+
+
 /*Gestión de Pago*/
 Route::resource('pagos', 'PagoController');
 /*Gestión de Pago*/
@@ -100,3 +108,4 @@ Route::resource('beneficios', 'BeneficioController');
 /*Gestión de Banners */
 Route::resource('banners', 'BannerController');
 /*Gestión de Banners */
+

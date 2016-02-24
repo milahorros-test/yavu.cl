@@ -58,6 +58,8 @@ class BannerController extends Controller
     }
     public function destroy($id)
     {
-
+        $this->banner->delete();
+        Session::flash('message', 'banner eliminado correctamente');
+        return Redirect::to('/banners');
     }
 }

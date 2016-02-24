@@ -5,8 +5,8 @@
 		</div>
 		<div class="list-group-item">
 			<div class="form-group has-feedback has-feedback-left">
-				{!!Form::label('Nombre del banner:')!!}
-				{!!Form::text('banner_empresa',null,['class'=>'form-control','placeholder'=>'Ingrese el nombre del banner'])!!}
+				{!!Form::label('Nombre del categoria:')!!}
+				{!!Form::text('nombre_categoria',null,['class'=>'form-control','placeholder'=>'Ingrese el nombre de la categoria'])!!}
 			</div>
 
 
@@ -42,7 +42,7 @@
 					$selected = null, ['class' => 'form-control']) 
 				!!}	
 
-			</div>
+			</div> 
 
 				@endif 
 
