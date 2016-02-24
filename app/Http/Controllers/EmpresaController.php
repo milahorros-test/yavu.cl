@@ -96,6 +96,15 @@ class EmpresaController extends Controller
     );
   }   
 
+  public function searchcat()
+{
+    $categories = \Input::get('categories');
+
+    $vacancies = \Vacancy::whereIn('category_id', $categories)->get();
+
+    return \View::make('vacancies.empty')->with('vacancies', $vacancies); 
+}
+
   public function destroy($id)
   {
       $this->empresa->delete();

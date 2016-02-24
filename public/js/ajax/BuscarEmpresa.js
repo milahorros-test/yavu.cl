@@ -40,3 +40,16 @@
 	}	
 	/*FUNCIONES Y PROCEDIMIENTOS*/
 });
+
+ /* FUNCION DE FILTRO */
+ 
+$(document).ready(function () {
+            $('.results > li').hide();
+
+            $('div.tags').find('input:checkbox').click(function () {
+                $('.results > li').hide();
+                $('div.tags').find('input:checked').each(function () {
+                    $('.results > li.' + $(this).attr('rel')).show();
+                });
+            });
+        });    
