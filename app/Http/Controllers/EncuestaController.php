@@ -1,87 +1,56 @@
 <?php
-
 namespace yavu\Http\Controllers;
-
 use Illuminate\Http\Request;
-
 use yavu\Http\Requests;
 use yavu\Http\Controllers\Controller;
-
+use yavu\Encuesta;
+use Session;
+use Auth;
+use Redirect;
+use Illuminate\Routing\Route;
+use DB;
 class EncuestaController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public function __construct(){
+        $this->beforeFilter('@find', ['only' => ['edit', 'update', 'destroy']]);
+    }
+    public function find(Route $route){
+        $this->encuesta = Encuesta::find($route->getParameter('encuestas'));
+    }    
     public function index()
     {
-        //
+        $encuestas = Encuesta::paginate(5);
+        return view('encuestas.index', compact('encuestas'));
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        return view('encuestas.create');
     }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function store(EncuestaCreateRequest $request)
     {
-        //
+        Encuesta::create($request->all());
+        Session::flash('message', 'Encuesta creada correctamente');
+        return Redirect::to('/encuestas');
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
-        //
-    }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    }
     public function edit($id)
     {
-        //
+        return view('encuestas.edit', ['encuesta' => $this->encuesta]);
     }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    public function update(EncuestaUpdateRequest $request, $id)
     {
-        //
+        $this->encuesta->fill($request->all());
+        $this->encuesta->save();
+        Session::flash('message', 'Encuesta editada correctamente');
+        return Redirect::to('/encuestas');
     }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
-        //
+        $this->encuesta->delete();
+        Session::flash('message', 'Encuesta eliminada correctamente');
+        return Redirect::to('/encuestas');
     }
 }

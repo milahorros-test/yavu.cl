@@ -1,87 +1,56 @@
 <?php
-
 namespace yavu\Http\Controllers;
-
 use Illuminate\Http\Request;
-
 use yavu\Http\Requests;
 use yavu\Http\Controllers\Controller;
-
+use yavu\Servicio;
+use Session;
+use Auth;
+use Redirect;
+use Illuminate\Routing\Route;
+use DB;
 class ServicioController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public function __construct(){
+        $this->beforeFilter('@find', ['only' => ['edit', 'update', 'destroy']]);
+    }
+    public function find(Route $route){
+        $this->Servicio = Servicio::find($route->getParameter('servicios'));
+    }    
     public function index()
     {
-        //
+        $servicios = Servicio::paginate(5);
+        return view('servicios.index', compact('servicios'));
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        return view('servicios.create');
     }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function store(ServicioCreateRequest $request)
     {
-        //
+        Servicio::create($request->all());
+        Session::flash('message', 'Servicio creado correctamente');
+        return Redirect::to('/servicios');  
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
-        //
+        
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
-        //
+        return view('servicios.edit', ['servicio' => $this->servicio]);
     }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    public function update(ServicioUpdateRequest $request, $id)
     {
-        //
+        $this->servicio->fill($request->all());
+        $this->servicio->save();
+        Session::flash('message', 'Servicio editado correctamente');
+        return Redirect::to('/servicios');        
     }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
-        //
+        $this->servicio->delete();
+        Session::flash('message', 'Servicio eliminado correctamente');
+        return Redirect::to('/servicios');
     }
 }

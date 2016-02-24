@@ -1,87 +1,56 @@
 <?php
-
 namespace yavu\Http\Controllers;
-
 use Illuminate\Http\Request;
-
 use yavu\Http\Requests;
 use yavu\Http\Controllers\Controller;
-
+use yavu\Pregunta;
+use Session;
+use Auth;
+use Redirect;
+use Illuminate\Routing\Route;
+use DB;
 class PreguntaController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public function __construct(){
+        $this->beforeFilter('@find', ['only' => ['edit', 'update', 'destroy']]);
+    }
+    public function find(Route $route){
+        $this->pregunta = Pregunta::find($route->getParameter('preguntas'));
+    }        
     public function index()
     {
-        //
+        $preguntas = Pregunta::paginate(5);
+        return view('preguntas.index', compact('preguntas'));
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        return view('preguntas.create');        
     }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function store(PreguntaCreateRequest $request)
     {
-        //
+        Pregunta::create($request->all());
+        Session::flash('message', 'Pregunta creada correctamente');
+        return Redirect::to('/preguntas');        
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
-        //
+                
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
-        //
+        return view('preguntas.edit', ['pregunta' => $this->pregunta]);      
     }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    public function update(PreguntaUpdateRequest $request, $id)
     {
-        //
+        $this->pregunta->fill($request->all());
+        $this->pregunta->save();
+        Session::flash('message', 'Pregunta editada correctamente');
+        return Redirect::to('/preguntas');       
     }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
-        //
+        $this->pregunta->delete();
+        Session::flash('message', 'Pregunta eliminada correctamente');
+        return Redirect::to('/preguntas');       
     }
 }
