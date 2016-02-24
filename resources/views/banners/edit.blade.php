@@ -3,13 +3,13 @@
 <div class="jumbotron">
 	<div id="contentIn">
 		@include('alerts.alertFields')
-		<h4>Actualización de administrador : {{$admin->nombre .' '. $admin->apellido}}</h4>
+		
 		<div class="panel panel-default">
-			<div class="panel-heading"><h4>Mantenedor de administradores</h4></div>
+			<div class="panel-heading"><h4>Mantenedor de banners</h4></div>
 			<div class="panel-body">
 				<table class="table">
-					{!!Form::model($admin, ['method'=>'PUT', 'route' => ['admins.update', $admin->id] ])!!}
-						@include('admins.forms.fieldsAdmin')
+					{!!Form::model($sorteo, ['method'=>'PUT', 'route' => ['banners.update', $sorteo->id] ])!!}
+						@include('banners.forms.fieldsBanner')
 						<tr>
 							<td>
 								Guardar o Eliminar
@@ -19,7 +19,7 @@
 								{!!Form::close()!!}	
 							</td>
 							<td>
-								{!!Form::open(['action'=> ['AdminController@destroy', $admin->id], 'method'=>'DELETE'])!!}
+								{!!Form::open(['action'=> ['BannerController@destroy', $sorteo->id], 'method'=>'DELETE'])!!}
 								{!!Form::submit('Eliminar', ['class'=>'btn btn-primary btn-danger']) !!}﻿
 								{!!Form::close()!!}				
 							</td>	

@@ -11,7 +11,8 @@ class CreateBannersTable extends Migration
             $table->string('banner_empresa', 200)->unique();
             $table->string('enlace_empresa', 100);
             $table->string('imagen_empresa', 100);   
-            $table->string('comentario_banner', 100);          
+            $table->string('comentario_banner', 100);   
+            $table->string('estado_banner',30);       
             $table->rememberToken();
             $table->timestamps();
         });
