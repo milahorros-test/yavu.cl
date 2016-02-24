@@ -1,30 +1,20 @@
 <?php
-
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-
 class CreateAlternativasTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::create('alternativas', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('encuesta_id');
+            $table->integer('pregunta_id');
+            $table->string('alternativa');
             $table->timestamps();
         });
     }
-
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
-        Schema::drop('alternativas');
+        Schema::dropIfExists('alternativas');
     }
 }
