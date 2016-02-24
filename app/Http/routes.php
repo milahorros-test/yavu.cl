@@ -68,3 +68,7 @@ Route::resource('admins','AdminController');
 /*Gestión de Notificaciones -> Pops*/
 Route::resource('pops', 'PopController');
 /*Gestión de Notificaciones -> Pops*/
+
+/*Gestión de Banners */
+Route::resource('banner', 'BannerController');
+/*Gestión de Banners */
