@@ -69,6 +69,27 @@ Route::resource('admins','AdminController');
 Route::resource('pops', 'PopController');
 /*Gestión de Notificaciones -> Pops*/
 
+<<<<<<< HEAD
+
+
+
+/*Gestión de Encuestas*/
+Route::resource('encuestas', 'PopController');
+/*Gestión de Encuestas*/
+
+/*Gestión de Preguntas*/
+Route::resource('preguntas', 'PopController');
+/*Gestión de Preguntas*/
+
+/*Gestión de Alternativas*/
+Route::resource('alternativas', 'PopController');
+/*Gestión de Alternativas*/
+
+/*Gestión de Servicio*/
+Route::resource('servicios', 'PopController');
+/*Gestión de Servicio*/
+=======
 /*Gestión de Banners */
 Route::resource('banners', 'BannerController');
 /*Gestión de Banners */
+>>>>>>> 272ac936b2bb403da8665b4f373cb8eeccdc6125

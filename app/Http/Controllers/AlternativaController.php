@@ -1,87 +1,55 @@
 <?php
-
 namespace yavu\Http\Controllers;
-
 use Illuminate\Http\Request;
-
 use yavu\Http\Requests;
 use yavu\Http\Controllers\Controller;
-
+use yavu\Alternativa;
+use Session;
+use Auth;
+use Redirect;
+use Illuminate\Routing\Route;
+use DB;
 class AlternativaController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public function __construct(){
+        $this->beforeFilter('@find', ['only' => ['edit', 'update', 'destroy']]);
+    }
+    public function find(Route $route){
+        $this->Alternativa = Alternativa::find($route->getParameter('alternativas'));
+    }        
     public function index()
     {
-        //
+        $alternativas = Alternativa::paginate(5);
+        return view('alternativas.index', compact('alternativas'));
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        return view('alternativas.create');
     }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
+    public function store(AlternativaCreateRequest $request)
+        Alternativa::create($request->all());
+        Session::flash('message', 'Alternativa creada correctamente');
+        return Redirect::to('/alternativas');
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
-        //
+        
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
-        //
+        return view('alternativas.edit', ['alternativa' => $this->alternativa]);
     }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    public function update(AlternativaUpdateRequest $request, $id)
     {
-        //
+        $this->alternativa->fill($request->all());
+        $this->alternativa->save();
+        Session::flash('message', 'Alternativa editada correctamente');
+        return Redirect::to('/alternativas');
     }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
-        //
+        $this->alternativa->delete();
+        Session::flash('message', 'Alternativa eliminada correctamente');
+        return Redirect::to('/alternativas');
     }
 }
