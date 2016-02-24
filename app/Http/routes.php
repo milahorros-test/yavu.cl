@@ -88,6 +88,14 @@ Route::resource('alternativas', 'AlternativaController');
 Route::resource('servicios', 'ServicioController');
 /*Gestión de Servicio*/
 
+/*Gestión de Pago*/
+Route::resource('Pagos', 'PagoController');
+/*Gestión de Pago*/
+
+/*Gestión de Beneficio*/
+Route::resource('Beneficios', 'BeneficioController');
+/*Gestión de Beneficio*/
+
 
 /*Gestión de Banners */
 Route::resource('banners', 'BannerController');
