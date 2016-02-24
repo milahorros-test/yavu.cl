@@ -22,6 +22,7 @@
           </tbody>
           @endforeach
         </table>  
+      {!!$encuestas->render()!!}
   </div>
 </div>
 @stop

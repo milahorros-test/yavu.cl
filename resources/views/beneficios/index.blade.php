@@ -20,6 +20,7 @@
           </tbody>
           @endforeach
         </table>  
+      {!!$beneficios->render()!!}
   </div>
 </div>
 @stop

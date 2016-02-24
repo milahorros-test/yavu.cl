@@ -21,6 +21,7 @@
           </tbody>
           @endforeach
         </table>  
+      {!!$alternativas->render()!!}
   </div>
 </div>
 @stop

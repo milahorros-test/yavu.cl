@@ -21,6 +21,7 @@
           </tbody>
           @endforeach
         </table>  
+      {!!$preguntas->render()!!}
   </div>
 </div>
 @stop

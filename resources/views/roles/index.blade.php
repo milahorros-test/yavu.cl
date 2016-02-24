@@ -8,19 +8,19 @@
     @include('alerts.warningMessage') 
         <table class="table">
           <thead>
-            <th>Id Usuario</th>
+            <th>Nombre</th>
             <th>Descripcion</th>
             <th>Operaciones</th>
           </thead>
-          @foreach($pagos as $pago) 
+          @foreach($roles as $role) 
           <tbody>
-            <td>{{$pago->user_id}}</td>
-            <td>{{$pago->descripcion}}</td>            
-            <td>{!!link_to_route('pagos.edit', $title = 'Editar', $parameters = $pago->id, $attributes = ['class'=>'btn btn-primary'])!!}</td>
+            <td>{{$role->nombre}}</td>
+            <td>{{$role->descripcion}}</td>            
+            <td>{!!link_to_route('roles.edit', $title = 'Editar', $parameters = $role->id, $attributes = ['class'=>'btn btn-primary'])!!}</td>
           </tbody>
           @endforeach
         </table>  
-      {!!$pagos->render()!!}
+      {!!$roles->render()!!}
   </div>
 </div>
 @stop
