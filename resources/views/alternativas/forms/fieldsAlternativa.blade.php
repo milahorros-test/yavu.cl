@@ -6,15 +6,15 @@
 		<div class="list-group-item">			
 			<div class="form-group has-feedback has-feedback-left">
 				{!!Form::label('Id Encuesta:')!!}
-				{!!Form::text('encuesta_id',null,['class'=>'form-control','placeholder'=>'Ingrese el nombre de la encuesta',])!!}
+				{!!Form::text('encuesta_id',null,['class'=>'form-control','placeholder'=>'Ingrese el id de la encuesta'])!!}
 			</div>
 			<div class="form-group has-feedback has-feedback-left">
 				{!!Form::label('Id Pregunta:')!!}
-				{!!Form::text('pregunta_id',null,['class'=>'form-control','placeholder'=>'Ingrese el nombre de la encuesta',])!!}
+				{!!Form::text('pregunta_id',null,['class'=>'form-control','placeholder'=>'Ingrese el id de la pregunta'])!!}
 			</div>			
 			<div class="form-group has-feedback has-feedback-left">
 				{!!Form::label('Alternativa:')!!}
-				{!!Form::text('alternativa',null,['class'=>'form-control','placeholder'=>'Ingrese el titulo de la encuesta',])!!}
+				{!!Form::text('alternativa',null,['class'=>'form-control','placeholder'=>'Ingrese contenido de la alternativa'])!!}
 			</div>		
 
 		</div>
