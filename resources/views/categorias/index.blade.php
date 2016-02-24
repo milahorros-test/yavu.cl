@@ -8,7 +8,7 @@
 		@include('alerts.warningMessage')
 		<h2>Panel de administración</h2>		
 		<div class="panel panel-default">
-			<div class="panel-heading"><h4>Mantenedor de banner</h4></div>
+			<div class="panel-heading"><h4>Mantenedor de categoria</h4></div>
 			<div class="panel-body">
 				<table class="table">
 
@@ -17,19 +17,15 @@
 					</form>
 				
 					<thead>
-						<th>Nombre Banner</th>
-						<th>Enlace</th>
-						<th>Imagen</th>
-						<th>Comentario</th>
-					</thead>
-					@foreach($banners as $banner)	
-					<tbody>
-						<td>{{$banner->banner_empresa}}</td>
-						<td>{{$banner->enlace_empresa}}</td>
-						<td>{{$banner->imagen_empresa}}</td>
-						<td>{{$banner->comentario_banner}}</td>
+						<th>Nombre Categoria</th>
 
-						<td>{!!link_to_route('banners.edit', $title = 'Editar', $parameters = $banner->id, $attributes = ['class'=>'btn btn-primary'])!!}
+					</thead>
+					@foreach($categorias as $categoria)	
+					<tbody>
+						<td>{{$categoria->nombre_categoria}}</td>
+>
+
+						<td>{!!link_to_route('categorias.edit', $title = 'Editar', $parameters = $categoria->id, $attributes = ['class'=>'btn btn-primary'])!!}
 						
 						</td>
 

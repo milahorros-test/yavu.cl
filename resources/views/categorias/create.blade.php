@@ -3,10 +3,10 @@
 <div class="jumbotron">
 	<div id="contentMiddle">
 		@include('alerts.alertFields')
-		<h4>Solicitar Banner </h4>
+		<h4>Ingresar Categoria </h4>
 		<div class="row">
-			{!!Form::open(['route'=>'banners.store', 'method'=>'POST'])!!}
-			@include('banners.forms.fieldsBanner')
+			{!!Form::open(['route'=>'categorias.store', 'method'=>'POST'])!!}
+			@include('categorias.forms.fieldsCategoria')
 				<div class="list-group">
 					<div class="list-group-item">
 						<h4>Todos los campos son requeridos</h4>
