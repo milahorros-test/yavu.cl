@@ -1,87 +1,58 @@
 <?php
-
 namespace yavu\Http\Controllers;
-
 use Illuminate\Http\Request;
-
 use yavu\Http\Requests;
 use yavu\Http\Controllers\Controller;
-
+use yavu\Http\Requests\BeneficioCreateRequest;
+use yavu\Http\Requests\BeneficioUpdateRequest;
+use yavu\Beneficio;
+use Session;
+use Auth;
+use Redirect;
+use Illuminate\Routing\Route;
+use DB;
 class BeneficioController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public function __construct(){
+        $this->beforeFilter('@find', ['only' => ['edit', 'update', 'destroy']]);
+    }
+    public function find(Route $route){
+        $this->beneficio = Beneficio::find($route->getParameter('beneficios'));
+    }      
     public function index()
     {
-        //
+        $beneficios = Beneficio::paginate(5);
+        return view('beneficios.index', compact('beneficios'));        
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        return view('beneficios.create');
     }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function store(BeneficioCreateRequest $request)
     {
-        //
+        Beneficio::create($request->all());
+        Session::flash('message', 'Beneficio creado correctamente');
+        return Redirect::to('/beneficios');
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
-        //
+        
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
-        //
+        return view('beneficios.edit', ['beneficio' => $this->beneficio]);
     }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    public function update(BeneficioUpdateRequest $request, $id)
     {
-        //
+        $this->beneficio->fill($request->all());
+        $this->beneficio->save();
+        Session::flash('message', 'Beneficio editado correctamente');
+        return Redirect::to('/beneficios');
     }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
-        //
+        $this->beneficio->delete();
+        Session::flash('message', 'Beneficio eliminado correctamente');
+        return Redirect::to('/beneficios');
     }
 }
