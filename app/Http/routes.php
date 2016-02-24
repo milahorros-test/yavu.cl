@@ -95,7 +95,6 @@ Route::resource('banners', 'BannerController');
 Route::resource('categorias', 'CategoriaController');
 /*Gestión de Categorías */
 
-
 /*Gestión de Pago*/
 Route::resource('pagos', 'PagoController');
 /*Gestión de Pago*/

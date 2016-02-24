@@ -17,13 +17,14 @@
 					</form>
 				
 					<thead>
-						<th>Nombre Categoria</th>
-
+						<th>Nombre categoria</th>
+						<th>Tipo Categoria</th>
 					</thead>
 					@foreach($categorias as $categoria)	
 					<tbody>
 						<td>{{$categoria->nombre_categoria}}</td>
 						<td>{{$categoria->tipo_categoria}}</td>
+
 
 						<td>{!!link_to_route('categorias.edit', $title = 'Editar', $parameters = $categoria->id, $attributes = ['class'=>'btn btn-primary'])!!}
 						

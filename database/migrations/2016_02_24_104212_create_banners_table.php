@@ -8,7 +8,7 @@ class CreateBannersTable extends Migration
         Schema::dropIfExists('banners');
         Schema::create('banners', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('banner_empresa', 200)->unique();
+            $table->string('banner_empresa', 200);
             $table->string('enlace_empresa', 100);
             $table->string('imagen_empresa', 100);   
             $table->string('comentario_banner', 100);   
