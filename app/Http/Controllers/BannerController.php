@@ -9,6 +9,7 @@ use yavu\Banner;
 use Auth;
 use Illuminate\Routing\Route;
 use DB;
+
 class BannerController extends Controller
 {
     public function __construct(){
@@ -19,29 +20,41 @@ class BannerController extends Controller
         //return $this->user;   
     }         
     public function index()
-    {
+    {   
         
-        return view('banners.index');
+        $banners = Banner::all();
+        return view('banners.index', compact('banners'));
+
     }
     public function create()
     {
-
+        return view('banners.create');
     }
+
     public function store(Request $request)
     {
-
+        Banner::create($request->all());
+        Session::flash('message', 'Banner creado correctamente');
+    return Redirect::to('/banners/create');
     }
     public function show($id)
     {
 
     }
-    public function edit($id)
-    {
+     public function edit($id)
 
+    {           
+        return view('banners.edit', ['banner' => $this->banner]); 
     }
-    public function update(Request $request, $id)
+
+    public function update(BannerUpdateRequest $request, $id)
+
     {
 
+        $this->banner->fill($request->all());
+        $this->banner->save();
+        Session::flash('message', 'banner validado correctamente');
+        return Redirect::to('/banners');
     }
     public function destroy($id)
     {
