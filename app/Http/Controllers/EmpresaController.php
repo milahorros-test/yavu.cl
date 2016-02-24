@@ -81,7 +81,20 @@ class EmpresaController extends Controller
       $empresas = Empresa::nombre($request->get('nombre'))->orderBy('id', 'DESC')->paginate();
 
     return view('listaempresas', compact('empresas'));      
-    } 
+    }
+
+   public function BuscarEmpresas($nombre){
+    $usuarios = DB::table('empresas')                    
+                ->select('*')    
+                ->where('nombre', 'like', '%'.$nombre.'%')   
+                ->orderBy('created_at','desc')   
+                ->get();
+
+    //dd($usuarios);
+    return response()->json(
+        $usuarios
+    );
+  }   
 
   public function destroy($id)
   {

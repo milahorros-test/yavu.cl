@@ -1,28 +1,25 @@
-@extends('layouts.front')	
+{!!Html::script('js/jquery.js')!!}
+{!!Html::script('js/ajax/BuscarEmpresa.js')!!}
+@extends('layouts.front')
 @section('content')
 <div class="jumbotron">
-	<div id="contentIn">
+	<div id="contentMiddle">
 		@include('alerts.alertFields')
 		@include('alerts.errorsMessage')
 		@include('alerts.successMessage')
 		@include('alerts.warningMessage')
-			
+		<h2>Panel de administración</h2>		
 		<div class="panel panel-default">
-			<div class="panel-heading"><h4>Empresas Asociadas!</h4></div>
+			<div class="panel-heading"><h4>Mantenedor de empresas</h4></div>
 			<div class="panel-body">
-				<table class="table">
-
-					
-					{!!Form::open(['action' => 'EmpresaController@ListaEmpresas', 'method' => 'GET', 'class' => 'navbar-form navbar-left pull-right', 'role' => 'search' ])!!}
-  						<div class="form-group">
-  								
-   					{!!Form::text('nombre',null,['class' => 'form-control', 'placeholder' => 'Nombre de empresa',])!!}
-   					
-
-  						</div>
- 						 <button type="submit" class="btn btn-default">Buscar</button>				
-
-				@foreach($empresas as $empresa)	
+				<form class="">
+					<div class="form-group">
+						{!!Form::text('nombre',null,['class'=>'form-control','placeholder'=>'buscar...','id'=>'empresa'])!!}
+					</div>
+					<a href="#!" class="btn btn-primary btn-sm" id="BuscarEmpresa">Buscar</a>
+				</form>
+				<table id="EmpresaList" class="table table-hover">
+					@foreach($empresas as $empresa)	
 
 				  <div class="container" id="tourpackages-carousel">
 				      <div class="row">				        
@@ -38,9 +35,11 @@
 				        </div>
 
 				@endforeach
-				</table>	
+				</table>
+
+					
 			</div>
-		</div>	
+		</div>
 		{!!$empresas->render()!!}
 	</div>
 </div>
