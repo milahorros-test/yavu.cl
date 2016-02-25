@@ -1,87 +1,58 @@
 <?php
-
 namespace yavu\Http\Controllers;
-
 use Illuminate\Http\Request;
-
 use yavu\Http\Requests;
 use yavu\Http\Controllers\Controller;
-
+use yavu\Http\Requests\IteraccionCreateRequest;
+use yavu\Http\Requests\IteraccionUpdateRequest;
+use yavu\Interaccion;
+use Session;
+use Auth;
+use Redirect;
+use Illuminate\Routing\Route;
+use DB;
 class InteraccionController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public function __construct(){
+        $this->beforeFilter('@find', ['only' => ['edit', 'update', 'destroy']]);
+    }
+    public function find(Route $route){
+        $this->interaccion = Interaccion::find($route->getParameter('interacciones'));
+    }      
     public function index()
     {
-        //
+        $eventos = Evento::paginate(5);
+        return view('eventos.index', compact('eventos')); 
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        return view('eventos.create');
     }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function store(EventoCreateRequest $request)
     {
-        //
+        Evento::create($request->all());
+        Session::flash('message', 'Evento creado correctamente');
+        return Redirect::to('/eventos'); 
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
-        //
+        
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
-        //
+        return view('eventos.edit', ['evento' => $this->evento]);
     }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    public function update(EventoUpdateRequest $request, $id)
     {
-        //
+        $this->evento->fill($request->all());
+        $this->evento->save();
+        Session::flash('message', 'Evento editado correctamente');
+        return Redirect::to('/eventos');
     }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
-        //
+        $this->evento->delete();
+        Session::flash('message', 'Evento eliminado correctamente');
+        return Redirect::to('/eventos');
     }
 }
