@@ -3,10 +3,10 @@
 <div class="jumbotron">
 	<div id="contentMiddle">
 		@include('alerts.alertFields')
-		<h4>Crear un nuevo evento</h4>
+		<h4>Crear una nueva Interaccion</h4>
 		<div class="row">
-			{!!Form::open(['route'=>'eventos.store', 'method'=>'POST'])!!}
-			@include('eventos.forms.fieldsEvento')
+			{!!Form::open(['route'=>'interacciones.store', 'method'=>'POST'])!!}
+			@include('interacciones.forms.fieldsInteraccion')
 				<div class="list-group">
 					<div class="list-group-item">
 						<h4>Todos los campos son requeridos</h4>

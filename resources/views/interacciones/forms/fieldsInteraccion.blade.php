@@ -6,11 +6,11 @@
 		<div class="list-group-item">	
 			<div class="form-group has-feedback has-feedback-left">
 				{!!Form::label('Nombre:')!!}
-				{!!Form::text('nombre',null,['class'=>'form-control','placeholder'=>'Ingrese el nombre del evento'])!!}
+				{!!Form::text('nombre_interaccion',null,['class'=>'form-control','placeholder'=>'Ingrese el nombre de la interaccion'])!!}
 			</div>
 			<div class="form-group has-feedback has-feedback-left">
 				{!!Form::label('Descripción:')!!}
-				{!!Form::textarea('descripcion',null,['class'=>'form-control','placeholder'=>'Ingrese descripcion del evento','rows' => '5'])!!}
+				{!!Form::textarea('descripcion_interaccion',null,['class'=>'form-control','placeholder'=>'Ingrese descripcion de la interaccion','rows' => '5'])!!}
 			</div>			
 
 		</div>

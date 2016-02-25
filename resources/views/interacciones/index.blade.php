@@ -12,15 +12,15 @@
             <th>Descripcion</th>
             <th>Operaciones</th>
           </thead>
-          @foreach($eventos as $evento) 
+          @foreach($interacciones as $interaccion) 
           <tbody>
-            <td>{{$evento->nombre}}</td>
-            <td>{{$evento->descripcion}}</td>            
-            <td>{!!link_to_route('eventos.edit', $title = 'Editar', $parameters = $evento->id, $attributes = ['class'=>'btn btn-primary'])!!}</td>
+            <td>{{$interaccion->nombre_interaccion}}</td>
+            <td>{{$interaccion->descripcion_interaccion}}</td>            
+            <td>{!!link_to_route('interacciones.edit', $title = 'Editar', $parameters = $interaccion->id, $attributes = ['class'=>'btn btn-primary'])!!}</td>
           </tbody>
           @endforeach
         </table>  
-      {!!$eventos->render()!!}
+      {!!$interacciones->render()!!}
   </div>
 </div>
 @stop

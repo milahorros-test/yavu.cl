@@ -3,8 +3,8 @@ namespace yavu\Http\Controllers;
 use Illuminate\Http\Request;
 use yavu\Http\Requests;
 use yavu\Http\Controllers\Controller;
-use yavu\Http\Requests\IteraccionCreateRequest;
-use yavu\Http\Requests\IteraccionUpdateRequest;
+use yavu\Http\Requests\InteraccionCreateRequest;
+use yavu\Http\Requests\InteraccionUpdateRequest;
 use yavu\Interaccion;
 use Session;
 use Auth;
@@ -21,18 +21,18 @@ class InteraccionController extends Controller
     }      
     public function index()
     {
-        $eventos = Evento::paginate(5);
-        return view('eventos.index', compact('eventos')); 
+        $interacciones = Interaccion::paginate(5);
+        return view('interacciones.index', compact('interacciones')); 
     }
     public function create()
     {
-        return view('eventos.create');
+        return view('interacciones.create');
     }
-    public function store(EventoCreateRequest $request)
+    public function store(InteraccionCreateRequest $request)
     {
-        Evento::create($request->all());
-        Session::flash('message', 'Evento creado correctamente');
-        return Redirect::to('/eventos'); 
+        Interaccion::create($request->all());
+        Session::flash('message', 'Interaccion creada correctamente');
+        return Redirect::to('/interacciones'); 
     }
     public function show($id)
     {
@@ -40,19 +40,19 @@ class InteraccionController extends Controller
     }
     public function edit($id)
     {
-        return view('eventos.edit', ['evento' => $this->evento]);
+        return view('interacciones.edit', ['interaccion' => $this->interaccion]);
     }
-    public function update(EventoUpdateRequest $request, $id)
+    public function update(InteraccionUpdateRequest $request, $id)
     {
-        $this->evento->fill($request->all());
-        $this->evento->save();
-        Session::flash('message', 'Evento editado correctamente');
-        return Redirect::to('/eventos');
+        $this->interaccion->fill($request->all());
+        $this->interaccion->save();
+        Session::flash('message', 'Interaccion editada correctamente');
+        return Redirect::to('/interacciones');
     }
     public function destroy($id)
     {
-        $this->evento->delete();
-        Session::flash('message', 'Evento eliminado correctamente');
-        return Redirect::to('/eventos');
+        $this->interaccion->delete();
+        Session::flash('message', 'Interaccion eliminada correctamente');
+        return Redirect::to('/interacciones');
     }
 }
