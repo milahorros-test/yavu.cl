@@ -52,3 +52,26 @@ Acordeon en Bootstrap
 	  </div>
 	</div>
 			-->
+
+
+			  <div class="list-group">
+    <div class="list-group-item-full-header wrap">
+      <table class="table">
+        <thead>
+          <th>Nombre</th>
+          <th>Descripcion</th>
+          <th>Operaciones</th>
+        </thead>
+        @foreach($feeds as $feed) 
+        <tbody>
+          <td>{{$feed->titulo}}</td>
+          <td>{{$feed->descripcion}}</td>            
+          <td>{!!link_to_route('feeds.edit', $title = 'Editar', $parameters = $feed->id, $attributes = ['class'=>'btn btn-primary'])!!}</td>
+        </tbody>
+        @endforeach
+      </table>        
+    </div>  
+    <div class="list-group-item">
+      {!!$feeds->render()!!}
+    </div>
+  </div>

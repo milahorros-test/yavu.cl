@@ -22,7 +22,7 @@ class FeedController extends Controller
     }       
     public function index()
     {
-        $feeds = Feed::paginate(20);
+        $feeds = Feed::paginate(10);
         return view('feeds.index', compact('feeds'));    
     }
     public function create()

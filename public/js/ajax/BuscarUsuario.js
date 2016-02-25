@@ -3,10 +3,7 @@
 	/*DECLARACIÓN DE VARIABLES GLOBALES*/
 
 	/*MÉTODOS CONSTRUCTORES*/
-	$("#BuscarUsuario").click(function(e){
-		BuscarUsuario();
-		e.preventDefault();
-	});
+
 	/*MÉTODOS CONSTRUCTORES*/
 
 	/*SELECTORES*/
@@ -15,6 +12,23 @@
 	        BuscarUsuario();
 	    }
 	});	*/
+	$("#BuscarUsuario").click(function(e)
+	{
+		if($("#usuario").val())
+		{
+			BuscarUsuario();
+		}
+		e.preventDefault();
+	});
+
+	$('#usuario').keydown(function (e)
+	{
+	    if(e.keyCode == 13 && $("#usuario").val())
+	    {
+	        BuscarUsuario();
+	    }
+	    //e.preventDefault();
+	})
 	/*SELECTORES*/
 
 	/*FUNCIONES Y PROCEDIMIENTOS*/
@@ -46,7 +60,8 @@
 						+"<td> <a href='usuarios/" + value.id + "/edit' class='btn btn-primary'>Editar</a> </td>");								 
 
 			});
-		});						
+		});	
+		return true;					
 	}	
 	/*FUNCIONES Y PROCEDIMIENTOS*/
 });
