@@ -48,12 +48,10 @@ class CategoriaController extends Controller
     }
 
     public function update(CategoriaUpdateRequest $request, $id)
-
     {
-
         $this->categoria->fill($request->all());
         $this->categoria->save();
-        Session::flash('message', 'categoria validado correctamente');
+        Session::flash('message', 'Categoria editada correctamente');
         return Redirect::to('/categorias');
     }
     public function destroy($id)
