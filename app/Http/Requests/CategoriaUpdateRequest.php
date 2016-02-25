@@ -10,10 +10,9 @@ class CategoriaUpdateRequest extends Request
     public function rules()
     {
         return [
-            'banner_empresa' => 'required',
-            'enlace_empresa' => 'required',
-            'imagen_empresa' => 'required',
-            'comentario_banner' => 'required'           
+            'nombre_categoria' => 'required',
+            'tipo_categoria' => 'required'
+           
         ];
     }
 }

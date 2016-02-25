@@ -3,10 +3,12 @@ namespace yavu\Http\Controllers;
 use Illuminate\Http\Request;
 use yavu\Http\Requests;
 use yavu\Http\Controllers\Controller;
-use Session;
-use Redirect;
+use yavu\Http\Requests\CategoriaCreateRequest;
+use yavu\Http\Requests\CategoriaUpdateRequest;
 use yavu\Categoria;
+use Session;
 use Auth;
+use Redirect;
 use Illuminate\Routing\Route;
 use DB;
 
