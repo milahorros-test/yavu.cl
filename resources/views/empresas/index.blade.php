@@ -1,3 +1,5 @@
+{!!Html::script('js/jquery.js')!!}
+{!!Html::script('js/ajax/BuscarEmpresa.js')!!}
 @extends('layouts.frontadm')	
 @section('content')
 <div class="jumbotron">
@@ -10,16 +12,13 @@
 		<div class="panel panel-default">
 			<div class="panel-heading"><h4>Mantenedor de empresas</h4></div>
 			<div class="panel-body">
-				<table class="table">
+				<table class="table table-hover" id="EmpresaList">
 
-					
-					{!!Form::open(['route' => 'empresas.index', 'method' => 'GET', 'class' => 'navbar-form navbar-left pull-right', 'role' => 'search' ])!!}
+		
   						<div class="form-group">
   								
-   						 {!!Form::text('nombre',null,['class' => 'form-control', 'placeholder' => 'Nombre de empresa',])!!}
+   						 {!!Form::text('nombre',null,['class' => 'form-control', 'placeholder' => 'Nombre de empresa','id'=>'empresa'])!!}
   						</div>
- 						 <button type="submit" class="btn btn-default">Buscar</button>
-					</form>
 				
 					<thead>
 						<th>Nombre</th>

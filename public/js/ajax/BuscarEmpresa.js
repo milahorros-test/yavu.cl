@@ -15,9 +15,19 @@
 	        BuscarUsuario();
 	    }
 	});	*/
+	$('#empresa').keydown(function (e)
+	{
+	    if(e.keyCode == 13 && $("#empresa").val())
+	    {
+	        BuscarEmpresa();
+	    }
+
+	    //e.preventDefault();
+	})	
 	/*SELECTORES*/
 
 	/*FUNCIONES Y PROCEDIMIENTOS*/
+
 	function BuscarEmpresa(){
 		console.log("click");
 		var NombreEmpresa = $("#empresa").val();
@@ -27,12 +37,22 @@
 			$("#EmpresaList").append(
 					"<thead>"
 						+"<th>Nombre</th>"
-
+						+"<th>Correo</th>"
+						+"<th>Ciudad</th>"
+						+"<th>Fono</th>"
+						+"<th>Aniversario Empresa</th>"
+						+"<th>Encargado</th>						"
+						+"<th>Operaciones</th>"
+					+"</thead>"
 				);
 			$(res).each(function(key,value){
 				$("#EmpresaList").append(
 						"<tbody><td>"+value.nombre+"</td>"
-
+						+"<td>"+value.correo+"</td>"
+						+"<td>"+value.ciudad+"</td>"
+						+"<td>"+value.fono+"</td>"
+						+"<td>"+value.fecha_creacion+"</td>"
+						+"<td>"+value.encargado+"</td>"
 						+"<td> <a href='empresas/" + value.id + "/edit' class='btn btn-primary'>Editar</a> </td>");								 
 
 			});

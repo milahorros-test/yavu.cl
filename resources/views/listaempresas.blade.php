@@ -12,32 +12,36 @@
 		<div class="panel panel-default">
 			<div class="panel-heading"><h4>Mantenedor de empresas</h4></div>
 			<div class="panel-body">
-				<form class="">
+
 					<div class="form-group">
-						{!!Form::text('nombre',null,['class'=>'form-control','placeholder'=>'buscar...','id'=>'empresa'])!!}
+						{!!Form::text('empresa',null,['class'=>'form-control','placeholder'=>'buscar...','id'=>'empresa'])!!}
 					</div>
-					<a href="#!" class="btn btn-primary btn-sm" id="BuscarEmpresa">Buscar</a>
-				</form>
-				<table id="EmpresaList" class="table table-hover">
-					@foreach($empresas as $empresa)	
+					<!--<a href="#!" class="btn btn-primary btn-sm" id="BuscarUsuario">Buscar</a>-->
+				<div class="wrap">
 
-				  <div class="container" id="tourpackages-carousel">
-				      <div class="row">				        
-				        <div class="col-md-6">
-				          <div class="thumbnail">
-				            <img src="{!!URL::to('images/empresa.png')!!}" alt="">
-				              <div class="caption">
-				                <h4>{{$empresa->nombre}}</h4>
-				            </div>
-				            <h4>Descripcion empresa</h4>
-				            <h4>Mas info</h4>
-				          </div>
-				        </div>
+					<table id="EmpresaList" class="table table-hover">
+						<thead>
+							<th>Nombre</th>
+							<th>Región</th>
+							<th>Ciudad</th>
 
-				@endforeach
-				</table>
+							<th>Operaciones</th>
+						</thead>
+						@foreach($empresas as $empresa)	
+						<tbody>
+							<td>{{$empresa->nombre}}</td>
+							<td>{{$empresa->email}}</td>
+							<td>{{$empresa->ciudad}}</td>
+							<td>{{$empresa->fono}}</td>
+							<td>{{$empresa->fecha_nacimiento}}</td>
+							<td>{{$empresa->sexo}}</td>
+							<td>{!!link_to_route('usuarios.edit', $title = 'Editar', $parameters = $empresa->id, $attributes = ['class'=>'btn btn-primary'])!!}</td>
+						</tbody>
+						@endforeach
+					</table>	
+								
+				</div>
 
-					
 			</div>
 		</div>
 		{!!$empresas->render()!!}
