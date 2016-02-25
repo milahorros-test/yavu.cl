@@ -112,7 +112,7 @@ Route::resource('eventos', 'EventoController');
 /*Gestión de Evento*/
 
 /*Gestión de Banners */
-Route::resource('banners', 'BannerController');
+Route::resource('feeds', 'FeedController');
 /*Gestión de Banners */
 
 /*Gestión de  Interacciones */
