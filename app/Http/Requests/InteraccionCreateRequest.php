@@ -4,7 +4,7 @@ namespace yavu\Http\Requests;
 
 use yavu\Http\Requests\Request;
 
-class BanerUpdateRequest extends Request
+class InteraccionCreateRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
