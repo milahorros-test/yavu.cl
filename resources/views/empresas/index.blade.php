@@ -1,7 +1,10 @@
-@extends('layouts.frontadm')	
+{!!Html::script('js/jquery.js')!!}
+{!!Html::script('js/ajax/BuscarEmpresa.js')!!}
+@extends('layouts.front')	
+
 @section('content')
 <div class="jumbotron">
-	<div id="contentIn">
+	<div id="contentMiddle">
 		@include('alerts.alertFields')
 		@include('alerts.errorsMessage')
 		@include('alerts.successMessage')
@@ -10,46 +13,74 @@
 		<div class="panel panel-default">
 			<div class="panel-heading"><h4>Mantenedor de empresas</h4></div>
 			<div class="panel-body">
-				<table class="table">
+				<div class="form-group">
 
-					
-					{!!Form::open(['route' => 'empresas.index', 'method' => 'GET', 'class' => 'navbar-form navbar-left pull-right', 'role' => 'search' ])!!}
-  						<div class="form-group">
-  								
-   						 {!!Form::text('nombre',null,['class' => 'form-control', 'placeholder' => 'Nombre de empresa',])!!}
-  						</div>
- 						 <button type="submit" class="btn btn-default">Buscar</button>
-					</form>
-				
-					<thead>
-						<th>Nombre</th>
-						<th>Correo</th>
-						<th>Ciudad</th>
-						<th>Fono</th>
-						<th>Aniversario Empresa</th>
-						<th>Encargado</th>
-						<th>Operaciones</th>
-					</thead>
-					@foreach($empresas as $empresa)	
-					<tbody>
-						<td>{{$empresa->nombre}}</td>
-						<td>{{$empresa->email}}</td>
-						<td>{{$empresa->ciudad}}</td>
-						<td>{{$empresa->fono}}</td>
-						<td>{{$empresa->fecha_creacion}}</td>
-						<td>{{$empresa->nombre_encargado}}</td>
-						<td>{!!link_to_route('empresas.edit', $title = 'Editar', $parameters = $empresa->id, $attributes = ['class'=>'btn btn-primary'])!!}
+  				@if(Auth::admin()->check())
+
+				 {!!Form::text('nombre',null,['class' => 'form-control', 'placeholder' => 'Nombre de empresa','id'=>'empresa'])!!}
+
+				@elseif(Auth::user()->check() || !Auth::user()->check())
+
+				 {!!Form::text('nombre',null,['class' => 'form-control', 'placeholder' => 'Nombre de empresa','id'=>'empresathumb'])!!}
+
+				 @endif
+
+				</div>
+				@if(Auth::admin()->check())
+					<table class="table table-hover" id="EmpresaList">
+
+						<thead>
+							<th>Nombre</th>
+							<th>Correo</th>
+							<th>ciudad</th>
+							<th>Fono</th>
+							<th>Aniversario Empresa</th>
+							<th>Encargado</th>
+							<th>Operaciones</th>
+						</thead>
+
+						@foreach($empresas as $empresa)	
+							<tbody>
+								<td>{{$empresa->nombre}}</td>
+								<td>{{$empresa->email}}</td>
+								<td>{{$empresa->ciudad}}</td>
+								<td>{{$empresa->fono}}</td>
+								<td>{{$empresa->fecha_creacion}}</td>
+								<td>{{$empresa->nombre_encargado}}</td>
+								<td>{!!link_to_route('empresas.edit', $title = 'Editar', $parameters = $empresa->id, $attributes = ['class'=>'btn btn-primary'])!!}
+								</td>
+							</tbody>
+						@endforeach
+					</table>	
+					{!!$empresas->render()!!}
 						
-						</td>
+				@elseif(Auth::user()->check() || !Auth::user()->check())
 
-					</tbody>
+					<div id="EmpresaListThumb">
+
+					@foreach($empresas as $empresa)	
+		        
+					        <div class="col-md-4">
+					          <div class="thumbnail">
+					            <img src="{!!URL::to('images/empresa.png')!!}" alt="">
+					              <div class="caption">
+					                <h4>{{$empresa->nombre}}</h4>
+					            </div>
+					            <td>{{$empresa->ciudad}}</td>
+								<td>{{$empresa->fono}}</td>
+					          </div>
+					        </div>
 
 					@endforeach
 
-				</table>	
+					</div>
+
+					{!!$empresas->render()!!}
+				@endif
+
+				
 			</div>
-		</div>	
-		{!!$empresas->render()!!}
+		</div>
 	</div>
 </div>
 @stop

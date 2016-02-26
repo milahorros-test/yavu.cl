@@ -76,25 +76,23 @@ class EmpresaController extends Controller
       return Redirect::to('/profile');
     }
 
-  public function ListaEmpresas(Request $request)
-    {
-      $empresas = Empresa::nombre($request->get('nombre'))->orderBy('id', 'DESC')->paginate();
-
-    return view('listaempresas', compact('empresas'));      
-    }
 
    public function BuscarEmpresas($nombre){
-    $usuarios = DB::table('empresas')                    
+    $empresas = DB::table('empresas')                    
                 ->select('*')    
-                ->where('nombre', 'like', '%'.$nombre.'%')   
+                ->where('nombre', 'like', '%'.$nombre.'%')  
+                ->orwhere('ciudad', 'like', '%'.$nombre.'%')
+                ->orwhere('region', 'like', '%'.$nombre.'%')
                 ->orderBy('created_at','desc')   
                 ->get();
 
-    //dd($usuarios);
+    //dd($empresas);
     return response()->json(
-        $usuarios
+        $empresas
     );
-  }   
+  } 
+  
+  
 
   public function searchcat()
 {

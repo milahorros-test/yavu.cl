@@ -7,7 +7,7 @@ Route::get('login','FrontController@login');
 Route::get('registro','FrontController@registro');
 Route::get('yavucoins','FrontController@yavucoins');
 Route::get('ysorteos','FrontController@ysorteos');
-Route::get('listaempresas','FrontController@listaempresas');
+Route::get('listaempresas/{empresa}','EmpresaController@ListaEmpresas');
 Route::get('contacto','FrontController@contacto');
 Route::get('nosotros','FrontController@nosotros');
 Route::get('terminos','FrontController@terminos');
