@@ -90,7 +90,9 @@ class EmpresaController extends Controller
     return response()->json(
         $empresas
     );
-  }   
+  } 
+  
+  
 
   public function searchcat()
 {

@@ -20,6 +20,18 @@
 	    if(e.keyCode == 13 && $("#empresa").val())
 	    {
 	        BuscarEmpresa();
+
+	    }
+
+	    //e.preventDefault();
+	})	
+
+	$('#empresathumb').keydown(function (e)
+	{
+	    if(e.keyCode == 13 && $("#empresathumb").val())
+	    {
+	        BuscarEmpresaThumb();
+
 	    }
 
 	    //e.preventDefault();
@@ -60,6 +72,43 @@
 	}	
 	/*FUNCIONES Y PROCEDIMIENTOS*/
 });
+
+
+	/*FUNCIONES Y PROCEDIMIENTOS*/
+
+	function BuscarEmpresaThumb(){
+		
+		var NombreEmpresa = $("#empresathumb").val();
+		var route = "http://localhost:8000/buscarempresa/"+NombreEmpresa+"";
+		$("#EmpresaListThumb").text("");
+		$.get(route, function(res){
+			console.log("clickthum");
+			$("#EmpresaListThumb").append(
+				'<div class="container" id="tourpackages-carousel">'
+				+'<div class="row">');
+			$(res).each(function(key,value){
+				$("#EmpresaListThumb").append(
+						
+					'<div class="col-md-4">'
+				        +'<div class="thumbnail">'
+				            +'<img src="images/empresa.png" alt="">'
+					            +'<div class="caption">'
+					                +'<h4>'+value.nombre+'</h4>'
+					            +'</div>'
+					        +'<td>'+value.ciudad+'</td>'
+							+'<td>'+value.fono+'</td>'
+					    +'</div>'					        
+					+'</div>'
+				);								 
+			});
+			$("#EmpresaListThumb").append(
+					'</div>'
+				+'</div>');
+		});						
+	}	
+	/*FUNCIONES Y PROCEDIMIENTOS*/
+
+
 
  /* FUNCION DE FILTRO */
  

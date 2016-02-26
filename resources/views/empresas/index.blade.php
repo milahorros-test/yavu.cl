@@ -1,6 +1,5 @@
 {!!Html::script('js/jquery.js')!!}
 {!!Html::script('js/ajax/BuscarEmpresa.js')!!}
-
 @extends('layouts.front')	
 
 @section('content')
@@ -15,8 +14,17 @@
 			<div class="panel-heading"><h4>Mantenedor de empresas</h4></div>
 			<div class="panel-body">
 				<div class="form-group">
-  								
+
+  				@if(Auth::admin()->check())
+
 				 {!!Form::text('nombre',null,['class' => 'form-control', 'placeholder' => 'Nombre de empresa','id'=>'empresa'])!!}
+
+				@elseif(Auth::user()->check() || !Auth::user()->check())
+
+				 {!!Form::text('nombre',null,['class' => 'form-control', 'placeholder' => 'Nombre de empresa','id'=>'empresathumb'])!!}
+
+				 @endif
+
 				</div>
 				@if(Auth::admin()->check())
 					<table class="table table-hover" id="EmpresaList">
@@ -24,7 +32,7 @@
 						<thead>
 							<th>Nombre</th>
 							<th>Correo</th>
-							<th>Ciudad</th>
+							<th>ciudad</th>
 							<th>Fono</th>
 							<th>Aniversario Empresa</th>
 							<th>Encargado</th>
@@ -43,28 +51,34 @@
 								</td>
 							</tbody>
 						@endforeach
-
 					</table>	
 					{!!$empresas->render()!!}
-				@elseif(Auth::user()->check())
+						
+				@elseif(Auth::user()->check() || !Auth::user()->check())
+
+					<div id="EmpresaListThumb">
 
 					@foreach($empresas as $empresa)	
 
 					  <div class="container" id="tourpackages-carousel">
 					      <div class="row">				        
-					        <div class="col-md-6">
+					        <div class="col-md-4">
 					          <div class="thumbnail">
 					            <img src="{!!URL::to('images/empresa.png')!!}" alt="">
 					              <div class="caption">
 					                <h4>{{$empresa->nombre}}</h4>
 					            </div>
-					            <h4>Descripcion empresa</h4>
-					            <h4>Mas info</h4>
+					            <td>{{$empresa->ciudad}}</td>
+								<td>{{$empresa->fono}}</td>
 					          </div>
 					        </div>
 						</div>
-					</div>	
+					</div>
+
 					@endforeach
+
+					</div>
+
 					{!!$empresas->render()!!}
 				@endif
 
