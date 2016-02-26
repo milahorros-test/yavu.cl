@@ -32,8 +32,10 @@ $(document).ready(function(){
 
 	$("#publicar").click(function(e)
 	{
-		document.getElementById("idUltima").value = "0";				    
+		document.getElementById("idUltima").value = "0";	
+
 		$("#Estados").empty();		
+		
 		if (document.getElementById("status").value !== "") {
 			var status = $("#status").val();
 			status = limpiar(status);
