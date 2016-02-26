@@ -59,9 +59,7 @@
 					<div id="EmpresaListThumb">
 
 					@foreach($empresas as $empresa)	
-
-					  <div class="container" id="tourpackages-carousel">
-					      <div class="row">				        
+		        
 					        <div class="col-md-4">
 					          <div class="thumbnail">
 					            <img src="{!!URL::to('images/empresa.png')!!}" alt="">
@@ -72,8 +70,6 @@
 								<td>{{$empresa->fono}}</td>
 					          </div>
 					        </div>
-						</div>
-					</div>
 
 					@endforeach
 
