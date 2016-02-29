@@ -2,18 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2171e59f-ebf0-4a58-8fdf-d21010b7375d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/FeedController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/FeedController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/ajax/GestionarEstados.js" afterPath="$PROJECT_DIR$/public/js/ajax/GestionarEstados.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/publicaciones/GestionarPublicacionesFeeds.js" afterPath="$PROJECT_DIR$/public/js/publicaciones/GestionarPublicacionesFeeds.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/feeds/forms/panelRight.blade.php" afterPath="$PROJECT_DIR$/resources/views/feeds/forms/panelRight.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/feeds/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/feeds/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layouts/front.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/front.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/usuarios/dashboard.blade.php" afterPath="$PROJECT_DIR$/resources/views/usuarios/dashboard.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/usuarios/profile.blade.php" afterPath="$PROJECT_DIR$/resources/views/usuarios/profile.blade.php" />
     </list>
     <ignored path="yavu.cl.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -48,10 +37,9 @@
       <file leaf-file-name="profile.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/usuarios/profile.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.7777777">
+            <state vertical-scroll-proportion="0.0">
               <caret line="104" column="61" selection-start-line="104" selection-start-column="61" selection-end-line="104" selection-end-column="61" />
               <folding>
-                <element signature="n#style#0;n#span#0;n#h6#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <marker date="1456706836459" expanded="true" signature="1724:1930" placeholder="..." />
                 <marker date="1456706836459" expanded="true" signature="1739:1929" placeholder="..." />
               </folding>
@@ -59,10 +47,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GestionarCoins.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GestionarCoins.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/ajax/GestionarCoins.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.01607717">
+            <state vertical-scroll-proportion="0.0">
               <caret line="60" column="41" selection-start-line="60" selection-start-column="41" selection-end-line="60" selection-end-column="41" />
               <folding>
                 <marker date="1455802657738" expanded="true" signature="1835:2093" placeholder="..." />
@@ -75,6 +63,16 @@
                 <marker date="1455802657738" expanded="true" signature="2863:3155" placeholder="..." />
                 <marker date="1455802657738" expanded="true" signature="2880:3139" placeholder="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.30252102">
+              <caret line="28" column="3" selection-start-line="28" selection-start-column="3" selection-end-line="28" selection-end-column="3" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -167,7 +165,7 @@
       <file leaf-file-name="FeedController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FeedController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.6666667">
+            <state vertical-scroll-proportion="0.0">
               <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
               <folding>
                 <element signature="e#39#67#0#PHP" expanded="true" />
@@ -214,9 +212,9 @@
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
     <option name="x" value="49" />
-    <option name="y" value="24" />
+    <option name="y" value="-4" />
     <option name="width" value="1317" />
-    <option name="height" value="744" />
+    <option name="height" value="772" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -289,8 +287,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -471,6 +469,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="database" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yavu.cl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yavu.cl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -570,11 +582,11 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="49" y="24" width="1317" height="744" extended-state="6" />
-    <editor active="false" />
+    <frame x="49" y="-4" width="1317" height="772" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17753339" sideWeight="0.5061538" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14846818" sideWeight="0.49384615" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15082483" sideWeight="0.49384615" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -637,6 +649,95 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/public/js/ajax/GestionarEstados.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="132" column="23" selection-start-line="132" selection-start-column="23" selection-end-line="132" selection-end-column="23" />
+          <folding>
+            <marker date="1456705116939" expanded="true" signature="3751:4555" placeholder="..." />
+            <marker date="1456705116939" expanded="true" signature="3790:4236" placeholder="..." />
+            <marker date="1456705116939" expanded="true" signature="3808:4059" placeholder="..." />
+            <marker date="1456705116939" expanded="false" signature="3835:3849" placeholder="..." />
+            <marker date="1456705116939" expanded="true" signature="3850:4054" placeholder="..." />
+            <marker date="1456705116939" expanded="false" signature="3970:3996" placeholder="..." />
+            <marker date="1456705116939" expanded="true" signature="4077:4180" placeholder="..." />
+            <marker date="1456705116939" expanded="true" signature="4288:4540" placeholder="..." />
+            <marker date="1456705116939" expanded="false" signature="4473:4487" placeholder="..." />
+            <marker date="1456705116939" expanded="true" signature="4488:4524" placeholder="..." />
+            <marker date="1456705116939" expanded="true" signature="9640:11267" placeholder="..." />
+            <marker date="1456705116939" expanded="true" signature="9679:10768" placeholder="..." />
+            <marker date="1456705116939" expanded="true" signature="9713:10206" placeholder="..." />
+            <marker date="1456705116939" expanded="true" signature="9866:10004" placeholder="..." />
+            <marker date="1456705116939" expanded="true" signature="10074:10189" placeholder="..." />
+            <marker date="1456705116939" expanded="true" signature="10243:10534" placeholder="..." />
+            <marker date="1456705116939" expanded="false" signature="10270:10284" placeholder="..." />
+            <marker date="1456705116939" expanded="true" signature="10285:10529" placeholder="..." />
+            <marker date="1456705116939" expanded="false" signature="10405:10431" placeholder="..." />
+            <marker date="1456705116939" expanded="true" signature="10552:10712" placeholder="..." />
+            <marker date="1456705116939" expanded="true" signature="10820:11252" placeholder="..." />
+            <marker date="1456705116939" expanded="false" signature="10954:10965" placeholder="..." />
+            <marker date="1456705116939" expanded="true" signature="10966:11229" placeholder="..." />
+            <marker date="1456705116939" expanded="true" signature="11076:11214" placeholder="..." />
+            <marker date="1456705116939" expanded="true" signature="11134:11174" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/publicaciones/GestionarPublicacionesFeeds.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="39" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="39" />
+          <folding>
+            <marker date="1456704913795" expanded="true" signature="2517:3321" placeholder="..." />
+            <marker date="1456704913795" expanded="true" signature="2556:3002" placeholder="..." />
+            <marker date="1456704913795" expanded="true" signature="2574:2825" placeholder="..." />
+            <marker date="1456704913795" expanded="false" signature="2601:2615" placeholder="..." />
+            <marker date="1456704913795" expanded="true" signature="2616:2820" placeholder="..." />
+            <marker date="1456704913795" expanded="false" signature="2736:2762" placeholder="..." />
+            <marker date="1456704913795" expanded="true" signature="2843:2946" placeholder="..." />
+            <marker date="1456704913795" expanded="true" signature="3054:3306" placeholder="..." />
+            <marker date="1456704913795" expanded="false" signature="3239:3253" placeholder="..." />
+            <marker date="1456704913795" expanded="true" signature="3254:3290" placeholder="..." />
+            <marker date="1456704913795" expanded="true" signature="3952:5579" placeholder="..." />
+            <marker date="1456704913795" expanded="true" signature="3991:5080" placeholder="..." />
+            <marker date="1456704913795" expanded="true" signature="4025:4518" placeholder="..." />
+            <marker date="1456704913795" expanded="true" signature="4178:4316" placeholder="..." />
+            <marker date="1456704913795" expanded="true" signature="4386:4501" placeholder="..." />
+            <marker date="1456704913795" expanded="true" signature="4555:4846" placeholder="..." />
+            <marker date="1456704913795" expanded="false" signature="4582:4596" placeholder="..." />
+            <marker date="1456704913795" expanded="true" signature="4597:4841" placeholder="..." />
+            <marker date="1456704913795" expanded="false" signature="4717:4743" placeholder="..." />
+            <marker date="1456704913795" expanded="true" signature="4864:5024" placeholder="..." />
+            <marker date="1456704913795" expanded="true" signature="5132:5564" placeholder="..." />
+            <marker date="1456704913795" expanded="false" signature="5266:5277" placeholder="..." />
+            <marker date="1456704913795" expanded="true" signature="5278:5541" placeholder="..." />
+            <marker date="1456704913795" expanded="true" signature="5388:5526" placeholder="..." />
+            <marker date="1456704913795" expanded="true" signature="5446:5486" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/feeds/forms/panelRight.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="9" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
+          <folding>
+            <marker date="1456692096428" expanded="true" signature="228:439" placeholder="..." />
+            <marker date="1456692096428" expanded="true" signature="243:438" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FeedController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
+          <folding>
+            <element signature="e#39#67#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/feeds/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -650,7 +751,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="163" column="9" selection-start-line="119" selection-start-column="0" selection-end-line="163" selection-end-column="9" />
           <folding>
-            <element signature="n#style#0;n#span#0;n#h6#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <marker date="1456706836459" expanded="true" signature="1724:1930" placeholder="..." />
             <marker date="1456706836459" expanded="true" signature="1739:1929" placeholder="..." />
           </folding>
@@ -691,7 +791,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="163" column="9" selection-start-line="119" selection-start-column="0" selection-end-line="163" selection-end-column="9" />
           <folding>
-            <element signature="n#style#0;n#span#0;n#h6#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <marker date="1456706836459" expanded="true" signature="1724:1930" placeholder="..." />
             <marker date="1456706836459" expanded="true" signature="1739:1929" placeholder="..." />
           </folding>
@@ -908,13 +1007,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.7619047">
-          <caret line="28" column="3" selection-start-line="28" selection-start-column="3" selection-end-line="28" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/feeds/forms/panelRight.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -964,7 +1056,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.9402985">
           <caret line="27" column="38" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1004,7 +1095,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FeedController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.6666667">
+        <state vertical-scroll-proportion="0.0">
           <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
           <folding>
             <element signature="e#39#67#0#PHP" expanded="true" />
@@ -1022,19 +1113,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/usuarios/profile.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.7777777">
+        <state vertical-scroll-proportion="0.0">
           <caret line="104" column="61" selection-start-line="104" selection-start-column="61" selection-end-line="104" selection-end-column="61" />
           <folding>
-            <element signature="n#style#0;n#span#0;n#h6#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <marker date="1456706836459" expanded="true" signature="1724:1930" placeholder="..." />
             <marker date="1456706836459" expanded="true" signature="1739:1929" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/RegistroCoin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/EstadoController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CoinController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/ajax/GestionarCoins.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.01607717">
+        <state vertical-scroll-proportion="0.0">
           <caret line="60" column="41" selection-start-line="60" selection-start-column="41" selection-end-line="60" selection-end-column="41" />
           <folding>
             <marker date="1455802657738" expanded="true" signature="1835:2093" placeholder="..." />
@@ -1047,6 +1161,14 @@
             <marker date="1455802657738" expanded="true" signature="2863:3155" placeholder="..." />
             <marker date="1455802657738" expanded="true" signature="2880:3139" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.30252102">
+          <caret line="28" column="3" selection-start-line="28" selection-start-column="3" selection-end-line="28" selection-end-column="3" />
+          <folding />
         </state>
       </provider>
     </entry>
