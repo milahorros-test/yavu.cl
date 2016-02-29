@@ -23,13 +23,29 @@ class FeedController extends Controller
     }       
     public function index()
     {
-        $feeds = EstadoEmpresa::paginate(10);
-        return view('feeds.index', compact('feeds'));
+        return view('feeds.index');
     }
 
 	public function CargarFeeds($idUltima){
+        if((int) $idUltima == "0"){
+        $feeds = DB::table('estado_empresas')                    
+            ->join('empresas'  , 'empresas.id', '=', 'estado_empresas.empresa_id')
+            ->select('estado_empresas.*', 'empresas.nombre as nombreEmp')    
+            ->where('estado_empresas.id', '>', (int) $idUltima)
+            ->orderBy('estado_empresas.created_at','desc')   
+            ->limit('10')
+            ->get();  
+                        
+        }elseif((int) $idUltima <> "0"){
+        $feeds = DB::table('estado_empresas')                    
+            ->join('empresas'  , 'empresas.id', '=', 'estado_empresas.empresa_id')
+            ->select('estado_empresas.*', 'empresas.nombre as nombreEmp')    
+            ->where('estado_empresas.id', '<', (int) $idUltima)
+            ->orderBy('estado_empresas.created_at','desc')   
+            ->limit('10')
+            ->get();  
+        }        
 
-		$feeds = EstadoEmpresa::all();
 		return response()->json(
 			$feeds
 		);
@@ -38,6 +54,7 @@ class FeedController extends Controller
 	public function CargarFeedsEmpresa($idUltima, $empresa){
 		return 'Cargar feeds empresa';
 	}	
+
 	public function create()
     {
         return view('feeds.create');
@@ -73,5 +90,7 @@ class FeedController extends Controller
         $this->feed->delete();
         Session::flash('message', 'Feed eliminado correctamente');
         return Redirect::to('/feeds');           
-    }
+    } 
+
+    
 }
