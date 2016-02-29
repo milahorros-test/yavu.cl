@@ -13,7 +13,6 @@ class CreateSorteosTable extends Migration
             $table->string('descripcion', 500);          
             $table->string('fecha_inicio_sorteo', 100);
             $table->string('estado_sorteo',30);           
-            $table->rememberToken();
             $table->timestamps();
         });
     }

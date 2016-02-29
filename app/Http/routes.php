@@ -59,6 +59,8 @@ Route::resource('servicios','ServicioController');
 
 /*Gestión de Sorteos*/
 Route::resource('sorteos', 'SorteoController');
+Route::get('listasorteos', 'SorteoController@ListaSorteos');
+Route::get('buscarsorteo/{nombre}', 'SorteoController@BuscarSorteos');
 /*Gestión de Sortes*/
 
 /*Gestión de Admins*/
