@@ -88,7 +88,6 @@ Route::resource('alternativas', 'AlternativaController');
 Route::resource('servicios', 'ServicioController');
 /*Gestión de Servicio*/
 
-
 /*Gestión de Banners */
 Route::resource('banners', 'BannerController');
 /*Gestión de Banners */
@@ -121,7 +120,6 @@ Route::resource('feeds', 'FeedController');
 Route::resource('interacciones', 'InteraccionController');
 /*Gestión de Interacciones */
 
-
 /*Gestión de  Interes */
 Route::resource('intereses', 'InteresController');
 /*Gestión de Interes */
@@ -129,3 +127,8 @@ Route::resource('intereses', 'InteresController');
 /*Gestión de  Feeds */
 Route::resource('feeds', 'FeedController');
 /*Gestión de Feeds */
+
+
+/*Gestión de tickets*/
+Route::resource('tickets','TicketController');
+/*Gestión de tickets*/

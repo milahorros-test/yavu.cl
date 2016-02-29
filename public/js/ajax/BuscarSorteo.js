@@ -87,12 +87,14 @@
 				        +'<div class="thumbnail">'
 				            +'<img src="images/empresa.png" alt="">'
 					            +'<div class="caption">'
+					             +'<td><h5>Nombre Sorteo</h5></td>'
 					                +'<h4>'+value.nombre_sorteo+'</h4>'
 					            +'</div>'
+					            +'<td><h5>Descripción</h5></td>'
 					        +'<td>'+value.descripcion+'</td>'
-							+'<td>'+value.estado_sorteo+'</td>'
 					    +'</div>'					        
 					+'</div>'
+
 				);								 
 			});
 			$("#SorteoListThumb").append(
@@ -116,3 +118,5 @@ $(document).ready(function () {
                 });
             });
         });    
+
+

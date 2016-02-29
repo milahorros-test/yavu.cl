@@ -185,8 +185,8 @@
          		@if (Auth::admin()->check()) 
 
 			<div class="form-group has-feedback has-feedback-left">
-				{!!Form::label('Estado Sorteo:')!!}		
-				{!!Form::select('estado_sorteo', 
+				{!!Form::label('Estado Empresa:')!!}		
+				{!!Form::select('estado', 
 					['Pendiente' => 'Pendiente',	
 					'Aprobado' => 'Aprobado'], 
 					$selected = null, ['class' => 'form-control']) 

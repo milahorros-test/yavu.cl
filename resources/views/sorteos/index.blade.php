@@ -1,5 +1,6 @@
 {!!Html::script('js/jquery.js')!!}
 {!!Html::script('js/ajax/BuscarSorteo.js')!!}
+{!!Html::script('js/ajax/ParticiparSorteo.js')!!}
 @extends('layouts.front') 
 
 @section('content')
@@ -50,34 +51,59 @@
             
         @elseif(Auth::user()->check() || !Auth::user()->check())
 
-
           <div id="SorteoListThumb">
 
           @foreach($sorteos as $sorteo) 
             
-                  <div class="col-md-4">
-                    <div class="thumbnail">
-                      <img src="{!!URL::to('images/empresa.png')!!}" alt="">
-                        <div class="caption">
-                          <h4>{{$sorteo->nombre_sorteo}}</h4>
-                      </div>
-                      <td>{{$sorteo->descripcion}}</td>
-                <td>{{$sorteo->estado_sorteo}}</td>
-                    </div>
+            <div class="col-md-4">
+              <div class="thumbnail">
+                <img src="{!!URL::to('images/empresa.png')!!}" alt="">
+                  <div class="caption">
+                    <td><h5>Nombre Sorteo</h5></td>
+                    <td>{{$sorteo->nombre_sorteo}}</td>
                   </div>
-
+                    <td><h5>Descripción</h5></td>
+                    <td>{{$sorteo->descripcion}}</td>
+                  @if(Auth::user()->check())
+                    <td><h5>Estado</h5></td>
+                    <td>{{$sorteo->estado_sorteo}}</td>
+                    <br>
+                    <td><a id="participar" href="{!! URL::to('#!') !!}" class="btn btn-primary" data-toggle="modal" data-target="#myModal" role="button">Participar!</a></td>
+  
+                    <!-- Modal -->
+                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                          </div>
+                          <div class="modal-body">
+                            ...
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                  @else 
+                    <td><a href="{!! URL::to('usuarios/create') !!}" class="btn btn-primary" role="button">Participar!</a></td>
+                  @endif
+              </div>
+            </div>
           @endforeach
-
           </div>
 
           {!!$sorteos->render()!!}
+        
         @endif
 
-        
       </div>
     </div>
   </div>
 </div>
-
 
 @stop
