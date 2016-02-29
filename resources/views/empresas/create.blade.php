@@ -3,7 +3,7 @@
 <div class="jumbotron">
 	<div id="contentMiddle">
 		@include('alerts.alertFields')
-		<h4>Registro de Empresas</h4>
+		<h1>Registro de Empresas</h1>
 		<div class="row">
 			{!!Form::open(['route'=>'empresas.store', 'method'=>'POST'])!!}
 			@include('empresas.forms.fieldsEmpresa')

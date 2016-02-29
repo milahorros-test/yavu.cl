@@ -1,8 +1,8 @@
 {!!Html::script('js/jquery.js')!!}
-{!!Html::script('js/ajax/GestionarEstados.js')!!}
-{!!Html::script('js/ajax/GestionarInteraccionesEstadosUsuario.js')!!}
+<!--{!!Html::script('js/ajax/GestionarEstados.js')!!}-->
+<!--{!!Html::script('js/ajax/GestionarInteraccionesEstadosUsuario.js')!!}-->
 {!!Html::script('js/ajax/GestionarCoins.js')!!}
-{!!Html::script('js/ajax/InteraccionPublicaciones.js')!!}
+<!--{!!Html::script('js/ajax/InteraccionPublicaciones.js')!!}-->
 @extends('layouts.front')
 @section('content')
 <div class="jumbotron">
@@ -32,6 +32,8 @@
 							</div>
 						</div>
 					</div>
+
+					<!--
 					<div class="list-group">
 						<div class="list-group-item-full-header">
 							<h6>PUBLICAR NUEVO ESTADO</h6>
@@ -51,11 +53,13 @@
 								El texto ingresado contiene caracteres no permitidos que no se guardarán.
 							</div>                                      
 						</div>  
-					</div>                      
+					</div>
+					-->
+					<!--
 					<div id="e">
 						<div id="Estados"></div>
-						{!!Form::hidden('idUltima', "0", ['id'=>'idUltima'])!!}                                 
-					</div>
+							{!!Form::hidden('idUltima', "0", ['id'=>'idUltima'])!!}
+						</div>
 					<div>
 						<div id="msj-estado" class="alert alert-dismissible list-group-item" role="alert" style="display:none;">
 							<img width="30%"  src='/images/iconoCargando.gif'/>
@@ -64,11 +68,13 @@
 							No hay mas publicaciones.
 						</div>
 						<a id="CargarEstados" href="#!" class="list-group-item list-group-item-info">
-							Cargar estados 
-							<span id="EstadosNuevos" class="badge"></span>                  
-						</a>    
-					</div>  
+							Cargar estados
+							<span id="EstadosNuevos" class="badge"></span>
+						</a>
+					</div>
 					<br>
+					-->
+
 				</div>
 				<div class="col-sm-4"><!--style="position:fixed;z-index:1000;"-->
 					<div class="list-group">

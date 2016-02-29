@@ -8,7 +8,7 @@ use yavu\Http\Requests\FeedUpdateRequest;
 use Session;
 use Redirect;
 use yavu\Feed;
-use yavu\Estado;
+use yavu\EstadoEmpresa;
 use Auth;
 use Illuminate\Routing\Route;
 use DB;
@@ -23,18 +23,35 @@ class FeedController extends Controller
     }       
     public function index()
     {
-        $feeds = Estado::paginate(10);
-        return view('feeds.index', compact('feeds'));    
+        $feeds = EstadoEmpresa::paginate(10);
+        return view('feeds.index', compact('feeds'));
     }
-    public function create()
+
+	public function CargarFeeds($idUltima){
+
+		$feeds = EstadoEmpresa::all();
+		return response()->json(
+			$feeds
+		);
+	}
+
+	public function CargarFeedsEmpresa($idUltima, $empresa){
+		return 'Cargar feeds empresa';
+	}	
+	public function create()
     {
         return view('feeds.create');
     }
     public function store(FeedCreateRequest $request)
     {
-        Feed::create($request->all());
-        Session::flash('message', 'Feed realizado correctamente');
-        return Redirect::to('/feeds');        
+		    if($request->ajax()){
+			    EstadoEmpresa::create($request->all());
+			    //Session::flash('message', 'Publicacion creada correctamente');
+			    return response()->json([
+				    "Mensaje: " => "Creado"
+			    ]);
+			    //CargarEstadoEmpresa();
+		    }
     }
     public function show($id)
     {

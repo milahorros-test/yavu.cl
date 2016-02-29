@@ -19,7 +19,11 @@ Route::get('sitemap', function(){
 
 /*Gestión de estados*/
 Route::resource('estadoempresa', 'EstadoEmpresaController');
-Route::get('estadosempresa/{idUltima}/{empresa}', 'EstadoEmpresaController@CargarEstadoEmpresa');
+//Route::get('estadosempresa/{idUltima}/{empresa}', 'FeedController@CargarEstadoEmpresa');
+
+Route::get('cargarfeeds/{idUltima}/', 'FeedController@CargarFeeds');
+Route::get('cargarfeedsempresa/{idUltima}/{empresa}', 'FeedController@CargarFeedsEmpresa');
+
 Route::get('contarestados', 'EstadoController@ContarEstados');
 Route::resource('estados','EstadoController');
 Route::get('buscarusuario/{nombre}', 'UserController@BuscarUsuarios');

@@ -1,5 +1,5 @@
 <div class="col-sm-8">
-
+	<!--
   <div class="list-group">
 
     <div class="list-group-item-full-header">
@@ -30,7 +30,7 @@
     </div> 
 
   </div> 
-
+	-->
   <div id="e">
 
     <div id="Estados"></div>
