@@ -8,8 +8,6 @@
 
     {!!Form::open(['action'=>'EstadoController@store', 'method'=>'POST'])!!}
 
-    {!!Form::text('titulo',null,['class'=>'form-control','placeholder'=>'Ingrese el título de la publicación'])!!}
-
     {!!Form::textarea('descripcion',null,['class'=>'form-control-stat','placeholder'=>'¿Qué deseas compartir en yavu?', 'maxlength'=>'500', 'required'=>'required','style'=>'resize:none;', 'rows'=>'10', 'id'=>'status'])!!}
 
     {!!Form::hidden('user_id', Auth::user()->get()->id, ['id'=>'user_id'])!!}

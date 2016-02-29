@@ -30,14 +30,14 @@ class UserController extends Controller
   public function BuscarUsuarios($nombre){
     $nombre = addslashes($nombre);
     $usuarios = DB::table('users')                    
-                ->select('*')    
-                ->where('nombre', 'like', '%'.$nombre.'%')   
+                ->select('*')
+                ->where('nombre', 'like', '%'.$nombre.'%')
                 ->orwhere('apellido', 'like', '%'.$nombre.'%')
                 ->orwhere('email', 'like', '%'.$nombre.'%')
                 ->orwhere('ciudad', 'like', '%'.$nombre.'%')
                 ->orwhere('region', 'like', '%'.$nombre.'%')
                 ->orwhere('pais', 'like', '%'.$nombre.'%')
-                ->orderBy('created_at','desc')   
+                ->orderBy('created_at','desc')
                 ->get();
 
     //dd($usuarios);

@@ -24,7 +24,7 @@
 
         <style>
             body {
-                padding-top: 50px;
+                padding-top:72px;
                 padding-bottom: 20px;
             }
         </style>

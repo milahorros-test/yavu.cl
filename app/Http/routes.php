@@ -123,3 +123,7 @@ Route::resource('interacciones', 'InteraccionController');
 /*Gestión de  Interes */
 Route::resource('intereses', 'InteresController');
 /*Gestión de Interes */
+
+/*Gestión de  Feeds */
+Route::resource('feeds', 'FeedController');
+/*Gestión de Feeds */

@@ -91,23 +91,18 @@
 					</div>
 					<div class="list-group"  id="EstadoEmpresa">
 						<div class="list-group-item-full-header">
-							<h6>MI EMPRESA</h6>
-						</div>                          
-						<div class="list-group-item">
-							Inicia actividad en yavu.cl con tu empresa registrandote aquí.<br>
+							<h6>MI(S) EMPRESA(S)
+								<span style="float:right;font-size: 0.9em;" class="label label-success">
+									<a href={!! URL::to('empresas/create/') !!}>REGISTRAR PYME</a>
+								</span>
+							</h6>
 						</div>
-						<a href="{!!URL::to('/empresas/create')!!}" class="list-group-item list-group-item-warning">Ir a registrar una empresa</a>  
-						<div class="list-group-item">
-							<h4>Estado de empresas</h4>
-						</div>                  
 					</div>
 					<div class="list-group">                    
 						<div class="list-group-item">
-							Noticias de las empresas a las que sigues
-						</div>  
-						<div class="list-group-item">
-							Últimas novedades en yavu
-						</div>  
+							<h6>ACCESOS RÁPIDOS</h6>
+						</div>
+						<a class="list-group-item list-group-item-warning" href="{!! URL::to('/feeds') !!}">Ir a publicaciones</a>
 						{!!link_to_route('usuarios.edit', $title = 'Modificar datos de mi cuenta', $parameters = Auth::user()->get()->id, $attributes = ['class'=>'list-group-item list-group-item-info'])!!}
 						<a href="{!!URL::to('dashboard')!!}" class="list-group-item list-group-item-warning">Volver a dashboard</a>
 						<a href="{!!URL::to('sitemap')!!}" class="list-group-item list-group-item-warning">Ir al Sitemap</a>

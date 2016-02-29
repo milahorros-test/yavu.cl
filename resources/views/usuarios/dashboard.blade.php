@@ -25,7 +25,7 @@
 					</div>					
 					<div class="list-group-item">
 					</div>																	
-					<a href="#!" class="list-group-item list-group-item-info">
+					<a href="{{URL::to('/feeds')}}" class="list-group-item list-group-item-info">
 						Ir a publicaciones 
 						<span class="badge">
 							14

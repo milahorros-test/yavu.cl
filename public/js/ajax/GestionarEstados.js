@@ -130,7 +130,7 @@ $(document).ready(function(){
 	/*FUNCIONES Y PROCEDIMIENTOS*/
 	function ActualizarEstados(){
 		var EstadosUsuario = $("#Estados").val(); 
-		$("#Estados").val() ="";
+		$("#Estados").value ="";
 		var route = "http://localhost:8000/estadosusuario";
 		var user_id = $("#user_id");
 		var Contador = 0;

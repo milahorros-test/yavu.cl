@@ -7,7 +7,7 @@ $(document).ready(function(){
 
 	/*MÉTODOS CONSTRUCTORES*/
 
-	//CargarEstados();
+	  CargarEstados();
 	//LimpiarEstados();
 
 	setInterval(function()
@@ -94,7 +94,7 @@ $(document).ready(function(){
 	function ActualizarEstados()
 	{
 		var EstadosUsuario = $("#Estados").val(); 
-		$("#Estados").val() ="";
+		$("#Estados").value = "";
 		var route = "http://localhost:8000/estadosusuario";
 		var user_id = $("#user_id");
 		var Contador = 0;
@@ -103,7 +103,7 @@ $(document).ready(function(){
 			if (Contador === 4){
 				Global_idUltimaPublicacion = value.id;
 			}
-			$(res).each(function(key,value){
+			$(res).each(function(key, value){
 				var TimeAgo = value.created_at;
 				var Estado = 
 					"<div id='status' class='list-group'>"

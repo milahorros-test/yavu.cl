@@ -8,6 +8,7 @@ use yavu\Http\Requests\FeedUpdateRequest;
 use Session;
 use Redirect;
 use yavu\Feed;
+use yavu\Estado;
 use Auth;
 use Illuminate\Routing\Route;
 use DB;
@@ -22,7 +23,7 @@ class FeedController extends Controller
     }       
     public function index()
     {
-        $feeds = Feed::paginate(10);
+        $feeds = Estado::paginate(10);
         return view('feeds.index', compact('feeds'));    
     }
     public function create()
