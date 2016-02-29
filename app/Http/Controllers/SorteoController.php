@@ -29,27 +29,35 @@ class SorteoController extends Controller
     public function index()
     {   
         
-        $sorteos = Sorteo::all();
+        $sorteos = DB::table('sorteos')
+                ->where('estado_sorteo', 'like', 'Aprobado') 
+                ->paginate(5);
         return view('sorteos.index', compact('sorteos'));
 
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public function BuscarSorteos($nombre){
+
+        $sorteos = DB::table('sorteos')                    
+                    ->select('*')    
+                    ->where('estado_sorteo', 'like', 'Aprobado') 
+                    ->orwhere('nombre_sorteo', 'like', '%'.$nombre.'%')  
+                    ->orwhere('descripcion', 'like', '%'.$nombre.'%')
+                    ->orderBy('created_at','desc')   
+                    ->get();
+
+        //dd($empresas);
+        return response()->json(
+            $sorteos
+        );
+    } 
+
     public function create()
     {
         return view('sorteos.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
     public function store(Request $request)
     {
         Sorteo::create($request->all());
