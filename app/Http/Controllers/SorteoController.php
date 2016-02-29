@@ -29,9 +29,7 @@ class SorteoController extends Controller
     public function index()
     {   
         
-        $sorteos = DB::table('sorteos')
-                ->where('estado_sorteo', 'like', 'Aprobado') 
-                ->paginate(5);
+        $sorteos = DB::table('sorteos')->paginate(5);
         return view('sorteos.index', compact('sorteos'));
 
     }

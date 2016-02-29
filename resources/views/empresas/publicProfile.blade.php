@@ -140,6 +140,17 @@
 							<a href="{!!URL::to('sitemap')!!}" class="list-group-item list-group-item-warning">Ir al Sitemap</a>
 						@endif
 					</div>	
+
+					<div class="list-group">                    
+						<div class="list-group-item">
+							<h6>ACCESOS RÁPIDOS</h6>
+						</div>
+						<a class="list-group-item list-group-item-warning" href="{!! URL::to('/feeds') !!}">Ir a publicaciones</a>
+						{!!link_to_route('empresas.edit', $title = 'Modificar datos de mi empresa', $parameters = $e->id, $attributes = ['class'=>'list-group-item list-group-item-info'])!!}
+						<a href="{!!URL::to('dashboard')!!}" class="list-group-item list-group-item-warning">Volver a dashboard</a>
+						<a href="{!!URL::to('sitemap')!!}" class="list-group-item list-group-item-warning">Ir al Sitemap</a>
+						<a href="{!!URL::to('sorteos/create')!!}" class="list-group-item list-group-item-warning">Crear sorteo nuevo</a>
+					</div>  					
 				
 				</div>
 
