@@ -12,6 +12,8 @@ use yavu\User;
 use yavu\Estado;
 use Illuminate\Routing\Route;
 use DB;
+use RUT;
+use Malahierba\ChileRut\ChileRut;
 class UserController extends Controller
 {
   public function __construct(){
@@ -94,10 +96,25 @@ class UserController extends Controller
   }
   public function update($id, UserUpdateRequest $request)
   {
-    $this->user->fill($request->all());
-    $this->user->save();
-    Session::flash('message', 'Usuario editado correctamente');
-    return Redirect::to('/usuarios');
+    if(RUT::check($request->rut)){
+      $this->user->fill($request->all());
+      $this->user->save();
+      Session::flash('message', 'Usuario editado correctamente');
+      return Redirect::to('/usuarios');      
+    }else{
+      Session::flash('message-error', 'El rut ingresado no es válido.');
+      return Redirect::to('/profile');   
+    }
+
+  }
+  public function ValidarRutUsuario($rut)
+  {
+    if(RUT::check($rut)){
+      return RUT::clean($rut);
+    }else{
+      return "false";
+    }
+    return "true";
   }
   public function destroy($id)
   {

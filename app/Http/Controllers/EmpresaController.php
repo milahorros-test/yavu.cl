@@ -11,6 +11,7 @@ use yavu\Empresa;
 use Illuminate\Routing\Route;
 use Auth;
 use DB;
+use Malahierba\ChileRut\ChileRut;
 
 class EmpresaController extends Controller
 {

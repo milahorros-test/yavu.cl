@@ -81,7 +81,7 @@
 			<div class="list-group-item">
 				<div class="form-group has-feedback has-feedback-left">
 					{!!Form::label('Rut:')!!}
-					{!!Form::text('rut',null,['class'=>'form-control','placeholder'=>'Ingrese su rut'])!!}
+					{!!Form::text('rut',null,['class'=>'form-control','placeholder'=>'Ingrese su rut', 'id' => 'rut'])!!}
 				</div>
 				<div class="form-group has-feedback has-feedback-left">
 					{!!Form::label('Nickname:')!!}
@@ -168,3 +168,25 @@
 		</div>
 	@endif
 <!--</div>-->
+<script>
+	$("#rut").change(function(){
+		ValidarRut($("#rut").val());
+	});
+	function ValidarRut(rut){
+		console.log("click");
+		var route = "http://localhost:8000/validarrutusuario/"+rut+"";
+
+		$.get(route, function(res){
+			
+			if(res !== 'false'){
+				$("#rut").val(res);
+				//console.log(res);
+			}else{
+				$("#rut").val("");
+				$("#rut").focus();
+				alert('Formato de rut invalido');
+			}
+		});
+		
+	}
+</script>
