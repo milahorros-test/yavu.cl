@@ -1,9 +1,12 @@
 @extends('layouts.frontadm')
 @section('content')
 <div class="jumbotron">
+	<div id="contentMiddle">
+	<h1>Registro de Admins</h1>
+	</div>
 	<div id="contentIn">
 		@include('alerts.alertFields')
-		<h4>Registro de administradores</h4>
+		
 
 		{!!Form::open(['route'=>'admins.store', 'method'=>'POST'])!!}
 			@include('admins.forms.fieldsAdmin')

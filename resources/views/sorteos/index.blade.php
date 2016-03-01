@@ -10,9 +10,8 @@
     @include('alerts.errorsMessage')
     @include('alerts.successMessage')
     @include('alerts.warningMessage')
-    <h2>Panel de administración</h2>    
+    <h1>Mantenedor de Sorteos</h1>   
     <div class="panel panel-default">
-      <div class="panel-heading"><h4>Mantenedor de Sorteos</h4></div>
       <div class="panel-body">
         <div class="form-group">
 

@@ -21,7 +21,7 @@
          <div class="col-sm-4"><!--style="position:fixed;z-index:1000;"-->
              <div class="list-group">
                  <div class="list-group-item-full-header">
-                     <h6>INFORMACIÓN</h6>
+                     <h6>Cantidad de Coins</h6>
                  </div>
                  <div class="list-group-item">
                      Coins 

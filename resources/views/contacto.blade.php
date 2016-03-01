@@ -1,50 +1,52 @@
 
 @extends('layouts.front')
 @section('content')
+@include('alerts.alertFields')
+@include('alerts.errorsMessage')
+@include('alerts.successMessage')
+@include('alerts.warningMessage')
+
 {!!Form::open()!!}
 <div class="jumbotron">
+  <div id="contentMiddle">
+  <h1>Contacto</h1>
+  </div>
   <div id="contentIn">
 
-    @include('alerts.alertFields')
-    @include('alerts.errorsMessage')
-    @include('alerts.successMessage')
-    @include('alerts.warningMessage')
     <div class="panel panel-default">
-      <div class="panel-heading"><h4>Formulario de contacto</h4></div>
+   
       <div class="panel-body">
+             <td colspan="2">Haznos saber tus dudas, ¡queremos entregarte el mejor servicio!</td>
+             <br>
         {!!Form::open()!!}
         <table class="table">
-          <tr>
-            <td colspan="2">Haznos saber tus dudas, ¡queremos entregarte el mejor servicio!</td>
-            <td>* <small>(Campos requeridos)</small></td>
-          </tr>
           <tr>
             <td>Nombre</td>
             <td>
               {!!Form::text('name',null,['class'=>'form-control','placeholder'=>'Ingresa tu nombre', 'required'=>'required'])!!}
             </td>
-            <td>*</td>
+
           </tr>
           <tr>
             <td>Email</td>
             <td>
               {!!Form::email('email',null,['class'=>'form-control','placeholder'=>'Ingresa tu email', 'required'=>'required'])!!}
             </td>
-            <td>*</td>
+
           </tr>
           <tr>
             <td>Teléfono</td>
             <td>
               {!!Form::text('fono',null,['class'=>'form-control','placeholder'=>'Ingresa tu numero de contacto', 'required'=>'required'])!!}         
             </td>
-            <td>*</td>
+
           </tr>
           <tr>
             <td>Mensaje</td>
             <td>
               {!!Form::textarea('message',null,['class'=>'form-control','placeholder'=>'Ingresa tu mensaje', 'required'=>'required','rows'=>'3'])!!}                      
             </td>
-            <td>*</td>
+
           </tr>
           <tr>
             <td><!--url--></td>
