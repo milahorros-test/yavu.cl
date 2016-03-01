@@ -1,6 +1,7 @@
 @extends('layouts.front')
 @section('content')
 <div class="jumbotron">
+ <!-- comentario -->
 	<div id="contentIn">
 		<h2>Términos y condiciones generales</h2>	
 		<div class="panel panel-default">
