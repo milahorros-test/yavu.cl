@@ -1,5 +1,7 @@
+{!!Html::style('css/graficos.css')!!}
 {!!Html::script('js/jquery.js')!!}
 {!!Html::script('js/ajax/GestionarEstadosEmpresa.js')!!}
+{!!Html::script('js/graficos.js')!!}
 <!--{!!Html::script('js/ajax/GestionarCoinsEmpresa.js')!!}-->
 <!--{!!Html::script('js/ajax/InteraccionPublicacionesEmpresa.js')!!}-->
 @extends('layouts.front')
@@ -150,12 +152,34 @@
 						<a href="{!!URL::to('dashboard')!!}" class="list-group-item list-group-item-warning">Volver a dashboard</a>
 						<a href="{!!URL::to('sitemap')!!}" class="list-group-item list-group-item-warning">Ir al Sitemap</a>
 						<a href="{!!URL::to('sorteos/create')!!}" class="list-group-item list-group-item-warning">Crear sorteo nuevo</a>
-					</div>  					
-				
+					</div>  		
+
+					<div class="list-group">                    
+						<div class="list-group-item">
+							<h6>Contadores Gráficos</h6>
+								<br />
+    							<div class="counter col_fourth">
+      							<i class="glyphicons-girl"></i>
+      							<h3 class="timer count-title" id="count-number" data-to="10" data-speed="1500"></h3>
+   							 	</div>
+							   
+							   	<div class="counter col_fourth">
+							      <i class="fa fa-coffee fa-2x"></i>
+							      <h2 class="timer count-title" id="count-number" data-to="20" data-speed="1500"></h2>
+							   	</div>
+
+							    <div class="counter col_fourth">
+							      <i class="fa fa-lightbulb-o fa-2x"></i>
+							      <h2 class="timer count-title" id="count-number" data-to="30" data-speed="1500"></h2>
+							    </div>
+
+							    <div class="counter col_fourth end">
+							      <i class="fa fa-bug fa-2x"></i>
+							      <h2 class="timer count-title" id="count-number" data-to="40" data-speed="1500"></h2>
+							    </div>
+						</div>  							
+					</div>
 				</div>
-
-			</div>
-
 			<br />
 
 		@endforeach
