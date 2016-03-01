@@ -41,7 +41,6 @@
 				   </div>
 				   <!--{!!link_to_route('usuarios.edit', $title = 'Ir a mi perfil', $parameters = Auth::user()->get()->id, $attributes = ['class'=>'list-group-item list-group-item-info'])!!}-->
 				   <a href="{!!URL::to('/profile')!!}" style="text-align: center;" class="list-group-item list-group-item-info">
-				   		<br>
 				   		<span style="font-size: 6em;" class="glyphicon glyphicon-user"></span>			   						   
 				   </a>
 
@@ -86,7 +85,6 @@
 					   Revisa algunas configuraciones de seguridad para ti.					   
 				   </div>
 				   <a href="#" style="text-align: center;" class="list-group-item list-group-item-info">				   		
-				   		<br>
 				   		<span style="font-size: 6em;" class="glyphicon glyphicon-cog"></span>
 				   	</a>
 			   </div>
