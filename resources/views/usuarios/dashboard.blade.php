@@ -104,10 +104,17 @@
 
 			   </div>
 
-				<div class="list-group" id="HistorialCoins">
+				<div class="list-group">					
 					<div class="list-group-item-full-header">
 						<h6>RESUMEN DE GARGAS DE COINS</h6>
+
 					</div>					
+					<div id="HistorialCoins">
+											
+					</div>
+					<div id="FooterHistorialCoins">
+						
+					</div>
 				</div>					   
 
 			   <!--

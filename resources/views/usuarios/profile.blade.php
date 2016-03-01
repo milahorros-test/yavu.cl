@@ -84,7 +84,7 @@
 						<div class="list-group-item">
 							Coins 
 							<span id="CantidadCoins" style="float:right;" class="label label-warning">
-								<img src="http://i601.photobucket.com/albums/tt93/tbg8904/Gaia%20Icon/Coins.png" width="16px" height="16px">
+								<img src="https://38.media.tumblr.com/9056c3040c618c65888244befef39321/tumblr_mhpc6eUvag1rrftcdo1_500.gif" width="16px" height="12px">
 							</span>
 						</div>
 						<div class="list-group-item">

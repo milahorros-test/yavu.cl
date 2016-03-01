@@ -66,27 +66,6 @@
             <li>
               <a href="{!!URL::to('/')!!}">Inicio</a>
             </li>
-            @if(Request::path() !== 'login') 
-              @if(!Auth::user()->check() && !Auth::empresa()->check() && !Auth::admin()->check())
-                <li class="dropdown"><a href="{!!URL::to('/login/')!!}">Inicia Sesión</a></li> 
-              @endif                
-            @endif 
-
-               <!--  
-            <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Puntos milahorros<b class="caret"></b></a>                        
-              <ul class="dropdown-menu">
-                <li><a href="#">Ranking mensual</a></li>
-                <li><a href="#">Mes específico</a></li>
-                <li><a href="#">Ranking global</a></li>
-              </ul>
-            </li>    
-                           
-            <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Contacto<b class="caret"></b></a>                        
-              <ul class="dropdown-menu">
-                <li><a href="/contacto/">Contacto</a></li>
-              </ul>
-            </li>
-            -->  
             @if (Auth::user()->check())
               <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle"><strong>{!!Auth::user()->get()->nombre!!}</strong>  <b class="caret"></b></a>                        
                 <ul class="dropdown-menu">
@@ -96,41 +75,29 @@
                   <li><a href="{!!URL::to('/logout')!!}">Cerrar sesión</a></li>
                 </ul>
               </li>                         
-
             @elseif (Auth::admin()->check())
-              <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Registrar empresa<b class="caret"></b></a>
-                <ul class="dropdown-menu">      
-                  <li><a href="{!!URL::to('/empresas/create')!!}">Registro de empresas</a></li> 
-                  <li><a href="{!!URL::to('/empresas')!!}">Mostrar listado de empresas</a></li>
-                  <li><a href="{!!URL::to('/sorteos')!!}">Sorteos por confirmar</a></li>
-                </ul>
-              </li> 
-              <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Pagos<b class="caret"></b></a>                        
-                <ul class="dropdown-menu">      
-                  <li><a href="{!!URL::to('/empresas')!!}">Registrar pago</a></li> 
-                  <li><a href="{!!URL::to('/empresas')!!}">Mostrar listado de deudores</a></li>
-                </ul>
-              </li> 
               <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Admintración<b class="caret"></b></a>
                 <ul class="dropdown-menu">      
                   <li><a href="{!!URL::to('/admins/create')!!}">Registro de Administradores</a></li>
                   <li><a href="{!!URL::to('/admins')!!}">Mostrar listado de Administradores</a></li>
+                  <li><a href="{!!URL::to('/empresas/create')!!}">Registro de empresas</a></li> 
+                  <li><a href="{!!URL::to('/empresas')!!}">Gestión de empresas</a></li>
+                  <li><a href="{!!URL::to('/sorteos')!!}">Sorteos por confirmar</a></li>                  
+                  <li><a href="{!!URL::to('/logout')!!}"><strong>Salir</strong></a></li>                  
                 </ul>
-                <li>
-                  <a href="{!!URL::to('/logout')!!}">Salir</a>
-                </li>
               </li>   
-            @else
-              @if(Request::path() !== 'login')
-                <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Nosotros<b class="caret"></b></a>
-                  <ul class="dropdown-menu">
-                    <li><a href="{!!URL::to('/nosotros/')!!}">Nuestra empresa</a></li>
-                    <li><a href="{!!URL::to('/contacto/')!!}">Contacto</a></li>
-                    <li><a href="{!!URL::to('/terminos/')!!}">Terminos</a></li>
-                  </ul>
-                </li> 
-                <li><a href="{!!URL::to('/yavucoins/')!!}">YavuCoins</a></li>             
-              @endif
+            @elseif(Request::path() !== 'login')
+              <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Nosotros<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="{!!URL::to('/nosotros/')!!}">Nuestra empresa</a></li>
+                  <li><a href="{!!URL::to('/contacto/')!!}">Contacto</a></li>
+                  <li><a href="{!!URL::to('/terminos/')!!}">Terminos</a></li>
+                  <li><a href="{!!URL::to('/yavucoins/')!!}"><strong>YavuCoins</strong></a></li>    
+                </ul>
+              </li> 
+              @if(!Auth::user()->check() && !Auth::empresa()->check() && !Auth::admin()->check())
+                <li class="dropdown"><a href="{!!URL::to('/login/')!!}">Inicia Sesión</a></li> 
+              @endif               
             @endif﻿  
 
           </ul>         

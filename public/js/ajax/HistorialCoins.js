@@ -58,14 +58,15 @@ $(document).ready(function(){
 				$("#HistorialCoins").append(
 					'<div class="list-group-item">'
 						+'<small>'
-						+'<div style="float:right;"><strong>Motivo</strong> '+value.motivo+'</div>'						
+						+'<div style="float:right;"><img width="6%" height="3%" src="https://38.media.tumblr.com/9056c3040c618c65888244befef39321/tumblr_mhpc6eUvag1rrftcdo1_500.gif" /></div>'
+						+'<div style=""><strong>Motivo</strong> '+value.motivo+'</div>'						
 						+'<div><strong>Hace</strong> '+humanTiming(value.created_at)+'</div>'
 						+'<div><strong>Cantidad</strong> '+formatNumber.new(value.cantidad,"$ ")+'</div>'
 						+'</small>'
 					+'</div>'						
 				);
 			});
-			$("#HistorialCoins").append(
+			$("#FooterHistorialCoins").append(
 				'<a href="#HistorialCoins"><div class="list-group-item list-group-item-info" style="text-align:right;">'
 					+'<a style="text-align: center;"><span style="font-size: 6em;" class="glyphicon glyphicon-usd"></span></a>'
 					+'<div"><strong>Movimientos </strong><small>('+Contador+' últimos movimientos)</small> <span class="text-success">'+formatNumber.new(TotalCoins, "$ ")+'</span></div>'				
