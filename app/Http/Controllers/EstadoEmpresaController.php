@@ -63,10 +63,12 @@ class EstadoEmpresaController extends Controller
                         ->join('empresas'  , 'empresas.id', '=', 'estado_empresas.empresa_id')
                         ->select('users.*', 'estado_empresas.*', 'empresas.nombre as nombreEmp')    
                         ->where('estado_empresas.user_id', '=', $nombreEmp[0]->user_id)
+                        ->where('empresas.nombre', '=', $empresa)
                         ->where('estado_empresas.id', '>', (int) $idUltima)
                         ->orderBy('estado_empresas.created_at','desc')   
                         ->limit('5')
                         ->get();  
+
         }elseif((int) $idUltima <> "0"){
             $estado_empresas = DB::table('estado_empresas')                    
                         ->join('users'  , 'users.id', '=', 'estado_empresas.user_id')

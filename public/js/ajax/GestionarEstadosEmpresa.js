@@ -158,7 +158,7 @@ $(document).ready(function(){
 	}
 
 	function CargarEstados(){
-		var EstadosUsuario = $("#Estados"); 
+		var Estados = $("#Estados"); 
 		var empresa = $("#empresa").val();
 		Global_idUltimaPublicacion = $("#idUltima").val();
 		var route = "http://localhost:8000/estadosempresa/"+Global_idUltimaPublicacion+"/"+empresa;
@@ -170,7 +170,7 @@ $(document).ready(function(){
 			$(res).each(function(key,value){				
 				var TimeAgo = value.created_at;
 				Global_idUltimaPublicacion = value.id;		
-				EstadosUsuario.append(
+				Estados.append(
 					"<div class='list-group'>"
 						+"<div class='list-group-item'>"												  	
 							  	+"<h4><a href='/empresa/"+value.nombreEmp+"/' style='color:#3C5B28;'>"
@@ -178,13 +178,17 @@ $(document).ready(function(){
 									+value.nombreEmp+" Idp:("+Global_idUltimaPublicacion+")"
 								+"</a></h4>"
 								+"<small>"
-									+"Publicó <abbr class=\'timeago\' title=\'"+TimeAgo+"\'>"+TimeAgo+"</abbr>"
+									+"Publicó <abbr class='timeago' title='"+TimeAgo+"'>"+TimeAgo+"</abbr>"
 								+"</small><hr>"		
 								+"<p>"+value.status+"</p>"
 						+"</div>"
 						+"<div class='list-group-item panel-footer'>"
-						+"<span class='glyphicon glyphicon-thumbs-up'>&nbsp;</span>"
+							+"<span class='glyphicon glyphicon-thumbs-up'>&nbsp;</span>"
 							+"<a name='like' class='inter' role='button' id='estado_"+value.id+"' value='"+value.id+"' href='#!' style='color:#3C5B28;'><span>Me gusta</span></a>"
+							+"&nbsp;&nbsp;|&nbsp;&nbsp;"
+							+"<a name='like' class='inter' role='button' id='estado_"+value.id+"' value='"+value.id+"' href='#!' style='color:#3C5B28;'><span>Yo quiero</span></a>"							
+							+"&nbsp;&nbsp;|&nbsp;&nbsp;"
+								+"<a name='like' class='inter' role='button' id='estado_"+value.id+"' value='"+value.id+"' href='#!' style='color:#3C5B28;'><span>Coins</span></a>"							
 						+"</div>"
 					+"</div>"
 				);
@@ -193,7 +197,7 @@ $(document).ready(function(){
 				Contador += 1;							
 			});
 			if(Contador < 5){					
-				//EstadosUsuario.append("Ultima publicacion: "+Global_idUltimaPublicacion);
+				//Estados.append("Ultima publicacion: "+Global_idUltimaPublicacion);
 				console.log("Hay menos de 5 registros");
 				$("#msj-finPublicaciones").fadeIn();	
 				setTimeout(function() {

@@ -15,6 +15,7 @@ $(document).ready(function(){
 		var a = $(".timeago");
 		for(var i = 0; i < a.length ; i++){
 			var elemento = document.getElementById( a[i].id );
+			console.log(elemento.title);
 			$('#'+a[i].id).text("" + humanTiming( elemento.title ) );
 		}
 	},40000);

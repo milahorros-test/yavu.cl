@@ -51,7 +51,7 @@
 
 					</div>
 
-				@if(isset(Auth::user()->get()->id))
+				@if(isset(Auth::user()->get()->id) && Auth::user()->get()->id===$e->user_id)
 					@if($e->user_id == Auth::user()->get()->id)
 						<div class="list-group">
 							<div class="list-group-item-full-header">

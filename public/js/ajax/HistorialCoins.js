@@ -67,7 +67,8 @@ $(document).ready(function(){
 			});
 			$("#HistorialCoins").append(
 				'<a href="#HistorialCoins"><div class="list-group-item list-group-item-info" style="text-align:right;">'
-					+'<div"><strong>Movimientos </strong><small>('+Contador+' últimos movimientos)</small> <div class="text-success">'+formatNumber.new(TotalCoins, "$ ")+'</div></div>'				
+					+'<a style="text-align: center;"><span style="font-size: 6em;" class="glyphicon glyphicon-usd"></span></a>'
+					+'<div"><strong>Movimientos </strong><small>('+Contador+' últimos movimientos)</small> <span class="text-success">'+formatNumber.new(TotalCoins, "$ ")+'</span></div>'				
 				+'</div></a>'				
 			);			
 		});			 	
