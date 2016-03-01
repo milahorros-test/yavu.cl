@@ -16,7 +16,7 @@ Route::get('sitemap', function(){
 	return view('sitemap');
 });
 /*Gestión del front*/
-
+//
 /*Gestión de estados*/
 Route::resource('estadoempresa', 'EstadoEmpresaController');
 Route::get('estadosempresa/{idUltima}/{empresa}', 'EstadoEmpresaController@CargarEstadoEmpresa');
