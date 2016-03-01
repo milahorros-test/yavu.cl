@@ -9,9 +9,8 @@
 		@include('alerts.errorsMessage')
 		@include('alerts.successMessage')
 		@include('alerts.warningMessage')
-		<h2>Panel de administración</h2>		
+		<h1>Mantenedor de Empresas</h1>		
 		<div class="panel panel-default">
-			<div class="panel-heading"><h4>Mantenedor de empresas</h4></div>
 			<div class="panel-body">
 				<div class="form-group">
 
