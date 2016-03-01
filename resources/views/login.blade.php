@@ -6,8 +6,12 @@
     @include('alerts.warningMessage')
     @include('alerts.errorsMessage')
     @include('alerts.alertFields')
+
+      <div id="contentMiddle">
+        <h1>Login</h1>
+      </div>
     <div class="panel panel-default">
-      <div class="panel-heading">Login</div>
+      
         <div class="panel-body">
           <div class="form-group has-feedback has-feedback-left ">
             {!!Form::label('Usuario:')!!}
