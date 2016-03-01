@@ -7,6 +7,7 @@ use yavu\Http\Requests\SorteoCreateRequest;
 use yavu\Http\Requests\SorteoUpdateRequest;
 use yavu\Http\Controllers\Controller;
 use yavu\Sorteo;
+use yavu\User;
 use Session;
 use Redirect;
 use DB;
@@ -49,7 +50,28 @@ class SorteoController extends Controller
             $sorteos
         );
     } 
+    public function CanjearTicket($user_id)
+    {
+        $coinsUsuario = DB::table('registro_coins')
+                ->where('user_id', $user_id)
+                ->sum('cantidad');     
 
+        if($coinsUsuario >= 1000){            
+            DB::table('registro_coins')->insert(
+                ['user_id' => $user_id, 
+                'motivo' => 'Canje de ticket',
+                'cantidad' => '-1000'
+                ]
+            );            
+        }else{
+            return response()->json([
+                "Mensaje: " => "Sin salido para el servicio"                
+            ]);             
+        }
+        return response()->json([
+            "Mensaje: " => "Creado"                
+        ]);   
+    }
     public function create()
     {
         return view('sorteos.create');

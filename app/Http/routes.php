@@ -65,6 +65,7 @@ Route::resource('servicios','ServicioController');
 Route::resource('sorteos', 'SorteoController');
 Route::get('listasorteos', 'SorteoController@ListaSorteos');
 Route::get('buscarsorteo/{nombre}', 'SorteoController@BuscarSorteos');
+Route::get('canjearticket/{user_id}', 'SorteoController@CanjearTicket');
 /*Gestión de Sortes*/
 
 /*Gestión de Admins*/
@@ -91,7 +92,6 @@ Route::resource('alternativas', 'AlternativaController');
 /*Gestión de Servicio*/
 Route::resource('servicios', 'ServicioController');
 /*Gestión de Servicio*/
-
 
 /*Gestión de Banners */
 Route::resource('banners', 'BannerController');
@@ -125,7 +125,6 @@ Route::resource('feeds', 'FeedController');
 Route::resource('interacciones', 'InteraccionController');
 /*Gestión de Interacciones */
 
-
 /*Gestión de  Interes */
 Route::resource('intereses', 'InteresController');
 /*Gestión de Interes */
@@ -133,3 +132,8 @@ Route::resource('intereses', 'InteresController');
 /*Gestión de  Feeds */
 Route::resource('feeds', 'FeedController');
 /*Gestión de Feeds */
+
+
+/*Gestión de tickets*/
+Route::resource('tickets','TicketController');
+/*Gestión de tickets*/
