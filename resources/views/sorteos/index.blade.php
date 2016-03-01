@@ -65,6 +65,8 @@
                     <td><h5>Descripción</h5></td>
                     <td>{{$sorteo->descripcion}}</td>
                   @if(Auth::user()->check())
+                    <input id="user_id" value="{!! Auth::user()->get()->id !!}" type="hidden" />
+                    <input type="hidden" name="_token" value="{{csrf_token()}}" id="token" />
                     <td><h5>Estado</h5></td>
                     <td>{{$sorteo->estado_sorteo}}</td>
                     <br>
@@ -76,14 +78,14 @@
                         <div class="modal-content">
                           <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                            <h4 class="modal-title" id="myModalLabel">Ticket's</h4>
                           </div>
                           <div class="modal-body">
-                            ...
+                            Transforma tus yavucoins a tickets para participar!
                           </div>
                           <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                            <button type="button" id='siquiero' class="btn btn-primary">Si quiero!</button>
                           </div>
                         </div>
                       </div>
