@@ -16,7 +16,7 @@
     <div class="panel panel-default">
    
       <div class="panel-body">
-             <td colspan="2">Haznos saber tus dudas, ¡queremos entregarte el mejor servicio!</td>
+             <td colspan="2">Haznos saber tus dudas, ¡Queremos entregarte el mejor servicio!</td>
              <br>
         {!!Form::open()!!}
         <table class="table">
