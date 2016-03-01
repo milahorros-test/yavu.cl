@@ -70,13 +70,30 @@ $(document).ready(function(){
 					//$("#EstadoEmpresa").removeClass("label-warning");
 					//$("#EstadoEmpresa").addClass("label-success");
 					$("#EstadoEmpresa").append(
-						'<div class="list-group-item">'
-							+"<strong>"+value.nombre+"</strong>"						
-							+'<span style="float:right;" class="label label-success">'
-								+'<span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>'
-								+"<a href='empresa/"+value.nombre+"/'>"+value.estado+"</a>"											
-							+"</span>"	
-							+'<a class="btn-xs btn-link" style="float:right;" href="empresas/'+value.id+'/edit">Editar</a>'	
+						'<div class="list-group-item-full-header">'
+							+'<div class="panel panel-success">'
+								+'<div class="panel-heading"><strong>'+value.nombre+'</strong></div>'
+								+'<div class="list-group">'
+									+'<div class="list-group-item">'
+										+'<small>Estado de la empresa</small> : '
+										+'<span style="float:right;" class="label label-success">'
+											+'<span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>'
+											+value.estado
+										+"</span>"	
+									+'</div>'
+
+									+'<div class="list-group-item">'
+										+'<small>Modificar datos de la empresa</small> : '
+										+'<a style="float:right;" class="btn-xs btn-link" href="empresas/'+value.id+'/edit">Editar</a>'	
+									+'</div>'
+
+									+'<div class="list-group-item">'
+										+'<small>Perfil de la empresa</small> : '
+										+"<a style='float:right;' class='btn-xs btn-link' href='empresa/"+value.nombre+"/'>Perfil</a>"	
+									+'</div>'
+
+								+'</div>'
+							+'</div>'
 						+'</div>'
 					);					
 				}					

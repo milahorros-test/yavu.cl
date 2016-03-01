@@ -60,4 +60,18 @@
           </div>
         </div>
 
+        <div class="list-group">
+          <div class="list-group-item-full-header">
+            <h6>PUBLICIDAD</h6>
+          </div>            
+          <div class="list-group-item">          
+          </div>
+          <div class="list-group-item">          
+          </div>
+          <div class="list-group-item">          
+          </div>
+          <div class="list-group-item">          
+          </div>
+        </div>
+
     </div>
