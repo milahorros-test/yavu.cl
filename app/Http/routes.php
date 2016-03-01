@@ -129,9 +129,9 @@ Route::resource('interacciones', 'InteraccionController');
 Route::resource('intereses', 'InteresController');
 /*Gestión de Interes */
 
-/*Gestión de  Feeds */
-Route::resource('feeds', 'FeedController');
-/*Gestión de Feeds */
+/*Gestión de  Rut */
+Route::resource('validarrutusuario/{rut}', 'UserController@ValidarRutUsuario');
+/*Gestión de Rut */
 
 
 /*Gestión de tickets*/

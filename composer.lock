@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "322438c94e74fadf3f419ab13044f30a",
-    "content-hash": "675d9a75e174e5ebc56363b21e78ed5e",
+    "hash": "379a7104d97b4ddc1c30ed1f63ab1c1c",
+    "content-hash": "4bd81e1ae6b59d4eca64ec5ec07d0932",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -672,6 +672,49 @@
                 "storage"
             ],
             "time": "2016-02-19 15:35:38"
+        },
+        {
+            "name": "malahierba-lab/chile-rut",
+            "version": "5.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/malahierba-lab/chile-rut.git",
+                "reference": "96a97d1c99a1f1ff9257e97697cd75856219863b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/malahierba-lab/chile-rut/zipball/96a97d1c99a1f1ff9257e97697cd75856219863b",
+                "reference": "96a97d1c99a1f1ff9257e97697cd75856219863b",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "5.1.*",
+                "php": ">=5.5.18"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Malahierba\\ChileRut\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "malahierba team",
+                    "email": "lab@malahierba.cl",
+                    "homepage": "http://malahierba.cl"
+                }
+            ],
+            "description": "Librería Laravel para el manejo y validación de RUT chileno",
+            "keywords": [
+                "chile",
+                "laravel",
+                "rut"
+            ],
+            "time": "2015-08-12 13:01:04"
         },
         {
             "name": "monolog/monolog",

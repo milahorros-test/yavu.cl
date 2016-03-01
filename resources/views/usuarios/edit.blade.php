@@ -1,3 +1,4 @@
+{!!Html::script('js/jquery.js')!!}
 @extends('layouts.front')
 @section('content')
 <div class="jumbotron">
