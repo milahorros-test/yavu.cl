@@ -6,8 +6,7 @@ $(document).ready(function(){
 	/*DECLARACION DE VARIABLES GLOBALES*/
 
 	/*MÉTODOS CONSTRUCTORES*/
-
-	  CargarEstados();
+	CargarEstados();
 	//LimpiarEstados();
 
 	setInterval(function()
@@ -157,7 +156,8 @@ $(document).ready(function(){
 							+'</div>'																	  	
 							*/
 						  	+"<h4><a href='/empresa/"+value.nombreEmp+"' style='color:#3C5B28;'>"
-						  		+"<img class='media-object' src='http://localhost:8000/images/user.png' data-holder-rendered='true' style='width: 32px; height: 32px;'/>"
+						  		+"<img class='media-object' src='/img/users/"+value.imagen_perfil_empresa+"' data-holder-rendered='true' style='width: 32px; height: 32px;'/>"
+						  		+'&nbsp;'
 								+value.nombreEmp+" Idp:("+Global_idUltimaPublicacion+")"
 							+"</a></h4>"
 							+"<small>"

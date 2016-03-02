@@ -163,7 +163,7 @@ $(document).ready(function(){
 		var now = new Date();
 		var nowTime = now.getTime()
 		nowTime = nowTime - Date.parse(time);
-		console.log(nowTime);
+		//console.log(nowTime);
 	    var tokens = [
 	    	[1, 'segundo'],
 	    	[60, 'minuto'],
@@ -302,7 +302,8 @@ $(document).ready(function(){
 								+'</ul>'
 							+'</div>'																	  	
 						  	+"<h4><a href='/empresa/"+value.nombreEmp+"' style='color:#3C5B28;'>"
-						  		+"<img class='media-object' src='http://localhost:8000/images/user.png' data-holder-rendered='true' style='width: 32px; height: 32px;'/>"
+						  		+"<img class='media-object' src='/img/users/"+value.imagen_perfil_empresa+"' data-holder-rendered='true' style='width: 32px; height: 32px;'/>"
+						  		+'&nbsp;'
 								+value.nombreEmp+" Idp:("+Global_idUltimaPublicacion+")"
 							+"</a></h4>"
 							+"<small>"
@@ -383,7 +384,7 @@ $(document).ready(function(){
 		var EstadosUsuario = $("#Estados"); 
          // VALOR QUE SE HA MOVIDO DEL SCROLL
         scroll_critical = parseInt($("#Estados").height()); // VALOR DE TU DIV
-        console.log(scroll_critical);
+        //console.log(scroll_critical);
         if (window_y > scroll_critical) { // SI EL SCROLL HA SUPERADO EL ALTO DE TU DIV
            // ACA MUESTRAS EL OTRO DIV Y EL OCULTAS EL DIV QUE QUIERES
            CargarEstados();

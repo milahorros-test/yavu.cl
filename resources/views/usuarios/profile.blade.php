@@ -17,18 +17,27 @@
 						<div class="list-group-item-full-header">
 							<h6>{!!strtoupper(Auth::user()->get()->nombre . ' ' . Auth::user()->get()->apellido)!!}</h6>
 						</div>
+
+						<!-- SECCION DE LAS FOTO DE PERFIL Y PORTADA -->
 						<div class="">
-							<div class="thumbnail">             
-								<img src="http://www.makingdifferent.com/wp-content/uploads/2015/08/An-Overview-of-the-Work-of-a-Ruby-on-Rails-Developer.png" alt="...">
-								<img src="http://2.bp.blogspot.com/_jhe_gqSPyFA/TDSQaThuD2I/AAAAAAAAADI/6FSxNbQcgxw/Albert+Einstein.jpg" alt="..." class="img-circle">                                 
+							<div class="thumbnail">  
+
+								<img id="ImagenPortada" src="/img/users/{{Auth::user()->get()->imagen_portada}}" alt="...">
+								<img id="ImagenPerfil" src="/img/users/{{Auth::user()->get()->imagen_perfil}}" class="img-circle" alt="...">
+								
+
+
 								<div class="caption">
 									{!!Auth::user()->get()->email!!}
 									{!!Auth::user()->get()->ciudad!!}
+
 									<p>
 										<a href="#!" class="btn btn-primary btn-xs" role="button">Button</a> 
 										<a href="#!" class="btn btn-default btn-xs" role="button">Button</a>
 									</p>
+
 								</div>
+
 							</div>
 						</div>
 					</div>

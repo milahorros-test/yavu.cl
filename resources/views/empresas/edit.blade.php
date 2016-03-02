@@ -10,8 +10,10 @@
 		@include('alerts.successMessage')
 		@include('alerts.warningMessage')			
 		<div class="row">
-			{!!Form::model($empresa, ['method'=>'PUT', 'route' => ['empresas.update', $empresa->id] ])!!}
-			@include('empresas.forms.fieldsEmpresa')
+			{!!Form::model($empresa, ['method'=>'PUT', 'route' => ['empresas.update', $empresa->id], 'files' => true ])!!}
+
+			@include('empresas.forms.fieldsEmpresa', array('empresa' => $empresa))
+
 				<div class="list-group">
 					<div class="list-group-item">				
 						<div class="form-group has-feedback has-feedback-left">

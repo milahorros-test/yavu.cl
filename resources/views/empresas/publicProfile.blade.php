@@ -31,10 +31,10 @@
 						</div>
 						<div class="">
 							<div class="thumbnail">
-								<img src="http://www.makingdifferent.com/wp-content/uploads/2015/08/An-Overview-of-the-Work-of-a-Ruby-on-Rails-Developer.png" alt="...">
-								
-								<img src="http://2.bp.blogspot.com/_jhe_gqSPyFA/TDSQaThuD2I/AAAAAAAAADI/6FSxNbQcgxw/Albert+Einstein.jpg" alt="..." class="img-circle">									
 
+								<img id="ImagenPortada" src="/img/users/{{$e->imagen_portada}}" alt="...">
+								<img id="ImagenPerfil" src="/img/users/{{$e->imagen_perfil}}" class="img-circle" alt="...">
+								
 
 								<div class="caption">
 									Campo : {{$e->email}}<br>
