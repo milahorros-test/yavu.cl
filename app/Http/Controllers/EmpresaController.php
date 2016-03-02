@@ -11,8 +11,7 @@ use yavu\Empresa;
 use Illuminate\Routing\Route;
 use Auth;
 use DB;
-use Malahierba\ChileRut\ChileRut;
-
+use RUT;
 class EmpresaController extends Controller
 {
   public function __construct(){
@@ -49,10 +48,15 @@ class EmpresaController extends Controller
   }
   public function update(EmpresaUpdateRequest $request, $id)
   {
+    if(RUT::check($request->rut)){
       $this->empresa->fill($request->all());
       $this->empresa->save();
       Session::flash('message', 'Empresa editada correctamente');
       return Redirect::to('/empresas');
+    }else{
+      Session::flash('message-error', 'El rut ingresado no es válido.');
+      return Redirect::to('/dashboard');   
+    }
   }
   public function MostrarEmpresaPublica($empresa){
     $empresa = DB::table('empresas')
@@ -77,7 +81,14 @@ class EmpresaController extends Controller
       return Redirect::to('/profile');
     }
 
-
+  public function ValidarRutEmpresa($rut)
+  {
+    if(RUT::check($rut)){
+      return RUT::clean($rut);
+    }else{
+      return "false";
+    }
+  }
    public function BuscarEmpresas($nombre){
     $empresas = DB::table('empresas')                    
                 ->select('*')    

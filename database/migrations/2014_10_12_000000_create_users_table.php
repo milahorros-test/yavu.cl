@@ -23,7 +23,8 @@ class CreateUsersTable extends Migration
             $table->string('fecha_nacimiento', 100);
             $table->string('password', 100);
             $table->string('estado',30);
-            $table->string('tipo_usuario',20);            
+            $table->string('tipo_usuario',20);
+                        
             $table->rememberToken();
             $table->timestamps();
         });

@@ -105,7 +105,6 @@ class UserController extends Controller
       Session::flash('message-error', 'El rut ingresado no es válido.');
       return Redirect::to('/profile');   
     }
-
   }
   public function ValidarRutUsuario($rut)
   {
@@ -114,8 +113,8 @@ class UserController extends Controller
     }else{
       return "false";
     }
-    return "true";
   }
+  
   public function destroy($id)
   {
     $this->user->delete();

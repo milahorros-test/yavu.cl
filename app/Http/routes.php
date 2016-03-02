@@ -130,7 +130,8 @@ Route::resource('intereses', 'InteresController');
 /*Gestión de Interes */
 
 /*Gestión de  Rut */
-Route::resource('validarrutusuario/{rut}', 'UserController@ValidarRutUsuario');
+Route::get('validarrutusuario/{rut}', 'UserController@ValidarRutUsuario');
+Route::get('validarrutempresa/{rut}', 'EmpresaController@ValidarRutEmpresa');
 /*Gestión de Rut */
 
 
