@@ -5,6 +5,7 @@ use yavu\Http\Requests;
 use yavu\Http\Controllers\Controller;
 use yavu\Http\Requests\TicketCreateRequest;
 use yavu\Ticket;
+use yavu\User;
 use Session;
 use Auth;
 use Redirect;
@@ -27,6 +28,36 @@ class TicketController extends Controller
     {
         return view('tickets.create');
     }
+
+    public function EfectuarCompra($user_id, $cantidadtickets)
+    {
+        $coinsUsuario = DB::table('registro_coins')
+                ->where('user_id', $user_id)
+                ->sum('cantidad');    
+
+        $valorCompra = (int) $cantidadtickets*1000;
+
+        if($coinsUsuario >= $valorCompra ){            
+            DB::table('registro_coins')->insert(
+                ['user_id' => $user_id, 
+                'motivo' => 'Compra de ticket'.(($cantidadtickets>1)?'s':''),
+                'cantidad' => $valorCompra*-1
+                ]
+            );   
+            DB::table('tickets')->insert(
+                ['user_id' => $user_id, 'cantidad_tickets' => $cantidadtickets, 'monto' => ((int) $cantidadtickets * 1000)]
+            );                 
+            return response()->json(
+               'Exito'
+            );                       
+
+        }else{
+            return response()->json(
+               'Sin salido para el servicio'
+            );                      
+        }
+    }
+  
     public function store(TicketCreateRequest $request)
     {
         Ticket::create($request->all());
@@ -37,4 +68,13 @@ class TicketController extends Controller
     {
 
     }   
+    public function VerificarTickets($user_id)
+    {
+        $ticketsUsuario = DB::table('tickets')
+                ->where('user_id', $user_id)
+                ->sum('cantidad_tickets');           
+        return response()->json(
+            $ticketsUsuario
+        );
+    }
 }
