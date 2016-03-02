@@ -1,6 +1,7 @@
 {!!Html::script('js/jquery.js')!!}
 {!!Html::script('js/ajax/BuscarUsuario.js')!!}
 {!!Html::script('js/ajax/GestionarCoins.js')!!}
+{!!Html::script('js/ajax/GestionarCompraTicket.js')!!}
 @extends('layouts.front')
 @section('content')
 <div class="jumbotron">
@@ -10,27 +11,43 @@
 		@include('alerts.successMessage')
 		@include('alerts.warningMessage')
 		<h2>Compra tus ticket's para participar!</h2>	
+
 		<div class="row">
 			<div class="col-md-8">
 				<div class="list-group">
-					<img alt="Imagen corfo" src= "{!!URL::to('images/ticket.png')!!}" height="100px" width="100px"/>
-				{!! 	Form::select('size', array('1' => '1', '2' => '2'), null, ['placeholder' => 'Seleciona la cantidad...']);!!}
-
+	                <div class="list-group-item-full-header">
+	                    <h6>COMPRA TUS TICKET</h6>
+	                </div>		
+	                <div class="list-group-item-full-header">
+	                    El valor de cada ticket es de <span class="text-success">$1.000</span>
+	                </div>		                		
+					<div class="list-group-item">
+						<img alt="Ticket ya!" src= "{!!URL::to('images/ticket.png')!!}" height="100px" width="100px"/>
+						{!!Form::select('size', array('1' => '1', '2' => '2'), null, ['placeholder' => 'Seleciona la cantidad...','id' => 'cantidadtickets']);!!}
+						<button type="button" id='comprar' class="btn btn-primary btn-sm">Comprar ticket</button>
+						<input type="hidden" name="_token" value="{{csrf_token()}}" id="token" />
+						<input type="hidden" value="{{Auth::user()->get()->id}}" id="user_id" />
+					</div>
+					<div class="list-group-item">
+						Total :
+						<span id="ValorCompra">0</span>
+					</div>	
 				</div>				
-			</div>			
-         <div class="col-sm-4"><!--style="position:fixed;z-index:1000;"-->
-             <div class="list-group">
-                 <div class="list-group-item-full-header">
-                     <h6>Cantidad de Coins</h6>
-                 </div>
-                 <div class="list-group-item">
-                     Coins 
-                     <span id="CantidadCoins" style="float:right;" class="label label-warning">
-                         <img src="http://i601.photobucket.com/albums/tt93/tbg8904/Gaia%20Icon/Coins.png" width="16px" height="16px">    
-                     </span>
-                 </div>
-             </div>
-         </div>
+			</div>		
+
+	         <div class="col-sm-4"><!--style="position:fixed;z-index:1000;"-->
+	             <div class="list-group">
+	                 <div class="list-group-item-full-header">
+	                     <h6>Cantidad de Coins</h6>
+	                 </div>
+	                 <div class="list-group-item">
+	                     Coins <img src="http://i601.photobucket.com/albums/tt93/tbg8904/Gaia%20Icon/Coins.png" width="16px" height="16px"> 
+	                     <span id="CantidadCoins" style="float:right;" class="label label-warning">
+	                            
+	                     </span>
+	                 </div>
+	             </div>
+	         </div>
 		</div>
 	</div>
 </div>

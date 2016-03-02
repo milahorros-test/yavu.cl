@@ -137,4 +137,5 @@ Route::get('validarrutempresa/{rut}', 'EmpresaController@ValidarRutEmpresa');
 
 /*Gestión de tickets*/
 Route::resource('tickets','TicketController');
+Route::resource('efectuarcompraticket/{user_id}/{cantidadtickets}', 'TicketController@EfectuarCompra');
 /*Gestión de tickets*/

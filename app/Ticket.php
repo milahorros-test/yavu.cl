@@ -5,6 +5,6 @@ class Ticket extends Model
 {
     protected $table = 'tickets';
     protected $fillable = [
-    	'nombre', 'descripcion'
+    	'user_id', 'cantidad_tickets', 'monto'
     ];
 }
