@@ -72,7 +72,7 @@
 			<div class="list-group-item">
 				<div class="form-group has-feedback has-feedback-left">
 					{!!Form::label('Rut:')!!}
-					{!!Form::text('rut',null,['class'=>'form-control','placeholder'=>'Ingrese rut de la empresa',])!!}			
+					{!!Form::text('rut',null,['class'=>'form-control','placeholder'=>'Ingrese rut de la empresa', 'id' => 'rut'])!!}			
 					<i class="form-control-feedback glyphicon glyphicon-user"></i>
 				</div>
 
@@ -169,6 +169,7 @@
 					</div>		
 					<div class="form-group has-feedback has-feedback-left">
 						{!!Form::hidden('estado', 'Pendiente')!!}	
+						<!-- con esto queda pendiente cada vez que se cambie la info-->
 					</div>						
 				@endif				
 
@@ -195,3 +196,25 @@
 			</div>
 
 				@endif 
+<script>
+	$("#rut").change(function(){
+		ValidarRut($("#rut").val());
+	});
+	function ValidarRut(rut){
+		console.log("click");
+		var route = "http://localhost:8000/validarrutempresa/"+rut+"";
+
+		$.get(route, function(res){
+			
+			if(res !== 'false'){
+				$("#rut").val(res);
+				//console.log(res);
+			}else{
+				$("#rut").val("");
+				$("#rut").focus();
+				alert('Formato de rut invalido');
+			}
+		});
+		
+	}
+</script>
