@@ -68,4 +68,13 @@ class TicketController extends Controller
     {
 
     }   
+    public function VerificarTickets($user_id)
+    {
+        $ticketsUsuario = DB::table('tickets')
+                ->where('user_id', $user_id)
+                ->sum('cantidad_tickets');           
+        return response()->json(
+            $ticketsUsuario
+        );
+    }
 }
