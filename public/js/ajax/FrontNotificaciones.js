@@ -8,7 +8,7 @@
 	/*DECLARACIÓN DE VARIABLES GLOBALES*/
 
 	/*MÉTODOS CONSTRUCTORES*/
-
+		//CargarNotificaciones();
 	/*MÉTODOS CONSTRUCTORES*/
 
 	
@@ -19,11 +19,15 @@
     	popover.popover({ html : true , trigger : 'manual'}); 
 
 		$('#Notificaciones, #CantidadNotificaciones').bind('click',function(){
+
 			CargarNotificaciones();
+
 		});
 
 		$('#Mensajes, #CantidadMensajes').bind('click',function(){
+
 			CargarMensajes();
+
 		});
   	})
 
@@ -34,99 +38,82 @@
 	/*FUNCIONES Y PROCEDIMIENTOS*/
 	function CargarNotificaciones()
 	{
-		$('#Notificaciones').attr('data-content', "");
 		var Notificaciones = $("#Notificacion"); 
 		var user_id = $("#user_id").val();
 		var route = "http://localhost:8000/cargarpops/"+$("#idUltima").val()+"/"+user_id;
 		var Contador = 0;
-		var data = "";
+		var pops = "";
 		console.log(user_id+"/"+$("#idUltima").val());
 
+		$.ajax({
+			url: "http://localhost:8000/cargarpops/"+$("#idUltima").val()+"/"+user_id,
+			type: 'GET',
+			dataType: 'json',
+			cache: false,
+			async: true,
+			data:{
+			  '_token': '{{ csrf_token() }}',
+			  'foo' : 'Foo'
+			},
+			success: function success(data, status) {
+				$(data).each(function(key,value){		
+					var TimeAgo = value.created_at;
+					Global_idUltimaNotificacion = value.id;		
+					if($.trim(value.tipo) === 'coins')
+					{
 
-		
-		$.get(route, function(res){
-			//if(Global_Control){mostrarCargando();}
+						pops +=	"<div class='list-group-item'>"
+									+"<div class='text-info' >"
+										+"<img src='img/yavu007.png' style='width: 32px; height: 30px;' />&nbsp;"		
+										+value.contenido+"<br>"
+										+"<small>"
+											+"<span	 class='timeago' id='timeago"+value.id+"' value='"+TimeAgo+"' title='"+TimeAgo+"\'>"+humanTiming(TimeAgo)+"</span	>"
+										+"</small>"	
+									+"</div>"
+								+"</div><hr>";
+					}
+					else if($.trim(value.tipo) === 'activacion')
+					{
 
-
-			$(res).each(function(key,value){				
-				var TimeAgo = value.created_at;
-				Global_idUltimaNotificacion = value.id;		
-
-
-
-				if($.trim(value.tipo) === 'coins')
-				{
-
-				data +=	"<div class='list-group-item'>"
-							+"<a class='text-info' href='#!'>"
-								+"<img src='img/yavu007.png' style='width: 32px; height: 30px;' />&nbsp;"		
-								+value.contenido
-								+"<small>"
-									+"<span	 class='timeago' id='timeago"+value.id+"' value='"+TimeAgo+"' title='"+TimeAgo+"\'>"+humanTiming(TimeAgo)+"</span	>"
-								+"</small>"	
-
-							+"</a>"
-						+"</div>";
-				}
-				/*
-				else if($.trim(value.tipo) === 'activacion')
-				{
-						Notificaciones.append(
-								"<div id='notificacion"+value.id+"' class='list-group'>"
-									+"<div class='list-group-item'>"							
+						pops +=	"<div class='list-group-item'>"
+									+"<div class='text-info' >"
 										+"<img src='img/users/"+value.imagen_perfil_empresa+"' style='width: 32px; height: 32px;' />&nbsp;"	
-										+value.contenido+" <a class='btn-link' href='/empresa/"+value.nombreEmp+"'<strong>"+value.nombreEmp+"</strong></a>"
-									+"</div>"
-									+"<div class='list-group-item-full panel-footer-small'>"	
+										+value.contenido+" <a class='btn-link' href='/empresa/"+value.nombreEmp+"'<strong>"+value.nombreEmp+"</strong></a><br>"
 										+"<small>"
 											+"<span	 class='timeago' id='timeago"+value.id+"' value='"+TimeAgo+"' title='"+TimeAgo+"\'>"+humanTiming(TimeAgo)+"</span	>"
-										+"</small>"		
+										+"</small>"	
 									+"</div>"
-								+"</div>"
-						);
-				}				
-				else //if(value.tipo === 'coins')
-				{
-						Notificaciones.append(
-								"<div id='notificacion"+value.id+"' class='list-group'>"
-									+"<div class='list-group-item'>"							
-										+value.contenido
-									+"</div>"
-									+"<div class='list-group-item-full panel-footer-small'>"	
+								+"</div><hr>";
+					}
+					else
+					{
+						pops +=	"<div class='list-group-item'>"
+									+"<div class='text-info' >"
+										+"<img src='img/yavu007.png' style='width: 32px; height: 30px;' />&nbsp;"		
+										+value.contenido+"<br>"
 										+"<small>"
 											+"<span	 class='timeago' id='timeago"+value.id+"' value='"+TimeAgo+"' title='"+TimeAgo+"\'>"+humanTiming(TimeAgo)+"</span	>"
-										+"</small>"		
+										+"</small>"	
 									+"</div>"
-								+"</div>"
-						);
-				}
-				*/
+								+"</div><hr>";						
+					}
 
+					Contador += 1;	
+					//ContarInteracciones(value.id);
+				});
 
-
-				document.getElementById("idUltima").value =  Global_idUltimaNotificacion;
-				Contador += 1;	
-				//ContarInteracciones(value.id);
-			});
-
-			var finalData = "<div class='list-group' style='overflow-y: scroll;height:100px;'>"
-							+data
+			var finalData = "<div class='list-group' style='overflow-y: scroll;height:200px;'>"
+							+pops
 							+"<div class='list-group-item-full-header'><a class='text-warning' href='/pops'>ver todas</a></div>"
 							+"</div>";
+			$('#Notificaciones').attr('data-content', finalData);
+	    	
 
-	    	$('#Notificaciones').attr('data-content', finalData);
 
-
-	    	if(Global_swap_notificaciones){
-	    		$('#Notificaciones').popover('show');
-	    		$('#Mensajes').popover('hide');
-	    		Global_swap_notificaciones = false;	
-	    	}else{
-	    		$('#Notificaciones').popover('hide');
-	    		Global_swap_notificaciones = true;
-	    	}	    	
+	    	
 
 			if(Contador < 5){	
+				document.getElementById("idUltima").value = 0; //Global_idUltimaNotificacion;
 				/*
 				if (Global_Control) { 
 					$("#msj-finPublicaciones").fadeIn();	
@@ -139,8 +126,22 @@
 			}
 			//ocultarCargando();	
 			Global_ContadorCargaNotificaciones += 1 * 5;
-			
-		});	
+	    	if(Global_swap_notificaciones){
+	    		$('#Notificaciones').popover('show');
+	    		$('#Mensajes').popover('hide');
+	    		Global_swap_notificaciones = false;	
+	    	}else{
+	    		$('#Notificaciones').popover('hide');
+	    		Global_swap_notificaciones = true;
+	    	}	    	
+
+			},
+			error: function error(xhr, textStatus, errorThrown) {
+			  alert('Remote sever unavailable. Please try later');
+			}
+		});
+
+
 			
 		/*	
 		var data = "";
