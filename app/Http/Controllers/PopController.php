@@ -20,9 +20,36 @@ class PopController extends Controller
     }         
     public function index()
     {
-        
         return view('pops.index');
     }
+    public function CargarPops($idUltima, $user_id){
+        if((int) $idUltima == "0"){
+            $pops = DB::table('pops')                    
+                ->join('empresas'  , 'empresas.id', '=', 'pops.empresa_id')
+                ->join('users'  , 'users.id', '=', 'pops.user_id')
+                ->select('pops.*', 'empresas.nombre as nombreEmp', 'empresas.imagen_perfil as imagen_perfil_empresa', 'users.nombre as nombreUsu', 'users.imagen_perfil as imagen_perfil_usuario')    
+                ->where('pops.id', '>', (int) $idUltima)
+                ->where('pops.user_id', '=', $user_id)
+                ->orderBy('pops.created_at','desc')   
+                ->limit('20')
+                ->get();  
+                        
+        }elseif((int) $idUltima <> "0"){
+            $pops = DB::table('pops')                    
+                ->join('empresas'  , 'empresas.id', '=', 'pops.empresa_id')
+                ->join('users'  , 'users.id', '=', 'pops.user_id')
+                ->select('pops.*', 'empresas.nombre as nombreEmp', 'empresas.imagen_perfil as imagen_perfil_empresa', 'users.nombre as nombreUsu', 'users.imagen_perfil as imagen_perfil_usuario')    
+                ->where('pops.id', '<', (int) $idUltima)
+                ->where('pops.user_id', '=', $user_id)
+                ->orderBy('pops.created_at','desc')   
+                ->limit('20')
+                ->get(); 
+        }        
+
+        return response()->json(
+            $pops
+        );
+    }    
     public function create()
     {
 

@@ -60,6 +60,29 @@
 				!!}			
 			</div>	
 		</div>
+		<!-- GESTION DE LAS FOTOS -->
+
+		@if(isset($empresa))
+			<div class="list-group-item">
+				<div class="form-group has-feedback has-feedback-left">
+
+					{!!Form::label('Cambiar avatar:')!!}<br>
+					{!!Form::file('imagen_perfil', ['class' => 'btn'])!!}
+					<br>
+					<img width="15%" id="ImagenPerfil" class="thumbnail" src="/img/users/{{$empresa->imagen_perfil}}" alt="...">
+				</div>
+
+				<div class="form-group has-feedback has-feedback-left">
+					{!!Form::label('Cambiar banner personal:')!!}<br>
+					{!!Form::file('imagen_portada', ['class' => 'btn'])!!}
+					<br>
+					<img width="35%" id="ImagenPortada" class="thumbnail" src="/img/users/{{$empresa->imagen_portada}}" alt="...">
+				</div>
+			</div>			
+		@endif
+
+
+
 	</div>
 </div>
 

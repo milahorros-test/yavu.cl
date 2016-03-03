@@ -72,7 +72,9 @@ $(document).ready(function(){
 					$("#EstadoEmpresa").append(
 						'<div class="list-group-item-full-header">'
 							+'<div class="panel panel-success">'
-								+'<div class="panel-heading"><strong>'+value.nombre+'</strong></div>'
+								+'<div class="panel-heading">'
+								+"<img class='media-object' src='/img/users/"+value.imagen_perfil+"' data-holder-rendered='true' style='width: 32px; height: 32px; border: 1px solid #73AD21;'/>"
+								+'&nbsp;<strong>'+value.nombre+'</strong></div>'    
 								+'<div class="list-group">'
 									+'<div class="list-group-item">'
 										+'<small>Estado de la empresa</small> : '

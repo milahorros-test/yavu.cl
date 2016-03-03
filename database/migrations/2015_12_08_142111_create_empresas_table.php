@@ -13,7 +13,6 @@ class CreateEmpresasTable extends Migration
             $table->string('email', 100)->unique();
             $table->string('login', 100);
             $table->string('nombre', 200);
-
             $table->string('direccion', 100);
             $table->string('ciudad', 100);
             $table->string('region', 100);
@@ -25,6 +24,8 @@ class CreateEmpresasTable extends Migration
             $table->string('fecha_de_pago', 100);
             $table->string('monto_pagado',100);
             $table->string('nombre_encargado', 100);
+            $table->string('imagen_perfil');
+            $table->string('imagen_portada');             
             $table->string('password', 100);
             $table->string('estado',30);
             $table->rememberToken();

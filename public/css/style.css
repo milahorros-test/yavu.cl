@@ -24,6 +24,30 @@
 }
 
 
+#ImagenPerfil{
+  opacity: 1;
+  -webkit-transition: opacity 0.2s;
+  -moz-transition: opacity 0.2s;
+}
+#ImagenPerfil:hover{
+  opacity: 0.95;
+  -webkit-transition: opacity 0.2s;
+  -moz-transition: opacity 0.2s;
+}
+#ImagenPortada{
+  opacity: 1;
+  -webkit-transition: opacity 0.2s;
+  -moz-transition: opacity 0.2s;
+}
+#ImagenPortada:hover{
+  opacity: 0.95;
+  -webkit-transition: opacity 0.2s;
+  -moz-transition: opacity 0.2s;
+}
+
+
+
+
 @media (min-width: 768px) {
   #contentIn {
     width: 90%;

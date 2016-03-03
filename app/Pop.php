@@ -4,5 +4,7 @@ use Illuminate\Database\Eloquent\Model;
 class Pop extends Model
 {
     protected $table = "pops";
-    protected $fillable = array('');	    
+    protected $fillable = [
+    	'user_id','empresa_id','tipo','estado','contenido',
+    ];	    
 }

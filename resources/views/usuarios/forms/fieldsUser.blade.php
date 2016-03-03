@@ -70,6 +70,33 @@
 				</div>			
 			@endif
 		</div>
+		<!-- GESTION DE LAS FOTOS -->		
+		<div class="list-group-item">
+
+
+			<div class="form-group has-feedback has-feedback-left">
+				{!!Form::label('Cambiar avatar:')!!}<br>
+				{!!Form::file('imagen_perfil', ['class' => 'btn'])!!}
+				<br>
+				@if(Request::path() !== 'usuarios/create')
+					<img width="15%" id="ImagenPerfil" class="thumbnail" src="/img/users/{{Auth::user()->get()->imagen_perfil}}" alt="...">
+				@else
+					<img width="15%" id="ImagenPerfil" class="thumbnail" src="https://image.freepik.com/iconos-gratis/silueta-usuario-masculino_318-35708.png" alt="...">
+				@endif
+			</div>
+
+			<div class="form-group has-feedback has-feedback-left">
+				{!!Form::label('Cambiar banner personal:')!!}<br>
+				{!!Form::file('imagen_portada', ['class' => 'btn'])!!}
+				<br>
+				@if(Request::path() !== 'usuarios/create')
+					<img width="35%" id="ImagenPortada" class="thumbnail" src="/img/users/{{Auth::user()->get()->imagen_portada}}" alt="...">
+				@else
+					<img width="25%" id="ImagenPerfil" class="thumbnail" src="http://medioambiente.nh-hoteles.es/themes/default/images/bgd-biodiversidad-00.png" alt="...">
+				@endif
+			</div>						
+		</div>		
+
 	</div>
 </div>
 <div class="col-sm-4">

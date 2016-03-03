@@ -30,7 +30,7 @@ class EmpresaController extends Controller
   }
   public function create()
   {
-      return view('empresas.create');
+    return view('empresas.create');
   }
   public function store(EmpresaCreateRequest $request)
   {

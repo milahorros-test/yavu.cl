@@ -9,7 +9,7 @@
 		@include('alerts.successMessage')
 		@include('alerts.warningMessage')	
 		<div class="row">
-			{!!Form::model($user, ['method'=>'PUT', 'route' => ['usuarios.update', $user->id] ])!!}
+			{!!Form::model($user, ['method'=>'PUT', 'route' => ['usuarios.update', $user->id], 'files' => true ])!!}
 			@include('usuarios.forms.fieldsUser')
 				<div class="list-group">
 					<div class="list-group-item">

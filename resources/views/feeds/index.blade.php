@@ -27,6 +27,7 @@
 @stop
 <script>
 
+
 	function eliminarEstado(id){
 		$("#publicacion"+id).fadeOut();
 	}
