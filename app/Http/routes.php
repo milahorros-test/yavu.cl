@@ -7,16 +7,33 @@ Route::get('login','FrontController@login');
 Route::get('registro','FrontController@registro');
 Route::get('yavucoins','FrontController@yavucoins');
 Route::get('ysorteos','FrontController@ysorteos');
-Route::get('listaempresas/{empresa}','EmpresaController@ListaEmpresas');
+
 Route::get('contacto','FrontController@contacto');
+Route::post('contacto', function () { 
+    $rules =  array('captcha' => ['required', 'captcha']); 
+    $validator = Validator::make( 
+        [ 'captcha' => Input::get('captcha') ], 
+        $rules, 
+        // Mensaje de error personalizado 
+        [ 'captcha' => 'El captcha incorrecto.' ]
+    ); 
+    if ($validator->passes()) { 
+        echo "Exito :)"; 
+    } else { 
+        return View::make('contacto')->withErrors($validator); 
+    } 
+});
+
+Route::get('listaempresas/{empresa}','EmpresaController@ListaEmpresas');
 Route::get('nosotros','FrontController@nosotros');
 Route::get('terminos','FrontController@terminos');
 Route::get('logout', 'LogController@logout');
 Route::get('sitemap', function(){
 	return view('sitemap');
 });
+
 /*Gestión del front*/
-//
+
 /*Gestión de estados*/
 Route::resource('estadoempresa', 'EstadoEmpresaController');
 Route::get('estadosempresa/{idUltima}/{empresa}', 'EstadoEmpresaController@CargarEstadoEmpresa');
@@ -143,3 +160,5 @@ Route::resource('tickets','TicketController');
 Route::get('efectuarcompraticket/{user_id}/{cantidadtickets}', 'TicketController@EfectuarCompra');
 Route::get('verificartickets/{user_id}', 'TicketController@VerificarTickets');
 /*Gestión de tickets*/
+
+

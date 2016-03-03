@@ -8,11 +8,8 @@
 
 {!!Form::open()!!}
 <div class="jumbotron">
-  <div id="contentMiddle">
-  <h1>Contacto</h1>
-  </div>
   <div id="contentIn">
-
+    <h1>Contacto</h1>
     <div class="panel panel-default">
    
       <div class="panel-body">
@@ -55,19 +52,26 @@
             <td><!--*--></td>
           </tr>
           <tr>
-            <td>¡Contáctate ya!</td>
+            <td>¡Ingresa el catpcha y contáctate ya!</td>
             <td>
-              {!!Form::submit('Enviar consulta',['class'=>'btn btn-primary btn-success'])!!}
+              {!! Form::open(array('url' => '/send_info')) !!}
+           <p>{!! Captcha::img(); !!}</p>
+          <p>{!! Form::text('captcha') !!}</p>
+          <p>{!!Form::submit('Enviar consulta',['class'=>'btn btn-primary btn-success'])!!}</p>
+    {!! Form::close() !!}
+              
             </td>
             <td><!--*--></td>
           </tr>
         </table>
+
         {!!Form::close()!!}
       </div>
     </div>  
   </div>
 </div>
 {!!Form::close()!!}
+
 @stop
 
 

@@ -146,6 +146,7 @@ return [
         yavu\Providers\RouteServiceProvider::class,
         'Collective\Html\HtmlServiceProvider',
         Malahierba\ChileRut\ChileRutServiceProvider::class,
+        'Mews\Captcha\CaptchaServiceProvider',
 
     ],
 
@@ -197,6 +198,7 @@ return [
         'Form'      => 'Collective\Html\FormFacade',
         'Html'      => 'Collective\Html\HtmlFacade',
         'RUT'       => Malahierba\ChileRut\Facades\ChileRut::class,
+        'Captcha'   => 'Mews\Captcha\Facades\Captcha',
 
     ],
 
