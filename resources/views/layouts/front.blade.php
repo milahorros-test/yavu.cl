@@ -39,8 +39,10 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/">Yavu</a>
+          <a class="navbar-brand" href="/"><img id="LogoYavu" src="img/yavu002.png" style="transition: width 0.5s;" width="30%" /></a>
         @if(Auth::user()->check())
+          {!!Form::hidden('user_id', Auth::user()->get()->id, ['id'=>'user_id'])!!}
+          {!!Form::hidden('idUltima', "0", ['id'=>'idUltima'])!!}
           <div class="navbar-brand">
             <a href="#!"> 
               <span id="Notificaciones" title="Notificaciones" data-toggle="popover" title="Popover title" data-placement="bottom"  class="glyphicon glyphicon-flash" style="font-size: 1em;" aria-hidden="true">
@@ -48,6 +50,7 @@
               </span>    
             </a>           
           </div>
+
           <div class="navbar-brand">
             <a href="#!">
               <span id="Mensajes" title="Mensajes" data-toggle="popover" title="Popover title" data-placement="bottom" class="glyphicon glyphicon-envelope" style="font-size: 1em;" aria-hidden="true">

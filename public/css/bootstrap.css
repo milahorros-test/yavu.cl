@@ -5889,7 +5889,7 @@ button.close {
   font-size: 14px;
   font-weight: normal;
   line-height: 1.42857143;
-  text-align: center;
+  text-align: left;
   white-space: normal;
   background-color: #fff;
   color: #000;
@@ -6812,7 +6812,7 @@ a:focus {
   left: 0;
   background-color: #000;
   z-index: 1030;
-  opacity: 0.8;
+  opacity: 1;
   border: 0px solid transparent;
 }
 .navbar-collapse {

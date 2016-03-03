@@ -52,6 +52,10 @@
   #contentIn {
     width: 90%;
   }
+  #LogoYavu {
+    width: 50%;
+    transition: width 0.5s;
+  }  
 }
 @media (min-width: 880px) {
   #contentIn {
