@@ -17,7 +17,7 @@
    
       <div class="panel-body">
              <td colspan="2">Haznos saber tus dudas, ¡Queremos entregarte el mejor servicio!</td>
-             <br>
+             
         {!!Form::open()!!}
         <table class="table">
           <tr>
@@ -25,7 +25,6 @@
             <td>
               {!!Form::text('name',null,['class'=>'form-control','placeholder'=>'Ingresa tu nombre', 'required'=>'required'])!!}
             </td>
-
           </tr>
           <tr>
             <td>Email</td>
