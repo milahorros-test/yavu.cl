@@ -109,7 +109,7 @@ $(document).ready(function(){
 						+"</div>"
 						+"<div class='list-group-item panel-footer'>"
 						+"<span class='glyphicon glyphicon-thumbs-up'>&nbsp;</span>"
-							+"<a name='like' class='inter' role='button' id='estado_"+value.id+"' value='"+value.id+"' href='#!' style='color:#3C5B28;'><span>Me gusta</span></a>"
+							+"<a name='like' class='inter' role='button' id='estado_"+value.id+"' value='"+value.id+"' href='#!' style='color:#3C5B28;'><span>Bien</span></a>"
 						+"</div>"
 					+"</div>";
 
@@ -318,7 +318,7 @@ $(document).ready(function(){
 									+"<span class='glyphicon glyphicon-thumbs-up'>"
 										+"&nbsp;"
 									+"</span>"
-									+"Me gusta"
+									+"Bien"
 								+"</span>"
 							+"</a>"
 							+"&nbsp;&nbsp;|&nbsp;&nbsp;"

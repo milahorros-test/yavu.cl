@@ -156,7 +156,7 @@ $(document).ready(function(){
 						+"<div class='list-group-item panel-footer'>"
 						+"<span class='glyphicon glyphicon-thumbs-up'>&nbsp;</span>"
 							+"<a name='like' class='inter' role='button' id='estado_"+value.id+"' value='"+value.id+"' href='#!' style='color:#3C5B28;'>"
-							+"<span>Me gusta</span></a>"
+							+"<span>Bien</span></a>"
 						+"</div>"
 					+"</div>";
 				EstadosUsuario.appendTo("#e").effects("highlight", {}, 12000);
@@ -342,7 +342,7 @@ $(document).ready(function(){
 									+"<span class='glyphicon glyphicon-thumbs-up'>"
 										+"&nbsp;"
 									+"</span>"
-									+"Me gusta"
+									+"Bien"
 								+"</span>"
 							+"</a>"							
 						+"</div>"

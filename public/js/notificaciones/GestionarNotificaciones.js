@@ -1,12 +1,12 @@
 $(document).ready(function(){	
 	/*DECLARACION DE VARIABLES GLOBALES*/
-	var Global_idUltimaPublicacion;
-	var Global_ContadorCargaPublicaciones;
+	var Global_idUltimaNotificacion;
+	var Global_ContadorCargaNotificaciones;
 	var Global_Control = true;
 	/*DECLARACION DE VARIABLES GLOBALES*/
 
 	/*MÉTODOS CONSTRUCTORES*/
-	CargarEstados();
+	CargarNotificaciones();
 	//LimpiarEstados();
 
 	setInterval(function()
@@ -23,166 +23,83 @@ $(document).ready(function(){
 
 	/*SELECTORES*/
 
-	$("#CargarEstados").click(function(e)
+	$("#CargarNotificaciones").click(function(e)
 	{
-		$("#EstadosNuevos").append("");
-		CargarEstados();			
+		$("#NotificacionesNuevas").append("");
+		CargarNotificaciones();			
 		e.preventDefault();
 	});
 
-	$("#publicar").click(function(e)
-	{
-		document.getElementById("idUltima").value = "0";	
 
-		$("#Estados").empty();		
-		
-		if (document.getElementById("status").value !== "") {
-			var status = $("#status").val();
-			status = limpiar(status);
-			var user_id = $("#user_id").val();
-			var token = $("#token").val();
-			var route = "http://localhost:8000/estados";
-			$.ajax({
-				url: route,
-				headers: {'X-CSRF-TOKEN': token},
-				type: 'POST',
-				dataType: 'json',
-				data: {
-					status: status,
-					user_id: user_id
-				},
-				success:function(){
-				    document.getElementById("status").value = "";
-				}
-			});	
-			
-		}else{
-			document.getElementById("status").focus();
-		}	
-		CargarEstados();
-		e.preventDefault();	
-	});
-
-	$("#limpiar").click(function(e)
-	{
-		document.getElementById("status").value = "";
-		e.preventDefault();
-	});
-
-	$( "#status" ).change(function(e) 
-	{
-		var status = $("#status").val();
-		var status_2 = limpiar(status);
-		status_2 = limpiar(status);
-		status_2 = limpiar(status);
-		if (status != status_2){
-			//console.log("son distintos");
-			var status = $("#status").val();
-			if (status !== limpiar(status)){
-			  $('#msj-error').append();
-				$("#msj-error").fadeIn();
-					setTimeout(function() {
-					    $("#msj-error").fadeOut(8000);
-					},800);			
-			}		
-		}	
-		e.preventDefault();
-	});
 	/*SELECTORES*/
 
 	/*FUNCIONES Y PROCEDIMIENTOS*/
-	function ActualizarEstados()
-	{
-		var EstadosUsuario = $("#Estados").val(); 
-		$("#Estados").value = "";
-		var route = "http://localhost:8000/estadosusuario";
-		var user_id = $("#user_id");
-		var Contador = 0;
-		$.get(route, function(res){
-			Contador += 1;
-			if (Contador === 4){
-				Global_idUltimaPublicacion = value.id;
-			}
-			$(res).each(function(key, value){
-				var TimeAgo = value.created_at;
-				var Estado = 
-					"<div id='status' class='list-group'>"
-						+"<div class='list-group-item'>"	
-						  	+"<h4><a href='/profile' style='color:#3C5B28;'>"
-						  		+"<img class='media-object' src='http://localhost:8000/images/user.png' data-holder-rendered='true' style='width: 32px; height: 32px;'/>"
-								+value.nombre+" "+value.apellido
-							+"</a></h4>"
-							+"<small>"
-								+"Publicó <abbr class=\'timeago\' title=\'"+TimeAgo+"\'>"+TimeAgo+"</abbr>"
-							+"</small><hr>"		
-							+"<p>"+value.status+"</p>"
-						+"</div>"
-						+"<div class='list-group-item panel-footer'>"
-						+"<span class='glyphicon glyphicon-thumbs-up'>&nbsp;</span>"
-							+"<a name='like' class='inter' role='button' id='estado_"+value.id+"' value='"+value.id+"' href='#!' style='color:#3C5B28;'>"
-							+"<span>Bien</span></a>"
-						+"</div>"
-					+"</div>";
-				EstadosUsuario.appendTo("#e").effects("highlight", {}, 12000);
-			});
-		});						
-	}
 
-
-	function CargarEstados(){
-		var Estados = $("#Estados"); 
-		Global_idUltimaPublicacion = $("#idUltima").val();
-		var route = "http://localhost:8000/cargarfeeds/"+Global_idUltimaPublicacion;
+	function CargarNotificaciones(){
+		var Notificaciones = $("#Notificacion"); 
+		Global_idUltimaNotificacion = $("#idUltima").val();
+		var user_id = $("#user_id").val();
+		var route = "http://localhost:8000/cargarpops/"+Global_idUltimaNotificacion+"/"+user_id;
 		var Contador = 0;
 		$.get(route, function(res){
 			if(Global_Control){mostrarCargando();}
+
 			$(res).each(function(key,value){				
 				var TimeAgo = value.created_at;
-				Global_idUltimaPublicacion = value.id;		
+				Global_idUltimaNotificacion = value.id;		
 
-				Estados.append(
-					"<div id='publicacion"+value.id+"' class='list-group'>"
-						+"<div class='list-group-item'>"	
-							/*
-							+'<div class="dropdown">'
-								+'<button class="btn btn-sm dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">'
-									+'<span class="glyphicon glyphicon-cog" aria-hidden="true"></span>'
-									+'<span class="caret"></span>'
-								+'</button>'
-								
-								+'<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">'
-									+'<li><a onclick="eliminarEstado('+value.id+')" href="#!">Eliminar publicación</a></li>'
-								+'</ul>'
-							+'</div>'																	  	
-							*/
-						  	+"<h4><a href='/empresa/"+value.nombreEmp+"' style='color:#3C5B28;'>"
-						  		+"<img class='media-object' src='/img/users/"+value.imagen_perfil_empresa+"' data-holder-rendered='true' style='width: 32px; height: 32px;'/>"
-						  		+'&nbsp;'
-								+value.nombreEmp+" Idp:("+Global_idUltimaPublicacion+")"
-							+"</a></h4>"
-							+"<small>"
-								+"Publicó <span	 class='timeago' id='timeago"+value.id+"' value='"+TimeAgo+"' title='"+TimeAgo+"\'>"+humanTiming(TimeAgo)+"</span	>"
-							+"</small><hr>"		
-							+"<p>"+value.status+"</p>"
-						+"</div>"
-						+"<div class='list-group-item panel-footer'>"					
-							+"<span id='badge_"+value.id+"' class='label label-success'></span>"+"&nbsp;"
-							+"<a role='button' class='btn-lg btn' href='#!' style='color:#3C5B28'>"
-								+"<span name='megusta' onclick='Interactuar(this.id)' id='estado_"+value.id+"' value='"+value.id+"'>"
-									+"<span class='glyphicon glyphicon-thumbs-up'>"
-										+"&nbsp;"
-									+"</span>"
-									+"Bien"
-								+"</span>"
-							+"</a>"
-							+"&nbsp;&nbsp;|&nbsp;&nbsp;"
-							+"<a name='like' class='inter btn-lg btn' role='button' id='estado_"+value.id+"' value='"+value.id+"' href='#!' style='color:#3C5B28;'><span>Yo quiero</span></a>"							
-							+"&nbsp;&nbsp;|&nbsp;&nbsp;"
-								+"<a name='like' class='inter btn-lg btn' role='button' id='estado_"+value.id+"' value='"+value.id+"' href='#!' style='color:#3C5B28;'><span>Coins</span></a>"																					
-						+"</div>"
-					+"</div>"
-				);				
-				document.getElementById("idUltima").value =  Global_idUltimaPublicacion;
+
+
+				if($.trim(value.tipo) === 'coins')
+				{
+
+					Notificaciones.append(
+						"<div id='notificacion"+value.id+"' class='list-group'>"
+							+"<div class='list-group-item'>"					
+								+"<img src='img/yavu007.png' style='width: 32px; height: 30px;' />&nbsp;"		
+								+value.contenido
+							+"</div>"
+							+"<div class='list-group-item-full panel-footer-small'>"	
+								+"<small>"
+									+"<span	 class='timeago' id='timeago"+value.id+"' value='"+TimeAgo+"' title='"+TimeAgo+"\'>"+humanTiming(TimeAgo)+"</span	>"
+								+"</small>"		
+							+"</div>"
+						+"</div>"								
+					);
+				}
+				else if($.trim(value.tipo) === 'activacion')
+				{
+						Notificaciones.append(
+								"<div id='notificacion"+value.id+"' class='list-group'>"
+									+"<div class='list-group-item'>"							
+										+"<img src='img/users/"+value.imagen_perfil_empresa+"' style='width: 32px; height: 32px;' />&nbsp;"	
+										+value.contenido+" <a class='btn-link' href='/empresa/"+value.nombreEmp+"'<strong>"+value.nombreEmp+"</strong></a>"
+									+"</div>"
+									+"<div class='list-group-item-full panel-footer-small'>"	
+										+"<small>"
+											+"<span	 class='timeago' id='timeago"+value.id+"' value='"+TimeAgo+"' title='"+TimeAgo+"\'>"+humanTiming(TimeAgo)+"</span	>"
+										+"</small>"		
+									+"</div>"
+								+"</div>"
+						);
+				}				
+				else //if(value.tipo === 'coins')
+				{
+						Notificaciones.append(
+								"<div id='notificacion"+value.id+"' class='list-group'>"
+									+"<div class='list-group-item'>"							
+										+value.contenido
+									+"</div>"
+									+"<div class='list-group-item-full panel-footer-small'>"	
+										+"<small>"
+											+"<span	 class='timeago' id='timeago"+value.id+"' value='"+TimeAgo+"' title='"+TimeAgo+"\'>"+humanTiming(TimeAgo)+"</span	>"
+										+"</small>"		
+									+"</div>"
+								+"</div>"
+						);
+				}
+			
+				document.getElementById("idUltima").value =  Global_idUltimaNotificacion;
 				Contador += 1;	
 				ContarInteracciones(value.id);
 			});
@@ -196,10 +113,11 @@ $(document).ready(function(){
 				}			
 			}
 			ocultarCargando();	
-			Global_ContadorCargaPublicaciones += 1 * 5;
+			Global_ContadorCargaNotificaciones += 1 * 5;
 			return true;
 		});						
 	}
+
   function ContarInteracciones(status_id)
   {
     status_id = status_id;
@@ -228,7 +146,7 @@ $(document).ready(function(){
 			$(res).each(function(key,value){
 				Contador += 1;
 				if (Contador === 5){
-					Global_idUltimaPublicacion = value.id;
+					Global_idUltimaNotificacion = value.id;
 					$("#EstadosNuevos").append(Contador + " <small>¡Publicaciones Nuevas!</small>");
 				}else{
 					$("#EstadosNuevos").append("");
