@@ -8,7 +8,10 @@
 	/*DECLARACIÓN DE VARIABLES GLOBALES*/
 
 	/*MÉTODOS CONSTRUCTORES*/
-		//CargarNotificaciones();
+		ContarNotificaciones();
+		setInterval(function(){
+			ContarNotificaciones();
+		},30000);		
 	/*MÉTODOS CONSTRUCTORES*/
 
 	
@@ -40,13 +43,11 @@
 	{
 		var Notificaciones = $("#Notificacion"); 
 		var user_id = $("#user_id").val();
-		var route = "http://localhost:8000/cargarpops/"+$("#idUltima").val()+"/"+user_id;
 		var Contador = 0;
 		var pops = "";
-		console.log(user_id+"/"+$("#idUltima").val());
 
 		$.ajax({
-			url: "http://localhost:8000/cargarpops/"+$("#idUltima").val()+"/"+user_id,
+			url: "http://localhost:8000/cargarpops/"+Global_idUltimaNotificacion+"/"+user_id,
 			type: 'GET',
 			dataType: 'json',
 			cache: false,
@@ -59,12 +60,14 @@
 				$(data).each(function(key,value){		
 					var TimeAgo = value.created_at;
 					Global_idUltimaNotificacion = value.id;		
+
+
 					if($.trim(value.tipo) === 'coins')
 					{
 
 						pops +=	"<div class='list-group-item'>"
 									+"<div class='text-info' >"
-										+"<img src='img/yavu007.png' style='width: 32px; height: 30px;' />&nbsp;"		
+										+"<img src='/img/yavu007.png' style='width: 32px; height: 30px;' />&nbsp;"		
 										+value.contenido+"<br>"
 										+"<small>"
 											+"<span	 class='timeago' id='timeago"+value.id+"' value='"+TimeAgo+"' title='"+TimeAgo+"\'>"+humanTiming(TimeAgo)+"</span	>"
@@ -77,7 +80,7 @@
 
 						pops +=	"<div class='list-group-item'>"
 									+"<div class='text-info' >"
-										+"<img src='img/users/"+value.imagen_perfil_empresa+"' style='width: 32px; height: 32px;' />&nbsp;"	
+										+"<img src='/img/users/"+value.imagen_perfil_empresa+"' style='width: 32px; height: 32px;' />&nbsp;"	
 										+value.contenido+" <a class='btn-link' href='/empresa/"+value.nombreEmp+"'<strong>"+value.nombreEmp+"</strong></a><br>"
 										+"<small>"
 											+"<span	 class='timeago' id='timeago"+value.id+"' value='"+TimeAgo+"' title='"+TimeAgo+"\'>"+humanTiming(TimeAgo)+"</span	>"
@@ -89,7 +92,7 @@
 					{
 						pops +=	"<div class='list-group-item'>"
 									+"<div class='text-info' >"
-										+"<img src='img/yavu007.png' style='width: 32px; height: 30px;' />&nbsp;"		
+										+"<img src='/img/yavu007.png' style='width: 32px; height: 30px;' />&nbsp;"		
 										+value.contenido+"<br>"
 										+"<small>"
 											+"<span	 class='timeago' id='timeago"+value.id+"' value='"+TimeAgo+"' title='"+TimeAgo+"\'>"+humanTiming(TimeAgo)+"</span	>"
@@ -101,7 +104,8 @@
 					Contador += 1;	
 					//ContarInteracciones(value.id);
 				});
-
+				$("#CantidadNotificaciones").text(Contador);
+				console.log(Contador);
 			var finalData = "<div class='list-group' style='overflow-y: scroll;height:200px;'>"
 							+pops
 							+"<div class='list-group-item-full-header'><a class='text-warning' href='/pops'>ver todas</a></div>"
@@ -113,7 +117,8 @@
 	    	
 
 			if(Contador < 5){	
-				document.getElementById("idUltima").value = 0; //Global_idUltimaNotificacion;
+				//document.getElementById("idUltima").value = 0; //
+				Global_idUltimaNotificacion = 0;
 				/*
 				if (Global_Control) { 
 					$("#msj-finPublicaciones").fadeIn();	
@@ -160,7 +165,38 @@
 
 
 	}
-
+	function ContarNotificaciones()
+	{
+		var user_id = $("#user_id").val();
+		var Contador = 0;
+		$.ajax({
+			url: "http://localhost:8000/cargarpops/"+$("#idUltima").val()+"/"+user_id,
+			type: 'GET',
+			dataType: 'json',
+			cache: false,
+			async: true,
+			data:{
+			  '_token': '{{ csrf_token() }}',
+			  'foo' : 'Foo'
+			},
+			success: function success(data, status) {
+				$(data).each(function(key,value){		
+					var TimeAgo = value.created_at;
+					Contador += 1;	
+				});
+				$("#CantidadNotificaciones").text(Contador);
+				console.log(Contador);
+				if(Contador < 5){	
+					//Falla
+					//document.getElementById("idUltima").value = 0; //Global_idUltimaNotificacion;
+				}
+			},
+			error: function error(xhr, textStatus, errorThrown) {
+			  alert('Remote sever unavailable. Please try later');
+			}
+		});
+		return true;
+	}
 
 	function CargarMensajes()
 	{

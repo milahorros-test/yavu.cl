@@ -178,18 +178,20 @@
 					{!!Form::label('Cumpleaños:')!!}
 					{!!Form::date('fecha_nacimiento',null,['class'=>'form-control','placeholder'=>''])!!}
 				</div>
-				@if (Auth::admin()->check())
-					<div class="form-group has-feedback has-feedback-left">
-						{!!Form::label('Tipo usuario:')!!}
-						{!!Form::select('tipo_usuario', 
-							['Usuario' => 'Usuario',
-							'Cliente' => 'Cliente'], 
-							$selected = null, ['class' => 'form-control']) 
-						!!}	
-					</div>	
+				@if (Auth::admin()->check()||Auth::user()->check())
 					<div class="form-group has-feedback has-feedback-left">
 						{!!Form::hidden('estado', 'Activo')!!}	
-					</div>			
+					</div>	
+					@if (Auth::admin()->check())
+						<div class="form-group has-feedback has-feedback-left">
+							{!!Form::label('Tipo usuario:')!!}
+							{!!Form::select('tipo_usuario', 
+								['Usuario' => 'Usuario',
+								'Cliente' => 'Cliente'], 
+								$selected = null, ['class' => 'form-control']) 
+							!!}	
+						</div>						
+					@endif
 				@endif
 			</div>
 		</div>

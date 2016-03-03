@@ -26,7 +26,10 @@ $(document).ready(function(){
 	$("#CargarEstados").click(function(e)
 	{
 		$("#EstadosNuevos").append("");
-		CargarEstados();			
+		if(Global_idUltimaPublicacion > 1){
+			CargarEstados();			
+		}
+
 		e.preventDefault();
 	});
 
@@ -130,9 +133,9 @@ $(document).ready(function(){
 
 
 	function CargarEstados(){
+		console.log(Global_idUltimaPublicacion);
 		var Estados = $("#Estados"); 
-		Global_idUltimaPublicacion = $("#idUltima").val();
-		var route = "http://localhost:8000/cargarfeeds/"+Global_idUltimaPublicacion;
+		var route = "http://localhost:8000/cargarfeeds/"+$("#idUltima").val();
 		var Contador = 0;
 		$.get(route, function(res){
 			if(Global_Control){mostrarCargando();}
@@ -193,8 +196,10 @@ $(document).ready(function(){
 			}
 			ocultarCargando();	
 			Global_ContadorCargaPublicaciones += 1 * 5;
-			return true;
-		});						
+			
+		});	
+		console.log(Global_idUltimaPublicacion);
+		return true;					
 	}
   function ContarInteracciones(status_id)
   {
