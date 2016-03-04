@@ -32,9 +32,21 @@
 						<div class="">
 							<div class="thumbnail">
 
-								<img id="ImagenPortada" src="/img/users/{{$e->imagen_portada}}" alt="...">
-								<img id="ImagenPerfil" src="/img/users/{{$e->imagen_perfil}}" class="img-circle" alt="...">
 								
+
+								@if($e->imagen_portada === "" )
+									<img id="ImagenPortada" src="http://medioambiente.nh-hoteles.es/themes/default/images/bgd-biodiversidad-00.png" alt="...">
+								@else
+									<img id="ImagenPortada" src="/img/users/{{$e->imagen_portada}}" alt="...">
+								@endif								
+
+								@if($e->imagen_perfil === "")
+									<img id="ImagenPerfil" src="https://image.freepik.com/iconos-gratis/silueta-usuario-masculino_318-35708.png" class="img-circle" alt="...">
+								@else
+									<img id="ImagenPerfil" src="/img/users/{{$e->imagen_perfil}}" class="img-circle" alt="...">
+								@endif
+
+
 
 								<div class="caption">
 									Campo : {{$e->email}}<br>

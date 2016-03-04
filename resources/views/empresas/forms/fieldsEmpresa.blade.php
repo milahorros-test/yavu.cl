@@ -65,23 +65,36 @@
 		@if(isset($empresa))
 			<div class="list-group-item">
 				<div class="form-group has-feedback has-feedback-left">
-
 					{!!Form::label('Cambiar avatar:')!!}<br>
 					{!!Form::file('imagen_perfil', ['class' => 'btn'])!!}
 					<br>
-					<img width="15%" id="ImagenPerfil" class="thumbnail" src="/img/users/{{$empresa->imagen_perfil}}" alt="...">
+					@if(Request::path() !== 'empresas/create')
+						@if($empresa->imagen_perfil==="")
+							<img width="15%" id="ImagenPerfil" class="thumbnail" src="https://image.freepik.com/iconos-gratis/silueta-usuario-masculino_318-35708.png" alt="...">
+						@else
+							<img width="15%" id="ImagenPerfil" class="thumbnail" src="/img/users/{{$empresa->imagen_perfil}}" alt="...">
+						@endif
+					@else
+						<img width="15%" id="ImagenPerfil" class="thumbnail" src="https://image.freepik.com/iconos-gratis/silueta-usuario-masculino_318-35708.png" alt="...">
+					@endif
 				</div>
 
 				<div class="form-group has-feedback has-feedback-left">
 					{!!Form::label('Cambiar banner personal:')!!}<br>
 					{!!Form::file('imagen_portada', ['class' => 'btn'])!!}
 					<br>
-					<img width="35%" id="ImagenPortada" class="thumbnail" src="/img/users/{{$empresa->imagen_portada}}" alt="...">
+					@if(Request::path() !== 'empresas/create')
+						@if($empresa->imagen_portada==="")
+							<img width="25%" id="ImagenPortada" class="thumbnail" src="http://medioambiente.nh-hoteles.es/themes/default/images/bgd-biodiversidad-00.png" alt="...">
+						@else
+							<img width="35%" id="ImagenPortada" class="thumbnail" src="/img/users/{{$empresa->imagen_portada}}" alt="...">
+						@endif
+					@else
+						<img width="25%" id="ImagenPortada" class="thumbnail" src="http://medioambiente.nh-hoteles.es/themes/default/images/bgd-biodiversidad-00.png" alt="...">
+					@endif
 				</div>
 			</div>			
 		@endif
-
-
 
 	</div>
 </div>
@@ -191,7 +204,7 @@
 						{!!Form::hidden('user_id', Auth::user()->get()->id )!!}
 					</div>		
 					<div class="form-group has-feedback has-feedback-left">
-						{!!Form::hidden('estado', 'Pendiente')!!}	
+						{!!Form::hidden('estado', 'Activo')!!}	
 						<!-- con esto queda pendiente cada vez que se cambie la info-->
 					</div>						
 				@endif				

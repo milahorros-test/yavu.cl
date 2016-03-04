@@ -50,7 +50,7 @@
               </span>    
             </a>           
           </div>
-
+          <!--
           <div class="navbar-brand">
             <a href="#!">
               <span id="Mensajes" title="Mensajes" data-toggle="popover" title="Popover title" data-placement="bottom" class="glyphicon glyphicon-envelope" style="font-size: 1em;" aria-hidden="true">
@@ -58,6 +58,7 @@
               </span>
             </a>
           </div>
+          -->
         @endif
         </div>
         <div id="navbar" class="navbar-collapse collapse">

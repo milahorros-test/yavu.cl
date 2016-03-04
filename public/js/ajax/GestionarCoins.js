@@ -69,12 +69,19 @@ $(document).ready(function(){
 				}else if(value.estado === "Activo"){
 					//$("#EstadoEmpresa").removeClass("label-warning");
 					//$("#EstadoEmpresa").addClass("label-success");
+
+					var ImagenPerfil = "/img/users/"+value.imagen_perfil;
+					if (value.imagen_perfil === "") 
+					{
+						ImagenPerfil = "https://image.freepik.com/iconos-gratis/silueta-usuario-masculino_318-35708.png";
+					}
+
 					$("#EstadoEmpresa").append(
 						'<div class="list-group-item-full-header">'
 							+'<div class="panel panel-success">'
 								+'<div class="panel-heading">'
-								+"<img class='media-object' src='/img/users/"+value.imagen_perfil+"' data-holder-rendered='true' style='width: 32px; height: 32px; border: 1px solid #73AD21;'/>"
-								+'&nbsp;<strong>'+value.nombre+'</strong></div>'    
+								+'<a class="btn-link" href="/empresa/'+value.nombre+'">'+"<img class='media-object' src='"+ImagenPerfil+"' data-holder-rendered='true' style='width: 32px; height: 32px; border: 1px solid #73AD21;'/></a>"
+								+'&nbsp;<strong><a class="btn-link" href="/empresa/'+value.nombre+'">'+value.nombre+'</a></strong></div>'    
 								+'<div class="list-group">'
 									+'<div class="list-group-item">'
 										+'<small>Estado de la empresa</small> : '
