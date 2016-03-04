@@ -50,7 +50,7 @@
           <div class="navbar-brand">
             <a href="#!"> 
               <span id="Notificaciones" title="Notificaciones" data-toggle="popover" title="Popover title" data-placement="bottom"  class="glyphicon glyphicon-flash" style="font-size: 1em;" aria-hidden="true">
-                <small><span id="CantidadNotificaciones" class="label label-danger">1</span></small>
+                <small><span id="CantidadNotificaciones" class="label label-danger"></span></small>
               </span>    
             </a>           
           </div>
@@ -58,7 +58,7 @@
           <div class="navbar-brand">
             <a href="#!">
               <span id="Mensajes" title="Mensajes" data-toggle="popover" title="Popover title" data-placement="bottom" class="glyphicon glyphicon-envelope" style="font-size: 1em;" aria-hidden="true">
-                <small><span id="CantidadMensajes" class="label label-danger">2</span></small>          
+                <small><span id="CantidadMensajes" class="label label-danger"></span></small>          
               </span>
             </a>
           </div>

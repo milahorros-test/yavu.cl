@@ -33,7 +33,7 @@ class FeedController extends Controller
             ->select('estado_empresas.*', 'empresas.nombre as nombreEmp', 'empresas.imagen_perfil as imagen_perfil_empresa')    
             ->where('estado_empresas.id', '>', (int) $idUltima)
             ->orderBy('estado_empresas.created_at','desc')   
-            ->limit('5')
+            ->limit('10')
             ->get();  
                         
         }elseif((int) $idUltima <> "0"){
@@ -42,7 +42,7 @@ class FeedController extends Controller
             ->select('estado_empresas.*', 'empresas.nombre as nombreEmp', 'empresas.imagen_perfil as imagen_perfil_empresa')    
             ->where('estado_empresas.id', '<', (int) $idUltima)
             ->orderBy('estado_empresas.created_at','desc')   
-            ->limit('5')
+            ->limit('10')
             ->get();  
         }        
 

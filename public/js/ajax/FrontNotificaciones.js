@@ -104,7 +104,7 @@
 					Contador += 1;	
 					//ContarInteracciones(value.id);
 				});
-				$("#CantidadNotificaciones").text(Contador);
+				//$("#CantidadNotificaciones").text(Contador);
 				console.log(Contador);
 			var finalData = "<div class='list-group' style='overflow-y: scroll;height:200px;'>"
 							+pops
@@ -118,7 +118,7 @@
 
 			if(Contador < 5){	
 				//document.getElementById("idUltima").value = 0; //
-				Global_idUltimaNotificacion = 0;
+				
 				/*
 				if (Global_Control) { 
 					$("#msj-finPublicaciones").fadeIn();	
@@ -130,6 +130,7 @@
 				*/	
 			}
 			//ocultarCargando();	
+			Global_idUltimaNotificacion = 0;
 			Global_ContadorCargaNotificaciones += 1 * 5;
 	    	if(Global_swap_notificaciones){
 	    		$('#Notificaciones').popover('show');
