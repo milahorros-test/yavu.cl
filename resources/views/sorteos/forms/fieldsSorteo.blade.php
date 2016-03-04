@@ -34,7 +34,6 @@
 					{!!Form::label('Imagen sorteo:')!!}<br>
 					{!!Form::file('imagen_sorteo', ['class' => 'btn'])!!}
 					<br>
-
 				</div>
 			</div>			
 		@endif

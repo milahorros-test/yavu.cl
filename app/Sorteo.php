@@ -13,7 +13,7 @@ class Sorteo extends Model
 
     public function setImagenSorteoAttribute($imagen_sorteo)
     {
-        $this->attributes['imagen_sorteo'] = Carbon::now()->second.$imagen_sorteo>getClientOriginalName();
+        $this->attributes['imagen_sorteo'] = Carbon::now()->second.$imagen_sorteo->getClientOriginalName();
 
         $name = Carbon::now()->second.$imagen_sorteo->getClientOriginalName();
         
