@@ -1,10 +1,10 @@
 @extends('layouts.front')
 @section('content')
 <div class="jumbotron">
- 	<div id="contentMiddle">
+ 	<div id="contentIn">
 		<h1>Terminos y condiciones</h1>
-	</div>
-	<div id="contentIn">
+
+	
 		<div class="panel panel-default">
 			<div class="panel-body">
 			    <p></p>
@@ -22,10 +22,11 @@
 				</div>		    
 		  	</div>
 		</div>
-
+			<h1>Registro de usuario</h1>
 		<div class="panel panel-default">
+
 			<div id="contentMiddle">
-		<h1>Registro de usuario</h1>
+		
 			</div>
 			<div class="panel-body">
 			    <p></p>
@@ -52,10 +53,12 @@
 
 		</div>
 
-
-		<div class="panel panel-default">
-			<div id="contentMiddle">
 		<h1>Condiciones generales</h1>
+		<div class="panel panel-default">
+
+			
+			<div id="contentMiddle">
+		
 			</div>
 			<div class="panel-body">
 			    <p></p>
@@ -93,10 +96,10 @@
 		  </div>
 
 		</div>
-
+		<h1>Jurisdicción y Ley Aplicable</h1>
 		<div class="panel panel-default">
 			<div id="contentMiddle">
-		<h1>Jurisdicción y Ley Aplicable</h1>
+		
 			</div>
 			<div class="panel-body">
 			    <p></p>

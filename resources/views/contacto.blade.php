@@ -8,16 +8,13 @@
 
 {!!Form::open()!!}
 <div class="jumbotron">
-  <div id="contentMiddle">
-  <h1>Contacto</h1>
-  </div>
   <div id="contentIn">
-
+    <h1>Contacto</h1>
     <div class="panel panel-default">
    
       <div class="panel-body">
-             <td colspan="2">Haznos saber tus dudas, ¡queremos entregarte el mejor servicio!</td>
-             <br>
+             <td colspan="2">Haznos saber tus dudas, ¡Queremos entregarte el mejor servicio!</td>
+             
         {!!Form::open()!!}
         <table class="table">
           <tr>
@@ -25,7 +22,6 @@
             <td>
               {!!Form::text('name',null,['class'=>'form-control','placeholder'=>'Ingresa tu nombre', 'required'=>'required'])!!}
             </td>
-
           </tr>
           <tr>
             <td>Email</td>
@@ -56,19 +52,26 @@
             <td><!--*--></td>
           </tr>
           <tr>
-            <td>¡Contáctate ya!</td>
+            <td>¡Ingresa el catpcha y contáctate ya!</td>
             <td>
-              {!!Form::submit('Enviar consulta',['class'=>'btn btn-primary btn-success'])!!}
+              {!! Form::open(array('url' => '/send_info')) !!}
+           <p>{!! Captcha::img(); !!}</p>
+          <p>{!! Form::text('captcha') !!}</p>
+          <p>{!!Form::submit('Enviar consulta',['class'=>'btn btn-primary btn-success'])!!}</p>
+    {!! Form::close() !!}
+              
             </td>
             <td><!--*--></td>
           </tr>
         </table>
+
         {!!Form::close()!!}
       </div>
     </div>  
   </div>
 </div>
 {!!Form::close()!!}
+
 @stop
 
 
