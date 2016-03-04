@@ -59,17 +59,17 @@
 					<div id="EmpresaListThumb">
 
 					@foreach($empresas as $empresa)	
-		        
-					        <div class="col-md-4">
-					          <div class="thumbnail">
-					            <img src="{!!URL::to('images/empresa.png')!!}" alt="">
-					              <div class="caption">
-					                <h4>{{$empresa->nombre}}</h4>
-					            </div>
-					            <td>{{$empresa->ciudad}}</td>
-								<td>{{$empresa->fono}}</td>
-					          </div>
-					        </div>
+	        
+				        <div class="col-md-4">
+				          <div class="thumbnail">
+				            <img src="{!!URL::to('img/users/'.$empresa->imagen_perfil)!!}" alt="">
+				              <div class="caption">
+				                <h4>{{$empresa->nombre}}</h4>
+				            </div>
+				            <td>{{$empresa->ciudad}}</td>
+							<td>{{$empresa->fono}}</td>
+				          </div>
+				        </div>
 
 					@endforeach
 

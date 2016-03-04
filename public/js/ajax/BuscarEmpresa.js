@@ -91,7 +91,7 @@
 						
 					'<div class="col-md-4">'
 				        +'<div class="thumbnail">'
-				            +'<img src="images/empresa.png" alt="">'
+				            +'<img src="/img/users/'+value.imagen_perfil+'" alt="">'
 					            +'<div class="caption">'
 					                +'<h4>'+value.nombre+'</h4>'
 					            +'</div>'
