@@ -5047,7 +5047,16 @@ a.thumbnail.active {
   padding: 10px 8px;
   margin-bottom: -1px;
   background-color: #fff;
+  -webkit-transition: background-color 0.2s;
   /*border: 1px solid #ddd;*/
+}
+.list-group-item-hover:hover {
+  background-color: #E6FFE9;
+  -webkit-transition: background-color 0.2s;
+}
+.list-group-item-hover {
+  background-color: #fff;
+  -webkit-transition: background-color 0.2s;
 }
 .list-group-item-full {
   position: relative;
@@ -5056,7 +5065,7 @@ a.thumbnail.active {
   padding: 0px 10px 0px 0px;
   margin-bottom: -1px;
   background-color: #fff;
-
+  -webkit-transition: background-color 0.2s;
   /*border: 1px solid #ddd;*/
 }
 .list-group-item-full-header {
@@ -5066,7 +5075,7 @@ a.thumbnail.active {
   padding: 1px 10px 1px 10px;
   margin-bottom: -1px;
   background-color: #fff;
-
+  -webkit-transition: background-color 0.2s;
   border: 1px;
 }
 .list-group-item-full-classic {
@@ -5075,6 +5084,7 @@ a.thumbnail.active {
   padding: 0px 0px 0px 0px;
   margin-bottom: 0px;
   background-color: #fff;
+  -webkit-transition: background-color 0.2s;
   /*border: 0px solid #ddd;*/
 }
 .list-group-item:first-child {

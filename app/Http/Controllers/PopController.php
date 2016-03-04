@@ -81,7 +81,7 @@ class PopController extends Controller
     public function MarcarVistas($user_id){
         DB::table('pops')
             ->where('user_id', $user_id)
-            ->update(['estado' => 'vista']);    
+            ->update(['estado' => 'visto']);    
     }
     public function create()
     {

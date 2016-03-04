@@ -11,7 +11,7 @@
 		ContarNotificaciones();
 		setInterval(function(){
 			ContarNotificaciones();
-		},1000);		
+		},30000);		
 	/*MÉTODOS CONSTRUCTORES*/
 
 	
@@ -61,7 +61,7 @@
 					if($.trim(value.tipo) === 'coins')
 					{
 
-						pops +=	"<div class='list-group-item'>"
+						pops +=	"<div class='list-group-item-hover'>"
 									+"<div class='text-info' >"
 										+"<img src='/img/yavu007.png' style='width: 32px; height: 30px;' />&nbsp;"		
 										+value.contenido+"<br>"
@@ -69,12 +69,12 @@
 											+"<span	 class='timeago' id='timeago"+value.id+"' value='"+TimeAgo+"' title='"+TimeAgo+"\'>"+humanTiming(TimeAgo)+"</span	>"
 										+"</small>"	
 									+"</div>"
-								+"</div><hr>";
+								+"</div>";
 					}
 					else if($.trim(value.tipo) === 'activacion')
 					{
 
-						pops +=	"<div class='list-group-item'>"
+						pops +=	"<div class='list-group-item-hover'>"
 									+"<div class='text-info' >"
 										+"<img src='/img/users/"+value.imagen_perfil_empresa+"' style='width: 32px; height: 32px;' />&nbsp;"	
 										+value.contenido+" <a class='btn-link' href='/empresa/"+value.nombreEmp+"'<strong>"+value.nombreEmp+"</strong></a><br>"
@@ -82,11 +82,11 @@
 											+"<span	 class='timeago' id='timeago"+value.id+"' value='"+TimeAgo+"' title='"+TimeAgo+"\'>"+humanTiming(TimeAgo)+"</span	>"
 										+"</small>"	
 									+"</div>"
-								+"</div><hr>";
+								+"</div>";
 					}
 					else
 					{
-						pops +=	"<div class='list-group-item'>"
+						pops +=	"<div class='list-group-item-hover'>"
 									+"<div class='text-info' >"
 										+"<img src='/img/yavu007.png' style='width: 32px; height: 30px;' />&nbsp;"		
 										+value.contenido+"<br>"
@@ -94,7 +94,7 @@
 											+"<span	 class='timeago' id='timeago"+value.id+"' value='"+TimeAgo+"' title='"+TimeAgo+"\'>"+humanTiming(TimeAgo)+"</span	>"
 										+"</small>"	
 									+"</div>"
-								+"</div><hr>";						
+								+"</div>";						
 					}
 
 					Contador += 1;	

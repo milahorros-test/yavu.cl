@@ -42,6 +42,7 @@ class LogController extends Controller
             //Ahora notifico al cliente
             DB::table('pops')->insert(
                 ['user_id' => $id, 
+                'empresa_id' => 1,
                 'tipo' => 'coins', 
                 'estado'   => 'pendiente',
                 'contenido' => 'Tienes una nueva carga!',
