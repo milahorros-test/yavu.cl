@@ -39,7 +39,7 @@ $(document).ready(function(){
 		var Notificaciones = $("#Notificacion"); 
 		Global_idUltimaNotificacion = $("#idUltima").val();
 		var user_id = $("#user_id").val();
-		var route = "http://localhost:8000/cargarpops/"+Global_idUltimaNotificacion+"/"+user_id;
+		var route = "http://localhost:8000/cargarpops/"+Global_idUltimaNotificacion+"/"+user_id+"/todas";
 		var Contador = 0;
 		$.get(route, function(res){
 			if(Global_Control){mostrarCargando();}

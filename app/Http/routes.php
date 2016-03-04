@@ -91,7 +91,7 @@ Route::resource('admins','AdminController');
 
 /*Gestión de Notificaciones -> Pops*/
 Route::resource('pops', 'PopController');
-Route::get('cargarpops/{idUltima}/{usuario}', 'PopController@CargarPops');
+Route::get('cargarpops/{idUltima}/{usuario}/{tipo}', 'PopController@CargarPops');
 Route::get('cargarpopsempresa/{idUltima}/{empresa}', 'PopController@CargarPopsEmpresa');
 
 /*Gestión de Notificaciones -> Pops*/

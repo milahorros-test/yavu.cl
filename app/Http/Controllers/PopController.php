@@ -22,34 +22,67 @@ class PopController extends Controller
     {
         return view('pops.index');
     }
-    public function CargarPops($idUltima, $user_id){
-        if((int) $idUltima == "0"){
-            $pops = DB::table('pops')                    
-                ->join('empresas'  , 'empresas.id', '=', 'pops.empresa_id')
-                ->join('users'  , 'users.id', '=', 'pops.user_id')
-                ->select('pops.*', 'empresas.nombre as nombreEmp', 'empresas.imagen_perfil as imagen_perfil_empresa', 'users.nombre as nombreUsu', 'users.imagen_perfil as imagen_perfil_usuario')    
-                ->where('pops.id', '>', (int) $idUltima)
-                ->where('pops.user_id', '=', $user_id)
-                ->orderBy('pops.created_at','desc')   
-                ->limit('20')
-                ->get();  
-                        
-        }elseif((int) $idUltima <> "0"){
-            $pops = DB::table('pops')                    
-                ->join('empresas'  , 'empresas.id', '=', 'pops.empresa_id')
-                ->join('users'  , 'users.id', '=', 'pops.user_id')
-                ->select('pops.*', 'empresas.nombre as nombreEmp', 'empresas.imagen_perfil as imagen_perfil_empresa', 'users.nombre as nombreUsu', 'users.imagen_perfil as imagen_perfil_usuario')    
-                ->where('pops.id', '<', (int) $idUltima)
-                ->where('pops.user_id', '=', $user_id)
-                ->orderBy('pops.created_at','desc')   
-                ->limit('20')
-                ->get(); 
+    public function CargarPops($idUltima, $user_id, $tipo){
+
+        if($tipo === 'todas')
+        {
+            if((int) $idUltima == "0"){
+                $pops = DB::table('pops')                    
+                    ->join('empresas'  , 'empresas.id', '=', 'pops.empresa_id')
+                    ->join('users'  , 'users.id', '=', 'pops.user_id')
+                    ->select('pops.*', 'empresas.nombre as nombreEmp', 'empresas.imagen_perfil as imagen_perfil_empresa', 'users.nombre as nombreUsu', 'users.imagen_perfil as imagen_perfil_usuario')    
+                    ->where('pops.id', '>', (int) $idUltima)
+                    ->where('pops.user_id', '=', $user_id)
+                    ->orderBy('pops.created_at','desc')   
+                    ->limit('20')
+                    ->get();  
+                            
+            }elseif((int) $idUltima <> "0"){
+                $pops = DB::table('pops')                    
+                    ->join('empresas'  , 'empresas.id', '=', 'pops.empresa_id')
+                    ->join('users'  , 'users.id', '=', 'pops.user_id')
+                    ->select('pops.*', 'empresas.nombre as nombreEmp', 'empresas.imagen_perfil as imagen_perfil_empresa', 'users.nombre as nombreUsu', 'users.imagen_perfil as imagen_perfil_usuario')    
+                    ->where('pops.id', '<', (int) $idUltima)
+                    ->where('pops.user_id', '=', $user_id)
+                    ->orderBy('pops.created_at','desc')   
+                    ->limit('20')
+                    ->get(); 
+            }  
+            $this->MarcarVistas($user_id);
+
+        }elseif ($tipo === 'novistas') {
+            //hacer un select count y retornar el numero directamente
+            if((int) $idUltima == "0"){
+
+                $pops = DB::table('pops')
+                                ->where('estado', 'pendiente')
+                                ->where('user_id', $user_id)
+                                ->where('id', '>', (int) $idUltima)
+                                ->count('estado');
+
+
+            }elseif((int) $idUltima <> "0"){
+
+                $pops = DB::table('pops')
+                                ->where('estado', 'pendiente')
+                                ->where('user_id', $user_id)
+                                ->where('id', '<', (int) $idUltima)
+                                ->count('estado');
+
+            }    
+            
+
         }        
 
         return response()->json(
             $pops
         );
     }    
+    public function MarcarVistas($user_id){
+        DB::table('pops')
+            ->where('user_id', $user_id)
+            ->update(['estado' => 'vista']);    
+    }
     public function create()
     {
 

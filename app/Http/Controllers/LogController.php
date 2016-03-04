@@ -39,12 +39,24 @@ class LogController extends Controller
                 'created_at' => strftime( "%Y-%m-%d-%H-%M-%S", time()),
                 'updated_at' => strftime( "%Y-%m-%d-%H-%M-%S", time())]
             );
+            //Ahora notifico al cliente
+            DB::table('pops')->insert(
+                ['user_id' => $id, 
+                'tipo' => 'coins', 
+                'estado'   => 'pendiente',
+                'contenido' => 'Tienes una nueva carga!',
+                'created_at' => strftime( "%Y-%m-%d-%H-%M-%S", time()),
+                'updated_at' => strftime( "%Y-%m-%d-%H-%M-%S", time())]
+            );
+
         }
             
     }
     public function create()
     {
     }
+
+
     public function store(LoginRequest $request)
     {
         $userEmail = User::where('email', Input::get('email'))->first();
@@ -71,6 +83,7 @@ class LogController extends Controller
             }
         }else{
             if(Auth::user()->attempt(['email' => Input::get('email'), 'password' => Input::get('password')])){
+
                 $this->CargarCoinSesion(Auth::user()->get()->id);
                 return Redirect::to('/dashboard');
             }

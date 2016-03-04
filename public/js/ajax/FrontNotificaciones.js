@@ -11,7 +11,7 @@
 		ContarNotificaciones();
 		setInterval(function(){
 			ContarNotificaciones();
-		},30000);		
+		},1000);		
 	/*MÉTODOS CONSTRUCTORES*/
 
 	
@@ -47,20 +47,16 @@
 		var pops = "";
 
 		$.ajax({
-			url: "http://localhost:8000/cargarpops/"+Global_idUltimaNotificacion+"/"+user_id,
+			url: "http://localhost:8000/cargarpops/"+Global_idUltimaNotificacion+"/"+user_id+"/todas",
 			type: 'GET',
 			dataType: 'json',
 			cache: false,
 			async: true,
-			data:{
-			  '_token': '{{ csrf_token() }}',
-			  'foo' : 'Foo'
-			},
+
 			success: function success(data, status) {
 				$(data).each(function(key,value){		
 					var TimeAgo = value.created_at;
 					Global_idUltimaNotificacion = value.id;		
-
 
 					if($.trim(value.tipo) === 'coins')
 					{
@@ -148,6 +144,11 @@
 		});
 
 
+
+
+
+
+
 			
 		/*	
 		var data = "";
@@ -160,37 +161,19 @@
 		*/
 		return true;
 
-
-				
-
-
-
 	}
 	function ContarNotificaciones()
 	{
 		var user_id = $("#user_id").val();
 		var Contador = 0;
 		$.ajax({
-			url: "http://localhost:8000/cargarpops/"+$("#idUltima").val()+"/"+user_id,
+			url: "http://localhost:8000/cargarpops/"+$("#idUltima").val()+"/"+user_id+"/novistas",
 			type: 'GET',
 			dataType: 'json',
 			cache: false,
 			async: true,
-			data:{
-			  '_token': '{{ csrf_token() }}',
-			  'foo' : 'Foo'
-			},
 			success: function success(data, status) {
-				$(data).each(function(key,value){		
-					var TimeAgo = value.created_at;
-					Contador += 1;	
-				});
-				$("#CantidadNotificaciones").text(Contador);
-				console.log(Contador);
-				if(Contador < 5){	
-					//Falla
-					//document.getElementById("idUltima").value = 0; //Global_idUltimaNotificacion;
-				}
+				$("#CantidadNotificaciones").text(data);
 			},
 			error: function error(xhr, textStatus, errorThrown) {
 			  alert('Remote sever unavailable. Please try later');
@@ -298,7 +281,6 @@
 			}
 		}	    	
 	}
-
 
 	/*FUNCIONES Y PROCEDIMIENTOS*/
 });
