@@ -17,7 +17,6 @@ class SorteoUpdateRequest extends Request
             'descripcion' => 'required',
             'fecha_inicio_sorteo' => 'required',   
             'estado_sorteo' => 'required',
-            
-                ];
+            ];
         }
 }

@@ -8,8 +8,8 @@
 			<div class="panel-heading"><h4>Mantenedor de sorteos</h4></div>
 			<div class="panel-body">
 				<table class="table">
-					{!!Form::model($sorteo, ['method'=>'PUT', 'route' => ['sorteos.update', $sorteo->id] ])!!}
-						@include('sorteos.forms.fieldsSorteo')
+					{!!Form::model($sorteo, ['method'=>'PUT', 'route' => ['sorteos.update', $sorteo->id], 'files' => true ])!!}
+						@include('sorteos.forms.fieldsSorteo', array('sorteo' => $sorteo))
 						<tr>
 							<td>
 								Guardar o Eliminar

@@ -23,7 +23,22 @@
 
         	 <div class="form-group has-feedback has-feedback-left">
             {!!Form::hidden('estado_sorteo', 'Pendiente')!!} 
-          </div>             
+          </div>      
+
+          		<!-- GESTION DE LAS FOTOS -->
+
+		@if(isset($sorteo))
+			<div class="list-group-item">
+				<div class="form-group has-feedback has-feedback-left">
+
+					{!!Form::label('Imagen sorteo:')!!}<br>
+					{!!Form::file('imagen_sorteo', ['class' => 'btn'])!!}
+					<br>
+
+				</div>
+			</div>			
+		@endif
+       
        
   		
          		@if (Auth::admin()->check()) 

@@ -56,17 +56,16 @@
             
             <div class="col-md-4">
               <div class="thumbnail">
-                <img src="{!!URL::to('images/empresa.png')!!}" alt="">
-                  <div class="caption">
-                    <td><h5>Nombre Sorteo</h5></td>
-                    <td>{{$sorteo->nombre_sorteo}}</td>
+                <img src="/img/users/{{$sorteo->imagen_sorteo}}" alt="">
+                  <div class="card-content">
+                    <h5>Nombre Sorteo:</h5> {{$sorteo->nombre_sorteo}}
                   </div>
-                    <td><h5>Descripción</h5></td>
+                    <td><h5>Descripción del Sorteo:</h5></td>
                     <td>{{$sorteo->descripcion}}</td>
                   @if(Auth::user()->check())
                     <input id="user_id" value="{!! Auth::user()->get()->id !!}" type="hidden" />
                     <input type="hidden" name="_token" value="{{csrf_token()}}" id="token" />
-                    <td><h5>Estado</h5></td>
+                    <td><h5>Estado del Sorteo:</h5></td>
                     <td>{{$sorteo->estado_sorteo}}</td>
                     <br>
                     <td><a id="participar" href="{!! URL::to('#!') !!}" class="btn btn-primary" data-toggle="modal" data-target="#myModal" role="button">Participar!</a></td>
