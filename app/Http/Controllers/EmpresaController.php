@@ -34,6 +34,17 @@ class EmpresaController extends Controller
   }
   public function store(EmpresaCreateRequest $request)
   {
+
+      DB::table('pops')->insert(
+          ['user_id' => $request->user_id, 
+          'empresa_id' => 1,
+          'tipo' => 'activacion', 
+          'estado'   => 'pendiente',
+          'contenido' => 'Se ha registrado tu pyme! '.$request->nombre,
+          'created_at' => strftime( "%Y-%m-%d-%H-%M-%S", time()),
+          'updated_at' => strftime( "%Y-%m-%d-%H-%M-%S", time())]
+      );    
+
       Empresa::create($request->all());
       Session::flash('message', 'Empresa creada correctamente');
       return Redirect::to('/empresas/create');

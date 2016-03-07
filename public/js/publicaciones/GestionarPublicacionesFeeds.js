@@ -139,9 +139,18 @@ $(document).ready(function(){
 		var Contador = 0;
 		$.get(route, function(res){
 			if(Global_Control){mostrarCargando();}
+			var ImagenPerfilEmpresa = "";
 			$(res).each(function(key,value){				
 				var TimeAgo = value.created_at;
 				Global_idUltimaPublicacion = value.id;		
+
+				ImagenPerfilEmpresa = "/img/users/"+value.imagen_perfil_empresa;
+
+				if (value.imagen_perfil_empresa === "" || value.imagen_perfil_empresa === null)
+				{
+					ImagenPerfilEmpresa = "https://image.freepik.com/iconos-gratis/silueta-usuario-masculino_318-35708.png";
+				}
+
 
 				Estados.append(
 					"<div id='publicacion"+value.id+"' class='list-group'>"
@@ -159,7 +168,7 @@ $(document).ready(function(){
 							+'</div>'																	  	
 							*/
 						  	+"<h4><a href='/empresa/"+value.nombreEmp+"' style='color:#3C5B28;'>"
-						  		+"<img class='media-object' src='/img/users/"+value.imagen_perfil_empresa+"' data-holder-rendered='true' style='width: 32px; height: 32px;'/>"
+						  		+"<img class='media-object' src='"+ImagenPerfilEmpresa+"' data-holder-rendered='true' style='width: 32px; height: 32px;'/>"
 						  		+'&nbsp;'
 								+value.nombreEmp+" Idp:("+Global_idUltimaPublicacion+")"
 							+"</a></h4>"

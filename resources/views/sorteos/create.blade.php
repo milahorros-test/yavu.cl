@@ -6,7 +6,7 @@
 		<h4>Solicitar Sorteo </h4>
 		<div class="row">
 			{!!Form::open(['route'=>'sorteos.store', 'method'=>'POST', 'files' => true ])!!}
-			@include('sorteos.forms.fieldsSorteo', array('sorteo' => $sorteo))
+			@include('sorteos.forms.fieldsSorteo')
 				<div class="list-group">
 					<div class="list-group-item">
 						<h4>Todos los campos son requeridos</h4>

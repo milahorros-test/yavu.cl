@@ -43,12 +43,17 @@ $(document).ready(function(){
 		var Contador = 0;
 		$.get(route, function(res){
 			if(Global_Control){mostrarCargando();}
-
+			var ImagenPerfilEmpresa = "";
 			$(res).each(function(key,value){				
 				var TimeAgo = value.created_at;
 				Global_idUltimaNotificacion = value.id;		
 
+				ImagenPerfilEmpresa = "/img/users/"+value.imagen_perfil_empresa;
 
+				if (value.imagen_perfil_empresa === "" || value.imagen_perfil_empresa === null)
+				{
+					ImagenPerfilEmpresa = "https://image.freepik.com/iconos-gratis/silueta-usuario-masculino_318-35708.png";
+				}
 
 				if($.trim(value.tipo) === 'coins')
 				{
@@ -72,8 +77,8 @@ $(document).ready(function(){
 						Notificaciones.append(
 								"<div id='notificacion"+value.id+"' class='list-group'>"
 									+"<div class='list-group-item'>"							
-										+"<img src='img/users/"+value.imagen_perfil_empresa+"' style='width: 32px; height: 32px;' />&nbsp;"	
-										+value.contenido+" <a class='btn-link' href='/empresa/"+value.nombreEmp+"'<strong>"+value.nombreEmp+"</strong></a>"
+										+"<img src='img/yavu007.png' style='width: 32px; height: 32px;' />&nbsp;"	
+										+value.contenido
 									+"</div>"
 									+"<div class='list-group-item-full panel-footer-small'>"	
 										+"<small>"

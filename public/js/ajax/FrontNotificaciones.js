@@ -54,9 +54,17 @@
 			async: true,
 
 			success: function success(data, status) {
+				var ImagenPerfilEmpresa = "";
 				$(data).each(function(key,value){		
 					var TimeAgo = value.created_at;
 					Global_idUltimaNotificacion = value.id;		
+
+					ImagenPerfilEmpresa = "/img/users/"+value.imagen_perfil_empresa;
+
+					if (value.imagen_perfil_empresa === "" || value.imagen_perfil_empresa === null)
+					{
+						ImagenPerfilEmpresa = "https://image.freepik.com/iconos-gratis/silueta-usuario-masculino_318-35708.png";
+					}					
 
 					if($.trim(value.tipo) === 'coins')
 					{
@@ -76,8 +84,8 @@
 
 						pops +=	"<div class='list-group-item-hover'>"
 									+"<div class='text-info' >"
-										+"<img src='/img/users/"+value.imagen_perfil_empresa+"' style='width: 32px; height: 32px;' />&nbsp;"	
-										+value.contenido+" <a class='btn-link' href='/empresa/"+value.nombreEmp+"'<strong>"+value.nombreEmp+"</strong></a><br>"
+										+"<img src='/img/yavu007.png' style='width: 32px; height: 32px;' />&nbsp;"	
+										+value.contenido+"<br>"
 										+"<small>"
 											+"<span	 class='timeago' id='timeago"+value.id+"' value='"+TimeAgo+"' title='"+TimeAgo+"\'>"+humanTiming(TimeAgo)+"</span	>"
 										+"</small>"	
