@@ -10,7 +10,7 @@
     @include('alerts.errorsMessage')
     @include('alerts.successMessage')
     @include('alerts.warningMessage')
-    <h1>Mantenedor de Sorteos</h1>   
+    <h1>Sorteos</h1>   
     <div class="panel panel-default">
       <div class="panel-body">
         <div class="form-group">
