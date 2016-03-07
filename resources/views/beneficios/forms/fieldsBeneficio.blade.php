@@ -12,7 +12,6 @@
 				{!!Form::label('Descripción:')!!}
 				{!!Form::textarea('descripcion',null,['class'=>'form-control','placeholder'=>'Ingrese descripcion del beneficio','rows' => '5'])!!}
 			</div>			
-
 		</div>
 	</div>
 </div>

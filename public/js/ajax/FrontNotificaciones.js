@@ -112,7 +112,7 @@
 				console.log(Contador);
 			var finalData = "<div class='list-group' style='overflow-y: scroll;height:200px;'>"
 							+pops
-							+"<div class='list-group-item-full-header'><a class='text-warning' href='/pops'>ver todas</a></div>"
+							+"<div class='list-group-item'><a class='text-warning' href='/pops'>ver todas</a></div>"
 							+"</div>";
 			$('#Notificaciones').attr('data-content', finalData);
 	    	
