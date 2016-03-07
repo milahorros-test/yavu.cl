@@ -22,6 +22,7 @@ $(document).ready(function(){
 	/*DECLARACIÓN DE VARIABLES GLOBALES*/
 
 	/*MÉTODOS CONSTRUCTORES*/
+		ContarTickets();
 	/*MÉTODOS CONSTRUCTORES*/
 
 	/*SELECTORES*/
@@ -51,20 +52,16 @@ $(document).ready(function(){
 			$.ajax({
 				url: route,
 				headers: {'X-CSRF-TOKEN': token},
-				type: 'POST',
+				type: 'GET',
 				dataType: 'json',
-				data: {
-
-				},
 				success:function(){
-					//console.log('exito');
 					ContarCoins();
+					ContarTickets();
 				}
 			});	
 		}
 	}
 	function ContarCoins(){
-		var CargarEstados = $("#CargarEstados"); 
 		var route = "http://localhost:8000/contarcoins";
 		var user_id = $("#user_id");
 		$.get(route, function(res){
@@ -73,6 +70,20 @@ $(document).ready(function(){
 				//console.log(value.coins);
 				if(parseInt(value.coins)>0){
 					$("#CantidadCoins").text(formatNumber.new(value.coins, "$ "));	
+				}
+					//$("#CantidadCoins").html("<p>0</p>");	
+			});
+		});						
+	}
+	function ContarTickets(){
+		var route = "http://localhost:8000/contartickets";
+		var user_id = $("#user_id");
+		$.get(route, function(res){
+			$("#CantidadTickets").text("");
+			$(res).each(function(key,value){
+				//console.log(value.coins);
+				if(parseInt(value.tickets)>0){
+					$("#CantidadTickets").text(formatNumber.new(value.tickets, "# "));	
 				}
 					//$("#CantidadCoins").html("<p>0</p>");	
 			});

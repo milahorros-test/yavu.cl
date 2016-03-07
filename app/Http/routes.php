@@ -159,6 +159,7 @@ Route::get('validarrutempresa/{rut}', 'EmpresaController@ValidarRutEmpresa');
 Route::resource('tickets','TicketController');
 Route::get('efectuarcompraticket/{user_id}/{cantidadtickets}', 'TicketController@EfectuarCompra');
 Route::get('verificartickets/{user_id}', 'TicketController@VerificarTickets');
+Route::get('contartickets', 'TicketController@ContarTickets');
 /*Gestión de tickets*/
 
 

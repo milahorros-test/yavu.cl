@@ -10,7 +10,7 @@
 		@include('alerts.errorsMessage')
 		@include('alerts.successMessage')
 		@include('alerts.warningMessage')
-		<h2>Compra tus ticket's para participar!</h2>	
+		<h1>Compra tus ticket's para participar!</h1>	
 
 		<div class="row">
 			<div class="col-md-8">
@@ -36,17 +36,31 @@
 			</div>		
 
 	         <div class="col-sm-4"><!--style="position:fixed;z-index:1000;"-->
+
 	             <div class="list-group">
 	                 <div class="list-group-item-full-header">
-	                     <h6>Cantidad de Coins</h6>
+	                     <h6>MIS COINS</h6>
 	                 </div>
 	                 <div class="list-group-item">
-	                     Coins <img src="http://i601.photobucket.com/albums/tt93/tbg8904/Gaia%20Icon/Coins.png" width="16px" height="16px"> 
+	                     <img src="http://i601.photobucket.com/albums/tt93/tbg8904/Gaia%20Icon/Coins.png" width="16px" height="16px"> 
 	                     <span id="CantidadCoins" style="float:right;" class="label label-warning">
 	                            
 	                     </span>
 	                 </div>
 	             </div>
+
+	             <div class="list-group">
+	                 <div class="list-group-item-full-header">
+	                     <h6>MIS TICKETS</h6>
+	                 </div>
+	                 <div class="list-group-item">
+	                     <img src="{!!URL::to('images/ticket.png')!!}" width="16px" height="16px"> 
+	                     <span id="CantidadTickets" style="float:right;" class="label label-info">
+	                            
+	                     </span>
+	                 </div>
+	             </div>
+
 	         </div>
 		</div>
 	</div>
