@@ -54,7 +54,7 @@
   }
   #LogoYavu {
     width: 50%;
-    transition: width 0.5s;
+    transition: width 0.5s;    
   }  
 }
 @media (min-width: 880px) {
