@@ -13,7 +13,7 @@ class EmpresaUpdateRequest extends Request
          'rut' => 'required',
          'email' => 'required',
          //'login' => 'required',
-         'nombre' => 'required',
+         'nombre' => 'required|unique:empresas',
       ];
    }
 }

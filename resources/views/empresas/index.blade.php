@@ -62,7 +62,12 @@
 	        
 				        <div class="col-md-4">
 				          <div class="thumbnail">
-				            <img src="{!!URL::to('img/users/'.$empresa->imagen_perfil)!!}" alt="">
+				          	@if($empresa->imagen_perfil !== "")
+				            	<img src="{!!URL::to('img/users/'.$empresa->imagen_perfil)!!}" alt="">
+				            @else
+				            	<img width="15%" id="ImagenPerfil" class="thumbnail" src="https://image.freepik.com/iconos-gratis/silueta-usuario-masculino_318-35708.png" alt="...">
+				            @endif
+
 				              <div class="caption">
 				                <h4>{{$empresa->nombre}}</h4>
 				            </div>
