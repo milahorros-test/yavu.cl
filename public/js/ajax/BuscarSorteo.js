@@ -77,21 +77,32 @@
 		$("#SorteoListThumb").text("");
 		$.get(route, function(res){
 			console.log("clickthum");
+			var ImagenSorteo = "";
 			$("#SorteoListThumb").append(
 				'<div class="container" id="tourpackages-carousel">'
 				+'<div class="row">');
 			$(res).each(function(key,value){
+
+				ImagenSorteo = '/img/users/'+value.imagen_sorteo;
+
+				if (value.imagen_sorteo === "" || value.imagen_sorteo === null)
+				{
+					ImagenSorteo = "/images/empresa.png";
+				}
+
+
 				$("#SorteoListThumb").append(
 						
 					'<div class="col-md-4">'
 				        +'<div class="thumbnail">'
-				            +'<img src="images/empresa.png" alt="">'
+				            +'<img src="'+ImagenSorteo+'" alt="">'
 					            +'<div class="caption">'
 					             +'<td><h5>Nombre Sorteo</h5></td>'
 					                +'<h4>'+value.nombre_sorteo+'</h4>'
 					            +'</div>'
 					            +'<td><h5>Descripción</h5></td>'
 					        +'<td>'+value.descripcion+'</td>'
+					        +'<br><span id="CantidadParticipantes"></span>'
 					    +'</div>'					        
 					+'</div>'
 
@@ -100,7 +111,28 @@
 			$("#SorteoListThumb").append(
 					'</div>'
 				+'</div>');
-		});						
+		});		
+		ContarParticipantes();				
+	}	
+
+	
+	function ContarParticipantes()
+	{
+		var sorteo_id = $("#sorteo_id").val();
+		var route = "http://localhost:8000/contarparticipantes/"+sorteo_id;
+		$.ajax({
+			url: route,
+			type: 'GET',
+			dataType: 'json',
+			cache: false,
+			async: true,			
+			success:function(data){
+				 //$("#CantidadParticipantes").text();
+				$(data).each(function(key,value){
+					console.log(value.participantes);
+				}); 
+			}
+		});			
 	}	
 	/*FUNCIONES Y PROCEDIMIENTOS*/
 

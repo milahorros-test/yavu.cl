@@ -83,7 +83,13 @@ Route::resource('sorteos', 'SorteoController');
 Route::get('listasorteos', 'SorteoController@ListaSorteos');
 Route::get('buscarsorteo/{nombre}', 'SorteoController@BuscarSorteos');
 Route::get('canjearticket/{user_id}', 'SorteoController@CanjearTicket');
-/*Gestión de Sortes*/
+/*Gestión de Sorteos*/
+
+/*Gestión de Participantes*/
+Route::resource('participantes', 'ParticipanteController');
+Route::get('contarparticipantes/{sorteo_id}','ParticipanteController@ContarParticipantes');
+
+/*Gestión de Participantes*/
 
 /*Gestión de Admins*/
 Route::resource('admins','AdminController');
@@ -160,6 +166,7 @@ Route::resource('tickets','TicketController');
 Route::get('efectuarcompraticket/{user_id}/{cantidadtickets}', 'TicketController@EfectuarCompra');
 Route::get('verificartickets/{user_id}', 'TicketController@VerificarTickets');
 Route::get('contartickets', 'TicketController@ContarTickets');
+Route::get('usarticket/{user_id}/{sorteo_id}', 'SorteoController@UsarTicket');
 /*Gestión de tickets*/
 
 

@@ -7,8 +7,12 @@
 	/*MÉTODOS CONSTRUCTORES*/
 
 	/*SELECTORES*/
+	$("#UsarTicket").click(function(){
+		console.log("hola estoy usando ticket, aun estoy pendiente");
+		UsarTicket();
+	});	
 	$("#participar").click(function(){
-		console.log("hola");
+		console.log("hola, estoy participando, aun estoy pendiente");
 	});
 	$("#siquiero").click(function(){
 		//console.log($("#user_id").val());
@@ -27,7 +31,7 @@
 		$.ajax({
 			url: route,
 			headers: {'X-CSRF-TOKEN': token},
-			type: 'POST',
+			type: 'GET',
 			dataType: 'json',
 			data: {
 				user_id: user_id,
@@ -39,7 +43,23 @@
 	}
 	function UsarTicket()
 	{
-
+		$('#myModal').modal('hide');
+		var user_id = $("#user_id").val();	
+		var sorteo_id = $("#sorteo_id").val();
+		var route = "http://localhost:8000/usarticket/"+user_id+"/"+sorteo_id;
+		$.ajax({
+			url: route,
+			headers: {'X-CSRF-TOKEN': token},
+			type: 'GET',
+			dataType: 'json',
+			data: {
+				user_id: user_id,
+				sorteo_id: sorteo_id
+			},
+			success:function(){
+				 
+			}
+		});
 	}
 	function VerificarTickets()
 	{
@@ -50,17 +70,6 @@
 			if(res>0){
 				$("#UsarTicket").removeAttr('style');	
 			}
-			
-
-/*
-			$(res).each(function(key,value){
-				
-				if(parseInt(value.coins)>0){
-					$("#CantidadCoins").append(formatNumber.new(value.coins, "$ "));	
-				}
-					//$("#CantidadCoins").html("<p>0</p>");	
-			});
-*/
 		});			
 	}
 	/*FUNCIONES Y PROCEDIMIENTOS*/

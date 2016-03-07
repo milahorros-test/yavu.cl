@@ -11,6 +11,7 @@ use yavu\User;
 use Session;
 use Redirect;
 use DB;
+use Carbon\Carbon;
 use Illuminate\Routing\Route;
 
 class SorteoController extends Controller
@@ -22,30 +23,27 @@ class SorteoController extends Controller
         $this->sorteo = Sorteo::find($route->getParameter('sorteos'));
         //return $this->user;
     }        
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {   
         
-        $sorteos = DB::table('sorteos')->paginate(5);
+        $sorteos = DB::table('sorteos')->paginate(10);
         return view('sorteos.index', compact('sorteos'));
 
     }
 
     public function BuscarSorteos($nombre){
 
-        $sorteos = DB::table('sorteos')                    
-                    ->select('*')    
-                    ->where('estado_sorteo', 'like', 'Aprobado') 
-                    ->orwhere('nombre_sorteo', 'like', '%'.$nombre.'%')  
-                    ->orwhere('descripcion', 'like', '%'.$nombre.'%')
-                    ->orderBy('created_at','desc')   
+        $sorteos = DB::table('sorteos')   
+                    ->join('participante_sorteos', 'sorteos.id', '=', 'participante_sorteos.sorteo_id')                 
+                    ->select('sorteos.*', 'count(participante_sorteos.sorteo_id) as opciones', 'count(distinct participante_sorteos.user_id) as participantes')
+                    ->where('sorteos.estado_sorteo', 'like', 'Aprobado') 
+                    ->where('participante_sorteos.sorteo_id', '=', 'sorteos.id')   
+                    ->orwhere('sorteos.nombre_sorteo', 'like', '%'.$nombre.'%')  
+                    ->orwhere('sorteos.descripcion', 'like', '%'.$nombre.'%')
+                    ->orderBy('sorteos.created_at','desc')   
                     ->get();
 
-        //dd($empresas);
+        dd($sorteos);
         return response()->json(
             $sorteos
         );
@@ -60,9 +58,21 @@ class SorteoController extends Controller
             DB::table('registro_coins')->insert(
                 ['user_id' => $user_id, 
                 'motivo' => 'Canje de ticket',
-                'cantidad' => '-1000'
+                'cantidad' => '-1000',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()                  
                 ]
-            );            
+            );      
+
+            DB::table('tickets')->insert(
+                ['user_id' => $user_id, 
+                'cantidad_tickets' => 1, 
+                'monto' => 1000,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+                ]
+            );    
+
         }else{
             return response()->json([
                 "Mensaje: " => "Sin salido para el servicio"                
@@ -84,40 +94,17 @@ class SorteoController extends Controller
         Session::flash('message', 'Sorteo creado correctamente');
     return Redirect::to('/sorteos/create');
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         //
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
 
     {   
                 
                 return view('sorteos.edit', ['sorteo' => $this->sorteo]); 
     }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update($id, SorteoUpdateRequest $request)
-
     {
 
         $this->sorteo->fill($request->all());
@@ -125,13 +112,38 @@ class SorteoController extends Controller
         Session::flash('message', 'sorteo validado correctamente');
         return Redirect::to('/sorteos');
     }
+    public function UsarTicket($user_id, $sorteo_id)
+    {
+        $ticketsUsuario = DB::table('tickets')
+                ->where('user_id', $user_id)
+                ->sum('cantidad_tickets'); 
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+        if ($ticketsUsuario > 0)
+        {
+            DB::table('tickets')->insert(
+                ['user_id' => $user_id, 
+                'cantidad_tickets' => -1, 
+                'monto' => -1000,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+                ]
+            );
+            //Ahora rindo el ticket
+            DB::table('participante_sorteos')->insert(
+                ['user_id' => $user_id, 
+                'sorteo_id' => $sorteo_id,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+                ]
+            );            
+
+            return 'exito';
+
+        }else{
+            return 'sin saldo de tickets';
+        }
+        return 'hola '.$user_id;
+    }
     public function destroy($id)
     {
         $this->sorteo->delete();
