@@ -86,12 +86,20 @@
 			$("#EmpresaListThumb").append(
 				'<div class="container" id="tourpackages-carousel">'
 				+'<div class="row">');
+
 			$(res).each(function(key,value){
+				var ImagenPerfil = "/img/users/"+value.imagen_perfil;
+
+				if (value.imagen_perfil === "")
+				{
+					ImagenPerfil = "https://image.freepik.com/iconos-gratis/silueta-usuario-masculino_318-35708.png";
+				}
+
 				$("#EmpresaListThumb").append(
 						
 					'<div class="col-md-4">'
 				        +'<div class="thumbnail">'
-				            +'<img src="/img/users/'+value.imagen_perfil+'" alt="">'
+				            +'<img src="'+ImagenPerfil+'" alt="">'
 					            +'<div class="caption">'
 					                +'<h4>'+value.nombre+'</h4>'
 					            +'</div>'
