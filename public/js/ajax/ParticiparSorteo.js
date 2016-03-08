@@ -8,12 +8,14 @@
 
 	/*SELECTORES*/
 	$("#UsarTicket").click(function(){
-		console.log("hola estoy usando ticket, aun estoy pendiente");
-		UsarTicket();
+		//console.log("hola estoy usando ticket, aun estoy pendiente");
+		UsarTicket($(this).attr('value'));
+		//console.log($(this).attr('value'));
 
 	});	
-	$(".participar").click(function(e){
-		console.log(this+e);
+	$(".participar").click(function(){
+		$("#UsarTicket").val($(this).attr('value'));
+		//console.log($(this).attr('value')+"/");
 	});
 	$("#siquiero").click(function(){
 		//console.log($("#user_id").val());
@@ -42,13 +44,14 @@
 			}
 		});			
 	}
-	function UsarTicket()
+	function UsarTicket(sorteo_id)//Esto deberia insertar un ticket en negativo y dejarlo rendido para el sorteo correspondiente.
 	{
 		$('#myModal').modal('hide');
 		var user_id = $("#user_id").val();	
 
 		//este sorteo id hay que validarlo
-		var sorteo_id = $("#sorteo_id").val();
+		//var sorteo_id = $("#sorteo_id").val();
+		console.log(sorteo_id);
 		var route = "http://localhost:8000/usarticket/"+user_id+"/"+sorteo_id;
 		$.ajax({
 			url: route,

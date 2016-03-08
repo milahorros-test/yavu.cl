@@ -64,7 +64,7 @@
                     <td>{{$sorteo->descripcion}}</td>
                   @if(Auth::user()->check())
                     <input id="user_id" value="{!! Auth::user()->get()->id !!}" type="hidden" />
-                    <input id="sorteo_id" value="sorteo_id{!! $sorteo->id !!}" type="hidden" />
+                    <input id="sorteo_id" value="{!! $sorteo->id !!}" type="hidden" />
                     <input type="hidden" name="_token" value="{{csrf_token()}}" id="token" />
                     <h5>Estado del Sorteo:</h5>  
                     {{$sorteo->estado_sorteo}}
@@ -84,7 +84,7 @@
                           </div>
                           <div class="modal-footer">
 
-                            <button id="UsarTicket" type="button" class="btn btn-success" style="display: none;" data-dismiss="modal">Usar ticket</button>  
+                            <button id="UsarTicket" value="{!! $sorteo->id !!}" type="button" class="btn btn-success" style="display: none;" data-dismiss="modal">Usar ticket</button>  
 
                             <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
                             <button type="button" id='siquiero' class="btn btn-primary">Si quiero!</button>
