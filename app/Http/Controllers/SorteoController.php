@@ -57,7 +57,7 @@ class SorteoController extends Controller
         if($coinsUsuario >= 1000){            
             DB::table('registro_coins')->insert(
                 ['user_id' => $user_id, 
-                'motivo' => 'Canje de ticket',
+                'motivo' => 'Canje (compra) de ticket',
                 'cantidad' => '-1000',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()                  

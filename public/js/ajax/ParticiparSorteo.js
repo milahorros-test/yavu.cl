@@ -4,6 +4,12 @@
 
 	/*MÉTODOS CONSTRUCTORES*/
 		VerificarTickets();
+		/*
+		setInterval(function()
+		{
+		},10000);
+		*/
+
 	/*MÉTODOS CONSTRUCTORES*/
 
 	/*SELECTORES*/
@@ -20,8 +26,8 @@
 	$("#siquiero").click(function(){
 		//console.log($("#user_id").val());
 		CanjearTicket();
-
-	});
+		UsarTicket($("#UsarTicket").attr('value'))
+;	});
 	/*SELECTORES*/
 
 	/*FUNCIONES Y PROCEDIMIENTOS*/

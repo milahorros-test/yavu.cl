@@ -20,7 +20,7 @@
 
 				@elseif(Auth::user()->check() || !Auth::user()->check())
 
-				 {!!Form::text('nombre',null,['class' => 'form-control', 'placeholder' => 'Nombre de empresa','id'=>'empresathumb'])!!}
+				 {!!Form::text('nombre',null,['class' => 'form-control', 'placeholder' => 'Nombre de empresa','id'=>'empresathumb', 'role' => 'combobox'])!!}
 
 				 @endif
 
