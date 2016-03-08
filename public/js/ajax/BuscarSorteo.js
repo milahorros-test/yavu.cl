@@ -1,5 +1,7 @@
 	$(document).ready(function(){	
-	/*DECLARACIÓN DE VARIABLES GLOBALES*/
+	/*DECLARACIÓ DE VARIABLES GLOBALES*/
+	var Busqueda = "";
+	var letter = "";
 	/*DECLARACIÓN DE VARIABLES GLOBALES*/
 
 	/*MÉTODOS CONSTRUCTORES*/
@@ -15,6 +17,136 @@
 	        BuscarUsuario();
 	    }
 	});	*/
+	$('.buscar').keyup(function(e){
+		//console.log(String.fromCharCode(e.keyCode));
+		//console.log(String.fromCharCode(112));
+
+		if(e.keyCode !== 32 && e.currentTarget.value.indexOf(String.fromCharCode(32)) > -1 )
+		{
+			Busqueda = e.currentTarget.value;
+			Busqueda = ReemplazarVacios(Busqueda);
+		}
+
+		function ReemplazarVacios(Busqueda)
+		{
+			Busqueda = Busqueda.replace(String.fromCharCode(32), '+');
+			Busqueda = Busqueda.replace('     ', '+');
+			Busqueda = Busqueda.replace('    ', '+');
+			Busqueda = Busqueda.replace('   ', '+');
+			Busqueda = Busqueda.replace('  ', '+');
+			Busqueda = Busqueda.replace('+++++', '+');
+			Busqueda = Busqueda.replace('++++', '+');
+			Busqueda = Busqueda.replace('+++', '+');
+			Busqueda = Busqueda.replace('++', '+');
+
+			if(Busqueda.indexOf(String.fromCharCode(32)) > -1)
+			{          
+				return ReemplazarVacios(Busqueda);
+			}
+			return Busqueda;
+		}
+	
+
+		if(e.keyCode === 13)
+		{
+			if(Busqueda.substring(0,1) === '+')
+			{
+				Busqueda = Busqueda.substring(1, Busqueda.length);
+			}
+
+			console.log(Busqueda);
+			//BUSCAR!
+		}
+
+		/*
+		if(letter.length >= 1)
+		{
+			letter = letter.substring(letter.length-1, letter.length);
+		}
+		*/
+
+		//console.log(letter);
+		/*
+		if(e.keyCode == 32)
+		{
+			if(letter !== '+' || letter !== String.fromCharCode(32) || letter !== ' ')
+			{
+				Busqueda += letter;
+				Busqueda += '+';
+			}
+			
+		}
+		else 
+		{
+			Busqueda = Busqueda.replace(String.fromCharCode(32),'');	
+			Busqueda += letter;
+		}
+
+		if(e.keyCode === 13)
+		{
+			console.log(Busqueda);
+			Busqueda = "";
+		}
+
+		if(e.keyCode === 8)
+		{
+			letter = '';
+			console.log(letter);
+			var fin = Busqueda.length-1;
+			Busqueda = Busqueda.substring(0, fin);			
+		}
+
+		console.log(Busqueda);
+		*/
+				
+
+		
+
+		/*
+		if (letter.length>2)
+		{
+			letter = letter.substring(letter.length-1,letter.length);
+			//console.log(letter);
+
+
+			if(e.keyCode === 32 || letter === ' ')
+			{
+				//console.log(e.currentTarget.value);
+				//Busqueda = '+'+dataWord;
+
+				console.log('Ha pulsado un espacio');
+
+				Busqueda += '+';
+
+			}
+			else if(e.keyCode === 13)
+			{
+				console.log(Busqueda);
+				Busqueda = "";
+			}
+			else if(e.keyCode === 8)
+			{
+				Busqueda = Busqueda.substring(0, Busqueda.length-1);
+			}
+			else
+			{
+				Busqueda += letter;
+			}
+
+
+		}else{
+			Busqueda += letter;
+		}
+		*/
+
+		//console.log(e.currentTarget.value);
+
+		//var dataWord = e.currentTarget.value;
+
+		//console.log(e.currentTarget.value);
+		//console.log(Busqueda);
+	});
+
 	$('#nombre_sorteo').keydown(function (e)
 	{
 	    if(e.keyCode == 13 && $("#nombre_sorteo").val())
@@ -42,8 +174,7 @@
 
 	function BuscarSorteo(){
 		console.log("click");
-		var NombreSorteo = $("#nombre_sorteo").val();
-		var route = "http://localhost:8000/buscarsorteo/"+NombreSorteo+"";
+		var route = "http://localhost:8000/buscarsorteo/"+Busqueda+"";
 		$("#SorteoList").text("");
 		$.get(route, function(res){
 			$("#SorteoList").append(

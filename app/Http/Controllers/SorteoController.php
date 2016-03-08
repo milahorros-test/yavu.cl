@@ -32,17 +32,54 @@ class SorteoController extends Controller
     }
 
     public function BuscarSorteos($nombre){
-    		
-        $sorteos = DB::table('sorteos')   
-                    ->join('participante_sorteos', 'sorteos.id', '=', 'participante_sorteos.sorteo_id')                 
-                    ->select('sorteos.*', 'count(participante_sorteos.sorteo_id) as opciones', 'count(distinct participante_sorteos.user_id) as participantes')
-                    ->where('sorteos.estado_sorteo', 'like', 'Aprobado') 
-                    ->where('participante_sorteos.sorteo_id', '=', 'sorteos.id')   
-                    ->orwhere('sorteos.nombre_sorteo', 'like', '%'.$nombre.'%')  
-                    ->orwhere('sorteos.descripcion', 'like', '%'.$nombre.'%')
-                    ->orderBy('sorteos.created_at','desc')   
-                    ->get();
+    	//$nombre = str_replace('+', ' ', $nombre);
+    	$nombre = explode('+', $nombre);
 
+      $sorteos = Sorteo::all();
+
+    	foreach ($nombre as $key => $value) {
+  			echo $value."-";
+    	}
+
+    	dd($nombre);
+    	/*
+						$sorteos = DB::table('sorteos')   
+                    ->where('estado_sorteo', 'like', 'Aprobado') 
+                    ->orwhere('nombre_sorteo', 'like', '%'.$value.'%')  
+                    ->orwhere('descripcion', 'like', '%'.$value.'%')
+                    ->union($sorteos)
+                    ->orderBy('created_at','desc')   
+                    ->get();    
+    	*/
+
+    	/*
+    	$nombre = str_replace('+', '', $nombre);
+    	$nombre = str_split($nombre, 1);
+
+    	$in = "";
+
+    	foreach ($nombre as $key => $value) {
+    		$in .= "'".$value."',";
+    	}
+    	$in = substr($in, 0, -1);
+
+
+    	echo $in;
+    	dd($nombre);
+    	
+        $sorteos = DB::table('sorteos')   
+                    ->whereRaw('MATCH(nombre_sorteo,descripcion) AGAINST("'.$nombre.'"")') 
+                    ->orderBy('created_at','desc')   
+                    ->get();    	
+      */
+/*    		
+        $sorteos = DB::table('sorteos')   
+                    ->where('estado_sorteo', 'like', 'Aprobado') 
+                    ->orwhere('nombre_sorteo', 'like', '%'.$nombre.'%')  
+                    ->orwhere('descripcion', 'like', '%'.$nombre.'%')
+                    ->orderBy('created_at','desc')   
+                    ->get();
+*/
         
         return response()->json(
             $sorteos

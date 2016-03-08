@@ -14,9 +14,9 @@
       <div class="panel-body">
         <div class="form-group">
           @if(Auth::admin()->check())
-            {!!Form::text('nombre',null,['class' => 'form-control', 'placeholder' => 'Nombre de sorteo','id'=>'nombre_sorteo'])!!}
+            {!!Form::text('nombre',null,['class' => 'form-control buscar', 'placeholder' => 'Nombre de sorteo','id'=>'nombre_sorteo'])!!}
           @elseif(Auth::user()->check() || !Auth::user()->check())
-           {!!Form::text('nombre',null,['class' => 'form-control', 'placeholder' => 'Nombre de sorteo','id'=>'sorteothumb'])!!}
+           {!!Form::text('nombre',null,['class' => 'form-control buscar', 'placeholder' => 'Nombre de sorteo','id'=>'sorteothumb'])!!}
           @endif
         </div>
         @if(Auth::admin()->check())
@@ -59,7 +59,7 @@
                     <h5>Estado del Sorteo:</h5>  
                     {{$sorteo->estado_sorteo}}
                     <br>
-                    <a  id='participar' href="{!! URL::to('#!') !!}" class="btn btn-primary participar" data-toggle="modal" data-target="#myModal" value="{!! $sorteo->id !!}" role="button">Participar!</a> 
+                    <a  id='participar' href="{!! URL::to('#!') !!}" class="btn btn-primary participar" data-toggle="modal" data-target="#myModal" value="{!! $sorteo->id !!}" role="button">Participar!/<a> 
   
                     <!-- Modal -->
                     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
