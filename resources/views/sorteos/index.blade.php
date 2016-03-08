@@ -64,12 +64,12 @@
                     <td>{{$sorteo->descripcion}}</td>
                   @if(Auth::user()->check())
                     <input id="user_id" value="{!! Auth::user()->get()->id !!}" type="hidden" />
-                    <input id="sorteo_id" value="{!! $sorteo->id !!}" type="hidden" />
+                    <input id="sorteo_id" value="sorteo_id{!! $sorteo->id !!}" type="hidden" />
                     <input type="hidden" name="_token" value="{{csrf_token()}}" id="token" />
-                    <td><h5>Estado del Sorteo:</h5></td>
-                    <td>{{$sorteo->estado_sorteo}}//{{dd($sorteo)}}</td>
+                    <h5>Estado del Sorteo:</h5>  
+                    {{$sorteo->estado_sorteo}}
                     <br>
-                    <td><a id="participar" href="{!! URL::to('#!') !!}" class="btn btn-primary" data-toggle="modal" data-target="#myModal" role="button">Participar!</a></td>
+                    <a  id='participar' href="{!! URL::to('#!') !!}" class="btn btn-primary participar" data-toggle="modal" data-target="#myModal" value="{!! $sorteo->id !!}" role="button">Participar!</a> 
   
                     <!-- Modal -->
                     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">

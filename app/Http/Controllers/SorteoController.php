@@ -32,7 +32,7 @@ class SorteoController extends Controller
     }
 
     public function BuscarSorteos($nombre){
-
+    		
         $sorteos = DB::table('sorteos')   
                     ->join('participante_sorteos', 'sorteos.id', '=', 'participante_sorteos.sorteo_id')                 
                     ->select('sorteos.*', 'count(participante_sorteos.sorteo_id) as opciones', 'count(distinct participante_sorteos.user_id) as participantes')
@@ -43,7 +43,7 @@ class SorteoController extends Controller
                     ->orderBy('sorteos.created_at','desc')   
                     ->get();
 
-        dd($sorteos);
+        
         return response()->json(
             $sorteos
         );

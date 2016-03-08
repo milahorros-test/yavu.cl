@@ -10,9 +10,10 @@
 	$("#UsarTicket").click(function(){
 		console.log("hola estoy usando ticket, aun estoy pendiente");
 		UsarTicket();
+
 	});	
-	$("#participar").click(function(){
-		console.log("hola, estoy participando, aun estoy pendiente");
+	$(".participar").click(function(e){
+		console.log(this+e);
 	});
 	$("#siquiero").click(function(){
 		//console.log($("#user_id").val());
@@ -45,6 +46,8 @@
 	{
 		$('#myModal').modal('hide');
 		var user_id = $("#user_id").val();	
+
+		//este sorteo id hay que validarlo
 		var sorteo_id = $("#sorteo_id").val();
 		var route = "http://localhost:8000/usarticket/"+user_id+"/"+sorteo_id;
 		$.ajax({
