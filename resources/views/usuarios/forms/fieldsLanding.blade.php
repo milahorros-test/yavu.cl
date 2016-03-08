@@ -14,6 +14,13 @@
 	{!!Form::label('Clave:')!!}
 	{!!Form::password('password',['class'=>'form-control','placeholder'=>'Ingrese una clave'])!!}
 </div>
+
+<div class="form-group has-feedback has-feedback-left col-sm-6">
+	{!!Form::label('Codigo Referido:')!!}
+	{!!Form::text('referido',null,['class'=>'form-control','placeholder'=>''])!!}
+</div>
+
+
 <div class="form-group has-feedback has-feedback-left col-sm-6">
 	{!!Form::label('Ciudad:')!!}
 	{!!Form::select('ciudad', 
@@ -51,4 +58,5 @@
 		$selected = null, ['class' => 'form-control']) 
 	!!}					
 </div>
+
 
