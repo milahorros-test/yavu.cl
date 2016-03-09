@@ -35,7 +35,7 @@
 	function BuscarUsuario(){
 		console.log("click");
 		var NombreUsuario = $("#usuario").val();
-		var route = "http://yavu.hol.es/buscarusuario/"+NombreUsuario+"";
+		var route = "http://yavu.hol.es/public/buscarusuario/"+NombreUsuario+"";
 		$("#UserList").text("");
 		$.get(route, function(res){
 			$("#UserList").append(

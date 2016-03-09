@@ -15,7 +15,7 @@ $(document).ready(function(){
 	/*FUNCIONES Y PROCEDIMIENTOS*/
 	function SolicitarEliminacion(){
 		var empresa_id = $("#SolicitudEliminacion").val();
-		var route = "http://yavu.hol.es/solicitareliminacionempresa/"+empresa_id;
+		var route = "http://yavu.hol.es/public/solicitareliminacionempresa/"+empresa_id;
 		$.get(route, function(res){
 			$(res).each(function(key,value){
 			  $('#msj-info').append();
