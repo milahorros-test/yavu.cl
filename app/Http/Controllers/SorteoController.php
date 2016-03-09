@@ -33,15 +33,42 @@ class SorteoController extends Controller
 
     public function BuscarSorteos($nombre){
     	//$nombre = str_replace('+', ' ', $nombre);
+    	$nombre = addslashes($nombre);
+    	//$nombre = addcslashes($nombre, 'A..z');
+    	$nombreCompleto="";
     	$nombre = explode('+', $nombre);
-
-      $sorteos = Sorteo::all();
-
+    	//dd($nombreCompleto);
+    	$sqlAdd = "SELECT * FROM (SELECT id, estado_sorteo,imagen_sorteo, nombre_sorteo, descripcion FROM sorteos)newTable";
     	foreach ($nombre as $key => $value) {
-  			echo $value."-";
+    		$nombreCompleto .= $value.' ';
+    		if ($key === 0)
+    		{
+    			$sqlAdd .= " WHERE newTable.nombre_sorteo like '%".$value."%' OR newTable.descripcion like '%".$value."%' OR newTable.estado_sorteo like '%".$value."%'";
+    		}
+    		else
+    		{
+    			$sqlAdd .= " OR newTable.nombre_sorteo like '%".$value."%' OR newTable.descripcion like '%".$value."%' OR newTable.estado_sorteo like '%".$value."%'";
+    		}
     	}
+    	$sqlAdd .= " OR newTable.nombre_sorteo like '%".$nombreCompleto."%' OR newTable.descripcion like '%".$nombreCompleto."%' OR newTable.estado_sorteo like '%".$nombreCompleto."%'";
 
-    	dd($nombre);
+    	$sqlAdd .= "ORDER BY newTable.nombre_sorteo DESC";
+
+    	$sorteos = DB::select($sqlAdd);
+      
+
+      
+
+/*
+                    consulta = "SELECT * FROM (select l.EMPL 'Bloque',s.slotid 'Máquina',s.PlayerID 'ID', p.prenom + ' ' + p.nom  'Cliente', p.pi 'Rut' ,s.SessionStart 'Inicio Sesión',Datediff(s,s.SessionStart, s.LastChg) / 60 'Minutos en Sesión',(Datediff(s,s.SessionStart, s.LastChg) / 60)/60 'Hrs' from online..rt_sessions s (nolock), jeux..physio p (nolock), mas..slot l (nolock) where p.NOCLI = s.PlayerID and  l.NOMAC = s.SlotID)newTable WHERE  newTable.Cliente like '%" & Me.txfBuscador.Text & "%'"
+
+SELECT * FROM (SELECT id, estado_sorteo,imagen_sorteo, nombre_sorteo, descripcion FROM sorteos)newTable 
+WHERE newTable.nombre_sorteo like '%yavu%' 
+OR newTable.nombre_sorteo like '%pipol%'
+OR newTable.nombre_sorteo like '%sorteo%'
+*/
+
+    	
     	/*
 						$sorteos = DB::table('sorteos')   
                     ->where('estado_sorteo', 'like', 'Aprobado') 

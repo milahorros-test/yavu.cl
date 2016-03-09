@@ -6,7 +6,7 @@
 
 	/*MÉTODOS CONSTRUCTORES*/
 	$("#BuscarSorteo").click(function(e){
-		BuscarSorteo();
+		//BuscarSorteo();
 		e.preventDefault();
 	});
 	/*MÉTODOS CONSTRUCTORES*/
@@ -20,7 +20,7 @@
 	$('.buscar').keyup(function(e){
 		//console.log(String.fromCharCode(e.keyCode));
 		//console.log(String.fromCharCode(112));
-
+		//console.log(e.keyCode);
 		if(e.keyCode !== 32 && e.currentTarget.value.indexOf(String.fromCharCode(32)) > -1 )
 		{
 			Busqueda = e.currentTarget.value;
@@ -38,8 +38,16 @@
 			Busqueda = Busqueda.replace('++++', '+');
 			Busqueda = Busqueda.replace('+++', '+');
 			Busqueda = Busqueda.replace('++', '+');
+			Busqueda = Busqueda.replace('=', '');
+			Busqueda = Busqueda.replace("'or'", '');
+			Busqueda = Busqueda.replace("'and'", '');
+			Busqueda = Busqueda.replace("script", '');
+			Busqueda = Busqueda.replace("/", '');
+			Busqueda = Busqueda.replace("'", '');
+			Busqueda = Busqueda.replace('<', '');
+			Busqueda = Busqueda.replace('>', '');
 
-			if(Busqueda.indexOf(String.fromCharCode(32)) > -1)
+			if(Busqueda.indexOf(String.fromCharCode(32)) > -1 || Busqueda.indexOf(String.fromCharCode(219)) > -1 || Busqueda.indexOf(String.fromCharCode(48)) > -1 || Busqueda.indexOf(String.fromCharCode(16)) > -1)
 			{          
 				return ReemplazarVacios(Busqueda);
 			}
@@ -56,6 +64,8 @@
 
 			console.log(Busqueda);
 			//BUSCAR!
+			BuscarSorteoThumb(Busqueda);
+
 		}
 
 		/*
@@ -151,7 +161,7 @@
 	{
 	    if(e.keyCode == 13 && $("#nombre_sorteo").val())
 	    {
-	        BuscarSorteo();
+	        //BuscarSorteo();
 
 	    }
 
@@ -162,7 +172,7 @@
 	{
 	    if(e.keyCode == 13 && $("#sorteothumb").val())
 	    {
-	        BuscarSorteoThumb();
+	        //BuscarSorteoThumb();
 
 	    }
 
@@ -172,7 +182,7 @@
 
 	/*FUNCIONES Y PROCEDIMIENTOS*/
 
-	function BuscarSorteo(){
+	function BuscarSorteo(Busqueda){
 		console.log("click");
 		var route = "http://localhost:8000/buscarsorteo/"+Busqueda+"";
 		$("#SorteoList").text("");
@@ -201,10 +211,9 @@
 
 	/*FUNCIONES Y PROCEDIMIENTOS*/
 
-	function BuscarSorteoThumb(){
+	function BuscarSorteoThumb(Busqueda){
 		
-		var NombreSorteo = $("#sorteothumb").val();
-		var route = "http://localhost:8000/buscarsorteo/"+NombreSorteo+"";
+		var route = "http://localhost:8000/buscarsorteo/"+Busqueda+"";
 		$("#SorteoListThumb").text("");
 		$.get(route, function(res){
 			console.log("clickthum");
