@@ -43,7 +43,7 @@
 	function BuscarEmpresa(){
 		console.log("click");
 		var NombreEmpresa = $("#empresa").val();
-		var route = "http://localhost:8000/buscarempresa/"+NombreEmpresa+"";
+		var route = "http://yavu.hol.es/buscarempresa/"+NombreEmpresa+"";
 		$("#EmpresaList").text("");
 		$.get(route, function(res){
 			$("#EmpresaList").append(
@@ -79,7 +79,7 @@
 	function BuscarEmpresaThumb(){
 		
 		var NombreEmpresa = $("#empresathumb").val();
-		var route = "http://localhost:8000/buscarempresa/"+NombreEmpresa+"";
+		var route = "http://yavu.hol.es/buscarempresa/"+NombreEmpresa+"";
 		$("#EmpresaListThumb").text("");
 		$.get(route, function(res){
 			console.log("clickthum");

@@ -48,7 +48,7 @@ $(document).ready(function(){
 		if (cantidadtickets > 0){
 			var user_id = $("#user_id").val();
 			var token = $("#token").val();
-			var route = "http://localhost:8000/efectuarcompraticket/"+user_id+"/"+cantidadtickets;
+			var route = "http://yavu.hol.es/efectuarcompraticket/"+user_id+"/"+cantidadtickets;
 			$.ajax({
 				url: route,
 				headers: {'X-CSRF-TOKEN': token},
@@ -62,7 +62,7 @@ $(document).ready(function(){
 		}
 	}
 	function ContarCoins(){
-		var route = "http://localhost:8000/contarcoins";
+		var route = "http://yavu.hol.es/contarcoins";
 		var user_id = $("#user_id");
 		$.get(route, function(res){
 			$("#CantidadCoins").text("");
@@ -76,7 +76,7 @@ $(document).ready(function(){
 		});						
 	}
 	function ContarTickets(){
-		var route = "http://localhost:8000/contartickets";
+		var route = "http://yavu.hol.es/contartickets";
 		var user_id = $("#user_id");
 		$.get(route, function(res){
 			$("#CantidadTickets").text("");
